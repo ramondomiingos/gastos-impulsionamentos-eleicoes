@@ -1,7 +1,9 @@
 import csv
 import io
 
-from gastos.loader import clean_lines, load_despesas
+import pytest
+
+from gastos.loader import clean_lines, load_despesas, parse_valor
 
 COLS = ["uf", "sq_candidato", "candidato", "cargo", "partido", "fornecedor",
         "cnpj_fornecedor", "descricao", "origem", "valor", "data", "sq_despesa",
@@ -36,7 +38,11 @@ def test_parses_decimal_comma(zip_path):
 
 def test_strips_nul_bytes(zip_path):
     d = load_despesas(zip_path, "RN")
-    assert "PEDRO LIMA" in set(d.candidato)
+    nul = d[d.sq_despesa == "1003"]
+    assert len(nul) == 1
+    assert nul.candidato.iloc[0] == "PEDRO LIMA"
+    for col in d.select_dtypes(exclude="number").columns:
+        assert not d[col].str.contains("\0", regex=False).any(), col
     out = list(clean_lines(["a\0b;c\n"]))
     assert out == ["ab;c\n"]
     rows = list(csv.reader(io.StringIO("".join(out)), delimiter=";"))
@@ -46,3 +52,15 @@ def test_strips_nul_bytes(zip_path):
 def test_uf_none_reads_brasil(zip_path):
     assert set(load_despesas(zip_path, None).uf) == {"BR"}
     assert set(load_despesas(zip_path, "RN").uf) == {"RN"}
+
+
+def test_parse_valor_formats():
+    assert parse_valor("1.234,50") == 1234.5
+    assert parse_valor("2500,00") == 2500.0
+    assert parse_valor("-10,00") == -10.0
+
+
+@pytest.mark.parametrize("bad", ["2500.00", "1,5", "12.34,50", "abc"])
+def test_parse_valor_rejects_other_shapes(bad):
+    with pytest.raises(ValueError, match=bad.replace(".", r"\.")):
+        parse_valor(bad)

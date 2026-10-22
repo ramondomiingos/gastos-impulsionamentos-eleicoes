@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 import io
+import re
 import zipfile
 from pathlib import Path
 from typing import Iterable, Iterator
@@ -46,10 +47,16 @@ def _member(names: list[str], uf: str | None) -> str:
     raise FileNotFoundError(f"{alvo} nao encontrado no zip")
 
 
-def _parse_valor(texto: str) -> float:
+_VALOR_RE = re.compile(r"^-?\d{1,3}(\.\d{3})*,\d{2}$|^-?\d+,\d{2}$")
+
+
+def parse_valor(texto: str) -> float:
+    """Converte valor no formato TSE ("1.234,50"); outro formato e erro."""
     texto = texto.strip()
     if not texto or texto in PLACEHOLDERS:
         return 0.0
+    if not _VALOR_RE.match(texto):
+        raise ValueError(f"valor fora do formato TSE: {texto!r}")
     return float(texto.replace(".", "").replace(",", "."))
 
 
@@ -77,7 +84,7 @@ def load_despesas(zip_path: Path, uf: str | None = None) -> pd.DataFrame:
                     continue
                 linhas.append([row[i] for i in idx])
     df = pd.DataFrame(linhas, columns=list(COLUNAS.values()), dtype=str)
-    df["valor"] = df["valor"].map(_parse_valor).astype(float)
+    df["valor"] = df["valor"].map(parse_valor).astype(float)
     # So linhas totalmente identicas colapsam: um SQ_DESPESA repetido com
     # descricao/valor diferentes sao itens do mesmo documento, nao duplicata.
     return df.drop_duplicates().reset_index(drop=True)
