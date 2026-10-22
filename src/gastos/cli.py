@@ -111,8 +111,19 @@ def _parse_teto(valor: str) -> float:
     return t
 
 
+def _parse_piso(valor: str) -> float:
+    try:
+        v = float(valor)
+    except ValueError:
+        v = float("nan")
+    if not (v > 0) or v == float("inf"):
+        raise _Erro(f"--piso-amostra invalido: {valor!r} (numero positivo em reais, ex. 50000)", 2)
+    return v
+
+
 def _emails(args) -> int:
     teto = _parse_teto(args.teto)
+    piso = _parse_piso(args.piso_amostra)
     try:
         contatos = load_contatos(Path(args.contatos))
     except ValueError as e:
@@ -129,7 +140,8 @@ def _emails(args) -> int:
             runs[uf] = rodar_uf(zip_path, uf, saida / "runs", [teto])
         except (_Erro, FileNotFoundError, KeyError) as e:  # UF sem dados: vira pendencia
             print(f"Aviso: {uf} sem analise ({e})", file=sys.stderr)
-    out = write_emails(Path(args.contatos), runs, teto, saida, eleitos=eleitos, assinatura=args.assinatura)
+    out = write_emails(Path(args.contatos), runs, teto, saida, eleitos=eleitos, assinatura=args.assinatura,
+                       piso_amostra=piso)
     print(f"E-mails gravados em {out / 'emails'}; veja {out / 'pendencias.md'}")
     return 0
 
@@ -172,6 +184,8 @@ def _parser() -> argparse.ArgumentParser:
     e.add_argument("--contatos", required=True, help="CSV com nome,cargo,uf,email[,sq_candidato]")
     e.add_argument("--teto", required=True, help="teto proposto como fracao (0.10 = 10%%)")
     e.add_argument("--assinatura", default="[Seu nome]", help="assinatura dos e-mails")
+    e.add_argument("--piso-amostra", dest="piso_amostra", default="50000",
+                   help="total minimo da campanha (R$) para entrar na amostra nominal em anexo (padrao: 50000)")
     e.add_argument("--zip", help="zip de despesas do TSE ja baixado")
     e.add_argument("--eleitos-zip", dest="eleitos_zip", help="consulta_cand zip/CSV ja baixado")
     e.add_argument("--saida", default="out", help="pasta de saida (padrao: out)")

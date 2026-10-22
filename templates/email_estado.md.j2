@@ -12,9 +12,10 @@ Para dar uma medida do tamanho disso, levantei os dados de prestação de contas
 - **Quem gastou:** {{ n_gastaram }} de {{ n_candidatos }} candidatos que declararam gasto de campanha ({{ pct_gastaram }}) tiveram despesa com essas plataformas. Entre os que gastaram, cerca de 1 em cada 10 destinou mais de {{ p90 }} do total da campanha a elas.
 - **Efeito de um teto de {{ teto }}:** {{ n_acima }} candidatos, {{ pct_acima }} dos {{ n_candidatos }} que declararam gasto de campanha, estariam acima do limite, e o valor que ultrapassaria esse limite somaria {{ excedente }}.
 
-Os números são agregados do estado; não se referem a nenhuma campanha em particular.
+{% if anexo %}
+Segue em anexo ({{ anexo }}) a lista {{ lista_txt }} do estado com maior participação desses gastos no total declarado, com o link da prestação de contas oficial de cada uma (dados públicos do TSE, prestações parciais).
 
-**O pedido.** Proponho um teto percentual para o gasto de uma campanha com plataformas estrangeiras de anúncio (neste cálculo, {{ teto }} do gasto total da campanha). Gostaria de convidá-lo(a) a ajudar a tornar isso realidade, seja apoiando a ideia, seja contribuindo com a formulação. Se for útil, envio as planilhas com as linhas que compõem cada número.
+{% endif %}**O pedido.** Proponho um teto percentual para o gasto de uma campanha com plataformas estrangeiras de anúncio (neste cálculo, {{ teto }} do gasto total da campanha). Gostaria de convidá-lo(a) a ajudar a tornar isso realidade, seja apoiando a ideia, seja contribuindo com a formulação. Se for útil, envio as planilhas com as linhas que compõem cada número.
 
 Atenciosamente,
 

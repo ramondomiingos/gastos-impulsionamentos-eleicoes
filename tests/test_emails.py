@@ -82,13 +82,28 @@ def test_email_forbidden_content(zip_path, tmp_path):
     pasta = cli.rodar_uf(zip_path, "RN", tmp_path / "runs", [0.10])
     stats, datas = emails.stats_from_run(pasta, 0.10)
     t = emails.render_email(pd.Series({"nome": "Maria Exemplo", "cargo": "Senador", "uf": "RN"}),
-                            stats, 0.10, datas)
+                            stats, 0.10, datas, anexo="amostra-rn.csv")
     low = t.lower()
     assert "dinheiro público" not in low and "dinheiro publico" not in low
+    assert "não se referem a nenhuma campanha" not in low
     for n in nomes:
         assert n.lower() not in low
     for p in partidos:
         assert re.search(rf"\b{re.escape(p)}\b", t, re.I) is None
+
+
+def test_names_only_in_attachment_parties_nowhere(tmp_path, uf_runs, eleitos):
+    df = pd.read_csv(uf_runs["RN"] / "candidatos.csv", sep=";", decimal=",", encoding="utf-8-sig", dtype=str)
+    partidos = {p.strip() for p in df["partido"] if p.strip()}
+    c = _contatos(tmp_path, ["José da Silva,Deputado Federal,RN,jose@example.org,"])
+    out = emails.write_emails(c, uf_runs, 0.10, tmp_path / "saida", eleitos=eleitos, piso_amostra=1.0)
+    corpo = next((out / "emails" / "rn").glob("*.md")).read_text(encoding="utf-8")
+    anexo = (out / "emails" / "rn" / "amostra-rn.csv").read_text(encoding="utf-8-sig")
+    assert "João Da Silva" not in corpo and "Pedro Lima" not in corpo
+    assert "João da Silva" in anexo and "Pedro Lima" in anexo
+    for p in partidos:
+        for texto in (corpo, anexo):
+            assert re.search(rf"(?<![A-Za-z]){re.escape(p)}(?![A-Za-z])", texto) is None, p
 
 
 def test_provavel_only_in_note(contato, stats):
@@ -209,7 +224,7 @@ def test_write_emails_same_uf_same_numbers(tmp_path, uf_runs, eleitos):
     corpos = [re.sub(r"Prezado\(a\)[^\n]*", "", a.read_text(encoding="utf-8")) for a in arqs]
     assert corpos[0] == corpos[1]
     idx = pd.read_csv(out / "indice.csv", sep=";", encoding="utf-8-sig", dtype=str)
-    assert list(idx.columns) == ["nome", "cargo", "uf", "email", "arquivo"] and len(idx) == 2
+    assert list(idx.columns) == ["nome", "cargo", "uf", "email", "arquivo", "anexo"] and len(idx) == 2
     assert (out / "pendencias.md").exists()
     assert any(p.is_dir() for p in (out / "runs").iterdir())  # copia da execucao
 
@@ -469,3 +484,130 @@ def test_empty_filters_rejected(zip_path, tmp_path, capsys, flag, valor):
     rc = cli.main(["analisar", "--zip", str(zip_path), flag, valor, "--saida", str(tmp_path / "o")])
     assert rc == 2 and flag in capsys.readouterr().err
     assert not (tmp_path / "o").exists()
+
+
+# ---------------- anexo: amostra nominal ----------------
+
+def _anexo(out, uf="rn"):
+    return pd.read_csv(out / "emails" / uf / f"amostra-{uf}.csv", sep=";", decimal=",",
+                       encoding="utf-8-sig", dtype=str)
+
+
+def _gera(tmp_path, uf_runs, eleitos, linhas=None, **kw):
+    c = _contatos(tmp_path, linhas or ["José da Silva,Deputado Federal,RN,jose@example.org,"])
+    return emails.write_emails(c, uf_runs, 0.10, tmp_path / "saida", eleitos=eleitos, **kw)
+
+
+def test_attachment_columns_ranking_and_format(tmp_path, uf_runs, eleitos):
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0)
+    raw = (out / "emails" / "rn" / "amostra-rn.csv").read_bytes()
+    assert raw.startswith(b"\xef\xbb\xbf") and b";" in raw.splitlines()[0]
+    a = _anexo(out)
+    assert list(a.columns) == ["posição", "candidato", "cargo", "uf",
+                               "gasto em plataformas (principal)", "piso confirmado",
+                               "total da campanha", "proporção", "link da prestação"]
+    assert list(a["posição"]) == ["1", "2"]
+    assert list(a["candidato"]) == ["João da Silva", "Pedro Lima"]
+    assert a.loc[0, "gasto em plataformas (principal)"] == "2500,00"
+    assert a.loc[0, "proporção"] == "100,0%"
+    assert a.loc[1, "total da campanha"] == "450,00" and a.loc[1, "proporção"] == "66,7%"
+    assert "partido" not in " ".join(a.columns).lower()
+    assert set(a["uf"]) == {"RN"}
+
+
+def test_attachment_one_per_uf_not_per_email(tmp_path, uf_runs, eleitos):
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0, linhas=[
+        "José da Silva,Deputado Federal,RN,jose@example.org,",
+        "Carlos Alberto,Senador,RN,carlos@example.org,"])
+    assert len(list((out / "emails" / "rn").glob("amostra-*.csv"))) == 1
+    idx = pd.read_csv(out / "indice.csv", sep=";", encoding="utf-8-sig", dtype=str)
+    assert list(idx["anexo"]) == ["emails/rn/amostra-rn.csv"] * 2
+    for md in (out / "emails" / "rn").glob("*.md"):
+        assert "amostra-rn.csv" in md.read_text(encoding="utf-8")
+
+
+def test_email_text_attachment_sentence(contato, stats):
+    t = render(contato, stats, anexo="amostra-rn.csv", n_amostra=5)
+    assert ("Segue em anexo (amostra-rn.csv) a lista das cinco campanhas do estado com maior participação "
+            "desses gastos no total declarado, com o link da prestação de contas oficial de cada uma "
+            "(dados públicos do TSE, prestações parciais).") in t
+    assert "não se referem a nenhuma campanha" not in t
+    assert "Segue em anexo (amostra-rn.csv) a lista das três campanhas" in render(
+        contato, stats, anexo="amostra-rn.csv", n_amostra=3)
+    sem = render(contato, stats)
+    assert "Segue em anexo" not in sem and "não se referem" not in sem
+    assert "parciais" in sem and "teto" in sem.lower()
+
+
+def test_links_unverified_say_indisponivel(tmp_path, uf_runs, eleitos):
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0, verificados={})
+    assert set(_anexo(out)["link da prestação"]) == {"link indisponível"}
+    pend = (out / "pendencias.md").read_text(encoding="utf-8")
+    assert "## Avisos" in pend and "link indisponível" in pend and "RN" in pend
+
+
+def test_links_verified_are_emitted(tmp_path, uf_runs, eleitos):
+    f = uf_runs["RN"] / "candidatos.csv"
+    d = pd.read_csv(f, sep=";", decimal=",", encoding="utf-8-sig", dtype={"sq_candidato": str})
+    d["cd_eleicao"] = "6259"
+    d.to_csv(f, index=False, sep=";", decimal=",", encoding="utf-8-sig")
+    ver = {("6259", "RN", "DEPUTADO ESTADUAL"): "20322002026"}
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0, verificados=ver)
+    a = _anexo(out)
+    assert a.loc[0, "link da prestação"] == (
+        "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/NORDESTE/RN/20322002026/200001/2026/RN/prestacao/despesas")
+    assert a.loc[1, "link da prestação"] == "link indisponível"  # Prefeito: sem mapeamento verificado
+
+
+def test_recipient_in_sample_warns(tmp_path, uf_runs):
+    el = pd.DataFrame([{"nome": "JOAO DA SILVA", "cargo": "DEPUTADO ESTADUAL", "uf": "RN", "partido": "ABC",
+                        "sq_candidato": "200001", "nome_urna": "JOAO"}])
+    out = _gera(tmp_path, uf_runs, el, piso_amostra=1.0,
+                linhas=["João da Silva,Deputado Estadual,RN,joao@example.org,"])
+    assert len(list((out / "emails" / "rn").glob("*.md"))) == 1  # e-mail gerado mesmo assim
+    pend = (out / "pendencias.md").read_text(encoding="utf-8")
+    assert "## Avisos" in pend
+    assert "o destinatário aparece na amostra anexa; confira antes de enviar" in pend
+    assert "João da Silva" in pend and "RN" in pend
+    assert re.search(r"^- `?amostra anexa`?:", pend, re.M)  # legenda
+
+
+def test_recipient_not_in_sample_no_warning(tmp_path, uf_runs, eleitos):
+    pend = (_gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0) / "pendencias.md").read_text(encoding="utf-8")
+    assert "o destinatário aparece na amostra" not in pend
+
+
+def test_empty_top_no_attachment_and_notice(tmp_path, uf_runs, eleitos):
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1e9)
+    assert not list((out / "emails").rglob("*.csv"))
+    corpo = next((out / "emails" / "rn").glob("*.md")).read_text(encoding="utf-8")
+    assert "Segue em anexo" not in corpo and "anexo" not in corpo.lower()
+    idx = pd.read_csv(out / "indice.csv", sep=";", encoding="utf-8-sig", dtype=str, keep_default_na=False)
+    assert list(idx["anexo"]) == [""]
+    pend = (out / "pendencias.md").read_text(encoding="utf-8")
+    assert "## Avisos" in pend and "nenhum candidato" in pend.lower() and "RN" in pend
+
+
+def test_rerun_removes_stale_attachment(tmp_path, uf_runs, eleitos):
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0)
+    assert (out / "emails" / "rn" / "amostra-rn.csv").exists()
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1e9)
+    assert not (out / "emails" / "rn" / "amostra-rn.csv").exists()
+
+
+def test_cli_piso_amostra(tmp_path, zip_path, monkeypatch):
+    c = _contatos(tmp_path, ["José da Silva,Deputado Federal,RN,jose@example.org,"])
+    monkeypatch.setattr(cli, "download_candidatos", lambda *a, **k: zip_path)
+    monkeypatch.setattr(cli, "download_resultados", lambda *a, **k: FIX / "eleitos.csv")
+    rc = cli.main(["emails", "--contatos", str(c), "--teto", "0.10", "--saida", str(tmp_path / "s"),
+                   "--piso-amostra", "1"])
+    assert rc == 0 and (tmp_path / "s" / "emails" / "rn" / "amostra-rn.csv").exists()
+    rc = cli.main(["emails", "--contatos", str(c), "--teto", "0.10", "--saida", str(tmp_path / "s2")])
+    assert rc == 0 and not list((tmp_path / "s2" / "emails").rglob("*.csv"))  # piso padrao 50000
+
+
+@pytest.mark.parametrize("piso", ["0", "-5", "abc", "nan", "inf", ""])
+def test_cli_invalid_piso_amostra(tmp_path, piso, capsys):
+    c = _contatos(tmp_path, ["José da Silva,Deputado Federal,RN,jose@example.org,"])
+    assert cli.main(["emails", "--contatos", str(c), "--teto", "0.10", "--saida", str(tmp_path / "s"),
+                     "--piso-amostra", piso]) == 2
