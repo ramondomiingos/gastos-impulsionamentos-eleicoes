@@ -35,19 +35,44 @@ def _alternation(terms) -> re.Pattern:
     return re.compile(r"(?<![a-z0-9])(?:" + "|".join(parts) + r")(?![a-z0-9])")
 
 
+def _lista(valor, caminho, onde) -> list:
+    """Lista de termos; None (chave sem valor) ou tipo errado e erro. [] e valido."""
+    if not isinstance(valor, list):
+        raise ValueError(f"{caminho}: '{onde}' deve ser uma lista (use [] para vazio)")
+    return valor
+
+
+def _secao(cfg, chave, caminho):
+    if not isinstance(cfg, dict) or chave not in cfg or cfg[chave] is None:
+        raise ValueError(f"{caminho}: chave obrigatoria ausente ou vazia: '{chave}'")
+    return cfg[chave]
+
+
 def load_rules(path: Path = DEFAULT_RULES) -> Rules:
-    cfg = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    caminho = Path(path)
+    cfg = yaml.safe_load(caminho.read_text(encoding="utf-8"))
+    plataformas = _secao(cfg, "plataformas", caminho)
+    imp = _secao(cfg, "origem_impulsionamento", caminho)
+    gateways = _lista(cfg.get("gateways"), caminho, "gateways") if "gateways" in cfg else None
+    if gateways is None:
+        raise ValueError(f"{caminho}: chave obrigatoria ausente ou vazia: 'gateways'")
+    if not isinstance(plataformas, dict):
+        raise ValueError(f"{caminho}: 'plataformas' deve ser um mapa plataforma -> regras")
     fornecedores, palavras = [], []
-    for plataforma, spec in cfg["plataformas"].items():
-        fornecedores.append((plataforma, _alternation(spec.get("fornecedores", []))))
-        palavras.append((plataforma, _alternation(spec.get("palavras", []))))
-    imp = cfg["origem_impulsionamento"]
+    for plataforma, spec in plataformas.items():
+        if not isinstance(spec, dict):
+            raise ValueError(f"{caminho}: plataforma '{plataforma}' deve ser um mapa")
+        for campo, destino in (("fornecedores", fornecedores), ("palavras", palavras)):
+            termos = _lista(spec.get(campo), caminho, f"plataformas.{plataforma}.{campo}")
+            destino.append((plataforma, _alternation(termos)))
+    origens = _lista(imp.get("origens"), caminho, "origem_impulsionamento.origens")
+    termos = _lista(imp.get("termos_descricao"), caminho, "origem_impulsionamento.termos_descricao")
     return Rules(
         fornecedores=tuple(fornecedores),
         palavras=tuple(palavras),
-        origens=frozenset(normalize(o) for o in imp.get("origens", [])),
-        termos_impulsionamento=_alternation(imp.get("termos_descricao", [])),
-        gateways=_alternation(cfg.get("gateways", [])),
+        origens=frozenset(normalize(o) for o in origens),
+        termos_impulsionamento=_alternation(termos),
+        gateways=_alternation(gateways),
     )
 
 
