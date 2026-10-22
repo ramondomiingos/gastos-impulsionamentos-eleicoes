@@ -8,17 +8,19 @@ para `pendencias.md`. O pipeline nao envia nada.
 from __future__ import annotations
 
 import csv
+import json
 import math
+import re
 import shutil
 from pathlib import Path
 
 import jinja2
 import pandas as pd
+from datetime import datetime
 
 from gastos import metrics
 from gastos.eleitos import cargo_tse, match_contatos
 from gastos.report import _brl, _pct, _slug
-from gastos.text import normalize
 
 TEMPLATES = Path(__file__).resolve().parents[2] / "templates"
 OBRIGATORIAS = ("nome", "cargo", "uf", "email")
@@ -73,29 +75,30 @@ def load_contatos(path: Path) -> pd.DataFrame:
 
 # -------------------------------------------------------------------- numeros
 
-def _dt_corte(pasta: Path) -> str | None:
-    datas = []
-    for f in sorted(pasta.glob("evidencia_*.csv")):
-        d = pd.read_csv(f, dtype=str, **{k: v for k, v in _CSV_LEITURA.items() if k != "decimal"})
-        if "dt_geracao" in d.columns:
-            datas.append(pd.to_datetime(d["dt_geracao"], format="%d/%m/%Y", errors="coerce"))
-    if not datas:
-        return None
-    s = pd.concat(datas).dropna()
-    return None if s.empty else s.max().strftime("%d/%m/%Y")
+def _dt_corte(pasta: Path) -> str:
+    """Le `meta.json` (data de corte da fatia inteira). ValueError se ausente/invalida."""
+    try:
+        d = json.loads((Path(pasta) / "meta.json").read_text(encoding="utf-8")).get("dt_corte")
+        datetime.strptime(str(d), "%d/%m/%Y")
+    except (OSError, ValueError, AttributeError) as e:
+        raise ValueError(f"meta.json ausente ou invalido: {e}")
+    return str(d)
 
 
-def stats_from_run(pasta: Path, teto: float) -> tuple[dict, str | None]:
+def stats_from_run(pasta: Path, teto: float) -> tuple[dict, str]:
     """Numeros da UF inteira a partir da pasta da execucao: (stats, dt_corte)."""
     pasta = Path(pasta)
     r = pd.read_csv(pasta / "resumo.csv", **_CSV_LEITURA).iloc[0]
     shares = pd.read_csv(pasta / "candidatos.csv", **_CSV_LEITURA)
-    dist = metrics.distribution(shares)
+    ativos = shares[shares["total"] > 0]  # declararam gasto de campanha
+    gastaram = ativos[ativos["principal"] > 0]  # gastaram com as plataformas
+    dist = metrics.distribution(gastaram)
     imp = metrics.cap_impact(shares, [teto]).iloc[0]
     stats = {
         "total": float(r["total"]), "principal": float(r["principal"]),
         "confirmado": float(r["confirmado"]), "provavel": float(r.get("provavel", 0.0) or 0.0),
-        "proporcao": float(r["proporcao"]), "mediana": dist["mediana"], "p90": dist["p90"],
+        "proporcao": float(r["proporcao"]), "mediana": dist["mediana"], "p90": dist["p90"], "max": dist["max"],
+        "n_candidatos": int(len(ativos)), "n_gastaram": int(len(gastaram)),
         "impacto_teto": {"n_acima": int(imp["n_acima"]), "pct_acima": float(imp["pct_acima"]),
                          "excedente": float(imp["excedente"])},
     }
@@ -119,6 +122,29 @@ def _teto_txt(t: float) -> str:
     return (f"{int(p)}" if p == int(p) else f"{p}".replace(".", ",")) + "%"
 
 
+_PARTICULAS = {"de", "da", "do", "dos", "das", "e"}
+_CARGOS_NEUTROS = {
+    "SENADOR": "Senador(a)", "DEPUTADO FEDERAL": "Deputado(a) Federal",
+    "DEPUTADO ESTADUAL": "Deputado(a) Estadual", "DEPUTADO DISTRITAL": "Deputado(a) Distrital",
+    "GOVERNADOR": "Governador(a)", "VICE-GOVERNADOR": "Vice-Governador(a)",
+}
+
+
+def _esc(texto) -> str:
+    """Escapa caracteres significativos de Markdown e achata quebras de linha."""
+    t = " ".join(str(texto).split())
+    return re.sub(r"([\\*_|`])", r"\\\1", t)
+
+
+def _nome_proprio(nome) -> str:
+    palavras = " ".join(str(nome).split()).lower().split(" ")
+    return " ".join(p if (i and p in _PARTICULAS) else p.capitalize() for i, p in enumerate(palavras))
+
+
+def _cargo_neutro(cargo) -> str:
+    return _esc(_CARGOS_NEUTROS.get(cargo_tse(cargo), str(cargo).strip()))
+
+
 def render_email(contato: pd.Series, stats: dict, teto_proposto: float, dt_corte: str,
                  assinatura: str = "[Seu nome]") -> str:
     """Renderiza o e-mail. Levanta ValueError se faltar qualquer numero (nunca renderiza vazio)."""
@@ -127,24 +153,30 @@ def render_email(contato: pd.Series, stats: dict, teto_proposto: float, dt_corte
     _num(teto_proposto)
     try:
         imp = stats["impacto_teto"]
-        v = {k: _num(stats[k]) for k in ("total", "principal", "confirmado", "proporcao", "mediana", "p90")}
+        v = {k: _num(stats[k]) for k in ("total", "principal", "confirmado", "proporcao", "p90")}
+        n_cand, n_gast = int(_num(stats["n_candidatos"])), int(_num(stats["n_gastaram"]))
         n_acima, pct_acima, exced = int(_num(imp["n_acima"])), _num(imp["pct_acima"]), _num(imp["excedente"])
     except (KeyError, TypeError) as e:
         raise ValueError(f"estatistica ausente: {e}")
+    if n_cand <= 0 or not 0 <= n_gast <= n_cand:
+        raise ValueError("contagem de candidatos invalida")
     if v["total"] <= 0 or v["principal"] <= 0:
         raise ValueError("UF sem gasto classificado: nao ha numero para o e-mail")
     provavel = stats.get("provavel")
     provavel = _num(provavel) if provavel not in (None, "") else 0.0
+    provavel = provavel if provavel >= 0.01 * v["principal"] else 0.0  # nota so se relevante (>= 1%)
     uf = str(contato["uf"]).strip().upper()
+    cargo_txt = _cargo_neutro(contato["cargo"])
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(TEMPLATES), undefined=jinja2.StrictUndefined,
                              keep_trailing_newline=True, trim_blocks=True, lstrip_blocks=True)
     return env.get_template("email_estado.md.j2").render(
-        nome=str(contato["nome"]).strip(), cargo=str(contato["cargo"]).strip(), uf=uf,
+        nome=_esc(_nome_proprio(contato["nome"])), cargo=cargo_txt, uf=uf,
+        n_gastaram=n_gast, n_candidatos=n_cand, pct_gastaram=_pct(n_gast / n_cand),
         uf_nome=UF_NOMES.get(uf, uf), principal=_brl(v["principal"]), confirmado=_brl(v["confirmado"]),
-        proporcao=_pct(v["proporcao"]), mediana=_pct(v["mediana"]), p90=_pct(v["p90"]),
+        proporcao=_pct(v["proporcao"]), p90=_pct(v["p90"]),
         teto=_teto_txt(teto_proposto), n_acima=n_acima, pct_acima=_pct(pct_acima), excedente=_brl(exced),
         provavel=_brl(provavel) if provavel > 0 else "", dt_corte=str(dt_corte).strip(),
-        assinatura=assinatura,
+        assinatura=_esc(assinatura),
     )
 
 
@@ -163,8 +195,22 @@ def _ufs_com_numeros(uf_runs: dict[str, Path], teto: float) -> tuple[dict, dict]
             else:
                 ok[uf] = (stats, corte)
         except (FileNotFoundError, KeyError, IndexError, ValueError) as e:
-            falhas[uf] = f"execucao ilegivel ({e})"
+            falhas[uf] = f"execução ilegível ({e})"
     return ok, falhas
+
+
+def _limpar_emails(pasta: Path) -> None:
+    """Apaga so os .md que a ferramenta escreve (emails/<uf>/*.md) de execucoes anteriores."""
+    if not pasta.is_dir():
+        return
+    for d in pasta.iterdir():
+        if d.is_dir():
+            for f in d.glob("*.md"):
+                f.unlink()
+            try:
+                d.rmdir()
+            except OSError:
+                pass
 
 
 def _linha_contato(c) -> str:
@@ -183,6 +229,7 @@ def write_emails(contatos_csv: Path, uf_runs: dict[str, Path], teto_proposto: fl
     numeros, falhas = _ufs_com_numeros(uf_runs, teto_proposto)
 
     out.mkdir(parents=True, exist_ok=True)
+    _limpar_emails(out / "emails")
     indice, sem_numero, usados = [], [], set()
     for c in casados.to_dict("records"):
         uf = str(c["uf_eleito"]).upper()
@@ -191,12 +238,18 @@ def write_emails(contatos_csv: Path, uf_runs: dict[str, Path], teto_proposto: fl
             sem_numero.append((c, motivo))
             continue
         stats, corte = numeros[uf]
-        texto = render_email(pd.Series({**c, "uf": uf}), stats, teto_proposto, corte, assinatura)
+        try:
+            texto = render_email(pd.Series({**c, "uf": uf}), stats, teto_proposto, corte, assinatura)
+        except ValueError as e:
+            sem_numero.append((c, f"falha ao gerar e-mail: {e}"))
+            continue
         pasta = out / "emails" / uf.lower()
         pasta.mkdir(parents=True, exist_ok=True)
-        slug = _slug(c["nome"]) or "contato"
-        if (uf, slug) in usados:
-            slug = f"{slug}-{c['sq_candidato']}"
+        base = _slug(c["nome"]) or "contato"
+        slug, n = base, 1
+        while (uf, slug) in usados:
+            n += 1
+            slug = f"{base}-{n}"
         usados.add((uf, slug))
         arq = pasta / f"{slug}.md"
         arq.write_text(texto, encoding="utf-8")

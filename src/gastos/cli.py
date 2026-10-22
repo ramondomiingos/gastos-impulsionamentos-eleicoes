@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+import zipfile
 from pathlib import Path
 
 import pandas as pd
@@ -116,6 +117,8 @@ def _emails(args) -> int:
         contatos = load_contatos(Path(args.contatos))
     except ValueError as e:
         raise _Erro(str(e), 2)
+    if args.zip and not (Path(args.zip).is_file() and zipfile.is_zipfile(args.zip)):
+        raise _Erro(f"--zip inexistente ou ilegivel: {args.zip}", 1)
     zip_path = Path(args.zip) if args.zip else download_candidatos()
     eleitos = load_eleitos(Path(args.eleitos_zip) if args.eleitos_zip else download_resultados())
     saida = Path(args.saida)

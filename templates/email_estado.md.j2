@@ -1,6 +1,6 @@
 Assunto: Teto percentual para gasto de campanha com plataformas de anúncio estrangeiras ({{ uf_nome }})
 
-Prezado(a) {{ nome }} ({{ cargo }}),
+Prezado(a) {{ cargo }} {{ nome }},
 
 Escrevo por uma preocupação pessoal com o modo como as campanhas gastam em anúncios na internet. Campanhas eleitorais pagam plataformas estrangeiras de anúncio (Meta, Google/YouTube, X e TikTok) para impulsionar conteúdo. Esse dinheiro sai do país e gera pouco emprego local, diferente do que ocorre com outros gastos de campanha.
 
@@ -9,8 +9,8 @@ Para dar uma medida do tamanho disso, levantei os dados de prestação de contas
 - **Gasto com plataformas estrangeiras:** {{ principal }}, somando os gastos confirmados e o impulsionamento sem plataforma citada.
 - **Piso:** pelo menos {{ confirmado }} em gastos confirmados diretamente com essas plataformas.
 - **Peso no total:** {{ proporcao }} de tudo o que as campanhas do estado declararam gastar.
-- **Distribuição entre candidatos:** a mediana da parcela do gasto de cada candidato com essas plataformas é {{ mediana }}; no percentil 90, {{ p90 }}. Ou seja, 1 em cada 10 candidatos ficou acima desse percentual.
-- **Efeito de um teto de {{ teto }}:** {{ n_acima }} candidatos ({{ pct_acima }} dos que declararam gasto) estariam acima do limite, e o excedente somaria {{ excedente }}.
+- **Quem gastou:** {{ n_gastaram }} de {{ n_candidatos }} candidatos ({{ pct_gastaram }}) declararam gasto com essas plataformas. Entre os que gastaram, 1 em cada 10 destinou mais de {{ p90 }} do total da campanha a elas.
+- **Efeito de um teto de {{ teto }}:** {{ n_acima }} candidatos ({{ pct_acima }} dos que declararam gasto de campanha) estariam acima do limite, e o valor que ultrapassaria esse limite somaria {{ excedente }}.
 
 Os números são agregados do estado; não se referem a nenhuma campanha em particular.
 

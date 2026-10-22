@@ -9,6 +9,7 @@ Cada execucao grava `out/AAAA-MM-DD_<recorte>/` com:
 """
 from __future__ import annotations
 
+import json
 import re
 import unicodedata
 from datetime import date
@@ -192,6 +193,8 @@ def write_run(
     resumo.to_csv(pasta / "resumo.csv", **CSV)
     shares.to_csv(pasta / "candidatos.csv", **CSV)
     tetos.to_csv(pasta / "tetos.csv", **CSV)
+    (pasta / "meta.json").write_text(
+        json.dumps({"dt_corte": _data_corte(df)}, ensure_ascii=False), encoding="utf-8")
     (pasta / "qualidade.md").write_text(_qualidade(df), encoding="utf-8")
     (pasta / "relatorio.md").write_text(_relatorio(df, recorte, resumo, shares, tetos, dist), encoding="utf-8")
     return pasta
