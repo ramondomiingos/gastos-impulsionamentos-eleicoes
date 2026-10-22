@@ -43,12 +43,12 @@ Exemplo real do RN (dados de 22/10/2026): as duas primeiras linhas acima geram `
 | arquivo | conteúdo |
 | --- | --- |
 | `relatorio.md` | número principal, piso, distribuição entre candidatos, impacto dos tetos, nota sobre o provável |
-| `qualidade.md` | totais por nível e amostras de linhas, para conferir a classificação |
+| `qualidade.md` | totais por nível, valor e linhas por tipo de prestação (Parcial, Relatório Financeiro, Final) e amostras de linhas, para conferir a classificação |
 | `resumo.csv` | totais do recorte (total, confirmado, generico, provavel, principal, proporcao, n_candidatos) |
 | `candidatos.csv` | os mesmos valores por candidato |
 | `tetos.csv` | para cada teto: candidatos acima, % acima e excedente |
 | `evidencia_confirmado.csv`, `evidencia_generico.csv`, `evidencia_provavel.csv` | as linhas de despesa que compõem cada nível; a soma de `valor` bate com `resumo.csv` |
-| `meta.json` | data de corte dos dados (`dt_corte`) |
+| `meta.json` | `dt_geracao` (data em que o TSE gerou o arquivo) e `dt_ultima_prestacao` (prestação mais recente entregue no recorte) |
 
 Os CSVs são escritos para o Excel brasileiro: UTF-8 com BOM (`utf-8-sig`), separador `;` e vírgula decimal.
 
@@ -75,11 +75,11 @@ nome,cargo,uf,email[,sq_candidato]
 gastos emails --contatos contatos.csv --teto 0.10 --assinatura "Seu nome"
 ```
 
-`--teto` é a fração proposta (0.10 = 10%). O comando liga cada contato à lista de eleitos (por nome, ou por `sq_candidato` quando preenchido), analisa as UFs envolvidas e grava em `out/` (ou `--saida`): `emails/<uf>/*.md`, `indice.csv`, `pendencias.md` (contatos sem correspondência, ambíguos ou UF sem números) e `runs/` com a análise de cada UF. O texto usa só números agregados do estado, informa que os dados são parciais e traz a data de corte. **O pipeline nunca envia e-mail**: você revisa e envia.
+`--teto` é a fração proposta (0.10 = 10%). O comando liga cada contato à lista de eleitos (por nome, ou por `sq_candidato` quando preenchido), analisa as UFs envolvidas e grava em `out/` (ou `--saida`): `emails/<uf>/*.md`, `indice.csv`, `pendencias.md` (contatos sem correspondência, ambíguos ou UF sem números) e `runs/` com a análise de cada UF. O texto usa só números agregados do estado, informa que os dados são parciais e traz as datas dos dados (gerados pelo TSE em X; prestações mais recentes entregues até Y). O `pendencias.md` traz uma legenda do que fazer em cada motivo (`sem_correspondencia`, `ambiguo`, `sq_diverge`, `duplicado`, `execução ilegível`, `falha ao gerar e-mail`). **O pipeline nunca envia e-mail**: você revisa e envia.
 
 ## Limitações
 
-- Os dados são **parciais** (prestação parcial); a data de corte aparece em `relatorio.md`, `meta.json` e nos e-mails. Os números mudam até a prestação final.
+- Os dados são **parciais**: reúnem prestações parciais e relatórios financeiros (algumas campanhas já entregaram a prestação final). `relatorio.md` e os e-mails dizem "dados gerados pelo TSE em X; as prestações de contas mais recentes incluídas foram entregues até Y" (as duas datas também estão em `meta.json`). Os números mudam até a prestação final de todas.
 - A classificação foi validada à mão apenas no RN. Em outros estados, olhe `qualidade.md` antes de usar os números.
 - Em 22/10/2026 o arquivo de resultados do TSE não tinha totalização de alguns cargos (ex.: senadores e governador da PB; disputas de 2º turno), então esses eleitos podem faltar na lista usada pelo `emails`.
 - O CPF vem mascarado; o candidato é identificado por `SQ_CANDIDATO`.
