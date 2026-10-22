@@ -1,0 +1,12 @@
+# Mapeamento VERIFICADO (CD_ELEICAO do TSE, UF, cargo) -> id da eleicao usado nas URLs do DivulgaCandContas.
+# So entram aqui combinacoes confirmadas; o que nao esta aqui sai como "link indisponivel" no anexo.
+# Gerado/estendido por `scripts/verificar_links.py` (somente leitura: GET na API publica do portal).
+# cargo = DS_CARGO do TSE em maiusculas; cd_eleicao = coluna CD_ELEICAO dos dados de prestacao de contas.
+verificados:
+  # Exemplo real fornecido pelo Ramon (URL copiada do portal), candidato a governador do RN.
+  # NAO foi conferido pela API: o portal respondeu 403 (Access Denied) ao ambiente de desenvolvimento.
+  - cd_eleicao: "6259"
+    uf: RN
+    cargo: GOVERNADOR
+    id_eleicao: "20322002026"
+    fonte: exemplo-do-usuario
