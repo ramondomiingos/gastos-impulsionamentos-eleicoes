@@ -1,0 +1,7 @@
+pandas
+pyyaml
+jinja2
+requests
+
+[dev]
+pytest
