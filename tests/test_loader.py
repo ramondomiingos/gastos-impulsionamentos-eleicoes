@@ -70,3 +70,16 @@ def test_dt_prestacao_loaded(zip_path):
     d = load_despesas(zip_path, "RN")
     assert set(d.dt_prestacao) <= {"03/10/2026", "05/10/2026", "04/10/2026", "15/10/2026", "09/10/2026"}
     assert "15/10/2026" in set(d.dt_prestacao)
+
+
+def test_cd_eleicao_optional_column(tmp_path):
+    import zipfile
+    from gastos import loader
+    linhas = ['"SG_UF";"SQ_CANDIDATO";"NM_CANDIDATO";"DS_CARGO";"SG_PARTIDO";"NM_FORNECEDOR_RFB";'
+              '"NR_CPF_CNPJ_FORNECEDOR";"DS_DESPESA";"DS_ORIGEM_DESPESA";"VR_DESPESA_CONTRATADA";'
+              '"DT_DESPESA";"SQ_DESPESA";"DT_GERACAO";"TP_PRESTACAO_CONTAS";"DT_PRESTACAO_CONTAS";"CD_ELEICAO"',
+              '"RN";"1";"A";"Senador";"X";"F";"1";"d";"o";"10,00";"01/01/2026";"5";"22/10/2026";"Parcial";"03/10/2026";"6259"']
+    z = tmp_path / "t.zip"
+    with zipfile.ZipFile(z, "w") as f:
+        f.writestr("despesas_contratadas_candidatos_2026_RN.csv", "\n".join(linhas).encode("latin-1"))
+    assert loader.load_despesas(z, "RN")["cd_eleicao"].tolist() == ["6259"]

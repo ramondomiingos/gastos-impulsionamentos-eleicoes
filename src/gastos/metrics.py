@@ -62,9 +62,22 @@ def summarize(df: pd.DataFrame, by: list[str]) -> pd.DataFrame:
 def candidate_shares(df: pd.DataFrame) -> pd.DataFrame:
     """Uma linha por sq_candidato, com uf/cargo/partido/candidato e as metricas."""
     keep = [c for c in ID_COLS if c in df.columns]
-    out = _aggregate(df, ["sq_candidato"], keep)
-    cols = ["sq_candidato", *keep, "total", *NIVEIS, "principal", "proporcao"]
+    extra = [c for c in ("cd_eleicao",) if c in df.columns]  # opcional: id da eleicao do TSE
+    out = _aggregate(df, ["sq_candidato"], keep + extra)
+    cols = ["sq_candidato", *keep, *extra, "total", *NIVEIS, "principal", "proporcao"]
     return out[cols].reset_index(drop=True)
+
+
+def top_candidatos(shares: pd.DataFrame, n: int = 5, piso_total: float = 50000.0) -> pd.DataFrame:
+    """Ate `n` candidatos com maior proporcao, entre os de total >= piso_total e principal > 0.
+
+    Desempate deterministico: maior principal, depois menor sq_candidato.
+    O piso evita que campanhas minusculas com proporcao absurda dominem a lista.
+    """
+    ok = shares[(shares["total"] >= piso_total) & (shares["principal"] > 0)]
+    ok = ok.assign(_sq=ok["sq_candidato"].astype(str).str.zfill(20))
+    ok = ok.sort_values(["proporcao", "principal", "_sq"], ascending=[False, False, True], kind="mergesort")
+    return ok.drop(columns="_sq").head(n).reset_index(drop=True)
 
 
 def cap_impact(shares: pd.DataFrame, caps: list[float]) -> pd.DataFrame:

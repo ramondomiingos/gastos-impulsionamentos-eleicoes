@@ -103,3 +103,49 @@ def test_distribution():
     assert d["mediana"] == pytest.approx(0.2)
     assert d["max"] == pytest.approx(0.4)
     assert not math.isnan(metrics.distribution(shares.iloc[0:0])["max"])
+
+
+# ---------------- top_candidatos ----------------
+
+def _sh(rows):
+    return pd.DataFrame(rows, columns=["sq_candidato", "total", "principal", "confirmado", "proporcao"])
+
+
+def test_top_candidatos_ranks_by_proporcao_desc():
+    s = _sh([("1", 100000.0, 10000.0, 5000.0, 0.10), ("2", 100000.0, 30000.0, 1000.0, 0.30),
+             ("3", 100000.0, 20000.0, 0.0, 0.20)])
+    r = metrics.top_candidatos(s)
+    assert list(r["sq_candidato"]) == ["2", "3", "1"]
+    assert "confirmado" in r.columns
+
+
+def test_top_candidatos_tie_break_principal_then_sq():
+    s = _sh([("9", 100000.0, 20000.0, 0.0, 0.2), ("5", 200000.0, 40000.0, 0.0, 0.2),
+             ("3", 200000.0, 40000.0, 0.0, 0.2)])
+    assert list(metrics.top_candidatos(s)["sq_candidato"]) == ["3", "5", "9"]
+
+
+def test_top_candidatos_piso_excludes_small_campaigns():
+    s = _sh([("1", 1000.0, 1000.0, 1000.0, 1.0), ("2", 49999.99, 40000.0, 0.0, 0.8),
+             ("3", 50000.0, 5000.0, 0.0, 0.1)])
+    assert list(metrics.top_candidatos(s)["sq_candidato"]) == ["3"]
+    assert list(metrics.top_candidatos(s, piso_total=1000.0)["sq_candidato"]) == ["1", "2", "3"]
+
+
+def test_top_candidatos_excludes_zero_principal_and_limits_n():
+    s = _sh([(str(i), 100000.0, float(i * 1000), 0.0, i / 100) for i in range(0, 9)])
+    r = metrics.top_candidatos(s)
+    assert len(r) == 5 and "0" not in set(r["sq_candidato"])
+    assert list(r["sq_candidato"]) == ["8", "7", "6", "5", "4"]
+    assert len(metrics.top_candidatos(s, n=2)) == 2
+
+
+def test_top_candidatos_fewer_than_n_and_empty():
+    s = _sh([("1", 100000.0, 10000.0, 0.0, 0.1)])
+    assert len(metrics.top_candidatos(s)) == 1
+    assert metrics.top_candidatos(_sh([])).empty
+    assert list(metrics.top_candidatos(_sh([])).columns) == list(_sh([]).columns)
+
+
+def test_candidate_shares_has_confirmado():
+    assert "confirmado" in metrics.candidate_shares(_df()).columns

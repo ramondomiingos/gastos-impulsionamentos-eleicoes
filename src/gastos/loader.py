@@ -28,6 +28,8 @@ COLUNAS = {
     "TP_PRESTACAO_CONTAS": "tp_prestacao",
     "DT_PRESTACAO_CONTAS": "dt_prestacao",
 }
+# Colunas opcionais (ausentes em arquivos antigos/fixtures): lidas se existirem.
+COLUNAS_OPCIONAIS = {"CD_ELEICAO": "cd_eleicao"}
 PLACEHOLDERS = {"-1", "#NULO"}
 
 csv.field_size_limit(10**7)
@@ -81,7 +83,9 @@ def load_despesas(zip_path: Path, uf: str | None = None) -> pd.DataFrame:
             texto = io.TextIOWrapper(raw, encoding="latin-1", newline="")
             reader = csv.reader(clean_lines(texto), delimiter=";", quotechar='"')
             header = next(reader)
-            idx = [header.index(c) for c in COLUNAS]
+            opc = {k: v for k, v in COLUNAS_OPCIONAIS.items() if k in header}
+            cols = {**COLUNAS, **opc}
+            idx = [header.index(c) for c in cols]
             i_sq = header.index("SQ_DESPESA")
             linhas = []
             for row in reader:
@@ -91,7 +95,7 @@ def load_despesas(zip_path: Path, uf: str | None = None) -> pd.DataFrame:
                 if sq in PLACEHOLDERS:
                     continue
                 linhas.append([row[i] for i in idx])
-    df = pd.DataFrame(linhas, columns=list(COLUNAS.values()), dtype=str)
+    df = pd.DataFrame(linhas, columns=list(cols.values()), dtype=str)
     df["valor"] = df["valor"].map(parse_valor).astype(float)
     # So linhas totalmente identicas colapsam: um SQ_DESPESA repetido com
     # descricao/valor diferentes sao itens do mesmo documento, nao duplicata.
