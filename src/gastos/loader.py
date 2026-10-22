@@ -57,8 +57,8 @@ def load_despesas(zip_path: Path, uf: str | None = None) -> pd.DataFrame:
     """Le as despesas contratadas; uf=None le o arquivo BRASIL.
 
     Le em fluxo, guardando so as colunas necessarias, descarta linhas de
-    preenchimento (SQ_DESPESA == "-1" / "#NULO") e mantem a primeira
-    ocorrencia de cada SQ_DESPESA.
+    preenchimento (SQ_DESPESA == "-1" / "#NULO") e remove apenas linhas
+    totalmente identicas (todas as colunas normalizadas).
     """
     with zipfile.ZipFile(zip_path) as z:
         nome = _member(z.namelist(), uf)
@@ -68,16 +68,16 @@ def load_despesas(zip_path: Path, uf: str | None = None) -> pd.DataFrame:
             header = next(reader)
             idx = [header.index(c) for c in COLUNAS]
             i_sq = header.index("SQ_DESPESA")
-            vistos: set[str] = set()
             linhas = []
             for row in reader:
                 if len(row) <= max(idx):
                     continue
                 sq = row[i_sq].strip()
-                if sq in PLACEHOLDERS or sq in vistos:
+                if sq in PLACEHOLDERS:
                     continue
-                vistos.add(sq)
                 linhas.append([row[i] for i in idx])
     df = pd.DataFrame(linhas, columns=list(COLUNAS.values()), dtype=str)
     df["valor"] = df["valor"].map(_parse_valor).astype(float)
-    return df
+    # So linhas totalmente identicas colapsam: um SQ_DESPESA repetido com
+    # descricao/valor diferentes sao itens do mesmo documento, nao duplicata.
+    return df.drop_duplicates().reset_index(drop=True)

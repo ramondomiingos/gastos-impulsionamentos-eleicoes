@@ -17,10 +17,14 @@ def test_drops_placeholder_rows(zip_path):
     assert (d.sq_despesa == "-1").sum() == 0
 
 
-def test_dedupes_sq_despesa(zip_path):
+def test_dedupes_only_identical_rows(zip_path):
     d = load_despesas(zip_path, "RN")
+    # linhas identicas (apos normalizar) colapsam
     assert (d.sq_despesa == "1002").sum() == 1
-    assert len(d) == 3
+    # mesmo sq_despesa com descricao/valor diferentes: ambas ficam
+    itens = d[d.sq_despesa == "1004"]
+    assert sorted(itens.valor) == [50.0, 100.0]
+    assert len(d) == 5
 
 
 def test_parses_decimal_comma(zip_path):
