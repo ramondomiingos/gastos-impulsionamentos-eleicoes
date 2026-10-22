@@ -134,7 +134,15 @@ def _emails(args) -> int:
     return 0
 
 
+def _valida_filtros(args) -> None:
+    for flag in ("cargo", "partido", "candidato"):
+        v = getattr(args, flag)
+        if v is not None and not v.strip():
+            raise _Erro(f"--{flag} vazio: informe um valor ou omita a opcao", 2)
+
+
 def _analisar(args) -> int:
+    _valida_filtros(args)
     uf = _parse_uf(args.uf) if args.uf is not None else None  # valida antes de baixar/carregar
     caps = _parse_tetos(args.tetos) if args.tetos is not None else CAPS_PADRAO
     zip_path = Path(args.zip) if args.zip else download_candidatos()
@@ -180,7 +188,7 @@ def main(argv: list[str] | None = None) -> int:
     except _Erro as e:
         print(f"Erro: {e}", file=sys.stderr)
         return e.codigo
-    except FileNotFoundError as e:
+    except (FileNotFoundError, zipfile.BadZipFile, OSError) as e:
         print(f"Erro: {e}", file=sys.stderr)
         return 1
 

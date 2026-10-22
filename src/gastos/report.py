@@ -62,6 +62,13 @@ def _data_corte(df: pd.DataFrame) -> str | None:
     return None if datas.empty else datas.max().strftime("%d/%m/%Y")
 
 
+def _dt_ultima_prestacao(df: pd.DataFrame) -> str | None:
+    if "dt_prestacao" not in df.columns:
+        return None
+    datas = pd.to_datetime(df["dt_prestacao"], format="%d/%m/%Y", errors="coerce").dropna()
+    return None if datas.empty else datas.max().strftime("%d/%m/%Y")
+
+
 def _tabela_md(df: pd.DataFrame, formatos: dict | None = None) -> str:
     formatos = formatos or {}
     cab = "| " + " | ".join(df.columns) + " |"
@@ -101,6 +108,13 @@ def _qualidade(df: pd.DataFrame) -> str:
         _tabela_md(pd.DataFrame(linhas, columns=["nível", "linhas", "valor"]), {"valor": _brl, "linhas": str}),
         "",
     ]
+    if "tp_prestacao" in df.columns:
+        por_tp = (df.groupby("tp_prestacao", dropna=False)["valor"].agg(["size", "sum"])
+                  .reset_index().sort_values("sum", ascending=False))
+        por_tp.columns = ["tipo", "linhas", "valor"]
+        out += ["## Por tipo de prestação", "",
+                "Mistura de prestações no recorte (valor contratado e número de linhas).", "",
+                _tabela_md(por_tp, {"valor": _brl, "linhas": str}), ""]
     for n in (*NIVEIS_EVIDENCIA, "nenhum"):
         titulo = (
             f"## Amostra de `{n}` (até {AMOSTRA} linhas de maior valor)"
@@ -117,11 +131,15 @@ def _relatorio(df, recorte, resumo, shares, tetos, dist) -> str:
     r = resumo.iloc[0]
     corte = _data_corte(df)
     recorte_txt = ", ".join(f"{k}: {v}" for k, v in recorte.items() if v) or "Brasil (todos)"
+    ger, ult = corte, _dt_ultima_prestacao(df)
+    datas_txt = (
+        f"dados gerados pelo TSE em **{ger or 'data não informada'}**; as prestações de contas mais "
+        f"recentes incluídas foram entregues até **{ult or 'data não informada'}**"
+    )
     corte_txt = (
-        f"Os dados são **parciais** (prestação de contas `Parcial`), com data de corte em **{corte}** "
-        f"(`dt_geracao` do TSE)."
-        if corte
-        else "Os dados são **parciais** (prestação de contas `Parcial`); a data de corte não consta nos dados."
+        f"Os dados são **parciais**: {datas_txt}. Reúnem prestações parciais e relatórios financeiros "
+        f"(algumas campanhas já entregaram a prestação final); os valores podem mudar até a prestação "
+        f"final de todas."
     )
     tabela_tetos = _tabela_md(
         tetos,
@@ -131,7 +149,7 @@ def _relatorio(df, recorte, resumo, shares, tetos, dist) -> str:
 
 Recorte: {recorte_txt}
 
-{corte_txt} Os números abaixo mudam até a prestação final.
+{corte_txt}
 
 ## Número principal
 
@@ -194,7 +212,8 @@ def write_run(
     shares.to_csv(pasta / "candidatos.csv", **CSV)
     tetos.to_csv(pasta / "tetos.csv", **CSV)
     (pasta / "meta.json").write_text(
-        json.dumps({"dt_corte": _data_corte(df)}, ensure_ascii=False), encoding="utf-8")
+        json.dumps({"dt_geracao": _data_corte(df), "dt_ultima_prestacao": _dt_ultima_prestacao(df)},
+                   ensure_ascii=False), encoding="utf-8")
     (pasta / "qualidade.md").write_text(_qualidade(df), encoding="utf-8")
     (pasta / "relatorio.md").write_text(_relatorio(df, recorte, resumo, shares, tetos, dist), encoding="utf-8")
     return pasta

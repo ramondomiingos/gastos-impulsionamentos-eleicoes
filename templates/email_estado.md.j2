@@ -22,7 +22,7 @@ Atenciosamente,
 
 ---
 
-**Sobre os dados.** Os dados são **parciais**: correspondem à prestação de contas parcial, com data de corte em {{ dt_corte }}, e os valores podem mudar até a prestação final. Fonte: dados abertos do TSE (despesas contratadas dos candidatos). Método: somei as despesas contratadas com plataformas estrangeiras de anúncio; impulsionamento sem plataforma citada foi contado como plataforma estrangeira, pois não há rede social nacional para impulsionamento.
+**Sobre os dados.** Os dados são **parciais**: dados gerados pelo TSE em {{ dt_geracao }}; as prestações de contas mais recentes incluídas foram entregues até {{ dt_ultima_prestacao }}. Reúnem prestações parciais e relatórios financeiros (algumas campanhas já entregaram a prestação final); os valores podem mudar até a prestação final de todas. Fonte: dados abertos do TSE (despesas contratadas dos candidatos). Método: somei as despesas contratadas com plataformas estrangeiras de anúncio; impulsionamento sem plataforma citada foi contado como plataforma estrangeira, pois não há rede social nacional para impulsionamento.
 {% if provavel %}
 
 Nota: há ainda {{ provavel }} em despesas que provavelmente também foram para essas plataformas (por exemplo, pagamentos por intermediários sem indicação da plataforma). Esse valor não foi somado a nenhum número acima (não incluído).

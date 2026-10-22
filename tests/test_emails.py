@@ -30,13 +30,20 @@ def contato():
                       "email": "m@example.org"})
 
 
+DATAS = {"dt_geracao": "22/10/2026", "dt_ultima_prestacao": "20/10/2026"}
+
+
 def render(contato, stats, **kw):
-    return emails.render_email(contato, stats, 0.10, "22/10/2026", **kw)
+    return emails.render_email(contato, stats, 0.10, DATAS, **kw)
 
 
 def test_email_mentions_partial_and_cutoff(contato, stats):
     t = render(contato, stats)
-    assert "parcia" in t.lower() and "22/10/2026" in t
+    assert "parciais" in t.lower()
+    assert "dados gerados pelo TSE em 22/10/2026" in t
+    assert "entregues até 20/10/2026" in t
+    assert "data de corte" not in t.lower()
+    assert "relatórios financeiros" in t and "prestação final" in t
 
 
 def test_email_has_state_numbers_and_floor(contato, stats):
@@ -73,9 +80,9 @@ def test_email_forbidden_content(zip_path, tmp_path):
     partidos = {p.strip() for p in df["partido"] if p.strip()}
     assert nomes and partidos
     pasta = cli.rodar_uf(zip_path, "RN", tmp_path / "runs", [0.10])
-    stats, corte = emails.stats_from_run(pasta, 0.10)
+    stats, datas = emails.stats_from_run(pasta, 0.10)
     t = emails.render_email(pd.Series({"nome": "Maria Exemplo", "cargo": "Senador", "uf": "RN"}),
-                            stats, 0.10, corte)
+                            stats, 0.10, datas)
     low = t.lower()
     assert "dinheiro público" not in low and "dinheiro publico" not in low
     for n in nomes:
@@ -88,7 +95,7 @@ def test_provavel_only_in_note(contato, stats):
     t = render(contato, stats)
     assert t.count("R$ 777,77") == 1
     idx = t.index("R$ 777,77")
-    assert idx > t.index("pelo menos") and idx > t.index("parcia")
+    assert idx > t.index("pelo menos") and idx > t.index("parciais")
     assert "não incluído" in t[idx:idx + 300]
     assert t.strip().endswith("(não incluído).")
     # nunca somado: principal+provavel nao aparece
@@ -121,9 +128,13 @@ def test_missing_key_or_cutoff_raises(contato, stats):
         render(contato, stats)
 
 
-def test_no_cutoff_raises(contato, stats):
+@pytest.mark.parametrize("datas", [
+    {}, {"dt_geracao": "", "dt_ultima_prestacao": "20/10/2026"},
+    {"dt_geracao": "22/10/2026", "dt_ultima_prestacao": None},
+    {"dt_geracao": "22/10/2026"}, "22/10/2026"])
+def test_no_cutoff_raises(contato, stats, datas):
     with pytest.raises(ValueError):
-        emails.render_email(contato, stats, 0.10, "")
+        emails.render_email(contato, stats, 0.10, datas)
 
 
 # ---------------- load_contatos ----------------
@@ -291,9 +302,9 @@ def test_metrics_among_spenders_only(tmp_path):
                   "principal": [0.0, 0.0, 10.0, 50.0, 0.0],
                   "proporcao": [0.0, 0.0, 0.1, 0.5, 0.0]}).to_csv(
         pasta / "candidatos.csv", index=False, sep=";", decimal=",", encoding="utf-8-sig")
-    (pasta / "meta.json").write_text('{"dt_corte": "01/01/2026"}')
-    st, corte = emails.stats_from_run(pasta, 0.10)
-    assert corte == "01/01/2026"
+    (pasta / "meta.json").write_text('{"dt_geracao": "01/01/2026", "dt_ultima_prestacao": "02/01/2026"}')
+    st, datas = emails.stats_from_run(pasta, 0.10)
+    assert datas == {"dt_geracao": "01/01/2026", "dt_ultima_prestacao": "02/01/2026"}
     assert st["n_candidatos"] == 4 and st["n_gastaram"] == 2  # so quem declarou gasto
     assert st["max"] == 0.5 and 0.1 < st["p90"] <= 0.5       # entre os que gastaram
 
@@ -323,15 +334,17 @@ def test_two_ufs_each_email_has_own_numbers(tmp_path, eleitos):
         pd.DataFrame({"sq_candidato": ["1", "2"], "total": [5000.0, 5000.0],
                       "principal": [princ, 0.0], "proporcao": [princ / 5000, 0.0]}).to_csv(
             p / "candidatos.csv", index=False, sep=";", decimal=",", encoding="utf-8-sig")
-        (p / "meta.json").write_text(json.dumps({"dt_corte": "10/10/2026" if uf == "RN" else "11/11/2026"}))
+        (p / "meta.json").write_text(json.dumps(
+            {"dt_geracao": "10/10/2026" if uf == "RN" else "11/11/2026",
+             "dt_ultima_prestacao": "09/09/2026" if uf == "RN" else "08/08/2026"}))
         runs[uf] = p
     c = _contatos(tmp_path, ["José da Silva,Deputado Federal,RN,j@example.org,",
                              "João Pereira,Deputado Estadual,SP,jp@example.org,1009"])
     out = emails.write_emails(c, runs, 0.10, tmp_path / "s", eleitos=eleitos)
     rn = next((out / "emails" / "rn").glob("*.md")).read_text(encoding="utf-8")
     sp = next((out / "emails" / "sp").glob("*.md")).read_text(encoding="utf-8")
-    assert "R$ 1.111,11" in rn and "R$ 2.222,22" not in rn and "10/10/2026" in rn and "11/11/2026" not in rn
-    assert "R$ 2.222,22" in sp and "R$ 1.111,11" not in sp and "11/11/2026" in sp
+    assert "R$ 1.111,11" in rn and "R$ 2.222,22" not in rn and "10/10/2026" in rn and "09/09/2026" in rn and "11/11/2026" not in rn
+    assert "R$ 2.222,22" in sp and "R$ 1.111,11" not in sp and "11/11/2026" in sp and "08/08/2026" in sp and "10/10/2026" not in sp
 
 
 def test_dt_corte_from_whole_slice(zip_path, tmp_path):
@@ -339,11 +352,14 @@ def test_dt_corte_from_whole_slice(zip_path, tmp_path):
     i = df.index[df["nivel"] == "nenhum"][0]
     df.loc[i, "dt_geracao"] = "30/10/2026"
     pasta = report.write_run(df, {"uf": "RN"}, out_root=tmp_path / "r", caps=[0.10])
-    assert json.loads((pasta / "meta.json").read_text())["dt_corte"] == "30/10/2026"
-    assert emails.stats_from_run(pasta, 0.10)[1] == "30/10/2026"
+    assert json.loads((pasta / "meta.json").read_text())["dt_geracao"] == "30/10/2026"
+    assert emails.stats_from_run(pasta, 0.10)[1]["dt_geracao"] == "30/10/2026"
+    assert emails.stats_from_run(pasta, 0.10)[1]["dt_ultima_prestacao"] == "15/10/2026"
 
 
-@pytest.mark.parametrize("conteudo", [None, "{ruim", '{"dt_corte": null}', '{"dt_corte": "xx"}'])
+@pytest.mark.parametrize("conteudo", [None, "{ruim", '{"dt_geracao": null}', '{"dt_geracao": "xx", "dt_ultima_prestacao": "01/01/2026"}',
+    '{"dt_geracao": "01/01/2026"}', '{"dt_geracao": "01/01/2026", "dt_ultima_prestacao": "xx"}',
+    '{"dt_corte": "01/01/2026"}'])
 def test_missing_or_invalid_meta_goes_to_pendencias(tmp_path, uf_runs, eleitos, conteudo):
     meta = uf_runs["RN"] / "meta.json"
     if conteudo is None:
@@ -420,3 +436,36 @@ def test_cli_missing_zip_fails_fast(tmp_path, capsys):
 ])
 def test_nome_proprio(entrada, esperado):
     assert emails._nome_proprio(entrada) == esperado
+
+
+def test_pendencias_legend(tmp_path, uf_runs, eleitos):
+    c = _contatos(tmp_path, ["Fulano Inexistente,Deputado Federal,RN,f@example.org,"])
+    out = emails.write_emails(c, uf_runs, 0.10, tmp_path / "s", eleitos=eleitos)
+    pend = (out / "pendencias.md").read_text(encoding="utf-8")
+    assert "## Legenda" in pend
+    for cod in ("sem_correspondencia", "ambiguo", "sq_diverge", "duplicado",
+                "execução ilegível", "falha ao gerar e-mail"):
+        assert re.search(rf"^- `?{cod}`?:", pend, re.M), cod
+
+
+def test_uf_inexistente_lists_available(zip_path, tmp_path, capsys):
+    rc = cli.main(["analisar", "--uf", "ZZ", "--zip", str(zip_path), "--saida", str(tmp_path / "o")])
+    err = capsys.readouterr().err
+    assert rc == 1 and "ZZ" in err and "RN" in err and "disponiveis" in err
+
+
+def test_bad_zip_and_oserror_clean_exit(tmp_path, capsys):
+    ruim = tmp_path / "ruim.zip"
+    ruim.write_text("nao e zip")
+    assert cli.main(["analisar", "--zip", str(ruim), "--saida", str(tmp_path / "o")]) == 1
+    err = capsys.readouterr().err
+    assert err.startswith("Erro:") and "Traceback" not in err
+    assert cli.main(["analisar", "--zip", str(tmp_path), "--saida", str(tmp_path / "o")]) == 1
+
+
+@pytest.mark.parametrize("flag", ["--cargo", "--partido", "--candidato"])
+@pytest.mark.parametrize("valor", ["", "   "])
+def test_empty_filters_rejected(zip_path, tmp_path, capsys, flag, valor):
+    rc = cli.main(["analisar", "--zip", str(zip_path), flag, valor, "--saida", str(tmp_path / "o")])
+    assert rc == 2 and flag in capsys.readouterr().err
+    assert not (tmp_path / "o").exists()

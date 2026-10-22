@@ -52,11 +52,11 @@ def test_qualidade_lists_level_totals_and_sample(tmp_path):
 
 def test_relatorio_states_partial_data_and_cutoff(tmp_path):
     r = (_run(tmp_path) / "relatorio.md").read_text(encoding="utf-8")
-    assert "parcial" in r.lower()
+    assert "parciais" in r.lower()
     assert "22/10/2026" in r
     assert "piso" in r.lower()
     assert "dinheiro público" not in r.lower()
-    assert "nan" not in r.lower()
+    assert "nan" not in r.lower().replace("financeiros", "")
 
 
 def test_run_folder_is_dated_and_versioned(tmp_path):
@@ -78,10 +78,10 @@ def test_folder_slug(tmp_path):
 def test_empty_input_no_nan(tmp_path):
     d = _run(tmp_path, df=_df().iloc[0:0])
     r = (d / "relatorio.md").read_text(encoding="utf-8")
-    assert "nan" not in r.lower() and "inf" not in r.lower().replace("informa", "")
+    assert "nan" not in r.lower().replace("financeiros", "") and "inf" not in r.lower().replace("informa", "")
     zero = _df().assign(valor=0.0)
     r2 = (_run(tmp_path, df=zero, today=date(2026, 10, 25)) / "relatorio.md").read_text(encoding="utf-8")
-    assert "nan" not in r2.lower()
+    assert "nan" not in r2.lower().replace("financeiros", "")
 
 
 def test_csvs_are_excel_friendly(tmp_path):
@@ -126,3 +126,39 @@ def test_qualidade_truncates_and_flattens(tmp_path):
     assert "linha1 linha2 col / " in q
     for linha in q.splitlines():
         assert "\t" not in linha
+
+
+def _df_mix():
+    d = _df()
+    d["dt_prestacao"] = ["01/10/2026", "03/10/2026", "02/10/2026", "28/10/2026", "05/10/2026"]
+    d["tp_prestacao"] = ["Parcial", "Parcial", "Relatório Financeiro", "Final", "Parcial"]
+    return d
+
+
+def test_meta_has_generation_and_last_prestacao_from_whole_slice(tmp_path):
+    import json
+    pasta = _run(tmp_path, _df_mix())  # a prestacao mais recente esta numa linha `nenhum`
+    m = json.loads((pasta / "meta.json").read_text())
+    assert m == {"dt_geracao": "22/10/2026", "dt_ultima_prestacao": "28/10/2026"}
+
+
+def test_meta_without_dt_prestacao_column_is_null(tmp_path):
+    import json
+    m = json.loads((_run(tmp_path) / "meta.json").read_text())
+    assert m["dt_geracao"] == "22/10/2026" and m["dt_ultima_prestacao"] is None
+
+
+def test_relatorio_wording_generation_vs_prestacao(tmp_path):
+    t = (_run(tmp_path, _df_mix()) / "relatorio.md").read_text(encoding="utf-8")
+    assert "gerados pelo TSE em **22/10/2026**" in t
+    assert "entregues até **28/10/2026**" in t
+    assert "data de corte" not in t.lower()
+    assert "relatórios financeiros" in t
+
+
+def test_qualidade_table_by_tp_prestacao(tmp_path):
+    t = (_run(tmp_path, _df_mix()) / "qualidade.md").read_text(encoding="utf-8")
+    assert "Por tipo de prestação" in t
+    assert "| Parcial | 3 | R$ 350,50 |" in t
+    assert "| Relatório Financeiro | 1 | R$ 30,00 |" in t
+    assert "| Final | 1 | R$ 819,50 |" in t

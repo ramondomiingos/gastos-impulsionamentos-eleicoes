@@ -7,7 +7,7 @@ from gastos.loader import clean_lines, load_despesas, parse_valor
 
 COLS = ["uf", "sq_candidato", "candidato", "cargo", "partido", "fornecedor",
         "cnpj_fornecedor", "descricao", "origem", "valor", "data", "sq_despesa",
-        "dt_geracao", "tp_prestacao"]
+        "dt_geracao", "tp_prestacao", "dt_prestacao"]
 
 
 def test_columns(zip_path):
@@ -64,3 +64,9 @@ def test_parse_valor_formats():
 def test_parse_valor_rejects_other_shapes(bad):
     with pytest.raises(ValueError, match=bad.replace(".", r"\.")):
         parse_valor(bad)
+
+
+def test_dt_prestacao_loaded(zip_path):
+    d = load_despesas(zip_path, "RN")
+    assert set(d.dt_prestacao) <= {"03/10/2026", "05/10/2026", "04/10/2026", "15/10/2026", "09/10/2026"}
+    assert "15/10/2026" in set(d.dt_prestacao)

@@ -75,17 +75,23 @@ def load_contatos(path: Path) -> pd.DataFrame:
 
 # -------------------------------------------------------------------- numeros
 
-def _dt_corte(pasta: Path) -> str:
-    """Le `meta.json` (data de corte da fatia inteira). ValueError se ausente/invalida."""
+def _data_valida(d) -> str:
+    if not isinstance(d, str):
+        raise ValueError(f"data ausente ou invalida: {d!r}")
+    datetime.strptime(d.strip(), "%d/%m/%Y")
+    return d.strip()
+
+
+def _datas(pasta: Path) -> dict:
+    """Le `meta.json` (datas da fatia inteira). ValueError se ausente/invalido."""
     try:
-        d = json.loads((Path(pasta) / "meta.json").read_text(encoding="utf-8")).get("dt_corte")
-        datetime.strptime(str(d), "%d/%m/%Y")
+        m = json.loads((Path(pasta) / "meta.json").read_text(encoding="utf-8"))
+        return {k: _data_valida(m.get(k)) for k in ("dt_geracao", "dt_ultima_prestacao")}
     except (OSError, ValueError, AttributeError) as e:
         raise ValueError(f"meta.json ausente ou invalido: {e}")
-    return str(d)
 
 
-def stats_from_run(pasta: Path, teto: float) -> tuple[dict, str]:
+def stats_from_run(pasta: Path, teto: float) -> tuple[dict, dict]:
     """Numeros da UF inteira a partir da pasta da execucao: (stats, dt_corte)."""
     pasta = Path(pasta)
     r = pd.read_csv(pasta / "resumo.csv", **_CSV_LEITURA).iloc[0]
@@ -102,7 +108,7 @@ def stats_from_run(pasta: Path, teto: float) -> tuple[dict, str]:
         "impacto_teto": {"n_acima": int(imp["n_acima"]), "pct_acima": float(imp["pct_acima"]),
                          "excedente": float(imp["excedente"])},
     }
-    return stats, _dt_corte(pasta)
+    return stats, _datas(pasta)
 
 
 # --------------------------------------------------------------------- e-mail
@@ -161,11 +167,14 @@ def _cargo_neutro(cargo) -> str:
     return _esc(_CARGOS_NEUTROS.get(cargo_tse(cargo), str(cargo).strip()))
 
 
-def render_email(contato: pd.Series, stats: dict, teto_proposto: float, dt_corte: str,
+def render_email(contato: pd.Series, stats: dict, teto_proposto: float, datas: dict,
                  assinatura: str = "[Seu nome]") -> str:
     """Renderiza o e-mail. Levanta ValueError se faltar qualquer numero (nunca renderiza vazio)."""
-    if not dt_corte or not str(dt_corte).strip():
-        raise ValueError("data de corte ausente")
+    try:
+        dt_geracao = _data_valida((datas or {}).get("dt_geracao"))
+        dt_prest = _data_valida((datas or {}).get("dt_ultima_prestacao"))
+    except (ValueError, AttributeError) as e:
+        raise ValueError(f"datas dos dados ausentes ou invalidas: {e}")
     _num(teto_proposto)
     try:
         imp = stats["impacto_teto"]
@@ -191,7 +200,7 @@ def render_email(contato: pd.Series, stats: dict, teto_proposto: float, dt_corte
         uf_nome=UF_NOMES.get(uf, uf), principal=_brl(v["principal"]), confirmado=_brl(v["confirmado"]),
         proporcao=_pct(v["proporcao"]), p90=_pct(v["p90"]),
         teto=_teto_txt(teto_proposto), n_acima=n_acima, pct_acima=_pct(pct_acima), excedente=_brl(exced),
-        provavel=_brl(provavel) if provavel > 0 else "", dt_corte=str(dt_corte).strip(),
+        provavel=_brl(provavel) if provavel > 0 else "", dt_geracao=dt_geracao, dt_ultima_prestacao=dt_prest,
         assinatura=_esc(assinatura),
     )
 
@@ -203,13 +212,11 @@ def _ufs_com_numeros(uf_runs: dict[str, Path], teto: float) -> tuple[dict, dict]
     ok, falhas = {}, {}
     for uf, pasta in uf_runs.items():
         try:
-            stats, corte = stats_from_run(pasta, teto)
+            stats, datas = stats_from_run(pasta, teto)
             if stats["total"] <= 0 or stats["principal"] <= 0:
                 falhas[uf] = "sem gasto classificado como plataforma estrangeira"
-            elif not corte:
-                falhas[uf] = "sem data de corte nos dados"
             else:
-                ok[uf] = (stats, corte)
+                ok[uf] = (stats, datas)
         except (FileNotFoundError, KeyError, IndexError, ValueError) as e:
             falhas[uf] = f"execução ilegível ({e})"
     return ok, falhas
@@ -253,9 +260,9 @@ def write_emails(contatos_csv: Path, uf_runs: dict[str, Path], teto_proposto: fl
             motivo = falhas.get(uf, "UF sem execucao de analise (sem dados)")
             sem_numero.append((c, motivo))
             continue
-        stats, corte = numeros[uf]
+        stats, datas = numeros[uf]
         try:
-            texto = render_email(pd.Series({**c, "uf": uf}), stats, teto_proposto, corte, assinatura)
+            texto = render_email(pd.Series({**c, "uf": uf}), stats, teto_proposto, datas, assinatura)
         except ValueError as e:
             sem_numero.append((c, f"falha ao gerar e-mail: {e}"))
             continue
@@ -308,4 +315,12 @@ def _pendencias(pendentes, sem_numero, falhas, uf_runs, eleitos) -> str:
             avisos.append(f"- {uf} / {cargo}: nenhum eleito na fonte do TSE; a lista parece incompleta "
                           f"(defasagem de dados, não erro do código). Contato: {c['nome']}")
     L += sorted(set(avisos)) or ["Nenhum aviso."]
+    L += ["", "## Legenda", "",
+          "- `sem_correspondencia`: nenhum eleito com esse nome, UF e cargo; confira a grafia, o cargo e a UF, "
+          "ou informe o `sq_candidato` na lista de contatos.",
+          "- `ambiguo`: mais de um eleito com esse nome; informe o `sq_candidato` na lista de contatos.",
+          "- `sq_diverge`: o `sq_candidato` informado não bate com a UF ou o cargo do contato; corrija um dos dois.",
+          "- `duplicado`: o mesmo eleito aparece em mais de um contato; mantenha só uma linha.",
+          "- `execução ilegível`: a execução da UF não tem números ou datas válidos; rode a análise de novo.",
+          "- `falha ao gerar e-mail`: faltou algum número para esse e-mail; veja a mensagem e rode de novo."]
     return "\n".join(L) + "\n"

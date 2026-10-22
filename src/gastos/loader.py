@@ -26,6 +26,7 @@ COLUNAS = {
     "SQ_DESPESA": "sq_despesa",
     "DT_GERACAO": "dt_geracao",
     "TP_PRESTACAO_CONTAS": "tp_prestacao",
+    "DT_PRESTACAO_CONTAS": "dt_prestacao",
 }
 PLACEHOLDERS = {"-1", "#NULO"}
 
@@ -44,6 +45,13 @@ def _member(names: list[str], uf: str | None) -> str:
     for name in names:
         if name.rsplit("/", 1)[-1].lower() == alvo.lower():
             return name
+    ufs = sorted({m.group(1) for n in names
+                  if (m := re.fullmatch(r"despesas_contratadas_candidatos_2026_([A-Za-z]{2})\.csv",
+                                        n.rsplit("/", 1)[-1]))})
+    if uf is not None and ufs:
+        raise FileNotFoundError(
+            f"UF {uf.upper()} nao encontrada no zip. UFs disponiveis: {', '.join(u.upper() for u in ufs)} "
+            f"(ou BR para o pais)")
     raise FileNotFoundError(f"{alvo} nao encontrado no zip")
 
 
