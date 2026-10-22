@@ -75,7 +75,29 @@ nome,cargo,uf,email[,sq_candidato]
 gastos emails --contatos contatos.csv --teto 0.10 --assinatura "Seu nome"
 ```
 
-`--teto` é a fração proposta (0.10 = 10%). O comando liga cada contato à lista de eleitos (por nome, ou por `sq_candidato` quando preenchido), analisa as UFs envolvidas e grava em `out/` (ou `--saida`): `emails/<uf>/*.md`, `indice.csv`, `pendencias.md` (contatos sem correspondência, ambíguos ou UF sem números) e `runs/` com a análise de cada UF. O texto usa só números agregados do estado, informa que os dados são parciais e traz as datas dos dados (gerados pelo TSE em X; prestações mais recentes entregues até Y). O `pendencias.md` traz uma legenda do que fazer em cada motivo (`sem_correspondencia`, `ambiguo`, `sq_diverge`, `duplicado`, `execução ilegível`, `falha ao gerar e-mail`). **O pipeline nunca envia e-mail**: você revisa e envia.
+`--teto` é a fração proposta (0.10 = 10%). O comando liga cada contato à lista de eleitos (por nome, ou por `sq_candidato` quando preenchido), analisa as UFs envolvidas e grava em `out/` (ou `--saida`): `emails/<uf>/*.md`, `emails/<uf>/amostra-<uf>.csv` (anexo, veja abaixo), `indice.csv` (com a coluna `anexo`), `pendencias.md` (contatos sem correspondência, ambíguos ou UF sem números) e `runs/` com a análise de cada UF. O corpo do texto usa só números agregados do estado (sem nomes de candidatos nem de partidos), informa que os dados são parciais e traz as datas dos dados (gerados pelo TSE em X; prestações mais recentes entregues até Y). O `pendencias.md` traz uma legenda do que fazer em cada motivo (`sem_correspondencia`, `ambiguo`, `sq_diverge`, `duplicado`, `execução ilegível`, `falha ao gerar e-mail`). **O pipeline nunca envia e-mail**: você revisa e envia.
+
+### Anexo: amostra nominal por UF
+
+Cada UF com candidatos elegíveis ganha **um** `emails/<uf>/amostra-<uf>.csv` (UTF-8 com BOM, `;`, vírgula decimal), referenciado pelo nome em todos os e-mails da UF e na coluna `anexo` do `indice.csv`. Colunas: posição, candidato (nome do TSE em caixa de título), cargo, uf, gasto em plataformas (principal), piso confirmado, total da campanha, proporção e link da prestação. **Não há coluna de partido.** O corpo do e-mail continua sem nomes; só o anexo é nominal (dados públicos do TSE, prestações parciais).
+
+- **Regra do ranking:** os 5 candidatos da UF com maior proporção (principal ÷ total contratado da campanha), entre os que têm total >= piso e principal > 0. Desempate: maior valor em plataformas, depois menor `sq_candidato`.
+- **Piso:** `--piso-amostra` (padrão R$ 50.000, número positivo; inválido sai com código 2). Evita que campanhas minúsculas com proporção absurda dominem a lista.
+- **UF sem ninguém acima do piso:** sem anexo, o e-mail omite a frase do anexo e o fato vai para a seção "Avisos" do `pendencias.md`.
+- **Destinatário na amostra:** o e-mail é gerado normalmente e o `pendencias.md` (seção "Avisos") nomeia o contato e a UF para você conferir antes de enviar.
+
+### Links da prestação de contas (o que é verificado e o que não é)
+
+O link tem o formato `https://divulgacandcontas.tse.jus.br/divulga/#/candidato/<REGIAO>/<UF>/<ID_ELEICAO>/<SQ_CANDIDATO>/2026/<UF>/prestacao/despesas` (`gastos.links.link_prestacao`). A região vem da UF (IBGE). O `ID_ELEICAO` do portal (ex. `20322002026`) **não é** o `CD_ELEICAO` dos dados abertos (ex. `6259`, que o pipeline já guarda por candidato): a relação só vale se confirmada na API do portal. Por isso o código **nunca adivinha**: só emite o link para combinações (CD_ELEICAO, UF, cargo) listadas em `config/links_verificados.yaml`; as demais saem como `link indisponível` no anexo e entram no `pendencias.md` (seção "Avisos").
+
+Estado atual (22/10/2026): a API do portal respondeu **403 (Access Denied)** ao ambiente em que isto foi desenvolvido, então **nenhuma combinação foi verificada pela API**. A única entrada do YAML é o exemplo real que o Ramon copiou do portal (governador do RN, `fonte: exemplo-do-usuario`); ela cobre só esse cargo/UF. Na prática, os links saem `link indisponível` até alguém rodar, de uma rede que o portal aceite:
+
+```bash
+.venv/bin/python scripts/verificar_links.py --listar                       # eleicao/ordinarias (ajuda a achar o id)
+.venv/bin/python scripts/verificar_links.py --eleicao-id 20322002026 --ufs RN,PB --saida config/links_verificados.yaml
+```
+
+O script é **somente leitura** (GET na API pública, com timeout e pausa; para no primeiro 403 sem contornar o bloqueio), testa um candidato por (UF, cargo) e só grava o que responder HTTP 200 com o mesmo `SQ_CANDIDATO`. O endpoint de candidato usado no script (`/divulga/rest/v1/candidatura/buscar/<ano>/<UF>/<id>/candidato/<SQ>`) foi escrito de memória e **não foi testado**; confira a resposta antes de confiar nele. Mesmo verificado pela API, o portal é um app JS: abra alguns links à mão. Os testes não usam rede.
 
 ## Limitações
 
