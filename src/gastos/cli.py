@@ -13,6 +13,8 @@ from pathlib import Path
 import pandas as pd
 
 from gastos.classify import classify, load_rules
+from gastos.eleitos import download_resultados, load_eleitos
+from gastos.emails import load_contatos, write_emails
 from gastos.fetch import download_candidatos
 from gastos.loader import load_despesas
 from gastos.report import write_run
@@ -88,6 +90,47 @@ def _filtrar(df: pd.DataFrame, cargo, partido, candidato) -> pd.DataFrame:
     return df.reset_index(drop=True)
 
 
+def rodar_uf(zip_path: Path, uf: str, saida: Path, caps: list[float]) -> Path:
+    """Analisa a UF inteira (todos os cargos) e grava a execucao. Caminho compartilhado com `emails`."""
+    df = load_despesas(Path(zip_path), uf)
+    if df.empty:
+        raise _Erro(f"Nenhuma despesa encontrada para {uf}.")
+    df = classify(df, load_rules())
+    return write_run(df, {"uf": uf, "cargo": None, "partido": None, "candidato": None},
+                     out_root=Path(saida), caps=caps)
+
+
+def _parse_teto(valor: str) -> float:
+    try:
+        t = float(valor)
+    except ValueError:
+        t = float("nan")
+    if not (0 < t <= 1):
+        raise _Erro(f"--teto invalido: {valor!r} (fracao entre 0 e 1, ex. 0.10 para 10%)", 2)
+    return t
+
+
+def _emails(args) -> int:
+    teto = _parse_teto(args.teto)
+    try:
+        contatos = load_contatos(Path(args.contatos))
+    except ValueError as e:
+        raise _Erro(str(e), 2)
+    zip_path = Path(args.zip) if args.zip else download_candidatos()
+    eleitos = load_eleitos(Path(args.eleitos_zip) if args.eleitos_zip else download_resultados())
+    saida = Path(args.saida)
+    ufs = sorted({u for u in contatos["uf"].str.upper() if re.fullmatch(r"[A-Z]{2}", u) and u != "BR"})
+    runs = {}
+    for uf in ufs:
+        try:
+            runs[uf] = rodar_uf(zip_path, uf, saida / "runs", [teto])
+        except (_Erro, FileNotFoundError, KeyError) as e:  # UF sem dados: vira pendencia
+            print(f"Aviso: {uf} sem analise ({e})", file=sys.stderr)
+    out = write_emails(Path(args.contatos), runs, teto, saida, eleitos=eleitos, assinatura=args.assinatura)
+    print(f"E-mails gravados em {out / 'emails'}; veja {out / 'pendencias.md'}")
+    return 0
+
+
 def _analisar(args) -> int:
     uf = _parse_uf(args.uf) if args.uf is not None else None  # valida antes de baixar/carregar
     caps = _parse_tetos(args.tetos) if args.tetos is not None else CAPS_PADRAO
@@ -114,6 +157,13 @@ def _parser() -> argparse.ArgumentParser:
     a.add_argument("--tetos", help="tetos percentuais separados por virgula, ex. 0.05,0.10")
     a.add_argument("--zip", help="zip do TSE ja baixado (pula o download)")
     a.add_argument("--saida", default="out", help="pasta de saida (padrao: out)")
+    e = sub.add_parser("emails", help="gera um e-mail por contato eleito, com os numeros da UF")
+    e.add_argument("--contatos", required=True, help="CSV com nome,cargo,uf,email[,sq_candidato]")
+    e.add_argument("--teto", required=True, help="teto proposto como fracao (0.10 = 10%%)")
+    e.add_argument("--assinatura", default="[Seu nome]", help="assinatura dos e-mails")
+    e.add_argument("--zip", help="zip de despesas do TSE ja baixado")
+    e.add_argument("--eleitos-zip", dest="eleitos_zip", help="consulta_cand zip/CSV ja baixado")
+    e.add_argument("--saida", default="out", help="pasta de saida (padrao: out)")
     return p
 
 
@@ -123,7 +173,7 @@ def main(argv: list[str] | None = None) -> int:
     except SystemExit as e:  # argparse sai sozinho em erro/--help
         return e.code if isinstance(e.code, int) else 2
     try:
-        return _analisar(args)
+        return _emails(args) if args.comando == "emails" else _analisar(args)
     except _Erro as e:
         print(f"Erro: {e}", file=sys.stderr)
         return e.codigo
