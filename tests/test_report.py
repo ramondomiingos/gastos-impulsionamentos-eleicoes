@@ -21,14 +21,18 @@ def _df():
     return pd.DataFrame(rows, columns=COLS)
 
 
+def _csv(path):
+    return pd.read_csv(path, sep=";", decimal=",", encoding="utf-8-sig")
+
+
 def _run(tmp_path, df=None, today=date(2026, 10, 22), recorte=RECORTE):
     return report.write_run(_df() if df is None else df, recorte, out_root=tmp_path, today=today)
 
 
 def test_evidence_sums_match_summary(tmp_path):
     d = _run(tmp_path)
-    resumo = pd.read_csv(d / "resumo.csv").iloc[0]
-    ev = {n: pd.read_csv(d / f"evidencia_{n}.csv") for n in ("confirmado", "generico", "provavel")}
+    resumo = _csv(d / "resumo.csv").iloc[0]
+    ev = {n: _csv(d / f"evidencia_{n}.csv") for n in ("confirmado", "generico", "provavel")}
     for n, e in ev.items():
         assert e["valor"].sum() == pytest.approx(resumo[n])
         assert (e["nivel"] == n).all()
@@ -78,3 +82,47 @@ def test_empty_input_no_nan(tmp_path):
     zero = _df().assign(valor=0.0)
     r2 = (_run(tmp_path, df=zero, today=date(2026, 10, 25)) / "relatorio.md").read_text(encoding="utf-8")
     assert "nan" not in r2.lower()
+
+
+def test_csvs_are_excel_friendly(tmp_path):
+    d = _run(tmp_path)
+    for f in d.glob("*.csv"):
+        assert f.read_bytes().startswith(b"\xef\xbb\xbf"), f.name
+    head = (d / "resumo.csv").read_text(encoding="utf-8-sig").splitlines()
+    assert head[0].split(";") == ["total", "confirmado", "generico", "provavel", "principal", "proporcao", "n_candidatos"]
+    assert "50,5" in (d / "evidencia_generico.csv").read_text(encoding="utf-8-sig")
+    assert "150,5" in head[1].split(";")
+
+
+@pytest.mark.parametrize("uf", ["../x", "R/N", "R N", "RNX", "1A"])
+def test_uf_validated(tmp_path, uf):
+    with pytest.raises(ValueError, match="uf"):
+        _run(tmp_path, recorte={"uf": uf, "cargo": None, "partido": None, "candidato": None})
+
+
+def test_uf_lowercase_and_br(tmp_path):
+    rec = {"uf": "rn ", "cargo": None, "partido": None, "candidato": None}
+    assert _run(tmp_path, recorte=rec).name == "2026-10-22_uf-RN"
+    rec["uf"] = "BR"
+    assert _run(tmp_path, recorte=rec).name == "2026-10-22_uf-BR"
+
+
+def test_headline_numbers(tmp_path):
+    r = (_run(tmp_path) / "relatorio.md").read_text(encoding="utf-8")
+    assert "(confirmado + generico): R$ 150,50**" in r
+    assert "Piso (apenas confirmado): R$ 100,00**" in r
+    assert "**12,5%**" in r
+    assert "| 10,0% | 1 | 50,0% | R$ 50,50 |" in r
+    assert "Há R$ 30,00 em despesas classificadas como `provavel`" in r
+    assert "R$ 180,50" not in r
+
+
+def test_qualidade_truncates_and_flattens(tmp_path):
+    df = _df()
+    df.loc[0, "descricao"] = "linha1\nlinha2\tcol | " + "z" * 300
+    df.loc[0, "fornecedor"] = "F" * 200
+    q = (_run(tmp_path, df=df) / "qualidade.md").read_text(encoding="utf-8")
+    assert "z" * 100 not in q and "F" * 100 not in q
+    assert "linha1 linha2 col / " in q
+    for linha in q.splitlines():
+        assert "\t" not in linha

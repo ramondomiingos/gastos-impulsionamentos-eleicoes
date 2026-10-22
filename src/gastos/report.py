@@ -21,6 +21,7 @@ from gastos import metrics
 NIVEIS_EVIDENCIA = ("confirmado", "generico", "provavel")
 CHAVES = ("uf", "cargo", "partido", "candidato")
 AMOSTRA = 10
+CSV = dict(index=False, sep=";", decimal=",", encoding="utf-8-sig")  # Excel pt-BR
 COLUNAS_AMOSTRA = ["sq_candidato", "candidato", "uf", "cargo", "fornecedor", "descricao", "valor", "plataforma"]
 
 
@@ -35,8 +36,13 @@ def _nome_recorte(recorte: dict) -> str:
         v = recorte.get(k)
         if v is None or str(v).strip() == "":
             continue
-        # UF fica em maiusculas (uf-RN); demais valores em minusculas ascii
-        partes.append(f"{k}-{str(v).strip().upper() if k == 'uf' else _slug(v)}")
+        if k == "uf":
+            uf = str(v).strip()
+            if not re.fullmatch(r"[A-Za-z]{2}", uf):
+                raise ValueError(f"uf invalida (esperado 2 letras, ex. RN ou BR): {v!r}")
+            partes.append(f"uf-{uf.upper()}")  # UF em maiusculas (uf-RN)
+        else:  # demais valores: slug ascii minusculo
+            partes.append(f"{k}-{_slug(v)}")
     return "_".join(partes) if partes else "brasil"
 
 
@@ -68,10 +74,19 @@ def _tabela_md(df: pd.DataFrame, formatos: dict | None = None) -> str:
     return "\n".join([cab, sep, *linhas])
 
 
+def _limpa(v, n: int = 80) -> str:
+    t = re.sub(r"\s+", " ", str(v)).strip()
+    return t if len(t) <= n else t[: n - 1] + "…"
+
+
 def _amostra(df: pd.DataFrame, nivel: str) -> pd.DataFrame:
     sub = df[df["nivel"] == nivel].sort_values(["valor", "sq_despesa"], ascending=[False, True], kind="mergesort")
     cols = [c for c in COLUNAS_AMOSTRA if c in sub.columns]
-    return sub.head(AMOSTRA)[cols]
+    out = sub.head(AMOSTRA)[cols].copy()
+    for c in ("descricao", "fornecedor"):
+        if c in out.columns:
+            out[c] = out[c].map(_limpa)
+    return out
 
 
 def _qualidade(df: pd.DataFrame) -> str:
@@ -162,7 +177,7 @@ def write_run(
     pasta.mkdir(parents=True, exist_ok=True)
 
     for n in NIVEIS_EVIDENCIA:
-        df[df["nivel"] == n].to_csv(pasta / f"evidencia_{n}.csv", index=False)
+        df[df["nivel"] == n].to_csv(pasta / f"evidencia_{n}.csv", **CSV)
 
     resumo = metrics.summarize(df, [])
     if resumo.empty:  # entrada vazia: linha zerada, sem NaN
@@ -174,9 +189,9 @@ def write_run(
     tetos = metrics.cap_impact(shares, caps)
     dist = metrics.distribution(shares)
 
-    resumo.to_csv(pasta / "resumo.csv", index=False)
-    shares.to_csv(pasta / "candidatos.csv", index=False)
-    tetos.to_csv(pasta / "tetos.csv", index=False)
+    resumo.to_csv(pasta / "resumo.csv", **CSV)
+    shares.to_csv(pasta / "candidatos.csv", **CSV)
+    tetos.to_csv(pasta / "tetos.csv", **CSV)
     (pasta / "qualidade.md").write_text(_qualidade(df), encoding="utf-8")
     (pasta / "relatorio.md").write_text(_relatorio(df, recorte, resumo, shares, tetos, dist), encoding="utf-8")
     return pasta
