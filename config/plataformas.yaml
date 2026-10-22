@@ -1,0 +1,58 @@
+# Regras de classificacao de gastos com plataformas de anuncio estrangeiras.
+# Todo texto e comparado normalizado (minusculas, sem acento) e sempre com
+# limite de palavra: "meta" nao casa em "metodo" nem "metalurgica".
+# Ordem das plataformas = prioridade quando mais de uma aparece.
+
+plataformas:
+  meta:
+    # nome do fornecedor (RFB): so vale no campo fornecedor
+    fornecedores:
+      - facebook
+      - instagram
+      - meta platforms
+    # termos de descricao: so valem no campo descricao
+    palavras:
+      - facebook
+      - instagram
+      - meta ads
+      - meta anuncios
+  google:
+    fornecedores:
+      - google brasil
+      - google ireland
+      - google llc
+      - youtube
+    palavras:
+      - google
+      - google ads
+      - youtube
+  x:
+    fornecedores:
+      - twitter
+      - x corp
+    palavras:
+      - twitter
+      - x ads
+      - x anuncios
+  tiktok:
+    fornecedores:
+      - tiktok
+      - bytedance
+    palavras:
+      - tiktok
+
+# Impulsionamento sem plataforma nomeada: todo impulsionamento conta como
+# plataforma estrangeira (nivel generico).
+origem_impulsionamento:
+  origens:
+    - Despesa com Impulsionamento de Conteúdos
+  termos_descricao:
+    - impulsionamento
+    - impulsionar
+    - impulsiona
+
+# Intermediarios de pagamento usados para pagar plataformas (nivel provavel
+# quando nao ha pista melhor).
+gateways:
+  - dlocal
+  - ebanx
