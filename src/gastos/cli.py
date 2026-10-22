@@ -15,7 +15,7 @@ import pandas as pd
 
 from gastos.classify import classify, load_rules
 from gastos.eleitos import download_resultados, load_eleitos
-from gastos.emails import load_contatos, write_emails
+from gastos.emails import PISO_AMOSTRA, load_contatos, write_emails
 from gastos.fetch import download_candidatos
 from gastos.loader import load_despesas
 from gastos.report import write_run
@@ -184,8 +184,8 @@ def _parser() -> argparse.ArgumentParser:
     e.add_argument("--contatos", required=True, help="CSV com nome,cargo,uf,email[,sq_candidato]")
     e.add_argument("--teto", required=True, help="teto proposto como fracao (0.10 = 10%%)")
     e.add_argument("--assinatura", default="[Seu nome]", help="assinatura dos e-mails")
-    e.add_argument("--piso-amostra", dest="piso_amostra", default="50000",
-                   help="total minimo da campanha (R$) para entrar na amostra nominal em anexo (padrao: 50000)")
+    e.add_argument("--piso-amostra", dest="piso_amostra", default=str(PISO_AMOSTRA),
+                   help=f"total minimo da campanha (R$) para entrar na amostra nominal em anexo (padrao: {PISO_AMOSTRA:g})")
     e.add_argument("--zip", help="zip de despesas do TSE ja baixado")
     e.add_argument("--eleitos-zip", dest="eleitos_zip", help="consulta_cand zip/CSV ja baixado")
     e.add_argument("--saida", default="out", help="pasta de saida (padrao: out)")

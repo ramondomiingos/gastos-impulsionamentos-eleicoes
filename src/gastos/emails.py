@@ -176,11 +176,25 @@ def _lista_txt(n: int) -> str:
     return f"das {_NUM_EXTENSO.get(n, n)} campanhas"
 
 
+def _links_txt(n_links: int, n_amostra: int) -> str:
+    fim = "dados públicos do TSE, prestações parciais"
+    if n_links <= 0:
+        return ("com os dados de cada uma (o link da prestação oficial ainda não está disponível para este "
+                "estado; os dados podem ser conferidos no portal DivulgaCandContas, divulgacandcontas.tse.jus.br, "
+                f"buscando pelo nome; {fim}).")
+    if n_links < n_amostra:
+        return f"com o link da prestação oficial das campanhas em que ele está disponível ({fim})."
+    return f"com o link da prestação de contas oficial de cada uma ({fim})."
+
+
 def render_email(contato: pd.Series, stats: dict, teto_proposto: float, datas: dict,
-                 assinatura: str = "[Seu nome]", anexo: str | None = None, n_amostra: int = 5) -> str:
+                 assinatura: str = "[Seu nome]", anexo: str | None = None, n_amostra: int = 5,
+                 n_links: int | None = None) -> str:
     """Renderiza o e-mail. Levanta ValueError se faltar qualquer numero (nunca renderiza vazio).
 
     `anexo` (nome do arquivo da amostra nominal) liga a frase que apresenta o anexo; sem ele a frase some.
+    `n_links` = quantos links de prestacao a amostra realmente traz (padrao: todos); a frase nunca promete
+    link que o anexo nao tem.
     """
     try:
         dt_geracao = _data_valida((datas or {}).get("dt_geracao"))
@@ -214,6 +228,7 @@ def render_email(contato: pd.Series, stats: dict, teto_proposto: float, datas: d
         teto=_teto_txt(teto_proposto), n_acima=n_acima, pct_acima=_pct(pct_acima), excedente=_brl(exced),
         provavel=_brl(provavel) if provavel > 0 else "", dt_geracao=dt_geracao, dt_ultima_prestacao=dt_prest,
         assinatura=_esc(assinatura), anexo=_esc(anexo) if anexo else "", lista_txt=_lista_txt(n_amostra),
+        links_txt=_links_txt(n_amostra if n_links is None else n_links, n_amostra),
     )
 
 
@@ -237,6 +252,7 @@ def _ufs_com_numeros(uf_runs: dict[str, Path], teto: float) -> tuple[dict, dict]
 COLUNAS_AMOSTRA = ["posição", "candidato", "cargo", "uf", "gasto em plataformas (principal)",
                    "piso confirmado", "total da campanha", "proporção", "link da prestação"]
 _STR = {"sq_candidato": str, "cd_eleicao": str}
+PISO_AMOSTRA = 50000.0  # fonte unica (a CLI usa o mesmo valor)
 
 
 def _top_da_uf(pasta: Path, n: int, piso: float) -> pd.DataFrame:
@@ -247,17 +263,23 @@ def _top_da_uf(pasta: Path, n: int, piso: float) -> pd.DataFrame:
     return metrics.top_candidatos(shares, n=n, piso_total=piso)
 
 
+def _csv_seguro(texto) -> str:
+    """Neutraliza injecao de formula no Excel: texto que comeca com = + - @ (ou tab/CR) ganha apostrofo."""
+    t = str(texto)
+    return "'" + t if t.lstrip().startswith(("=", "+", "-", "@")) or t[:1] in ("\t", "\r") else t
+
+
 def _tabela_amostra(top: pd.DataFrame, uf: str, verificados: dict) -> pd.DataFrame:
     """Linhas do anexo (valores numericos como float; formatados na gravacao)."""
     linhas = []
     for pos, r in enumerate(top.to_dict("records"), start=1):
         linhas.append({
-            "posição": pos, "candidato": _nome_proprio(r.get("candidato", "")),
-            "cargo": _CARGOS_NEUTROS.get(cargo_tse(r.get("cargo")), str(r.get("cargo", "")).strip()),
+            "posição": pos, "candidato": _csv_seguro(_nome_proprio(r.get("candidato", ""))),
+            "cargo": _csv_seguro(_cargo_neutro(r.get("cargo", ""))),
             "uf": uf, "gasto em plataformas (principal)": r["principal"], "piso confirmado": r["confirmado"],
             "total da campanha": r["total"], "proporção": _pct(r["proporcao"]),
-            "link da prestação": links.link_ou_indisponivel(
-                uf, r["sq_candidato"], r.get("cargo"), r.get("cd_eleicao"), verificados),
+            "link da prestação": _csv_seguro(links.link_ou_indisponivel(
+                uf, r["sq_candidato"], r.get("cargo"), r.get("cd_eleicao"), verificados)),
         })
     return pd.DataFrame(linhas, columns=COLUNAS_AMOSTRA)
 
@@ -280,7 +302,6 @@ def _linha_contato(c) -> str:
     return f"{c['nome']} | {c['cargo']} | {c['uf']} | {c['email']}"
 
 
-PISO_AMOSTRA = 50000.0
 N_AMOSTRA = 5
 
 
@@ -305,34 +326,36 @@ def write_emails(contatos_csv: Path, uf_runs: dict[str, Path], teto_proposto: fl
     _limpar_emails(out / "emails")
     if verificados is None:
         verificados = links.carregar_verificados()
-    indice, sem_numero, usados, avisos = [], [], set(), []
-    amostras: dict[str, tuple[str | None, set]] = {}  # uf -> (nome do anexo ou None, sq dos listados)
-    for uf in sorted(numeros):
+    indice, sem_numero, usados = [], [], set()
+    avisos: list[tuple[str, str]] = []  # (uf, texto): so entram no pendencias se algum e-mail da UF saiu
+    amostras: dict[str, tuple[str | None, set, int]] = {}  # uf -> (anexo ou None, sq listados, n links)
+    ufs_com_contato = {str(c["uf_eleito"]).upper() for c in casados.to_dict("records")}
+    for uf in sorted(set(numeros) & ufs_com_contato):
         pasta_uf = out / "emails" / uf.lower()
         try:
             top = _top_da_uf(uf_runs[uf], N_AMOSTRA, piso_amostra)
         except (OSError, KeyError, ValueError) as e:
-            avisos.append(f"- UF {uf}: amostra nominal não gerada (candidatos.csv ilegível: {e})")
-            amostras[uf] = (None, set())
+            avisos.append((uf, f"- UF {uf}: amostra nominal não gerada (candidatos.csv ilegível: {e})"))
+            amostras[uf] = (None, set(), 0)
             continue
         if top.empty:
-            avisos.append(f"- UF {uf}: nenhum candidato atinge o piso de {_brl(piso_amostra)} de total da "
-                          f"campanha com gasto em plataformas; e-mails sem anexo")
-            amostras[uf] = (None, set())
+            avisos.append((uf, f"- UF {uf}: nenhum candidato atinge o piso de {_brl(piso_amostra)} de total da "
+                               f"campanha com gasto em plataformas; e-mails sem anexo"))
+            amostras[uf] = (None, set(), 0)
             continue
         tabela = _tabela_amostra(top, uf, verificados)
         pasta_uf.mkdir(parents=True, exist_ok=True)
         nome_anexo = f"amostra-{uf.lower()}.csv"
         tabela.to_csv(pasta_uf / nome_anexo, index=False, sep=";", decimal=",", float_format="%.2f",
                       encoding="utf-8-sig")
-        amostras[uf] = (nome_anexo, {str(x) for x in top["sq_candidato"]})
         falta = tabela["link da prestação"] == links.INDISPONIVEL
+        amostras[uf] = (nome_anexo, {str(x) for x in top["sq_candidato"]}, int((~falta).sum()))
         if falta.any():
             grupos = sorted({(str(r.get("cargo", "")).strip(), str(r.get("cd_eleicao", "") or "(ausente)"))
                              for r, f in zip(top.to_dict("records"), falta) if f})
-            avisos.append(f"- UF {uf}: {int(falta.sum())} de {len(tabela)} links da amostra com "
-                          f"\"{links.INDISPONIVEL}\" (mapeamento do id da eleição não verificado para: "
-                          + "; ".join(f"cargo {c}, CD_ELEICAO {e}" for c, e in grupos) + ")")
+            avisos.append((uf, f"- UF {uf}: {int(falta.sum())} de {len(tabela)} links da amostra com "
+                               f"\"{links.INDISPONIVEL}\" (mapeamento do id da eleição não verificado para: "
+                               + "; ".join(f"cargo {c}, CD_ELEICAO {e}" for c, e in grupos) + ")"))
     for c in casados.to_dict("records"):
         uf = str(c["uf_eleito"]).upper()
         if uf not in numeros:
@@ -341,9 +364,9 @@ def write_emails(contatos_csv: Path, uf_runs: dict[str, Path], teto_proposto: fl
             continue
         stats, datas = numeros[uf]
         try:
-            nome_anexo, sqs_top = amostras.get(uf, (None, set()))
+            nome_anexo, sqs_top, n_links = amostras.get(uf, (None, set(), 0))
             texto = render_email(pd.Series({**c, "uf": uf}), stats, teto_proposto, datas, assinatura,
-                                 anexo=nome_anexo, n_amostra=len(sqs_top))
+                                 anexo=nome_anexo, n_amostra=len(sqs_top), n_links=n_links)
         except ValueError as e:
             sem_numero.append((c, f"falha ao gerar e-mail: {e}"))
             continue
@@ -361,8 +384,13 @@ def write_emails(contatos_csv: Path, uf_runs: dict[str, Path], teto_proposto: fl
                        "arquivo": str(arq.relative_to(out)),
                        "anexo": str((pasta / nome_anexo).relative_to(out)) if nome_anexo else ""})
         if nome_anexo and str(c.get("sq_candidato", "")).strip() in sqs_top:
-            avisos.append(f"- {_linha_contato({**c, 'uf': uf})}: o destinatário aparece na amostra anexa; "
-                          f"confira antes de enviar (UF {uf})")
+            avisos.append((uf, f"- {_linha_contato({**c, 'uf': uf})}: o destinatário aparece na amostra anexa; "
+                               f"confira antes de enviar (UF {uf})"))
+    gerou = {r["uf"] for r in indice}
+    for uf, (nome_anexo, _, _) in amostras.items():  # sem amostra orfa: UF sem nenhum e-mail gerado
+        if nome_anexo and uf not in gerou:
+            (out / "emails" / uf.lower() / nome_anexo).unlink(missing_ok=True)
+    avisos = [t for uf, t in avisos if uf in gerou]
     pd.DataFrame(indice, columns=["nome", "cargo", "uf", "email", "arquivo", "anexo"]).to_csv(
         out / "indice.csv", index=False, sep=";", encoding="utf-8-sig")
 
@@ -377,8 +405,9 @@ def write_emails(contatos_csv: Path, uf_runs: dict[str, Path], teto_proposto: fl
 
 
 def _pendencias(pendentes, sem_numero, falhas, uf_runs, eleitos, avisos_amostra=()) -> str:
-    L = ["# Pendências", "", "Nenhum e-mail foi gerado para os itens abaixo.", ""]
-    L += ["## Contatos sem e-mail gerado (ligação com a lista de eleitos)", ""]
+    L = ["# Pendências", ""]
+    L += ["## Contatos sem e-mail gerado (ligação com a lista de eleitos)", "",
+          "Nenhum e-mail foi gerado para os itens abaixo (nesta seção e na seguinte).", ""]
     if pendentes.empty:
         L.append("Nenhum.")
     for c in pendentes.to_dict("records"):
@@ -400,7 +429,7 @@ def _pendencias(pendentes, sem_numero, falhas, uf_runs, eleitos, avisos_amostra=
             avisos.append(f"- {uf} / {cargo}: nenhum eleito na fonte do TSE; a lista parece incompleta "
                           f"(defasagem de dados, não erro do código). Contato: {c['nome']}")
     L += sorted(set(avisos)) or ["Nenhum aviso."]
-    L += ["", "## Avisos", ""]
+    L += ["", "## Avisos (e-mails foram gerados para estes itens; confira antes de enviar)", ""]
     L += sorted(avisos_amostra) or ["Nenhum aviso."]
     L += ["", "## Legenda", "",
           "- `sem_correspondencia`: nenhum eleito com esse nome, UF e cargo; confira a grafia, o cargo e a UF, "

@@ -611,3 +611,79 @@ def test_cli_invalid_piso_amostra(tmp_path, piso, capsys):
     c = _contatos(tmp_path, ["José da Silva,Deputado Federal,RN,jose@example.org,"])
     assert cli.main(["emails", "--contatos", str(c), "--teto", "0.10", "--saida", str(tmp_path / "s"),
                      "--piso-amostra", piso]) == 2
+
+
+# ---------------- fix round 1 (anexo) ----------------
+
+def test_sentence_links_none_partial_all(contato, stats):
+    todos = render(contato, stats, anexo="amostra-rn.csv", n_amostra=5, n_links=5)
+    assert "com o link da prestação de contas oficial de cada uma" in todos
+    nenhum = render(contato, stats, anexo="amostra-rn.csv", n_amostra=5, n_links=0)
+    assert "com os dados de cada uma (o link da prestação oficial ainda não está disponível para este estado; " \
+           "os dados podem ser conferidos no portal DivulgaCandContas, divulgacandcontas.tse.jus.br, " \
+           "buscando pelo nome; dados públicos do TSE, prestações parciais)." in nenhum
+    assert "com o link da prestação de contas oficial de cada uma" not in nenhum
+    parcial = render(contato, stats, anexo="amostra-rn.csv", n_amostra=5, n_links=2)
+    assert "com o link da prestação oficial das campanhas em que ele está disponível" in parcial
+    assert "de cada uma" not in parcial
+
+
+def test_sentence_links_through_real_flow(tmp_path, uf_runs, eleitos):
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0, verificados={})
+    corpo = next((out / "emails" / "rn").glob("*.md")).read_text(encoding="utf-8")
+    assert "ainda não está disponível" in corpo and "com o link da prestação de contas oficial" not in corpo
+
+
+def test_sentence_links_all_through_real_flow(tmp_path, uf_runs, eleitos):
+    f = uf_runs["RN"] / "candidatos.csv"
+    d = pd.read_csv(f, sep=";", decimal=",", encoding="utf-8-sig", dtype={"sq_candidato": str})
+    d["cd_eleicao"] = "6259"
+    d.to_csv(f, index=False, sep=";", decimal=",", encoding="utf-8-sig")
+    ver = {("6259", "RN", "DEPUTADO ESTADUAL"): "20322002026", ("6259", "RN", "PREFEITO"): "1"}
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0, verificados=ver)
+    corpo = next((out / "emails" / "rn").glob("*.md")).read_text(encoding="utf-8")
+    assert "em que ele está disponível" in corpo or "de cada uma" in corpo  # parcial ou todos, nunca "indisponivel"
+    assert "ainda não está disponível" not in corpo
+
+
+def test_csv_formula_guard(tmp_path):
+    t = emails._tabela_amostra(pd.DataFrame([{
+        "sq_candidato": "1", "candidato": "=CMD|x", "cargo": "@x", "total": 1.0, "principal": 1.0,
+        "confirmado": 0.0, "proporcao": 1.0}]), "RN", {})
+    assert t.loc[0, "candidato"].startswith("'=")
+    assert t.loc[0, "cargo"].startswith("'@")
+    t2 = emails._tabela_amostra(pd.DataFrame([{
+        "sq_candidato": "1", "candidato": "ana_maria *x*", "cargo": "Senador", "total": 1.0, "principal": 1.0,
+        "confirmado": 0.0, "proporcao": 1.0}]), "RN", {})
+    assert t2.loc[0, "candidato"] == "Ana_maria *x*"  # sem escape de Markdown
+    assert emails._csv_seguro("  -1+1") == "'  -1+1" and emails._csv_seguro("Ana") == "Ana"
+    assert emails._csv_seguro("\t=x").startswith("'")
+
+
+def test_no_orphan_attachment_when_all_contacts_fail(tmp_path, uf_runs, eleitos):
+    # contato casado em RN, mas o e-mail falha (meta.json invalido): sem amostra orfa nem avisos de amostra
+    (uf_runs["RN"] / "meta.json").write_text("{}", encoding="utf-8")
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0, verificados={})
+    assert not list((out / "emails").rglob("amostra-*.csv"))
+    pend = (out / "pendencias.md").read_text(encoding="utf-8")
+    assert "links da amostra" not in pend
+
+
+def test_no_attachment_for_uf_without_contacts(tmp_path, uf_runs, eleitos):
+    out = _gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0, linhas=[
+        "Fulano Inexistente,Deputado Federal,RN,fulano@example.org,"])
+    assert not list((out / "emails").rglob("amostra-*.csv"))
+
+
+def test_pendencias_headings(tmp_path, uf_runs, eleitos):
+    pend = (_gera(tmp_path, uf_runs, eleitos, piso_amostra=1.0) / "pendencias.md").read_text(encoding="utf-8")
+    assert not pend.startswith("# Pendências\n\nNenhum e-mail foi gerado para os itens abaixo.")
+    i, j = pend.index("## Avisos"), pend.index("## Legenda")
+    assert "foram gerados" in pend[i:j].splitlines()[0].lower() + pend[i:j][:300].lower()
+    primeira = pend.index("## Contatos sem e-mail gerado")
+    assert "Nenhum e-mail foi gerado para os itens abaixo" in pend[primeira:i]
+
+
+def test_piso_single_source():
+    assert float(cli._parser().parse_args(["emails", "--contatos", "x", "--teto", "0.1"]).piso_amostra) \
+        == emails.PISO_AMOSTRA == 50000.0
