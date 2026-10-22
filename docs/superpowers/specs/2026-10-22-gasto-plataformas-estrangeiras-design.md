@@ -92,3 +92,11 @@ O Ramon quer **medir** quanto foi gasto e **usar o número** em e-mails a deputa
 ## Perguntas em aberto
 
 Nenhuma. Falta a aprovação do Ramon sobre este documento.
+
+## Adendo 2026-10-22: amostra nominal em anexo (decisão do Ramon)
+
+- Cada e-mail passa a ter um **anexo** (CSV para Excel, `utf-8-sig`, `;`, vírgula decimal) com os **5 candidatos da UF com maior participação** do gasto em plataformas estrangeiras no gasto total da campanha, **por nome**, cada um com o **link da prestação de contas oficial** no DivulgaCandContas (formato do exemplo do Ramon: `https://divulgacandcontas.tse.jus.br/divulga/#/candidato/<REGIAO>/<UF>/<ID_ELEICAO>/<SQ_CANDIDATO>/2026/<UF>/prestacao/despesas`).
+- Isso **revoga** para o anexo as regras "não citar nomes de candidatos" e "números agregados que não se referem a nenhuma campanha". O **corpo do e-mail** continua sem nomes de candidatos nem de partidos; a frase "não se referem a nenhuma campanha em particular" é trocada por uma que apresente o anexo como dados públicos do TSE.
+- Meus defaults (o Ramon pode mudar): ranking pela proporção (principal ÷ total da campanha), só entre candidatos com total contratado de pelo menos R$ 50.000 (parâmetro `--piso-amostra`), desempate pelo maior valor absoluto; o anexo traz nome, cargo, UF, valor em plataformas, total da campanha, proporção, piso confirmado e link; **sem partido**.
+- Se o próprio destinatário estiver entre os 5, o e-mail é gerado normalmente e o fato é registrado em `pendencias.md` como aviso, para o Ramon decidir se envia.
+- Todo link precisa ser verificado: o formato real do ID da eleição por cargo/UF deve ser descoberto nos dados/API pública do TSE e confirmado por requisição de leitura (HTTP 200) em uma amostra antes de ser usado.
