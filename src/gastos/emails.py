@@ -136,9 +136,25 @@ def _esc(texto) -> str:
     return re.sub(r"([\\*_|`])", r"\\\1", t)
 
 
+_ROMANOS = {"ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"}
+
+
+def _palavra(p: str) -> str:
+    """Capitaliza cada trecho separado por hifen/apostrofo ("maria-clara d'avila")."""
+    return re.sub(r"[^-']+", lambda m: m.group(0).capitalize(), p)
+
+
 def _nome_proprio(nome) -> str:
     palavras = " ".join(str(nome).split()).lower().split(" ")
-    return " ".join(p if (i and p in _PARTICULAS) else p.capitalize() for i, p in enumerate(palavras))
+    out = []
+    for i, p in enumerate(palavras):
+        if p in _ROMANOS:
+            out.append(p.upper())
+        elif i and p in _PARTICULAS:
+            out.append(p)
+        else:
+            out.append(_palavra(p))
+    return " ".join(out)
 
 
 def _cargo_neutro(cargo) -> str:

@@ -44,10 +44,12 @@ def test_email_has_state_numbers_and_floor(contato, stats):
     assert "R$ 12.345,67" in t
     assert "R$ 8.000,50" in t and "pelo menos" in t
     assert "12,3%" in t  # proporcao
-    assert "60 de 200 candidatos (30,0%) declararam gasto" in t
-    assert "1 em cada 10" in t and "42,0%" in t
+    assert "60 de 200 candidatos que declararam gasto de campanha (30,0%)" in t
+    assert "cerca de 1 em cada 10" in t and "42,0%" in t
+    assert "7 candidatos, 25,0% dos 200 que declararam gasto de campanha," in t
+    assert "**Gasto estimado com plataformas estrangeiras:** R$ 12.345,67" in t
     assert "mediana" not in t.lower() and "excedente" not in t.lower()
-    assert "ultrapassaria esse limite somaria R$ 4.321,00" in t and "25,0%" in t
+    assert "ultrapassaria esse limite somaria R$ 4.321,00" in t
 
 
 def test_email_proposes_percentage_ceiling_and_invites(contato, stats):
@@ -405,3 +407,16 @@ def test_cli_missing_zip_fails_fast(tmp_path, capsys):
     ruim.write_text("nao e zip")
     assert cli.main(["emails", "--contatos", str(c), "--teto", "0.1", "--saida", str(tmp_path / "s"),
                      "--zip", str(ruim)]) == 1
+
+
+@pytest.mark.parametrize("entrada,esperado", [
+    ("MARIA-CLARA D'AVILA", "Maria-Clara D'Avila"),
+    ("JOÃO DA SILVA II", "João da Silva II"),
+    ("carlos de souza iv", "Carlos de Souza IV"),
+    ("PEDRO LIMA JR", "Pedro Lima Jr"),
+    ("jose alves JUNIOR", "Jose Alves Junior"),
+    ("ZE FILHO", "Ze Filho"),
+    ("DE LA CRUZ E SILVA III", "De La Cruz e Silva III"),
+])
+def test_nome_proprio(entrada, esperado):
+    assert emails._nome_proprio(entrada) == esperado
