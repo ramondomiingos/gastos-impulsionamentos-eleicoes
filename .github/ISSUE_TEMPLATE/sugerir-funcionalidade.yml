@@ -17,4 +17,4 @@ body:
   - type: markdown
     attributes:
       value: |
-        Lembrete das regras do projeto: sem partido do candidato, linguagem neutra ("valores declarados"), nada é enviado automaticamente. Veja o [CONTRIBUTING](../blob/main/CONTRIBUTING.md).
+        Lembrete das regras do projeto: sem partido do candidato, linguagem neutra ("valores declarados"), nada é enviado automaticamente. Veja o [CONTRIBUTING](https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes/blob/main/CONTRIBUTING.md).
