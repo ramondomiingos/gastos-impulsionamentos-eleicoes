@@ -10,43 +10,43 @@
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 350675829.16,
-   "principal": 35606309.12,
-   "confirmado": 29848480.65,
+   "total": 353502540.36,
+   "principal": 35716309.12,
+   "confirmado": 29958480.65,
    "generico": 5757828.47,
    "provavel": 59801.9,
-   "proporcao": 0.101536,
+   "proporcao": 0.101036,
    "n_candidatos": 1364,
    "n_gastaram": 666,
    "n_elegiveis": 598,
    "pago": 34848246.76,
    "pago_publico": 27621591.36,
    "pct_publico": 0.792625,
-   "cobertura_pago": 0.97871,
+   "cobertura_pago": 0.975696,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 282,
      "pct_acima": 0.471572,
-     "excedente": 22578926.89
+     "excedente": 22622944.59
     },
     {
      "teto": 0.1,
-     "n_acima": 185,
-     "pct_acima": 0.309365,
-     "excedente": 16064349.08
+     "n_acima": 184,
+     "pct_acima": 0.307692,
+     "excedente": 16089504.58
     },
     {
      "teto": 0.15,
      "n_acima": 135,
      "pct_acima": 0.225753,
-     "excedente": 12164938.4
+     "excedente": 12184762.04
     },
     {
      "teto": 0.2,
-     "n_acima": 111,
-     "pct_acima": 0.185619,
-     "excedente": 9240162.96
+     "n_acima": 110,
+     "pct_acima": 0.183946,
+     "excedente": 9250091.85
     }
    ],
    "top": [
@@ -68,8 +68,8 @@
      "uf": "RJ",
      "principal": 963000.0,
      "confirmado": 963000.0,
-     "total": 2030369.4,
-     "proporcao": 0.474298,
+     "total": 2049994.4,
+     "proporcao": 0.469757,
      "pequena": false
     },
     {
@@ -101,8 +101,8 @@
      "uf": "RJ",
      "principal": 749005.0,
      "confirmado": 711005.0,
-     "total": 2014879.0,
-     "proporcao": 0.371737,
+     "total": 2043384.0,
+     "proporcao": 0.366551,
      "pequena": false
     }
    ]
@@ -110,12 +110,12 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 33433040.16,
+   "total": 33456330.16,
    "principal": 1244635.0,
    "confirmado": 1244635.0,
    "generico": 0.0,
    "provavel": 72.99,
-   "proporcao": 0.037228,
+   "proporcao": 0.037202,
    "n_candidatos": 8,
    "n_gastaram": 7,
    "n_elegiveis": 7,
@@ -128,25 +128,25 @@
      "teto": 0.05,
      "n_acima": 2,
      "pct_acima": 0.285714,
-     "excedente": 289362.4
+     "excedente": 288247.9
     },
     {
      "teto": 0.1,
      "n_acima": 2,
      "pct_acima": 0.285714,
-     "excedente": 218674.81
+     "excedente": 216445.81
     },
     {
      "teto": 0.15,
      "n_acima": 2,
      "pct_acima": 0.285714,
-     "excedente": 147987.21
+     "excedente": 144643.71
     },
     {
      "teto": 0.2,
-     "n_acima": 2,
-     "pct_acima": 0.285714,
-     "excedente": 77299.61
+     "n_acima": 1,
+     "pct_acima": 0.142857,
+     "excedente": 73399.7
     }
    ],
    "top": [
@@ -157,8 +157,8 @@
      "uf": "RJ",
      "principal": 490000.0,
      "confirmado": 490000.0,
-     "total": 15286222.82,
-     "proporcao": 0.032055,
+     "total": 15287222.82,
+     "proporcao": 0.032053,
      "pequena": false
     },
     {
@@ -179,8 +179,8 @@
      "uf": "RJ",
      "principal": 200050.0,
      "confirmado": 200050.0,
-     "total": 980750.43,
-     "proporcao": 0.203976,
+     "total": 1003040.43,
+     "proporcao": 0.199444,
      "pequena": false
     },
     {
@@ -210,12 +210,12 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 25185757.27,
+   "total": 25243904.09,
    "principal": 2546978.13,
    "confirmado": 2126978.13,
    "generico": 420000.0,
    "provavel": 6000.0,
-   "proporcao": 0.101128,
+   "proporcao": 0.100895,
    "n_candidatos": 12,
    "n_gastaram": 8,
    "n_elegiveis": 10,
@@ -228,13 +228,13 @@
      "teto": 0.05,
      "n_acima": 6,
      "pct_acima": 0.6,
-     "excedente": 1368476.89
+     "excedente": 1365570.45
     },
     {
      "teto": 0.1,
      "n_acima": 3,
      "pct_acima": 0.3,
-     "excedente": 711287.55
+     "excedente": 709438.55
     },
     {
      "teto": 0.15,
@@ -268,8 +268,8 @@
      "uf": "RJ",
      "principal": 620000.0,
      "confirmado": 335000.0,
-     "total": 5468904.52,
-     "proporcao": 0.113368,
+     "total": 5487394.52,
+     "proporcao": 0.112986,
      "pequena": false
     },
     {
@@ -279,8 +279,8 @@
      "uf": "RJ",
      "principal": 365000.0,
      "confirmado": 350000.0,
-     "total": 4174264.84,
-     "proporcao": 0.087441,
+     "total": 4178945.56,
+     "proporcao": 0.087343,
      "pequena": false
     },
     {
@@ -301,8 +301,8 @@
      "uf": "RJ",
      "principal": 183000.0,
      "confirmado": 183000.0,
-     "total": 3571383.11,
-     "proporcao": 0.051241,
+     "total": 3606341.11,
+     "proporcao": 0.050744,
      "pequena": false
     }
    ]
@@ -310,43 +310,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 199258394.37,
-   "principal": 21047915.5,
-   "confirmado": 17438223.1,
+   "total": 201310734.38,
+   "principal": 21087915.5,
+   "confirmado": 17478223.1,
    "generico": 3609692.4,
    "provavel": 53117.89,
-   "proporcao": 0.105631,
+   "proporcao": 0.104753,
    "n_candidatos": 584,
    "n_gastaram": 312,
    "n_elegiveis": 289,
    "pago": 20572798.52,
    "pago_publico": 17031568.69,
    "pct_publico": 0.827868,
-   "cobertura_pago": 0.977427,
+   "cobertura_pago": 0.975573,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 138,
      "pct_acima": 0.477509,
-     "excedente": 13563218.15
+     "excedente": 13557955.14
     },
     {
      "teto": 0.1,
-     "n_acima": 90,
-     "pct_acima": 0.311419,
-     "excedente": 9530096.13
+     "n_acima": 89,
+     "pct_acima": 0.307958,
+     "excedente": 9512128.06
     },
     {
      "teto": 0.15,
      "n_acima": 65,
      "pct_acima": 0.224913,
-     "excedente": 7048746.31
+     "excedente": 7023165.52
     },
     {
      "teto": 0.2,
      "n_acima": 52,
      "pct_acima": 0.179931,
-     "excedente": 5169786.06
+     "excedente": 5141950.46
     }
    ],
    "top": [
@@ -368,8 +368,8 @@
      "uf": "RJ",
      "principal": 963000.0,
      "confirmado": 963000.0,
-     "total": 2030369.4,
-     "proporcao": 0.474298,
+     "total": 2049994.4,
+     "proporcao": 0.469757,
      "pequena": false
     },
     {
@@ -379,8 +379,8 @@
      "uf": "RJ",
      "principal": 749005.0,
      "confirmado": 711005.0,
-     "total": 2014879.0,
-     "proporcao": 0.371737,
+     "total": 2043384.0,
+     "proporcao": 0.366551,
      "pequena": false
     },
     {
@@ -390,8 +390,8 @@
      "uf": "RJ",
      "principal": 710000.0,
      "confirmado": 560000.0,
-     "total": 1643939.19,
-     "proporcao": 0.431889,
+     "total": 1644337.19,
+     "proporcao": 0.431785,
      "pequena": false
     },
     {
@@ -410,43 +410,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 92798637.36,
-   "principal": 10766780.49,
-   "confirmado": 9038644.42,
+   "total": 93491571.73,
+   "principal": 10836780.49,
+   "confirmado": 9108644.42,
    "generico": 1728136.07,
    "provavel": 611.02,
-   "proporcao": 0.116023,
+   "proporcao": 0.115912,
    "n_candidatos": 760,
    "n_gastaram": 339,
    "n_elegiveis": 292,
    "pago": 10521808.24,
    "pago_publico": 6898682.67,
    "pct_publico": 0.655656,
-   "cobertura_pago": 0.977247,
+   "cobertura_pago": 0.970935,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 136,
      "pct_acima": 0.465753,
-     "excedente": 7357869.45
+     "excedente": 7411171.08
     },
     {
      "teto": 0.1,
      "n_acima": 90,
      "pct_acima": 0.308219,
-     "excedente": 5604290.59
+     "excedente": 5651492.17
     },
     {
      "teto": 0.15,
      "n_acima": 67,
      "pct_acima": 0.229452,
-     "excedente": 4471872.66
+     "excedente": 4520620.58
     },
     {
      "teto": 0.2,
      "n_acima": 56,
      "pct_acima": 0.191781,
-     "excedente": 3632967.65
+     "excedente": 3674632.05
     }
    ],
    "top": [
@@ -468,8 +468,8 @@
      "uf": "RJ",
      "principal": 350000.0,
      "confirmado": 350000.0,
-     "total": 567106.6,
-     "proporcao": 0.617168,
+     "total": 569824.6,
+     "proporcao": 0.614224,
      "pequena": false
     },
     {
@@ -501,8 +501,8 @@
      "uf": "RJ",
      "principal": 250000.0,
      "confirmado": 250000.0,
-     "total": 699503.68,
-     "proporcao": 0.357396,
+     "total": 704753.68,
+     "proporcao": 0.354734,
      "pequena": false
     }
    ]

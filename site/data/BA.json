@@ -10,43 +10,43 @@
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 268035744.57,
-   "principal": 9778421.81,
-   "confirmado": 7910248.53,
+   "total": 271610903.55,
+   "principal": 10226421.81,
+   "confirmado": 8358248.53,
    "generico": 1868173.28,
    "provavel": 1040.33,
-   "proporcao": 0.036482,
+   "proporcao": 0.037651,
    "n_candidatos": 896,
    "n_gastaram": 311,
-   "n_elegiveis": 431,
+   "n_elegiveis": 432,
    "pago": 10053243.64,
    "pago_publico": 8479637.84,
    "pct_publico": 0.843473,
-   "cobertura_pago": 1.0,
+   "cobertura_pago": 0.983066,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 88,
-     "pct_acima": 0.204176,
-     "excedente": 3837418.48
+     "n_acima": 91,
+     "pct_acima": 0.210648,
+     "excedente": 4207494.09
     },
     {
      "teto": 0.1,
-     "n_acima": 54,
-     "pct_acima": 0.12529,
-     "excedente": 1758637.15
+     "n_acima": 56,
+     "pct_acima": 0.12963,
+     "excedente": 1969787.51
     },
     {
      "teto": 0.15,
-     "n_acima": 31,
-     "pct_acima": 0.071926,
-     "excedente": 981024.49
+     "n_acima": 34,
+     "pct_acima": 0.078704,
+     "excedente": 1078684.36
     },
     {
      "teto": 0.2,
-     "n_acima": 18,
-     "pct_acima": 0.041763,
-     "excedente": 633178.31
+     "n_acima": 19,
+     "pct_acima": 0.043981,
+     "excedente": 643222.81
     }
    ],
    "top": [
@@ -55,10 +55,10 @@
      "nome": "Antonio Carlos Peixoto de Magalhães Neto",
      "cargo": "Governador",
      "uf": "BA",
-     "principal": 850000.0,
-     "confirmado": 830000.0,
-     "total": 13511772.16,
-     "proporcao": 0.062908,
+     "principal": 925000.0,
+     "confirmado": 905000.0,
+     "total": 13586772.16,
+     "proporcao": 0.068081,
      "pequena": false
     },
     {
@@ -68,8 +68,8 @@
      "uf": "BA",
      "principal": 755000.0,
      "confirmado": 755000.0,
-     "total": 2490192.0,
-     "proporcao": 0.303189,
+     "total": 2500642.0,
+     "proporcao": 0.301922,
      "pequena": false
     },
     {
@@ -84,25 +84,25 @@
      "pequena": false
     },
     {
+     "sq": "50002534985",
+     "nome": "Dayane Jamille Carneiro dos Santos Pimentel",
+     "cargo": "Deputado Federal",
+     "uf": "BA",
+     "principal": 478494.47,
+     "confirmado": 478494.47,
+     "total": 3046465.9,
+     "proporcao": 0.157065,
+     "pequena": false
+    },
+    {
      "sq": "50002533123",
      "nome": "João Inácio Ribeiro Roma Neto",
      "cargo": "Senador",
      "uf": "BA",
      "principal": 450001.0,
      "confirmado": 450001.0,
-     "total": 4499809.6,
+     "total": 4499823.2,
      "proporcao": 0.100004,
-     "pequena": false
-    },
-    {
-     "sq": "50002534985",
-     "nome": "Dayane Jamille Carneiro dos Santos Pimentel",
-     "cargo": "Deputado Federal",
-     "uf": "BA",
-     "principal": 443494.47,
-     "confirmado": 443494.47,
-     "total": 3011465.9,
-     "proporcao": 0.147269,
      "pequena": false
     }
    ]
@@ -110,12 +110,12 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 20729779.52,
-   "principal": 1360800.0,
-   "confirmado": 850800.0,
+   "total": 20804779.52,
+   "principal": 1435800.0,
+   "confirmado": 925800.0,
    "generico": 510000.0,
    "provavel": 0.0,
-   "proporcao": 0.065645,
+   "proporcao": 0.069013,
    "n_candidatos": 5,
    "n_gastaram": 4,
    "n_elegiveis": 3,
@@ -128,7 +128,7 @@
      "teto": 0.05,
      "n_acima": 3,
      "pct_acima": 1.0,
-     "excedente": 323599.04
+     "excedente": 394849.04
     },
     {
      "teto": 0.1,
@@ -155,10 +155,10 @@
      "nome": "Antonio Carlos Peixoto de Magalhães Neto",
      "cargo": "Governador",
      "uf": "BA",
-     "principal": 850000.0,
-     "confirmado": 830000.0,
-     "total": 13511772.16,
-     "proporcao": 0.062908,
+     "principal": 925000.0,
+     "confirmado": 905000.0,
+     "total": 13586772.16,
+     "proporcao": 0.068081,
      "pequena": false
     },
     {
@@ -199,12 +199,12 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 16951460.4,
+   "total": 17084002.0,
    "principal": 1149941.37,
    "confirmado": 1111941.37,
    "generico": 38000.0,
    "provavel": 29.99,
-   "proporcao": 0.067837,
+   "proporcao": 0.067311,
    "n_candidatos": 6,
    "n_gastaram": 6,
    "n_elegiveis": 5,
@@ -217,13 +217,13 @@
      "teto": 0.05,
      "n_acima": 2,
      "pct_acima": 0.4,
-     "excedente": 401459.67
+     "excedente": 395218.99
     },
     {
      "teto": 0.1,
      "n_acima": 1,
      "pct_acima": 0.2,
-     "excedente": 20.04
+     "excedente": 18.68
     },
     {
      "teto": 0.15,
@@ -246,7 +246,7 @@
      "uf": "BA",
      "principal": 450001.0,
      "confirmado": 450001.0,
-     "total": 4499809.6,
+     "total": 4499823.2,
      "proporcao": 0.100004,
      "pequena": false
     },
@@ -257,8 +257,8 @@
      "uf": "BA",
      "principal": 415000.0,
      "confirmado": 415000.0,
-     "total": 4771017.0,
-     "proporcao": 0.086984,
+     "total": 4895817.0,
+     "proporcao": 0.084766,
      "pequena": false
     },
     {
@@ -268,8 +268,8 @@
      "uf": "BA",
      "principal": 176000.0,
      "confirmado": 160000.0,
-     "total": 3660072.17,
-     "proporcao": 0.048086,
+     "total": 3663936.17,
+     "proporcao": 0.048036,
      "pequena": false
     },
     {
@@ -279,8 +279,8 @@
      "uf": "BA",
      "principal": 106000.0,
      "confirmado": 84000.0,
-     "total": 3898522.64,
-     "proporcao": 0.02719,
+     "total": 3902386.64,
+     "proporcao": 0.027163,
      "pequena": false
     },
     {
@@ -299,43 +299,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 161555667.47,
-   "principal": 4733333.26,
-   "confirmado": 4157311.88,
+   "total": 164143283.78,
+   "principal": 5086333.26,
+   "confirmado": 4510311.88,
    "generico": 576021.38,
    "provavel": 710.58,
-   "proporcao": 0.029298,
+   "proporcao": 0.030987,
    "n_candidatos": 425,
    "n_gastaram": 159,
    "n_elegiveis": 223,
    "pago": 4992094.11,
    "pago_publico": 4381060.64,
    "pct_publico": 0.8776,
-   "cobertura_pago": 1.0,
+   "cobertura_pago": 0.981472,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 33,
-     "pct_acima": 0.147982,
-     "excedente": 1945561.91
+     "n_acima": 35,
+     "pct_acima": 0.156951,
+     "excedente": 2248306.4
     },
     {
      "teto": 0.1,
-     "n_acima": 22,
-     "pct_acima": 0.098655,
-     "excedente": 1187856.78
+     "n_acima": 25,
+     "pct_acima": 0.112108,
+     "excedente": 1399018.37
     },
     {
      "teto": 0.15,
-     "n_acima": 13,
-     "pct_acima": 0.058296,
-     "excedente": 699661.23
+     "n_acima": 16,
+     "pct_acima": 0.071749,
+     "excedente": 792430.1
     },
     {
      "teto": 0.2,
-     "n_acima": 9,
-     "pct_acima": 0.040359,
-     "excedente": 489781.85
+     "n_acima": 10,
+     "pct_acima": 0.044843,
+     "excedente": 491826.35
     }
    ],
    "top": [
@@ -346,8 +346,8 @@
      "uf": "BA",
      "principal": 755000.0,
      "confirmado": 755000.0,
-     "total": 2490192.0,
-     "proporcao": 0.303189,
+     "total": 2500642.0,
+     "proporcao": 0.301922,
      "pequena": false
     },
     {
@@ -355,10 +355,10 @@
      "nome": "Dayane Jamille Carneiro dos Santos Pimentel",
      "cargo": "Deputado Federal",
      "uf": "BA",
-     "principal": 443494.47,
-     "confirmado": 443494.47,
-     "total": 3011465.9,
-     "proporcao": 0.147269,
+     "principal": 478494.47,
+     "confirmado": 478494.47,
+     "total": 3046465.9,
+     "proporcao": 0.157065,
      "pequena": false
     },
     {
@@ -368,30 +368,30 @@
      "uf": "BA",
      "principal": 385584.9,
      "confirmado": 315584.9,
-     "total": 2806496.8,
-     "proporcao": 0.13739,
+     "total": 2982996.8,
+     "proporcao": 0.129261,
      "pequena": false
     },
     {
-     "sq": "50002534749",
-     "nome": "Marcelo de Souza Emerenciano",
+     "sq": "50002535008",
+     "nome": "Sandro Alex dos Santos Silva Filho",
      "cargo": "Deputado Federal",
      "uf": "BA",
-     "principal": 173800.0,
-     "confirmado": 173800.0,
-     "total": 457219.75,
-     "proporcao": 0.380124,
+     "principal": 244036.36,
+     "confirmado": 244036.36,
+     "total": 1489999.99,
+     "proporcao": 0.163783,
      "pequena": false
     },
     {
-     "sq": "50002538758",
-     "nome": "Deyvid Souza Bacelar da Silva",
+     "sq": "50002531450",
+     "nome": "Talita Santos de Oliveira",
      "cargo": "Deputado Federal",
      "uf": "BA",
-     "principal": 115000.0,
-     "confirmado": 115000.0,
-     "total": 167626.8,
-     "proporcao": 0.686048,
+     "principal": 197000.0,
+     "confirmado": 197000.0,
+     "total": 964327.5,
+     "proporcao": 0.204287,
      "pequena": false
     }
    ]
@@ -399,43 +399,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 68798837.18,
-   "principal": 2534347.18,
-   "confirmado": 1790195.28,
+   "total": 69578838.25,
+   "principal": 2554347.18,
+   "confirmado": 1810195.28,
    "generico": 744151.9,
    "provavel": 299.76,
-   "proporcao": 0.036837,
+   "proporcao": 0.036712,
    "n_candidatos": 460,
    "n_gastaram": 142,
-   "n_elegiveis": 200,
+   "n_elegiveis": 201,
    "pago": 2478408.16,
    "pago_publico": 1628576.2,
    "pct_publico": 0.657106,
-   "cobertura_pago": 0.977928,
+   "cobertura_pago": 0.970271,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 50,
-     "pct_acima": 0.25,
-     "excedente": 1166797.86
+     "n_acima": 51,
+     "pct_acima": 0.253731,
+     "excedente": 1169119.66
     },
     {
      "teto": 0.1,
-     "n_acima": 31,
-     "pct_acima": 0.155,
-     "excedente": 570760.33
+     "n_acima": 30,
+     "pct_acima": 0.149254,
+     "excedente": 570750.46
     },
     {
      "teto": 0.15,
      "n_acima": 18,
-     "pct_acima": 0.09,
-     "excedente": 281363.27
+     "pct_acima": 0.089552,
+     "excedente": 286254.27
     },
     {
      "teto": 0.2,
      "n_acima": 9,
-     "pct_acima": 0.045,
-     "excedente": 143396.46
+     "pct_acima": 0.044776,
+     "excedente": 151396.46
     }
    ],
    "top": [
@@ -468,8 +468,8 @@
      "uf": "BA",
      "principal": 103000.0,
      "confirmado": 48000.0,
-     "total": 953457.77,
-     "proporcao": 0.108028,
+     "total": 962457.77,
+     "proporcao": 0.107018,
      "pequena": false
     },
     {

@@ -10,12 +10,12 @@
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 48796888.53,
+   "total": 48817331.13,
    "principal": 1223707.42,
    "confirmado": 598555.9,
    "generico": 625151.52,
    "provavel": 39.99,
-   "proporcao": 0.025078,
+   "proporcao": 0.025067,
    "n_candidatos": 211,
    "n_gastaram": 69,
    "n_elegiveis": 106,
@@ -28,7 +28,7 @@
      "teto": 0.05,
      "n_acima": 22,
      "pct_acima": 0.207547,
-     "excedente": 376094.86
+     "excedente": 375453.46
     },
     {
      "teto": 0.1,
@@ -310,12 +310,12 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 23826670.34,
+   "total": 23840811.94,
    "principal": 509214.71,
    "confirmado": 324179.99,
    "generico": 185034.72,
    "provavel": 0.0,
-   "proporcao": 0.021372,
+   "proporcao": 0.021359,
    "n_candidatos": 67,
    "n_gastaram": 28,
    "n_elegiveis": 47,
@@ -328,7 +328,7 @@
      "teto": 0.05,
      "n_acima": 10,
      "pct_acima": 0.212766,
-     "excedente": 184755.45
+     "excedente": 184114.05
     },
     {
      "teto": 0.1,
@@ -379,8 +379,8 @@
      "uf": "AC",
      "principal": 50000.0,
      "confirmado": 0.0,
-     "total": 968859.0,
-     "proporcao": 0.051607,
+     "total": 981687.0,
+     "proporcao": 0.050933,
      "pequena": false
     },
     {
@@ -410,12 +410,12 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 13273881.49,
+   "total": 13280182.49,
    "principal": 336775.91,
    "confirmado": 168375.91,
    "generico": 168400.0,
    "provavel": 39.99,
-   "proporcao": 0.025371,
+   "proporcao": 0.025359,
    "n_candidatos": 132,
    "n_gastaram": 30,
    "n_elegiveis": 50,

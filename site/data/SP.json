@@ -10,43 +10,43 @@
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 657685743.63,
-   "principal": 103913594.91,
-   "confirmado": 84280593.16,
-   "generico": 19633001.75,
+   "total": 662078672.51,
+   "principal": 105219594.91,
+   "confirmado": 85475093.16,
+   "generico": 19744501.75,
    "provavel": 24724.33,
-   "proporcao": 0.157999,
+   "proporcao": 0.158923,
    "n_candidatos": 1921,
    "n_gastaram": 1211,
-   "n_elegiveis": 1138,
-   "pago": 103398723.9,
-   "pago_publico": 84401228.8,
-   "pct_publico": 0.81627,
-   "cobertura_pago": 0.995045,
+   "n_elegiveis": 1139,
+   "pago": 103404473.9,
+   "pago_publico": 84406978.8,
+   "pct_publico": 0.81628,
+   "cobertura_pago": 0.982749,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 662,
-     "pct_acima": 0.581722,
-     "excedente": 76530612.86
+     "n_acima": 663,
+     "pct_acima": 0.58209,
+     "excedente": 77652092.95
     },
     {
      "teto": 0.1,
-     "n_acima": 492,
-     "pct_acima": 0.432337,
-     "excedente": 56810476.69
+     "n_acima": 493,
+     "pct_acima": 0.432836,
+     "excedente": 57781827.97
     },
     {
      "teto": 0.15,
-     "n_acima": 370,
-     "pct_acima": 0.325132,
-     "excedente": 42071278.02
+     "n_acima": 371,
+     "pct_acima": 0.325724,
+     "excedente": 42962078.08
     },
     {
      "teto": 0.2,
-     "n_acima": 283,
-     "pct_acima": 0.248682,
-     "excedente": 31586362.85
+     "n_acima": 282,
+     "pct_acima": 0.247586,
+     "excedente": 32185714.6
     }
    ],
    "top": [
@@ -57,8 +57,8 @@
      "uf": "SP",
      "principal": 3500000.0,
      "confirmado": 300000.0,
-     "total": 25487215.37,
-     "proporcao": 0.137324,
+     "total": 25495293.94,
+     "proporcao": 0.13728,
      "pequena": false
     },
     {
@@ -110,12 +110,12 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 40022050.25,
+   "total": 40079210.83,
    "principal": 6042490.0,
    "confirmado": 2842490.0,
    "generico": 3200000.0,
    "provavel": 0.0,
-   "proporcao": 0.150979,
+   "proporcao": 0.150764,
    "n_candidatos": 5,
    "n_gastaram": 3,
    "n_elegiveis": 4,
@@ -128,13 +128,13 @@
      "teto": 0.05,
      "n_acima": 2,
      "pct_acima": 0.5,
-     "excedente": 4066719.24
+     "excedente": 4066315.32
     },
     {
      "teto": 0.1,
      "n_acima": 2,
      "pct_acima": 0.5,
-     "excedente": 2093548.49
+     "excedente": 2092740.63
     },
     {
      "teto": 0.15,
@@ -157,8 +157,8 @@
      "uf": "SP",
      "principal": 3500000.0,
      "confirmado": 300000.0,
-     "total": 25487215.37,
-     "proporcao": 0.137324,
+     "total": 25495293.94,
+     "proporcao": 0.13728,
      "pequena": false
     },
     {
@@ -188,12 +188,12 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 25825530.15,
-   "principal": 5453110.0,
-   "confirmado": 4539110.0,
-   "generico": 914000.0,
+   "total": 26163833.75,
+   "principal": 5728110.0,
+   "confirmado": 4714110.0,
+   "generico": 1014000.0,
    "provavel": 0.0,
-   "proporcao": 0.211152,
+   "proporcao": 0.218932,
    "n_candidatos": 11,
    "n_gastaram": 8,
    "n_elegiveis": 9,
@@ -206,19 +206,19 @@
      "teto": 0.05,
      "n_acima": 5,
      "pct_acima": 0.555556,
-     "excedente": 4286459.01
+     "excedente": 4544543.83
     },
     {
      "teto": 0.1,
      "n_acima": 4,
      "pct_acima": 0.444444,
-     "excedente": 3230409.63
+     "excedente": 3471579.27
     },
     {
      "teto": 0.15,
      "n_acima": 4,
      "pct_acima": 0.444444,
-     "excedente": 2176859.44
+     "excedente": 2401113.9
     },
     {
      "teto": 0.2,
@@ -251,6 +251,17 @@
      "pequena": false
     },
     {
+     "sq": "250002532794",
+     "nome": "Ricardo de Aquino Salles",
+     "cargo": "Senador",
+     "uf": "SP",
+     "principal": 934495.0,
+     "confirmado": 359495.0,
+     "total": 4726027.79,
+     "proporcao": 0.197734,
+     "pequena": false
+    },
+    {
      "sq": "250002541308",
      "nome": "Andre Luis do Prado",
      "cargo": "Senador",
@@ -259,17 +270,6 @@
      "confirmado": 486000.0,
      "total": 4523736.5,
      "proporcao": 0.199172,
-     "pequena": false
-    },
-    {
-     "sq": "250002532794",
-     "nome": "Ricardo de Aquino Salles",
-     "cargo": "Senador",
-     "uf": "SP",
-     "principal": 659495.0,
-     "confirmado": 184495.0,
-     "total": 4387724.19,
-     "proporcao": 0.150305,
      "pequena": false
     },
     {
@@ -288,43 +288,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 374873880.26,
-   "principal": 56326386.52,
-   "confirmado": 46840729.84,
+   "total": 377117248.16,
+   "principal": 56920386.52,
+   "confirmado": 47434729.84,
    "generico": 9485656.68,
    "provavel": 20869.64,
-   "proporcao": 0.150254,
+   "proporcao": 0.150936,
    "n_candidatos": 883,
    "n_gastaram": 574,
    "n_elegiveis": 546,
    "pago": 55876255.14,
    "pago_publico": 46794507.66,
    "pct_publico": 0.837467,
-   "cobertura_pago": 0.992009,
+   "cobertura_pago": 0.981656,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 312,
-     "pct_acima": 0.571429,
-     "excedente": 41102289.66
+     "n_acima": 313,
+     "pct_acima": 0.57326,
+     "excedente": 41596877.32
     },
     {
      "teto": 0.1,
      "n_acima": 230,
      "pct_acima": 0.421245,
-     "excedente": 30559095.91
+     "excedente": 30967104.16
     },
     {
      "teto": 0.15,
-     "n_acima": 166,
-     "pct_acima": 0.304029,
-     "excedente": 23132164.03
+     "n_acima": 167,
+     "pct_acima": 0.305861,
+     "excedente": 23512218.6
     },
     {
      "teto": 0.2,
-     "n_acima": 131,
-     "pct_acima": 0.239927,
-     "excedente": 17322485.47
+     "n_acima": 132,
+     "pct_acima": 0.241758,
+     "excedente": 17671456.36
     }
    ],
    "top": [
@@ -368,8 +368,8 @@
      "uf": "SP",
      "principal": 1352000.0,
      "confirmado": 382000.0,
-     "total": 2682190.92,
-     "proporcao": 0.504066,
+     "total": 2702190.92,
+     "proporcao": 0.500335,
      "pequena": false
     },
     {
@@ -379,8 +379,8 @@
      "uf": "SP",
      "principal": 1346247.07,
      "confirmado": 1346247.07,
-     "total": 3082969.11,
-     "proporcao": 0.436672,
+     "total": 3083029.11,
+     "proporcao": 0.436664,
      "pequena": false
     }
    ]
@@ -388,43 +388,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 216964282.97,
-   "principal": 36091608.39,
-   "confirmado": 30058263.32,
-   "generico": 6033345.07,
+   "total": 218718379.77,
+   "principal": 36528608.39,
+   "confirmado": 30483763.32,
+   "generico": 6044845.07,
    "provavel": 3854.69,
-   "proporcao": 0.166348,
+   "proporcao": 0.167012,
    "n_candidatos": 1022,
    "n_gastaram": 626,
-   "n_elegiveis": 579,
-   "pago": 35751868.76,
-   "pago_publico": 26748401.14,
-   "pct_publico": 0.748168,
-   "cobertura_pago": 0.990587,
+   "n_elegiveis": 580,
+   "pago": 35757618.76,
+   "pago_publico": 26754151.14,
+   "pct_publico": 0.748208,
+   "cobertura_pago": 0.978894,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 343,
-     "pct_acima": 0.592401,
-     "excedente": 27075144.95
+     "pct_acima": 0.591379,
+     "excedente": 27444356.48
     },
     {
      "teto": 0.1,
-     "n_acima": 256,
-     "pct_acima": 0.442142,
-     "excedente": 20927422.67
+     "n_acima": 257,
+     "pct_acima": 0.443103,
+     "excedente": 21250403.91
     },
     {
      "teto": 0.15,
      "n_acima": 199,
-     "pct_acima": 0.343696,
-     "excedente": 16318794.51
+     "pct_acima": 0.343103,
+     "excedente": 16605285.54
     },
     {
      "teto": 0.2,
-     "n_acima": 151,
-     "pct_acima": 0.260794,
-     "excedente": 12855155.39
+     "n_acima": 149,
+     "pct_acima": 0.256897,
+     "excedente": 13105536.24
     }
    ],
    "top": [
@@ -444,10 +444,10 @@
      "nome": "Mosart Aragão Pereira",
      "cargo": "Deputado Estadual",
      "uf": "SP",
-     "principal": 650898.5,
-     "confirmado": 650898.5,
-     "total": 724206.43,
-     "proporcao": 0.898775,
+     "principal": 720898.5,
+     "confirmado": 720898.5,
+     "total": 798706.93,
+     "proporcao": 0.902582,
      "pequena": false
     },
     {
@@ -457,8 +457,8 @@
      "uf": "SP",
      "principal": 625000.0,
      "confirmado": 625000.0,
-     "total": 944899.76,
-     "proporcao": 0.661446,
+     "total": 950262.89,
+     "proporcao": 0.657713,
      "pequena": false
     },
     {
