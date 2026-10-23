@@ -59,7 +59,9 @@
      "confirmado": 12850000.0,
      "total": 87463578.05,
      "proporcao": 0.171786,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "280002542548",
@@ -70,7 +72,9 @@
      "confirmado": 2590000.0,
      "total": 65679887.48,
      "proporcao": 0.040956,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "280002551547",
@@ -81,7 +85,9 @@
      "confirmado": 690000.0,
      "total": 1506091.13,
      "proporcao": 0.45814,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "280002548139",
@@ -92,7 +98,9 @@
      "confirmado": 145500.0,
      "total": 1077899.66,
      "proporcao": 0.510715,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "280002551932",
@@ -103,9 +111,13 @@
      "confirmado": 546700.0,
      "total": 22107406.5,
      "proporcao": 0.024729,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     }
-   ]
+   ],
+   "partido": "ZZPARTIDO",
+   "sg_partido": "ZZPARTIDO"
   }
  }
 }

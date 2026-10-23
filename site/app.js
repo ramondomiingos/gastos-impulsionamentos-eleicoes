@@ -12,13 +12,13 @@
     "deputado-distrital": "Deputado distrital",
   };
   var NOMES_CARDS = ["gancho", "por-cargo", "maiores-valores", "tetos", "convite"];
-  var CHAVE_PERFIL = "radar.perfil";
 
   var BASE = baseDados();
   var indice = null;
   var cacheUf = {};
   var atual = { uf: null, cargo: null, dados: null, modelo: null };
   var seq = 0;
+  var hashProprio = null;
 
   function $(id) { return document.getElementById(id); }
 
@@ -45,16 +45,26 @@
     });
   }
 
-  function mostrarErro(msg) {
+  function mostrarErro(msg, semNovaTentativa) {
     $("status").textContent = "";
     $("erro-msg").textContent = msg;
+    $("erro-cmd").hidden = true;
+    $("btn-tentar").hidden = !!semNovaTentativa;
     $("erro").hidden = false;
     $("painel").hidden = true;
   }
 
   function limparErro() { $("erro").hidden = true; }
 
+  function avisoArquivoLocal() {
+    mostrarErro("Esta página precisa ser aberta por um servidor, porque o navegador bloqueia a leitura dos dados quando ela vem direto de um arquivo. Na pasta do projeto, rode o comando abaixo e abra http://localhost:8000", true);
+    var cmd = $("erro-cmd");
+    cmd.textContent = "python3 -m http.server -d site 8000";
+    cmd.hidden = false;
+  }
+
   function iniciar() {
+    if (Lib.modoArquivoLocal(location.protocol)) { avisoArquivoLocal(); return; }
     limparErro();
     $("status").textContent = "Carregando os dados…";
     buscar("index.json").then(function (idx) {
@@ -116,6 +126,7 @@
   function escolher(uf, cargo) {
     var h = Lib.buildHash(uf, cargo);
     if (location.hash === h) { mostrar(uf, cargo, false); return; }
+    hashProprio = h;
     location.hash = h; // dispara hashchange
   }
 
@@ -127,13 +138,16 @@
       try { history.replaceState(null, "", Lib.buildHash(uf, cargo)); } catch (e) { /* ignora */ }
     }
     $("status").textContent = "Carregando " + nomeUf(uf) + "…";
-    var p = cacheUf[uf] ? Promise.resolve(cacheUf[uf]) : buscar(uf + ".json").then(function (d) { cacheUf[uf] = d; return d; });
+    var caminho = Lib.caminhoUf(indice, uf);
+    if (!caminho) { mostrarErro("Estado inválido: " + uf + "."); return; }
+    var p = cacheUf[uf] ? Promise.resolve(cacheUf[uf]) : buscar(caminho).then(function (d) { cacheUf[uf] = d; return d; });
     p.then(function (dados) {
       if (meu !== seq) return;
       limparErro();
       atual = { uf: uf, cargo: cargo, dados: dados };
       renderizar();
-      $("status").textContent = "";
+      var r0 = (dados.recortes || {})[cargo];
+      $("status").textContent = "Dados de " + dados.nome + " · " + ((r0 && r0.rotulo) || ROTULOS_CARGO[cargo] || cargo) + " carregados.";
     }).catch(function (e) {
       if (meu !== seq) return;
       mostrarErro("Não foi possível carregar os dados de " + nomeUf(uf) + " (" + e.message + "). Tente de novo.");
@@ -218,7 +232,10 @@
       if (t.pequena) nome.appendChild(el("span", "etiqueta", "campanha pequena"));
       li.appendChild(nome);
       li.appendChild(el("span", "meta", t.cargo + " · " + t.uf));
-      li.appendChild(el("span", "valor", Lib.formatBRL(t.principal) + " em plataformas"));
+      var vl = el("span", "valor", Lib.formatBRL(t.principal) + " em plataformas");
+      var tg = Lib.tagFraca(t);
+      if (tg) vl.appendChild(el("span", "tag", tg));
+      li.appendChild(vl);
       li.appendChild(el("span", "meta", "Confirmado: " + Lib.formatBRL(t.confirmado) + " · Total da campanha: " + Lib.formatBRL(t.total) +
         " · " + Lib.formatPct(t.proporcao) + " do total"));
       lista.appendChild(li);
@@ -226,28 +243,17 @@
   }
 
   // ---------- cards ----------
-  function perfilSalvo() {
-    try { return localStorage.getItem(CHAVE_PERFIL) || ""; } catch (e) { return ""; }
-  }
-  function salvarPerfil(v) {
-    try { localStorage.setItem(CHAVE_PERFIL, v); } catch (e) { /* sem armazenamento: segue sem salvar */ }
-  }
-  var perfil = perfilSalvo();
-
-  function textoPerfil(padrao) { return perfil.trim() || padrao; }
-
-  function construirCard(c, id) {
-    var s = el("section", "card");
-    s.id = id;
-    s.appendChild(el("div", "kicker", c.kicker));
-    if (c.tipo === "gancho") {
+  var CONSTRUTORES = {
+    gancho: function (s, c) {
       s.appendChild(el("h2", "", c.titulo));
       var h = el("div", "hero", c.hero.valor);
+      h.style.fontSize = Lib.fonteHero(c.hero) + "px";
       h.appendChild(el("small", "", c.hero.unidade));
       s.appendChild(h);
       s.appendChild(el("p", "sub", c.texto));
       s.appendChild(el("span", "chip", c.chip));
-    } else if (c.tipo === "barras") {
+    },
+    barras: function (s, c) {
       s.appendChild(el("h2", "", c.titulo));
       var bars = el("div", "bars");
       c.linhas.forEach(function (l) {
@@ -267,7 +273,8 @@
       });
       s.appendChild(bars);
       s.appendChild(el("p", "nota", c.nota));
-    } else if (c.tipo === "top") {
+    },
+    top: function (s, c) {
       s.appendChild(el("h2", "", c.titulo));
       if (c.vazio) {
         s.appendChild(el("div", "vazio", c.textoVazio));
@@ -278,15 +285,19 @@
           item.appendChild(el("div", "n", String(l.n)));
           var t = el("div", "t");
           t.appendChild(el("b", "", l.nome));
-          t.appendChild(el("div", "valor", l.valor));
-          t.appendChild(el("span", "", l.detalhe));
+          var ln = el("div", "linha");
+          ln.appendChild(el("span", "valor", l.valor));
+          ln.appendChild(el("span", "det", l.detalhe));
+          t.appendChild(ln);
+          if (l.tag) t.appendChild(el("span", "tag", l.tag));
           item.appendChild(t);
           it.appendChild(item);
         });
         s.appendChild(it);
       }
       s.appendChild(el("p", "nota", c.nota));
-    } else if (c.tipo === "tetos") {
+    },
+    tetos: function (s, c) {
       s.appendChild(el("h2", "", c.titulo));
       s.appendChild(el("p", "lead", c.lead));
       if (c.vazio) {
@@ -304,17 +315,25 @@
         s.appendChild(st);
       }
       s.appendChild(el("p", "nota", c.nota));
-    } else if (c.tipo === "cta") {
+    },
+    cta: function (s, c) {
       s.appendChild(el("h2", "", c.titulo));
       s.appendChild(el("p", "lead", c.texto));
-      var box = el("div", "cta-box", c.chamada);
-      var hd = el("span", "handle", textoPerfil(c.perfilPadrao));
-      hd.setAttribute("data-perfil", "1");
-      box.appendChild(hd);
-      s.appendChild(box);
+      var sg = el("div", "site-grande", c.endereco);
+      sg.style.fontSize = Lib.fonteEndereco(c.endereco) + "px";
+      s.appendChild(sg);
+      s.appendChild(el("p", "projeto", c.projeto));
       s.appendChild(el("div", "hashtag", c.hashtag));
-    }
+    },
+  };
+
+  function construirCard(c, id) {
+    var s = el("section", "card card-" + c.tipo);
+    s.id = id;
+    s.appendChild(el("div", "kicker", c.kicker));
+    CONSTRUTORES[c.tipo](s, c);
     s.appendChild(el("div", "spacer"));
+    if (c.tipo !== "cta") s.appendChild(el("div", "site", c.endereco));
     s.appendChild(el("p", "source", c.rodape));
     return s;
   }
@@ -334,7 +353,7 @@
   }
 
   function renderCards() {
-    var modelo = Lib.modeloCards(atual.dados, atual.cargo, indice);
+    var modelo = Lib.modeloCards(atual.dados, atual.cargo, indice, { endereco: Lib.enderecoDoSite(location.host) });
     atual.modelo = modelo;
     var grade = $("grade");
     limpar(grade);
@@ -450,29 +469,19 @@
       var cargo = $("sel-cargo").value;
       var ufAntiga = atual.uf || $("sel-uf").value;
       var r = Lib.escolherUf(indice, ufAntiga, cargo);
-      if (r.mudou) {
-        avisoFiltro(cargo === "presidente"
-          ? "Presidente é uma disputa nacional: o estado foi ajustado para Brasil."
-          : "O cargo " + (ROTULOS_CARGO[cargo] || cargo).toLowerCase() + " não existe em " + nomeUf(ufAntiga) + ": o estado foi ajustado para " + nomeUf(r.uf) + ".");
-      } else {
-        avisoFiltro("");
-      }
+      avisoFiltro(Lib.avisoTrocaUf({ uf: ufAntiga, nome: nomeUf(ufAntiga) }, { uf: r.uf, nome: nomeUf(r.uf) }, cargo, ROTULOS_CARGO[cargo] || cargo));
       escolher(r.uf, cargo);
     });
-    window.addEventListener("hashchange", function () { if (indice) aplicarHash(); });
+    window.addEventListener("hashchange", function () {
+      if (location.hash !== hashProprio) avisoFiltro(""); // hash editado à mão: o aviso antigo não vale mais
+      hashProprio = null;
+      if (indice) aplicarHash();
+    });
     window.addEventListener("resize", ajustarEscala);
     $("btn-tentar").addEventListener("click", function () {
       if (!indice) iniciar(); else mostrar(atual.uf || "BR", atual.cargo || "presidente", true);
     });
     $("btn-todos").addEventListener("click", baixarTodos);
-    var campo = $("perfil");
-    campo.value = perfil;
-    campo.addEventListener("input", function () {
-      perfil = campo.value;
-      salvarPerfil(perfil);
-      var h = document.querySelector("[data-perfil]");
-      if (h) h.textContent = textoPerfil("@seu_perfil");
-    });
   }
 
   ligar();

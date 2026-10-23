@@ -55,7 +55,9 @@
      "confirmado": 440000.0,
      "total": 3854032.5,
      "proporcao": 0.114166,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002534001",
@@ -66,7 +68,9 @@
      "confirmado": 333000.0,
      "total": 3033561.29,
      "proporcao": 0.119661,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002533843",
@@ -77,7 +81,9 @@
      "confirmado": 280000.0,
      "total": 3401468.22,
      "proporcao": 0.082317,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002533877",
@@ -88,7 +94,9 @@
      "confirmado": 0.0,
      "total": 1125016.68,
      "proporcao": 0.183108,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002535507",
@@ -99,9 +107,13 @@
      "confirmado": 202000.0,
      "total": 3011178.74,
      "proporcao": 0.067083,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     }
-   ]
+   ],
+   "partido": "ZZPARTIDO",
+   "sg_partido": "ZZPARTIDO"
   },
   "governador": {
    "rotulo": "Governo",
@@ -151,7 +163,9 @@
      "confirmado": 333000.0,
      "total": 3033561.29,
      "proporcao": 0.119661,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002534442",
@@ -162,7 +176,9 @@
      "confirmado": 0.0,
      "total": 5624490.37,
      "proporcao": 0.020446,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002535255",
@@ -173,7 +189,9 @@
      "confirmado": 90664.22,
      "total": 6779770.08,
      "proporcao": 0.013373,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002546757",
@@ -184,7 +202,9 @@
      "confirmado": 0.0,
      "total": 44926.5,
      "proporcao": 0.115745,
-     "pequena": true
+     "pequena": true,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002546756",
@@ -195,9 +215,13 @@
      "confirmado": 200.0,
      "total": 26222.4,
      "proporcao": 0.007627,
-     "pequena": true
+     "pequena": true,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     }
-   ]
+   ],
+   "partido": "ZZPARTIDO",
+   "sg_partido": "ZZPARTIDO"
   },
   "senador": {
    "rotulo": "Senado",
@@ -247,7 +271,9 @@
      "confirmado": 440000.0,
      "total": 3854032.5,
      "proporcao": 0.114166,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002533843",
@@ -258,7 +284,9 @@
      "confirmado": 280000.0,
      "total": 3401468.22,
      "proporcao": 0.082317,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002535507",
@@ -269,7 +297,9 @@
      "confirmado": 202000.0,
      "total": 3011178.74,
      "proporcao": 0.067083,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002534448",
@@ -280,7 +310,9 @@
      "confirmado": 77000.0,
      "total": 2370175.6,
      "proporcao": 0.032487,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     },
     {
      "sq": "200002534447",
@@ -291,9 +323,13 @@
      "confirmado": 20000.0,
      "total": 1106837.0,
      "proporcao": 0.027104,
-     "pequena": false
+     "pequena": false,
+     "partido": "ZZPARTIDO",
+     "sg_partido": "ZZPARTIDO"
     }
-   ]
+   ],
+   "partido": "ZZPARTIDO",
+   "sg_partido": "ZZPARTIDO"
   }
  }
 }

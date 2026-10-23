@@ -22,21 +22,68 @@
     return (num(x) * 100).toFixed(1).replace(".", ",") + "%";
   }
 
-  /* Número grande do card 1: {valor: "R$ 574", unidade: " mil"} ou {"R$ 20,4", " mi"}. */
+  /* Número grande do card 1: {valor: "R$ 574", unidade: " mil"}, {"R$ 20,4", " mi"}, {"R$ 105", " mi"} (sem decimal a partir de 100 mi), {"R$ 1,2", " bi"}. */
   function hero(n) {
     var v = num(n);
+    if (v >= 1000000000) return { valor: "R$ " + (v / 1000000000).toFixed(1).replace(".", ","), unidade: " bi" };
     if (v >= 1000000 || Math.round(v / 1000) >= 1000) {
-      return { valor: "R$ " + (v / 1000000).toFixed(1).replace(".", ","), unidade: " mi" };
+      var mi = v / 1000000;
+      if (Number(mi.toFixed(1)) >= 100) return { valor: "R$ " + Math.round(mi), unidade: " mi" };
+      return { valor: "R$ " + mi.toFixed(1).replace(".", ","), unidade: " mi" };
     }
     if (v >= 1000) return { valor: "R$ " + Math.round(v / 1000), unidade: " mil" };
     return { valor: formatBRL(v), unidade: "" };
   }
 
-  function escapeHtml(s) {
-    if (s === null || s === undefined) return "";
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
+  /* Tamanho de fonte (px) do número grande para caber nos 904 px úteis do card (estimativa por caracteres). */
+  function fonteHero(h) {
+    var largura = String(h.valor).length * 0.5 + String(h.unidade).length * 0.22;
+    return Math.max(60, Math.min(210, Math.floor(880 / largura)));
+  }
+
+  /* Tamanho de fonte (px) do endereço grande do card 5, para caber em uma linha de 904 px. */
+  function fonteEndereco(e) {
+    return Math.max(34, Math.min(72, Math.floor(880 / (String(e).length * 0.56))));
+  }
+
+  /* Marca neutra para valores pouco sustentados por plataforma citada. */
+  function tagFraca(t) {
+    var p = num(t && t.principal);
+    if (!(p > 0)) return null;
+    var c = num(t.confirmado);
+    if (c === 0) return "valor todo sem plataforma citada na nota";
+    if (c / p < 0.5) return "mais da metade sem plataforma citada";
+    return null;
+  }
+
+  var ENDERECO_PADRAO = "radar-impulsionamento.netlify.app";
+
+  /* Endereço do site para os cards: o host real, ou o padrão em localhost, arquivo local ou texto estranho. */
+  function enderecoDoSite(host) {
+    var h = String(host === null || host === undefined ? "" : host).toLowerCase();
+    if (!/^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+(:\d+)?$/.test(h)) return ENDERECO_PADRAO;
+    if (/^\d+(\.\d+){3}(:\d+)?$/.test(h) || /^localhost(\.|:|$)/.test(h)) return ENDERECO_PADRAO;
+    return h;
+  }
+
+  /* Página aberta direto de um arquivo: o navegador bloqueia fetch() de arquivos locais. */
+  function modoArquivoLocal(protocolo) {
+    return protocolo === "file:";
+  }
+
+  /* Caminho do JSON de uma UF, só se ela existe no índice. */
+  function caminhoUf(indice, uf) {
+    if (typeof uf !== "string") return null;
+    var ok = ((indice && indice.ufs) || []).some(function (u) { return u.uf === uf; });
+    return ok && /^[A-Z]{2}$/.test(uf) ? uf + ".json" : null;
+  }
+
+  function avisoTrocaUf(antiga, nova, cargo, rotulo) {
+    if (!antiga || !nova || antiga.uf === nova.uf) return "";
+    if (cargo === "presidente") return "Presidente é uma disputa nacional: o estado foi ajustado para " + nova.nome + ".";
+    if (cargo === "deputado-distrital") return rotulo + " existe só no Distrito Federal: o estado foi ajustado para " + nova.nome + ".";
+    if (antiga.uf === "BR") return "Escolha um estado: mostrando " + nova.nome + " por enquanto.";
+    return "O cargo " + String(rotulo).toLowerCase() + " não existe em " + antiga.nome + ": o estado foi ajustado para " + nova.nome + ".";
   }
 
   function has(o, k) {
@@ -118,12 +165,11 @@
       segs.push({ t: "dinheiro público", forte: true });
       segs.push({ t: " (Fundo Eleitoral e Fundo Partidário) para pagar anúncios. No recorte escolhido, " });
       segs.push({ t: fp.pct, forte: true });
-      segs.push({ t: " do valor já pago em impulsionamento saiu desses fundos" + (fp.cobertura ? " (cobertura de " + fp.cobertura + " do contratado)" : "") + ". Esse dinheiro vai para plataformas estrangeiras que empregam pouco no país. " });
-    } else {
-      segs.push({ t: "Esse dinheiro vai para plataformas estrangeiras. " });
+      segs.push({ t: " do valor já pago em impulsionamento saiu desses fundos" + (fp.cobertura ? " (cobertura de " + fp.cobertura + " do contratado)" : "") + ". " });
     }
+    segs.push({ t: "Esse dinheiro vai para plataformas estrangeiras. " });
     segs.push({ t: "Na nossa visão", posicao: true });
-    segs.push({ t: ", ele teria mais retorno para as pessoas se circulasse na economia local, em benfeitorias. Por isso propomos um teto percentual." });
+    segs.push({ t: ", elas empregam pouco no país, e esse dinheiro teria mais retorno para as pessoas se circulasse na economia local, em benfeitorias. Por isso propomos um teto percentual." });
     return segs;
   }
 
@@ -143,7 +189,8 @@
     );
   }
 
-  function modeloCards(dados, cargoKey, indice) {
+  function modeloCards(dados, cargoKey, indice, opcoes) {
+    var endereco = (opcoes && opcoes.endereco) || ENDERECO_PADRAO;
     var recortes = (dados && dados.recortes) || {};
     var r = recortes[cargoKey] || {};
     var principal = num(r.principal);
@@ -221,11 +268,12 @@
           nome: t.nome,
           valor: formatBRL(t.principal),
           detalhe: formatPct(t.proporcao) + " do total da campanha" + (t.pequena ? " (campanha pequena)" : ""),
+          tag: tagFraca(t),
         };
       }),
       vazio: top.length === 0,
       textoVazio: "Nenhuma campanha deste recorte declarou impulsionamento em plataformas até agora.",
-      nota: "Ranking pelo valor absoluto declarado; inclui impulsionamento sem plataforma citada. Não é lista de irregularidades.",
+      nota: "Valores absolutos declarados; não é lista de irregularidades.",
       rodape: rodape,
     };
 
@@ -259,15 +307,16 @@
     var cta = {
       tipo: "cta",
       kicker: "Participe",
-      titulo: "Quer ajudar a levar isso adiante?",
-      texto: "Compartilhe estes cards, mande sua opinião e acompanhe os números do seu estado.",
-      chamada: "Fale comigo e acompanhe a iniciativa:",
-      perfilPadrao: "@seu_perfil",
+      titulo: "Quer ver os números do seu estado?",
+      texto: "Escolha o estado e o cargo, veja quem declarou os maiores valores, baixe os cards e ajude a levar essa proposta adiante.",
+      projeto: "Projeto aberto: contribua no GitHub",
       hashtag: HASHTAG,
       rodape: rodape,
     };
 
-    return { cards: [gancho, barras, topCard, tetos, cta] };
+    var cards = [gancho, barras, topCard, tetos, cta];
+    cards.forEach(function (c) { c.endereco = endereco; });
+    return { cards: cards };
   }
 
   return {
@@ -277,7 +326,14 @@
     parseHash: parseHash,
     buildHash: buildHash,
     modeloCards: modeloCards,
-    escapeHtml: escapeHtml,
+    fonteHero: fonteHero,
+    fonteEndereco: fonteEndereco,
+    tagFraca: tagFraca,
+    enderecoDoSite: enderecoDoSite,
+    ENDERECO_PADRAO: ENDERECO_PADRAO,
+    caminhoUf: caminhoUf,
+    modoArquivoLocal: modoArquivoLocal,
+    avisoTrocaUf: avisoTrocaUf,
     fontePublica: fontePublica,
     cargosGlobais: cargosGlobais,
     ufsParaCargo: ufsParaCargo,

@@ -34,6 +34,7 @@
   <div id="status" class="status" role="status" aria-live="polite">Carregando os dados…</div>
   <div id="erro" class="erro" role="alert" hidden>
     <p id="erro-msg"></p>
+    <pre id="erro-cmd" class="cmd" hidden></pre>
     <button type="button" id="btn-tentar" class="btn">Tentar de novo</button>
   </div>
 
@@ -67,10 +68,6 @@
       <p class="legenda">Cinco cards no formato de story (1080×1920), com os números do recorte escolhido. Os mesmos números estão no resumo acima.</p>
       <div class="acoes-gerais">
         <button type="button" id="btn-todos" class="btn btn-forte">Baixar todos</button>
-        <div class="campo campo-perfil">
-          <label for="perfil">Seu perfil, para o último card</label>
-          <input id="perfil" type="text" maxlength="40" autocomplete="off" spellcheck="false" placeholder="@seu_perfil">
-        </div>
       </div>
       <p id="msg-download" class="legenda" role="status" aria-live="polite"></p>
       <div id="grade" class="grade"></div>

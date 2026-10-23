@@ -10,6 +10,8 @@ const rn = fx("RN.json");
 const semPago = fx("RN_sem_pago.json");
 const vazio = fx("RN_vazio.json");
 const br = fx("BR.json");
+const hostil = fx("RN_hostil.json");
+const HOSTIL = `<img src=x onerror=alert(1)> & "Zé" O'Brien`;
 
 test("formatBRL", () => {
   assert.equal(Lib.formatBRL(363000), "R$ 363.000");
@@ -30,6 +32,11 @@ test("hero", () => {
   assert.deepEqual(Lib.hero(20425733), { valor: "R$ 20,4", unidade: " mi" });
   assert.deepEqual(Lib.hero(500), { valor: "R$ 500", unidade: "" });
   assert.deepEqual(Lib.hero(999600), { valor: "R$ 1,0", unidade: " mi" });
+  assert.deepEqual(Lib.hero(99940000), { valor: "R$ 99,9", unidade: " mi" });
+  assert.deepEqual(Lib.hero(99960000), { valor: "R$ 100", unidade: " mi" });
+  assert.deepEqual(Lib.hero(100000000), { valor: "R$ 100", unidade: " mi" });
+  assert.deepEqual(Lib.hero(105219594.91), { valor: "R$ 105", unidade: " mi" });
+  assert.deepEqual(Lib.hero(1200000000), { valor: "R$ 1,2", unidade: " bi" });
 });
 
 test("parseHash valido", () => {
@@ -55,12 +62,6 @@ test("parseHash invalido cai para recorte valido", () => {
 test("buildHash", () => {
   assert.equal(Lib.buildHash("PB", "governador"), "#PB/governador");
   assert.equal(Lib.buildHash("BR", "presidente"), "#BR/presidente");
-});
-
-test("escapeHtml", () => {
-  assert.equal(Lib.escapeHtml(`<b>&"'`), "&lt;b&gt;&amp;&quot;&#39;");
-  assert.equal(Lib.escapeHtml(null), "");
-  assert.equal(Lib.escapeHtml(5), "5");
 });
 
 const todosTexto = (m) => JSON.stringify(m).toLowerCase();
@@ -177,7 +178,8 @@ test("importaSegmentos com pago*: frase de fundos medida, sem palavras de magnit
   const t = juntar(Lib.importaSegmentos(rn.recortes.governador));
   assert.match(t, /As campanhas usam dinheiro público \(Fundo Eleitoral e Fundo Partidário\) para pagar anúncios\./);
   assert.match(t, /No recorte escolhido, 71,6% do valor já pago em impulsionamento saiu desses fundos \(cobertura de 100,0% do contratado\)\./);
-  assert.match(t, /Na nossa visão/);
+  assert.match(t, /Na nossa visão.*empregam pouco no país/);
+  assert.doesNotMatch(t, /\. Esse dinheiro vai para plataformas estrangeiras que empregam/);
   assert.doesNotMatch(t, /grande parte|maior parte/);
   const fortes = Lib.importaSegmentos(rn.recortes.governador).filter((s) => s.forte).map((s) => s.t);
   assert.deepEqual(fortes, ["dinheiro público", "71,6%"]);
@@ -196,4 +198,119 @@ test("importaSegmentos sem pago*: sem número, sem dinheiro público e sem magni
   assert.match(t, /Na nossa visão/);
   assert.doesNotMatch(t, /dinheiro público|%|grande parte|maior parte|undefined/);
   assert.doesNotMatch(juntar(Lib.importaSegmentos(undefined)), /undefined|dinheiro público/);
+});
+
+test("fonteHero: encolhe só quando precisa", () => {
+  assert.equal(Lib.fonteHero(Lib.hero(20425733)), 210);
+  assert.equal(Lib.fonteHero(Lib.hero(105219594)), 210);
+  assert.equal(Lib.fonteHero(Lib.hero(574064)), 210);
+  const longo = { valor: "R$ 123.456.789", unidade: " mi" };
+  const f = Lib.fonteHero(longo);
+  assert.ok(f < 210 && f >= 60);
+});
+
+test("tagFraca", () => {
+  assert.equal(Lib.tagFraca({ principal: 100, confirmado: 0 }), "valor todo sem plataforma citada na nota");
+  assert.equal(Lib.tagFraca({ principal: 100, confirmado: 20 }), "mais da metade sem plataforma citada");
+  assert.equal(Lib.tagFraca({ principal: 100, confirmado: 49.9 }), "mais da metade sem plataforma citada");
+  assert.equal(Lib.tagFraca({ principal: 100, confirmado: 50 }), null);
+  assert.equal(Lib.tagFraca({ principal: 100, confirmado: 90 }), null);
+  assert.equal(Lib.tagFraca({ principal: 0, confirmado: 0 }), null);
+  assert.equal(Lib.tagFraca({}), null);
+});
+
+test("modeloCards: card 3 traz a tag de apoio fraco", () => {
+  const m = Lib.modeloCards(rn, "governador", indice);
+  const l = m.cards[2].linhas;
+  assert.equal(l[0].tag, null); // Carlos: 333k de 363k
+  assert.equal(l[1].tag, "valor todo sem plataforma citada na nota"); // Álvaro: confirmado 0
+});
+
+test("nenhum texto renderizável contém partido (campos de partido nos dados são ignorados)", () => {
+  assert.ok(JSON.stringify(rn).includes("ZZPARTIDO"), "fixture precisa ter partido");
+  for (const [d, k] of [[rn, "todos"], [rn, "governador"], [rn, "senador"], [br, "presidente"], [vazio, "senador"], [semPago, "todos"]]) {
+    const t = JSON.stringify(Lib.modeloCards(d, k, indice));
+    assert.doesNotMatch(t, /ZZPARTIDO/);
+    assert.doesNotMatch(t.toLowerCase(), /partido\b/);
+  }
+  const fs2 = fs.readFileSync(path.join(__dirname, "../../site/app.js"), "utf8");
+  assert.doesNotMatch(fs2, /partido/i);
+});
+
+test("nome hostil permanece texto inerte no modelo e app.js nunca usa innerHTML", () => {
+  const m = Lib.modeloCards(hostil, "governador", indice);
+  assert.equal(m.cards[2].linhas[0].nome, HOSTIL);
+  const app = fs.readFileSync(path.join(__dirname, "../../site/app.js"), "utf8");
+  assert.doesNotMatch(app, /innerHTML|outerHTML|insertAdjacentHTML|document\.write/);
+  assert.equal(Lib.escapeHtml, undefined);
+});
+
+test("caminhoUf: UF fora do índice nunca vira caminho de fetch", () => {
+  assert.equal(Lib.caminhoUf(indice, "RN"), "RN.json");
+  assert.equal(Lib.caminhoUf(indice, "BR"), "BR.json");
+  assert.equal(Lib.caminhoUf(indice, "XX"), null);
+  assert.equal(Lib.caminhoUf(indice, "../index"), null);
+  assert.equal(Lib.caminhoUf(indice, "rn"), null);
+  assert.equal(Lib.caminhoUf(indice, undefined), null);
+  assert.equal(Lib.caminhoUf(indice, "__proto__"), null);
+});
+
+test("avisoTrocaUf", () => {
+  const BR = { uf: "BR", nome: "Brasil" }, AC = { uf: "AC", nome: "Acre" }, DF = { uf: "DF", nome: "Distrito Federal" }, PB = { uf: "PB", nome: "Paraíba" };
+  assert.equal(Lib.avisoTrocaUf(AC, AC, "governador", "Governador"), "");
+  assert.match(Lib.avisoTrocaUf(BR, AC, "governador", "Governador"), /Escolha um estado/);
+  assert.match(Lib.avisoTrocaUf(BR, AC, "governador", "Governador"), /Acre/);
+  assert.doesNotMatch(Lib.avisoTrocaUf(BR, AC, "governador", "Governador"), /não existe/);
+  assert.match(Lib.avisoTrocaUf(PB, BR, "presidente", "Presidente"), /nacional/);
+  assert.match(Lib.avisoTrocaUf(PB, DF, "deputado-distrital", "Deputado distrital"), /só existe no Distrito Federal|existe só no Distrito Federal/);
+  assert.match(Lib.avisoTrocaUf(BR, DF, "deputado-distrital", "Deputado distrital"), /Distrito Federal/);
+});
+
+test("enderecoDoSite", () => {
+  assert.equal(Lib.enderecoDoSite("gastos-eleicoes.netlify.app"), "gastos-eleicoes.netlify.app");
+  assert.equal(Lib.enderecoDoSite("radar.exemplo.org.br"), "radar.exemplo.org.br");
+  assert.equal(Lib.enderecoDoSite("RADAR.Exemplo.org"), "radar.exemplo.org");
+  for (const h of ["localhost", "localhost:8765", "127.0.0.1", "127.0.0.1:8000", "", null, undefined, "a b.com", "<x>.com", "evil.com/x", "http://x.com", "semponto", "[::1]", "x.com?a=1"]) {
+    assert.equal(Lib.enderecoDoSite(h), Lib.ENDERECO_PADRAO, String(h));
+  }
+  assert.equal(Lib.ENDERECO_PADRAO, "radar-impulsionamento.netlify.app");
+});
+
+test("modeloCards: todos os cards trazem o endereço; o card 5 também", () => {
+  const m = Lib.modeloCards(rn, "todos", indice);
+  for (const c of m.cards) assert.equal(c.endereco, Lib.ENDERECO_PADRAO);
+  const m2 = Lib.modeloCards(rn, "todos", indice, { endereco: "meu.site.com" });
+  for (const c of m2.cards) assert.equal(c.endereco, "meu.site.com");
+});
+
+test("card 5: convite para o site, sem perfil pessoal", () => {
+  const c = Lib.modeloCards(rn, "todos", indice, { endereco: "meu.site.com" }).cards[4];
+  assert.equal(c.tipo, "cta");
+  assert.equal(c.endereco, "meu.site.com");
+  assert.equal(c.titulo, "Quer ver os números do seu estado?");
+  assert.match(c.texto, /Escolha o estado e o cargo/);
+  assert.match(c.projeto, /contribua no GitHub/);
+  assert.equal(c.hashtag, "#TetoNoImpulsionamento");
+  const j = JSON.stringify(c).toLowerCase();
+  assert.doesNotMatch(j, /@|perfil/);
+});
+
+test("app.js e index.html não têm mais perfil pessoal nem localStorage", () => {
+  const app = fs.readFileSync(path.join(__dirname, "../../site/app.js"), "utf8");
+  const html = fs.readFileSync(path.join(__dirname, "../../site/index.html"), "utf8");
+  assert.doesNotMatch(app + html, /perfil|localStorage/i);
+});
+
+test("modoArquivoLocal", () => {
+  assert.equal(Lib.modoArquivoLocal("file:"), true);
+  assert.equal(Lib.modoArquivoLocal("http:"), false);
+  assert.equal(Lib.modoArquivoLocal("https:"), false);
+  assert.equal(Lib.modoArquivoLocal(undefined), false);
+});
+
+test("fonteEndereco: uma linha para endereços curtos e longos", () => {
+  assert.equal(Lib.fonteEndereco("a.com.br"), 72);
+  const f = Lib.fonteEndereco(Lib.ENDERECO_PADRAO);
+  assert.ok(f >= 40 && f < 72);
+  assert.ok(Lib.fonteEndereco("x".repeat(80) + ".com") >= 34);
 });
