@@ -94,13 +94,18 @@ def linhas_barras(cands: pd.DataFrame, max_linhas: int = MAX_LINHAS, nomes: dict
     return linhas
 
 
+def linhas_consulta_cand(eleitos_zip: Path):
+    """Linhas (dict) do arquivo BRASIL do consulta_cand do TSE (latin-1, sem bytes nulos)."""
+    with zipfile.ZipFile(eleitos_zip) as z:
+        membro = next(n for n in z.namelist() if n.upper().endswith("BRASIL.CSV"))
+        texto = z.read(membro).replace(b"\0", b"").decode("latin-1")
+    yield from csv.DictReader(io.StringIO(texto), delimiter=";")
+
+
 def _consulta_cand(eleitos_zip: Path, uf: str, cargo: str | None) -> tuple[int, int, dict]:
     """(candidatos no cargo/UF, quantos seguem no 2º turno, nome completo por SQ) a partir do consulta_cand do TSE."""
-    z = zipfile.ZipFile(eleitos_zip)
-    membro = next(n for n in z.namelist() if n.upper().endswith("BRASIL.CSV"))
-    texto = z.read(membro).replace(b"\0", b"").decode("latin-1")
     sq_todos, sq_2turno, nomes = set(), set(), {}
-    for r in csv.DictReader(io.StringIO(texto), delimiter=";"):
+    for r in linhas_consulta_cand(eleitos_zip):
         if r["SG_UF"] != uf:
             continue
         if cargo is None:

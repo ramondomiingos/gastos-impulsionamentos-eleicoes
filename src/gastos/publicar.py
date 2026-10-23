@@ -1,0 +1,198 @@
+"""`gastos publicar`: grava os JSON do site (`site/data/`) a partir do pipeline loader -> classify -> metrics.
+
+Formato: ver docs/superpowers/specs/2026-10-23-site-funcional-design.md. O arquivo nacional e carregado e
+classificado UMA vez; cada UF e fatiada em memoria. Sem campo de partido; nomes so em `top`.
+"""
+from __future__ import annotations
+
+import json
+from datetime import date
+from pathlib import Path
+
+import pandas as pd
+
+from gastos import metrics
+from gastos.classify import classify, load_rules
+from gastos.emails import _nome_proprio
+from gastos.loader import load_despesas
+from gastos.report import _data_corte, _dt_ultima_prestacao
+from gastos.story import UF_ARTIGO, UF_NOME, linhas_consulta_cand
+from gastos.text import normalize
+
+TETOS_PADRAO = [0.05, 0.10, 0.15, 0.20]
+PISO_CAMPANHA = 50_000.0
+TOP_N = 5
+
+# slug -> (nome do cargo no TSE, rotulo na pagina). A ordem e a dos cargos nos arquivos.
+CARGOS_SITE = {
+    "presidente": ("Presidente", "Presidência"),
+    "governador": ("Governador", "Governo"),
+    "senador": ("Senador", "Senado"),
+    "deputado-federal": ("Deputado Federal", "Deputados federais"),
+    "deputado-estadual": ("Deputado Estadual", "Deputados estaduais"),
+    "deputado-distrital": ("Deputado Distrital", "Deputados distritais"),
+}
+CARGOS_ESTADO = [s for s in CARGOS_SITE if s != "presidente"]
+ROTULO_TODOS = "Todos os cargos"
+VERSAO = 1
+
+
+def slug_cargo(cargo: str) -> str:
+    return normalize(cargo).replace(" ", "-")
+
+
+def _dinheiro(x) -> float:
+    return round(float(x), 2)
+
+
+def _prop(x) -> float:
+    return round(float(x), 6)
+
+
+def montar_recorte(shares: pd.DataFrame, rotulo: str, cargo: str | None, nomes: dict[str, str],
+                   tetos: list[float], piso_campanha: float) -> dict:
+    """Formato `Recorte` do desenho a partir de `candidate_shares` do recorte."""
+    total = float(shares["total"].sum())
+    principal = float(shares["principal"].sum())
+    elegiveis = shares[shares["total"] >= piso_campanha]
+    impacto = metrics.cap_impact(elegiveis, tetos)
+    top = []
+    for r in metrics.maiores_valores(shares, TOP_N).itertuples(index=False):
+        sq = str(r.sq_candidato)
+        nome_cargo = CARGOS_SITE.get(slug_cargo(r.cargo), (str(r.cargo),))[0]
+        top.append({
+            "sq": sq,
+            "nome": nomes.get(sq) or _nome_proprio(r.candidato),
+            "cargo": nome_cargo,
+            "uf": str(r.uf),
+            "principal": _dinheiro(r.principal),
+            "confirmado": _dinheiro(r.confirmado),
+            "total": _dinheiro(r.total),
+            "proporcao": _prop(r.proporcao),
+            "pequena": bool(r.total < piso_campanha),
+        })
+    return {
+        "rotulo": rotulo,
+        "cargo": cargo,
+        "total": _dinheiro(total),
+        "principal": _dinheiro(principal),
+        "confirmado": _dinheiro(shares["confirmado"].sum()),
+        "generico": _dinheiro(shares["generico"].sum()),
+        "provavel": _dinheiro(shares["provavel"].sum()),
+        "proporcao": _prop(principal / total) if total else 0.0,
+        "n_candidatos": int((shares["total"] > 0).sum()),
+        "n_gastaram": int((shares["principal"] > 0).sum()),
+        "n_elegiveis": int(len(elegiveis)),
+        "tetos": [{"teto": float(t.teto), "n_acima": int(t.n_acima), "pct_acima": _prop(t.pct_acima),
+                   "excedente": _dinheiro(t.excedente)} for t in impacto.itertuples(index=False)],
+        "top": top,
+    }
+
+
+def _slugs(df: pd.DataFrame) -> pd.Series:
+    return df["cargo"].map(slug_cargo)
+
+
+def _cargos_do_recorte(uf: str) -> list[str]:
+    return ["presidente"] if uf == "BR" else CARGOS_ESTADO
+
+
+def montar_uf(df: pd.DataFrame, uf: str, nomes: dict[str, str], info: dict, tetos: list[float],
+              piso_campanha: float, meta: dict | None = None) -> dict:
+    """Conteudo de `<UF>.json`. `df` = despesas classificadas da UF (BR: so Presidente).
+
+    `info`: {"n_candidatos_total": int, "segundo_turno": int}. `meta` (opcional) sobrepoe
+    dt_geracao/dt_ultima_prestacao; sem ele as datas saem do proprio `df`, como em `report.write_run`.
+    """
+    meta = meta or {}
+    permitidos = _cargos_do_recorte(uf)
+    df = df[_slugs(df).isin(permitidos)]
+    slugs = _slugs(df)
+    recortes = {}
+    if uf != "BR":
+        recortes["todos"] = montar_recorte(metrics.candidate_shares(df), ROTULO_TODOS, None, nomes,
+                                           tetos, piso_campanha)
+    for slug in permitidos:
+        sub = df[slugs == slug]
+        if sub.empty:
+            continue
+        nome_cargo, rotulo = CARGOS_SITE[slug]
+        recortes[slug] = montar_recorte(metrics.candidate_shares(sub), rotulo, nome_cargo, nomes,
+                                        tetos, piso_campanha)
+    return {
+        "uf": uf,
+        "nome": UF_NOME[uf],
+        "artigo": UF_ARTIGO[uf],
+        "dt_geracao": meta.get("dt_geracao", _data_corte(df)),
+        "dt_ultima_prestacao": meta.get("dt_ultima_prestacao", _dt_ultima_prestacao(df)),
+        "segundo_turno": int(info["segundo_turno"]),
+        "n_candidatos_total": int(info["n_candidatos_total"]),
+        "recortes": recortes,
+    }
+
+
+def _ler_candidatos(eleitos_zip: Path) -> tuple[dict[str, str], dict[str, dict]]:
+    """(nome em caixa de titulo por SQ, {uf: {"n_candidatos_total", "segundo_turno"}}) dos cargos do site."""
+    nomes: dict[str, str] = {}
+    sqs: dict[str, set] = {}
+    seg: dict[str, set] = {}
+    for r in linhas_consulta_cand(eleitos_zip):
+        slug = slug_cargo(r["DS_CARGO"])
+        uf = r["SG_UF"]
+        if slug not in CARGOS_SITE or (slug == "presidente") != (uf == "BR"):
+            continue
+        sq = r["SQ_CANDIDATO"]
+        sqs.setdefault(uf, set()).add(sq)
+        nomes[sq] = _nome_proprio(r["NM_CANDIDATO"])
+        if normalize(r["DS_SIT_TOT_TURNO"]).startswith("2") and r.get("NR_TURNO", "1") == "1":
+            seg.setdefault(uf, set()).add(sq)
+    info = {uf: {"n_candidatos_total": len(s), "segundo_turno": len(seg.get(uf, ()))} for uf, s in sqs.items()}
+    return nomes, info
+
+
+def _num(x: float):
+    return int(x) if float(x).is_integer() else float(x)
+
+
+def _gravar(caminho: Path, dados: dict) -> None:
+    caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
+def publicar(zip_path, eleitos_zip, saida: Path, tetos: list[float] | None = None,
+             piso_campanha: float = PISO_CAMPANHA, hoje: date | None = None) -> Path:
+    """Grava `index.json`, `BR.json` e um `<UF>.json` por estado em `saida`; devolve a pasta."""
+    if not (piso_campanha > 0) or piso_campanha == float("inf"):
+        raise ValueError(f"piso_campanha invalido: {piso_campanha!r}")
+    tetos = list(TETOS_PADRAO if tetos is None else tetos)
+    hoje = hoje or date.today()
+    saida = Path(saida)
+    saida.mkdir(parents=True, exist_ok=True)
+
+    nomes, infos = _ler_candidatos(Path(eleitos_zip))
+    df = load_despesas(Path(zip_path), None)
+    if df.empty:
+        raise FileNotFoundError("Nenhuma despesa no arquivo nacional.")
+    df = classify(df, load_rules())
+    meta = {"dt_geracao": _data_corte(df), "dt_ultima_prestacao": _dt_ultima_prestacao(df)}
+
+    vazio = {"n_candidatos_total": 0, "segundo_turno": 0}
+    entradas = []
+    ufs = ["BR", *sorted(u for u in df["uf"].unique() if u in UF_NOME and u != "BR")]
+    for uf in ufs:
+        dados = montar_uf(df[df["uf"] == uf], uf, nomes, infos.get(uf, vazio), tetos, piso_campanha,
+                          meta if uf == "BR" else None)
+        if not dados["recortes"]:
+            continue
+        _gravar(saida / f"{uf}.json", dados)
+        entradas.append({"uf": uf, "nome": dados["nome"], "artigo": dados["artigo"],
+                         "cargos": list(dados["recortes"])})
+    _gravar(saida / "index.json", {
+        "versao": VERSAO,
+        "gerado_em": hoje.strftime("%Y-%m-%d"),
+        "dt_geracao": meta["dt_geracao"],
+        "dt_ultima_prestacao": meta["dt_ultima_prestacao"],
+        "piso_campanha": _num(piso_campanha),
+        "tetos": tetos,
+        "ufs": entradas,
+    })
+    return saida

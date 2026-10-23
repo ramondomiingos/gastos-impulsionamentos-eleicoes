@@ -18,6 +18,7 @@ from gastos.eleitos import download_resultados, load_eleitos
 from gastos.emails import PISO_AMOSTRA, load_contatos, write_emails
 from gastos.fetch import download_candidatos
 from gastos.loader import load_despesas
+from gastos.publicar import PISO_CAMPANHA, publicar
 from gastos.report import write_run
 from gastos.text import normalize
 
@@ -111,13 +112,13 @@ def _parse_teto(valor: str) -> float:
     return t
 
 
-def _parse_piso(valor: str) -> float:
+def _parse_piso(valor: str, flag: str = "--piso-amostra") -> float:
     try:
         v = float(valor)
     except ValueError:
         v = float("nan")
     if not (v > 0) or v == float("inf"):
-        raise _Erro(f"--piso-amostra invalido: {valor!r} (numero positivo em reais, ex. 50000)", 2)
+        raise _Erro(f"{flag} invalido: {valor!r} (numero positivo em reais, ex. 50000)", 2)
     return v
 
 
@@ -143,6 +144,18 @@ def _emails(args) -> int:
     out = write_emails(Path(args.contatos), runs, teto, saida, eleitos=eleitos, assinatura=args.assinatura,
                        piso_amostra=piso)
     print(f"E-mails gravados em {out / 'emails'}; veja {out / 'pendencias.md'}")
+    return 0
+
+
+def _publicar(args) -> int:
+    piso = _parse_piso(args.piso_campanha, "--piso-campanha")
+    for flag, valor in (("--zip", args.zip), ("--eleitos-zip", args.eleitos_zip)):
+        if valor and not (Path(valor).is_file() and zipfile.is_zipfile(valor)):
+            raise _Erro(f"{flag} inexistente ou ilegivel (zip): {valor}", 1)
+    zip_path = Path(args.zip) if args.zip else download_candidatos()
+    eleitos_zip = Path(args.eleitos_zip) if args.eleitos_zip else download_resultados()
+    pasta = publicar(zip_path, eleitos_zip, Path(args.saida), CAPS_PADRAO, piso)
+    print(f"JSON gravados em {pasta}")
     return 0
 
 
@@ -189,6 +202,12 @@ def _parser() -> argparse.ArgumentParser:
     e.add_argument("--zip", help="zip de despesas do TSE ja baixado")
     e.add_argument("--eleitos-zip", dest="eleitos_zip", help="consulta_cand zip/CSV ja baixado")
     e.add_argument("--saida", default="out", help="pasta de saida (padrao: out)")
+    b = sub.add_parser("publicar", help="grava os JSON do site (agregados por estado e cargo)")
+    b.add_argument("--zip", help="zip de despesas do TSE ja baixado (pula o download)")
+    b.add_argument("--eleitos-zip", dest="eleitos_zip", help="consulta_cand zip ja baixado (pula o download)")
+    b.add_argument("--saida", default="site/data", help="pasta de saida (padrao: site/data)")
+    b.add_argument("--piso-campanha", dest="piso_campanha", default=str(PISO_CAMPANHA),
+                   help=f"total minimo da campanha (R$) para entrar na contagem dos tetos (padrao: {PISO_CAMPANHA:g})")
     return p
 
 
@@ -198,7 +217,7 @@ def main(argv: list[str] | None = None) -> int:
     except SystemExit as e:  # argparse sai sozinho em erro/--help
         return e.code if isinstance(e.code, int) else 2
     try:
-        return _emails(args) if args.comando == "emails" else _analisar(args)
+        return {"emails": _emails, "publicar": _publicar}.get(args.comando, _analisar)(args)
     except _Erro as e:
         print(f"Erro: {e}", file=sys.stderr)
         return e.codigo

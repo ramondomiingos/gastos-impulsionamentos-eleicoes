@@ -80,6 +80,17 @@ def top_candidatos(shares: pd.DataFrame, n: int = 5, piso_total: float = 50000.0
     return ok.drop(columns="_sq").head(n).reset_index(drop=True)
 
 
+def maiores_valores(shares: pd.DataFrame, n: int = 5) -> pd.DataFrame:
+    """Ate `n` candidatos com maior valor absoluto em plataformas (principal > 0).
+
+    Ordem: principal desc, total desc, sq_candidato asc (deterministico).
+    """
+    ok = shares[shares["principal"] > 0]
+    ok = ok.assign(_sq=ok["sq_candidato"].astype(str).str.zfill(20))
+    ok = ok.sort_values(["principal", "total", "_sq"], ascending=[False, False, True], kind="mergesort")
+    return ok.drop(columns="_sq").head(n).reset_index(drop=True)
+
+
 def cap_impact(shares: pd.DataFrame, caps: list[float]) -> pd.DataFrame:
     """Impacto de cada teto: n_acima, pct_acima (fracao dos candidatos com total > 0), excedente."""
     ativos = shares[shares["total"] > 0]
