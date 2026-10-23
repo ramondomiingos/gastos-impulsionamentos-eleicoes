@@ -37,7 +37,7 @@ Exemplo real do RN (dados de 22/10/2026): as duas primeiras linhas acima geram `
 
 | recorte | principal (confirmado + genérico) | piso (confirmado) | proporção sobre o total |
 | --- | --- | --- | --- |
-| RN, todos os cargos | R$ 4.240.709,51 | R$ 2.930.448,25 | 4,6% |
+| RN, todos os cargos | R$ 4.240.709,51 | R$ 2.930.448,25 | 4,5% |
 | RN, Deputado Federal | R$ 1.145.454,73 | R$ 707.060,28 | 3,1% |
 
 ## O que sai na pasta

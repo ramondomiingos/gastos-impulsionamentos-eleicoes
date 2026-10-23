@@ -70,6 +70,7 @@ O Ramon quer **medir** quanto foi gasto e **usar o número** em e-mails a deputa
 
 - Estrutura de pastas, nomes dos módulos, interface de linha de comando.
 - Como evitar dupla contagem entre linhas, por exemplo o mesmo `SQ_DESPESA` repetido por parcelamento.
+  - **Nota de 2026-10-23: a deduplicação de linhas totalmente idênticas foi revogada.** No RN ela removia 276 linhas (R$ 899.837,43); nos `SQ_DESPESA` afetados com pagamento, 114 de 121 tinham pago igual ao contratado só sem a remoção (em BA/governador e SP/senador o pago passava do principal pelo mesmo motivo). As linhas idênticas são itens reais distintos. Em seu lugar, o carregamento avisa se um `SQ_DESPESA` aparece em mais de um tipo de prestação (nenhum nos dados de 22/10/2026). O texto original acima fica como registro.
 - Como obter a lista de eleitos. A eleição foi em 04/10/2026. O TSE tem dados de resultados, que ainda não foram verificados.
 - Textos dos modelos de e-mail, em tom sóbrio e objetivo, em português.
 - Testes para as regras de classificação, com exemplos reais do RN, incluindo os falsos positivos.

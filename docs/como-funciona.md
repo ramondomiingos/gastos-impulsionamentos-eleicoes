@@ -21,7 +21,7 @@ Cada etapa recebe e devolve DataFrames ou arquivos simples. Isso permite trocar 
 | Módulo | Responsabilidade |
 | --- | --- |
 | `fetch.py` | baixa o zip do TSE para `data/raw/` (reaproveita o arquivo se já existir) |
-| `loader.py` | lê o CSV de dentro do zip, remove bytes nulos, valida o formato do valor, descarta linhas de preenchimento e linhas totalmente idênticas |
+| `loader.py` | lê o CSV de dentro do zip, remove bytes nulos, valida o formato do valor, descarta linhas de preenchimento (não remove linhas repetidas) e avisa se um `SQ_DESPESA` aparece em mais de um tipo de prestação |
 | `text.py` | normalização de texto (minúsculas, sem acento), usada na classificação e no casamento de nomes |
 | `classify.py` | aplica as regras de `config/plataformas.yaml` e atribui um nível a cada despesa |
 | `metrics.py` | agrega por UF, cargo, partido ou candidato; proporção; distribuição; impacto de tetos; ranking de candidatos |
@@ -36,7 +36,7 @@ Cada etapa recebe e devolve DataFrames ou arquivos simples. Isso permite trocar 
 
 - **Só despesas contratadas, nunca somadas às pagas.** Somar as duas contaria o mesmo gasto duas vezes. O arquivo de despesas pagas serviria só para conferência.
 - **Só despesas de candidatos.** Órgãos partidários ficam fora; nenhum texto deve sugerir que cobrem o partido.
-- **Deduplicação conservadora.** Só linhas totalmente idênticas são removidas. O mesmo `SQ_DESPESA` aparece em várias linhas legítimas (itens do mesmo documento); remover por esse id sozinho apagaria gasto real (mais de R$ 20 milhões no RN).
+- **Sem deduplicação de linhas.** Nenhuma linha é removida além das de preenchimento (`SQ_DESPESA` = -1 ou `#NULO`). Linhas contratadas totalmente idênticas são itens reais distintos (por exemplo, o mesmo item contratado duas vezes): nas despesas pagas, o valor pago de cada `SQ_DESPESA` bate com a soma das linhas idênticas, não com uma só. A versão anterior removia essas linhas e subestimava o gasto (no RN, R$ 899.837,43). Como proteção contra dupla contagem, o carregamento emite um aviso se o mesmo `SQ_DESPESA` aparecer em mais de um tipo de prestação (nos dados de 22/10/2026, nenhum).
 - **Número principal = confirmado + genérico.** Todo impulsionamento conta como plataforma estrangeira, porque não há rede social nacional para isso. O `confirmado` é sempre mostrado como piso, e o `provavel` nunca entra no número principal.
 - **Regras em YAML, não no código.** Quem não programa consegue ajustar fornecedores e palavras. Todo texto é comparado sem acento e com limite de palavra.
 - **Nunca adivinhar.** Links só saem para combinações verificadas; e-mail nunca sai sem números; contato ambíguo vai para pendências.
