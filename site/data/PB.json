@@ -1,0 +1,469 @@
+{
+ "uf": "PB",
+ "nome": "Paraíba",
+ "artigo": "da",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 419,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 124066383.2,
+   "principal": 8285472.99,
+   "confirmado": 2993262.35,
+   "generico": 5292210.64,
+   "provavel": 75.98,
+   "proporcao": 0.066783,
+   "n_candidatos": 320,
+   "n_gastaram": 154,
+   "n_elegiveis": 192,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 64,
+     "pct_acima": 0.333333,
+     "excedente": 4575545.51
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 37,
+     "pct_acima": 0.192708,
+     "excedente": 2474340.67
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 20,
+     "pct_acima": 0.104167,
+     "excedente": 1322285.91
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 9,
+     "pct_acima": 0.046875,
+     "excedente": 852173.44
+    }
+   ],
+   "top": [
+    {
+     "sq": "150002551789",
+     "nome": "Lucas Ribeiro Novais de Araujo",
+     "cargo": "Governador",
+     "uf": "PB",
+     "principal": 1060000.0,
+     "confirmado": 220000.0,
+     "total": 6360169.35,
+     "proporcao": 0.166662,
+     "pequena": false
+    },
+    {
+     "sq": "150002549791",
+     "nome": "Nabor Wanderley da Nobrega Filho",
+     "cargo": "Senador",
+     "uf": "PB",
+     "principal": 1050000.0,
+     "confirmado": 0.0,
+     "total": 2509974.5,
+     "proporcao": 0.418331,
+     "pequena": false
+    },
+    {
+     "sq": "150002538692",
+     "nome": "Efraim de Araujo Morais Filho",
+     "cargo": "Governador",
+     "uf": "PB",
+     "principal": 571487.96,
+     "confirmado": 42000.0,
+     "total": 6853337.22,
+     "proporcao": 0.083388,
+     "pequena": false
+    },
+    {
+     "sq": "150002549793",
+     "nome": "João Azevêdo Lins Filho",
+     "cargo": "Senador",
+     "uf": "PB",
+     "principal": 500000.0,
+     "confirmado": 0.0,
+     "total": 3013757.61,
+     "proporcao": 0.165906,
+     "pequena": false
+    },
+    {
+     "sq": "150002544009",
+     "nome": "Jhony Wesllys Bezerra Costa",
+     "cargo": "Deputado Federal",
+     "uf": "PB",
+     "principal": 407029.99,
+     "confirmado": 77029.99,
+     "total": 2289342.6,
+     "proporcao": 0.177793,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 19662447.54,
+   "principal": 1861487.96,
+   "confirmado": 492000.0,
+   "generico": 1369487.96,
+   "provavel": 0.0,
+   "proporcao": 0.094672,
+   "n_candidatos": 3,
+   "n_gastaram": 3,
+   "n_elegiveis": 3,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 2,
+     "pct_acima": 0.666667,
+     "excedente": 970812.63
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.333333,
+     "excedente": 423983.06
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.333333,
+     "excedente": 105974.6
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "150002551789",
+     "nome": "Lucas Ribeiro Novais de Araujo",
+     "cargo": "Governador",
+     "uf": "PB",
+     "principal": 1060000.0,
+     "confirmado": 220000.0,
+     "total": 6360169.35,
+     "proporcao": 0.166662,
+     "pequena": false
+    },
+    {
+     "sq": "150002538692",
+     "nome": "Efraim de Araujo Morais Filho",
+     "cargo": "Governador",
+     "uf": "PB",
+     "principal": 571487.96,
+     "confirmado": 42000.0,
+     "total": 6853337.22,
+     "proporcao": 0.083388,
+     "pequena": false
+    },
+    {
+     "sq": "150002544133",
+     "nome": "Cicero de Lucena Filho",
+     "cargo": "Governador",
+     "uf": "PB",
+     "principal": 230000.0,
+     "confirmado": 230000.0,
+     "total": 6448940.97,
+     "proporcao": 0.035665,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 13498965.91,
+   "principal": 2058614.42,
+   "confirmado": 420614.42,
+   "generico": 1638000.0,
+   "provavel": 0.0,
+   "proporcao": 0.152502,
+   "n_candidatos": 7,
+   "n_gastaram": 7,
+   "n_elegiveis": 6,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 1484177.23
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 1020514.45
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 3,
+     "pct_acima": 0.5,
+     "excedente": 730865.18
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.333333,
+     "excedente": 552905.1
+    }
+   ],
+   "top": [
+    {
+     "sq": "150002549791",
+     "nome": "Nabor Wanderley da Nobrega Filho",
+     "cargo": "Senador",
+     "uf": "PB",
+     "principal": 1050000.0,
+     "confirmado": 0.0,
+     "total": 2509974.5,
+     "proporcao": 0.418331,
+     "pequena": false
+    },
+    {
+     "sq": "150002549793",
+     "nome": "João Azevêdo Lins Filho",
+     "cargo": "Senador",
+     "uf": "PB",
+     "principal": 500000.0,
+     "confirmado": 0.0,
+     "total": 3013757.61,
+     "proporcao": 0.165906,
+     "pequena": false
+    },
+    {
+     "sq": "150002544905",
+     "nome": "Veneziano Vital do Rêgo Segundo Neto",
+     "cargo": "Senador",
+     "uf": "PB",
+     "principal": 374840.0,
+     "confirmado": 374840.0,
+     "total": 3659023.37,
+     "proporcao": 0.102443,
+     "pequena": false
+    },
+    {
+     "sq": "150002538459",
+     "nome": "Marcelo Antônio Cartaxo Queiroga Lopes",
+     "cargo": "Senador",
+     "uf": "PB",
+     "principal": 75000.0,
+     "confirmado": 0.0,
+     "total": 3043490.51,
+     "proporcao": 0.024643,
+     "pequena": false
+    },
+    {
+     "sq": "150002544909",
+     "nome": "Andre Avelino de Paiva Gadelha Neto",
+     "cargo": "Senador",
+     "uf": "PB",
+     "principal": 32000.0,
+     "confirmado": 32000.0,
+     "total": 1168260.5,
+     "proporcao": 0.027391,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 62828681.49,
+   "principal": 2844337.13,
+   "confirmado": 1358830.39,
+   "generico": 1485506.74,
+   "provavel": 29.99,
+   "proporcao": 0.045271,
+   "n_candidatos": 138,
+   "n_gastaram": 71,
+   "n_elegiveis": 89,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 26,
+     "pct_acima": 0.292135,
+     "excedente": 1352716.86
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 16,
+     "pct_acima": 0.179775,
+     "excedente": 547818.05
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 8,
+     "pct_acima": 0.089888,
+     "excedente": 133146.36
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 3,
+     "pct_acima": 0.033708,
+     "excedente": 28737.72
+    }
+   ],
+   "top": [
+    {
+     "sq": "150002544009",
+     "nome": "Jhony Wesllys Bezerra Costa",
+     "cargo": "Deputado Federal",
+     "uf": "PB",
+     "principal": 407029.99,
+     "confirmado": 77029.99,
+     "total": 2289342.6,
+     "proporcao": 0.177793,
+     "pequena": false
+    },
+    {
+     "sq": "150002538457",
+     "nome": "Gilberto Gomes da Silva",
+     "cargo": "Deputado Federal",
+     "uf": "PB",
+     "principal": 338000.0,
+     "confirmado": 203000.0,
+     "total": 2484014.29,
+     "proporcao": 0.13607,
+     "pequena": false
+    },
+    {
+     "sq": "150002533578",
+     "nome": "Ruy Manuel Carneiro Barbosa de Aça Belchior",
+     "cargo": "Deputado Federal",
+     "uf": "PB",
+     "principal": 204500.0,
+     "confirmado": 0.0,
+     "total": 1998962.82,
+     "proporcao": 0.102303,
+     "pequena": false
+    },
+    {
+     "sq": "150002533571",
+     "nome": "Romero Rodrigues Veiga",
+     "cargo": "Deputado Federal",
+     "uf": "PB",
+     "principal": 187000.0,
+     "confirmado": 187000.0,
+     "total": 1912352.36,
+     "proporcao": 0.097785,
+     "pequena": false
+    },
+    {
+     "sq": "150002544167",
+     "nome": "Ricardo Vieira Coutinho",
+     "cargo": "Deputado Federal",
+     "uf": "PB",
+     "principal": 173107.68,
+     "confirmado": 173107.68,
+     "total": 1092176.97,
+     "proporcao": 0.158498,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 28076288.26,
+   "principal": 1521033.48,
+   "confirmado": 721817.54,
+   "generico": 799215.94,
+   "provavel": 45.99,
+   "proporcao": 0.054175,
+   "n_candidatos": 172,
+   "n_gastaram": 73,
+   "n_elegiveis": 94,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 32,
+     "pct_acima": 0.340426,
+     "excedente": 767838.79
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 16,
+     "pct_acima": 0.170213,
+     "excedente": 482025.11
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 8,
+     "pct_acima": 0.085106,
+     "excedente": 352299.77
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 4,
+     "pct_acima": 0.042553,
+     "excedente": 270530.62
+    }
+   ],
+   "top": [
+    {
+     "sq": "150002541192",
+     "nome": "Fábio Nóbrega Lopes",
+     "cargo": "Deputado Estadual",
+     "uf": "PB",
+     "principal": 298000.0,
+     "confirmado": 67000.0,
+     "total": 404942.25,
+     "proporcao": 0.735907,
+     "pequena": false
+    },
+    {
+     "sq": "150002544157",
+     "nome": "Romualdo Antonio Quirino de Sousa",
+     "cargo": "Deputado Estadual",
+     "uf": "PB",
+     "principal": 90000.0,
+     "confirmado": 0.0,
+     "total": 456381.1,
+     "proporcao": 0.197204,
+     "pequena": false
+    },
+    {
+     "sq": "150002541185",
+     "nome": "André Luiz Gomes de Araújo",
+     "cargo": "Deputado Estadual",
+     "uf": "PB",
+     "principal": 80900.0,
+     "confirmado": 0.0,
+     "total": 255652.41,
+     "proporcao": 0.316445,
+     "pequena": false
+    },
+    {
+     "sq": "150002541186",
+     "nome": "Vitor Matheus Ribeiro Felix",
+     "cargo": "Deputado Estadual",
+     "uf": "PB",
+     "principal": 75000.0,
+     "confirmado": 20000.0,
+     "total": 278158.3,
+     "proporcao": 0.269631,
+     "pequena": false
+    },
+    {
+     "sq": "150002548947",
+     "nome": "Maria Luiza Porto Bezerra Cavalcanti",
+     "cargo": "Deputado Estadual",
+     "uf": "PB",
+     "principal": 50000.0,
+     "confirmado": 50000.0,
+     "total": 946712.73,
+     "proporcao": 0.052814,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

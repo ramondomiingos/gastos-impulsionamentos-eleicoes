@@ -1,0 +1,491 @@
+{
+ "uf": "RJ",
+ "nome": "Rio de Janeiro",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 2007,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 350675829.16,
+   "principal": 35606309.12,
+   "confirmado": 29848480.65,
+   "generico": 5757828.47,
+   "provavel": 59801.9,
+   "proporcao": 0.101536,
+   "n_candidatos": 1364,
+   "n_gastaram": 666,
+   "n_elegiveis": 598,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 282,
+     "pct_acima": 0.471572,
+     "excedente": 22578926.89
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 185,
+     "pct_acima": 0.309365,
+     "excedente": 16064349.08
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 135,
+     "pct_acima": 0.225753,
+     "excedente": 12164938.4
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 111,
+     "pct_acima": 0.185619,
+     "excedente": 9240162.96
+    }
+   ],
+   "top": [
+    {
+     "sq": "190002543101",
+     "nome": "Luiz Lindbergh Farias Filho",
+     "cargo": "Deputado Federal",
+     "uf": "RJ",
+     "principal": 1665000.0,
+     "confirmado": 1660000.0,
+     "total": 3293375.83,
+     "proporcao": 0.50556,
+     "pequena": false
+    },
+    {
+     "sq": "190002541053",
+     "nome": "Flavio Fernando Prado",
+     "cargo": "Deputado Federal",
+     "uf": "RJ",
+     "principal": 963000.0,
+     "confirmado": 963000.0,
+     "total": 2030369.4,
+     "proporcao": 0.474298,
+     "pequena": false
+    },
+    {
+     "sq": "190002542888",
+     "nome": "Carlos Roberto Coelho de Mattos Júnior",
+     "cargo": "Senador",
+     "uf": "RJ",
+     "principal": 905000.0,
+     "confirmado": 785000.0,
+     "total": 2724451.81,
+     "proporcao": 0.332177,
+     "pequena": false
+    },
+    {
+     "sq": "190002541690",
+     "nome": "Maria Eduarda Bianchi dos Santos Prado",
+     "cargo": "Deputado Estadual",
+     "uf": "RJ",
+     "principal": 843000.0,
+     "confirmado": 813000.0,
+     "total": 993420.5,
+     "proporcao": 0.848583,
+     "pequena": false
+    },
+    {
+     "sq": "190002543097",
+     "nome": "Elias Marco Khalil Jabbour",
+     "cargo": "Deputado Federal",
+     "uf": "RJ",
+     "principal": 749005.0,
+     "confirmado": 711005.0,
+     "total": 2014879.0,
+     "proporcao": 0.371737,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 33433040.16,
+   "principal": 1244635.0,
+   "confirmado": 1244635.0,
+   "generico": 0.0,
+   "provavel": 72.99,
+   "proporcao": 0.037228,
+   "n_candidatos": 8,
+   "n_gastaram": 7,
+   "n_elegiveis": 7,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 2,
+     "pct_acima": 0.285714,
+     "excedente": 289362.4
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.285714,
+     "excedente": 218674.81
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.285714,
+     "excedente": 147987.21
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.285714,
+     "excedente": 77299.61
+    }
+   ],
+   "top": [
+    {
+     "sq": "190002542887",
+     "nome": "Douglas Ruas dos Santos",
+     "cargo": "Governador",
+     "uf": "RJ",
+     "principal": 490000.0,
+     "confirmado": 490000.0,
+     "total": 15286222.82,
+     "proporcao": 0.032055,
+     "pequena": false
+    },
+    {
+     "sq": "190002543380",
+     "nome": "Eduardo da Costa Paes",
+     "cargo": "Governador",
+     "uf": "RJ",
+     "principal": 369985.0,
+     "confirmado": 369985.0,
+     "total": 15855248.62,
+     "proporcao": 0.023335,
+     "pequena": false
+    },
+    {
+     "sq": "190002536162",
+     "nome": "William Carlos Brum Bispo",
+     "cargo": "Governador",
+     "uf": "RJ",
+     "principal": 200050.0,
+     "confirmado": 200050.0,
+     "total": 980750.43,
+     "proporcao": 0.203976,
+     "pequena": false
+    },
+    {
+     "sq": "190002550196",
+     "nome": "Anthony William Garotinho Matheus de Oliveira",
+     "cargo": "Governador",
+     "uf": "RJ",
+     "principal": 160000.0,
+     "confirmado": 160000.0,
+     "total": 433001.5,
+     "proporcao": 0.369514,
+     "pequena": false
+    },
+    {
+     "sq": "190002537524",
+     "nome": "André Bourguignon Marinho",
+     "cargo": "Governador",
+     "uf": "RJ",
+     "principal": 22000.0,
+     "confirmado": 22000.0,
+     "total": 596456.17,
+     "proporcao": 0.036885,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 25185757.27,
+   "principal": 2546978.13,
+   "confirmado": 2126978.13,
+   "generico": 420000.0,
+   "provavel": 6000.0,
+   "proporcao": 0.101128,
+   "n_candidatos": 12,
+   "n_gastaram": 8,
+   "n_elegiveis": 10,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 6,
+     "pct_acima": 0.6,
+     "excedente": 1368476.89
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 3,
+     "pct_acima": 0.3,
+     "excedente": 711287.55
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.1,
+     "excedente": 496332.23
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.1,
+     "excedente": 360109.64
+    }
+   ],
+   "top": [
+    {
+     "sq": "190002542888",
+     "nome": "Carlos Roberto Coelho de Mattos Júnior",
+     "cargo": "Senador",
+     "uf": "RJ",
+     "principal": 905000.0,
+     "confirmado": 785000.0,
+     "total": 2724451.81,
+     "proporcao": 0.332177,
+     "pequena": false
+    },
+    {
+     "sq": "190002548141",
+     "nome": "Benedita Souza da Silva Sampaio",
+     "cargo": "Senador",
+     "uf": "RJ",
+     "principal": 620000.0,
+     "confirmado": 335000.0,
+     "total": 5468904.52,
+     "proporcao": 0.113368,
+     "pequena": false
+    },
+    {
+     "sq": "190002548145",
+     "nome": "Pedro Paulo Carvalho Teixeira",
+     "cargo": "Senador",
+     "uf": "RJ",
+     "principal": 365000.0,
+     "confirmado": 350000.0,
+     "total": 4174264.84,
+     "proporcao": 0.087441,
+     "pequena": false
+    },
+    {
+     "sq": "190002535142",
+     "nome": "Carlos Francisco Portinho",
+     "cargo": "Senador",
+     "uf": "RJ",
+     "principal": 290000.0,
+     "confirmado": 290000.0,
+     "total": 4507689.73,
+     "proporcao": 0.064335,
+     "pequena": false
+    },
+    {
+     "sq": "190002550182",
+     "nome": "Wagner dos Santos Carneiro",
+     "cargo": "Senador",
+     "uf": "RJ",
+     "principal": 183000.0,
+     "confirmado": 183000.0,
+     "total": 3571383.11,
+     "proporcao": 0.051241,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 199258394.37,
+   "principal": 21047915.5,
+   "confirmado": 17438223.1,
+   "generico": 3609692.4,
+   "provavel": 53117.89,
+   "proporcao": 0.105631,
+   "n_candidatos": 584,
+   "n_gastaram": 312,
+   "n_elegiveis": 289,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 138,
+     "pct_acima": 0.477509,
+     "excedente": 13563218.15
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 90,
+     "pct_acima": 0.311419,
+     "excedente": 9530096.13
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 65,
+     "pct_acima": 0.224913,
+     "excedente": 7048746.31
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 52,
+     "pct_acima": 0.179931,
+     "excedente": 5169786.06
+    }
+   ],
+   "top": [
+    {
+     "sq": "190002543101",
+     "nome": "Luiz Lindbergh Farias Filho",
+     "cargo": "Deputado Federal",
+     "uf": "RJ",
+     "principal": 1665000.0,
+     "confirmado": 1660000.0,
+     "total": 3293375.83,
+     "proporcao": 0.50556,
+     "pequena": false
+    },
+    {
+     "sq": "190002541053",
+     "nome": "Flavio Fernando Prado",
+     "cargo": "Deputado Federal",
+     "uf": "RJ",
+     "principal": 963000.0,
+     "confirmado": 963000.0,
+     "total": 2030369.4,
+     "proporcao": 0.474298,
+     "pequena": false
+    },
+    {
+     "sq": "190002543097",
+     "nome": "Elias Marco Khalil Jabbour",
+     "cargo": "Deputado Federal",
+     "uf": "RJ",
+     "principal": 749005.0,
+     "confirmado": 711005.0,
+     "total": 2014879.0,
+     "proporcao": 0.371737,
+     "pequena": false
+    },
+    {
+     "sq": "190002550489",
+     "nome": "Marcelo Andre Cid Heraclito do Porto Queiroz",
+     "cargo": "Deputado Federal",
+     "uf": "RJ",
+     "principal": 710000.0,
+     "confirmado": 560000.0,
+     "total": 1643939.19,
+     "proporcao": 0.431889,
+     "pequena": false
+    },
+    {
+     "sq": "190002532809",
+     "nome": "Filippe Medeiros Poubel",
+     "cargo": "Deputado Federal",
+     "uf": "RJ",
+     "principal": 620000.0,
+     "confirmado": 620000.0,
+     "total": 2898787.95,
+     "proporcao": 0.213882,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 92798637.36,
+   "principal": 10766780.49,
+   "confirmado": 9038644.42,
+   "generico": 1728136.07,
+   "provavel": 611.02,
+   "proporcao": 0.116023,
+   "n_candidatos": 760,
+   "n_gastaram": 339,
+   "n_elegiveis": 292,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 136,
+     "pct_acima": 0.465753,
+     "excedente": 7357869.45
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 90,
+     "pct_acima": 0.308219,
+     "excedente": 5604290.59
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 67,
+     "pct_acima": 0.229452,
+     "excedente": 4471872.66
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 56,
+     "pct_acima": 0.191781,
+     "excedente": 3632967.65
+    }
+   ],
+   "top": [
+    {
+     "sq": "190002541690",
+     "nome": "Maria Eduarda Bianchi dos Santos Prado",
+     "cargo": "Deputado Estadual",
+     "uf": "RJ",
+     "principal": 843000.0,
+     "confirmado": 813000.0,
+     "total": 993420.5,
+     "proporcao": 0.848583,
+     "pequena": false
+    },
+    {
+     "sq": "190002541800",
+     "nome": "Leonardo Rocha Lupi",
+     "cargo": "Deputado Estadual",
+     "uf": "RJ",
+     "principal": 350000.0,
+     "confirmado": 350000.0,
+     "total": 567106.6,
+     "proporcao": 0.617168,
+     "pequena": false
+    },
+    {
+     "sq": "190002538014",
+     "nome": "Vinicius Cozzolino Abrahão",
+     "cargo": "Deputado Estadual",
+     "uf": "RJ",
+     "principal": 303000.0,
+     "confirmado": 303000.0,
+     "total": 604214.02,
+     "proporcao": 0.501478,
+     "pequena": false
+    },
+    {
+     "sq": "190002541676",
+     "nome": "Felipe Michel",
+     "cargo": "Deputado Estadual",
+     "uf": "RJ",
+     "principal": 300375.59,
+     "confirmado": 300375.59,
+     "total": 656949.69,
+     "proporcao": 0.457228,
+     "pequena": false
+    },
+    {
+     "sq": "190002543573",
+     "nome": "Lilian Prates Belem Behring",
+     "cargo": "Deputado Estadual",
+     "uf": "RJ",
+     "principal": 250000.0,
+     "confirmado": 250000.0,
+     "total": 699503.68,
+     "proporcao": 0.357396,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

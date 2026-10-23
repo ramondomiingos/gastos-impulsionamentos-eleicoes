@@ -1,0 +1,491 @@
+{
+ "uf": "AC",
+ "nome": "Acre",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 2,
+ "n_candidatos_total": 363,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 48796888.53,
+   "principal": 1223707.42,
+   "confirmado": 598555.9,
+   "generico": 625151.52,
+   "provavel": 39.99,
+   "proporcao": 0.025078,
+   "n_candidatos": 211,
+   "n_gastaram": 69,
+   "n_elegiveis": 106,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 22,
+     "pct_acima": 0.207547,
+     "excedente": 376094.86
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 11,
+     "pct_acima": 0.103774,
+     "excedente": 163308.15
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 6,
+     "pct_acima": 0.056604,
+     "excedente": 61542.88
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 5,
+     "pct_acima": 0.04717,
+     "excedente": 26392.59
+    }
+   ],
+   "top": [
+    {
+     "sq": "10002532492",
+     "nome": "Alan Rick Miranda",
+     "cargo": "Governador",
+     "uf": "AC",
+     "principal": 130000.0,
+     "confirmado": 0.0,
+     "total": 2031608.33,
+     "proporcao": 0.063989,
+     "pequena": false
+    },
+    {
+     "sq": "10002545231",
+     "nome": "Maria do Socorro Neri Medeiros de Souza",
+     "cargo": "Deputado Federal",
+     "uf": "AC",
+     "principal": 125000.0,
+     "confirmado": 50000.0,
+     "total": 879000.5,
+     "proporcao": 0.142207,
+     "pequena": false
+    },
+    {
+     "sq": "10002532418",
+     "nome": "Joziney Alves Amorim",
+     "cargo": "Deputado Federal",
+     "uf": "AC",
+     "principal": 96000.0,
+     "confirmado": 96000.0,
+     "total": 790552.8,
+     "proporcao": 0.121434,
+     "pequena": false
+    },
+    {
+     "sq": "10002536441",
+     "nome": "Jorge Ney Viana Macedo Neves",
+     "cargo": "Senador",
+     "uf": "AC",
+     "principal": 85000.0,
+     "confirmado": 85000.0,
+     "total": 1381032.27,
+     "proporcao": 0.061548,
+     "pequena": false
+    },
+    {
+     "sq": "10002544107",
+     "nome": "Mailza Assis Cameli",
+     "cargo": "Governador",
+     "uf": "AC",
+     "principal": 80718.8,
+     "confirmado": 0.0,
+     "total": 2227899.5,
+     "proporcao": 0.036231,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 4642027.95,
+   "principal": 215718.8,
+   "confirmado": 5000.0,
+   "generico": 210718.8,
+   "provavel": 0.0,
+   "proporcao": 0.046471,
+   "n_candidatos": 5,
+   "n_gastaram": 5,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 28419.58
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "10002532492",
+     "nome": "Alan Rick Miranda",
+     "cargo": "Governador",
+     "uf": "AC",
+     "principal": 130000.0,
+     "confirmado": 0.0,
+     "total": 2031608.33,
+     "proporcao": 0.063989,
+     "pequena": false
+    },
+    {
+     "sq": "10002544107",
+     "nome": "Mailza Assis Cameli",
+     "cargo": "Governador",
+     "uf": "AC",
+     "principal": 80718.8,
+     "confirmado": 0.0,
+     "total": 2227899.5,
+     "proporcao": 0.036231,
+     "pequena": false
+    },
+    {
+     "sq": "10002550719",
+     "nome": "Thor Oliveira Dantas",
+     "cargo": "Governador",
+     "uf": "AC",
+     "principal": 2500.0,
+     "confirmado": 2500.0,
+     "total": 201489.37,
+     "proporcao": 0.012408,
+     "pequena": false
+    },
+    {
+     "sq": "10002544015",
+     "nome": "Sebastiao Bocalom Rodrigues",
+     "cargo": "Governador",
+     "uf": "AC",
+     "principal": 2000.0,
+     "confirmado": 2000.0,
+     "total": 168292.52,
+     "proporcao": 0.011884,
+     "pequena": false
+    },
+    {
+     "sq": "10002549500",
+     "nome": "Eudo Raffael Lima da Silva",
+     "cargo": "Governador",
+     "uf": "AC",
+     "principal": 500.0,
+     "confirmado": 500.0,
+     "total": 12738.23,
+     "proporcao": 0.039252,
+     "pequena": true
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 7054308.75,
+   "principal": 161998.0,
+   "confirmado": 101000.0,
+   "generico": 60998.0,
+   "provavel": 0.0,
+   "proporcao": 0.022964,
+   "n_candidatos": 7,
+   "n_gastaram": 6,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 15948.39
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "10002536441",
+     "nome": "Jorge Ney Viana Macedo Neves",
+     "cargo": "Senador",
+     "uf": "AC",
+     "principal": 85000.0,
+     "confirmado": 85000.0,
+     "total": 1381032.27,
+     "proporcao": 0.061548,
+     "pequena": false
+    },
+    {
+     "sq": "10002548046",
+     "nome": "Gladson de Lima Camelí",
+     "cargo": "Senador",
+     "uf": "AC",
+     "principal": 60000.0,
+     "confirmado": 0.0,
+     "total": 2081531.92,
+     "proporcao": 0.028825,
+     "pequena": false
+    },
+    {
+     "sq": "10002533895",
+     "nome": "Cylmara Fernandes da Rocha Gripp",
+     "cargo": "Senador",
+     "uf": "AC",
+     "principal": 8000.0,
+     "confirmado": 8000.0,
+     "total": 1009780.46,
+     "proporcao": 0.007923,
+     "pequena": false
+    },
+    {
+     "sq": "10002535804",
+     "nome": "Sergio de Oliveira Cunha",
+     "cargo": "Senador",
+     "uf": "AC",
+     "principal": 5000.0,
+     "confirmado": 5000.0,
+     "total": 1130543.5,
+     "proporcao": 0.004423,
+     "pequena": false
+    },
+    {
+     "sq": "10002544274",
+     "nome": "Eduardo Ovidio Borges de Velloso Vianna",
+     "cargo": "Senador",
+     "uf": "AC",
+     "principal": 3000.0,
+     "confirmado": 3000.0,
+     "total": 44900.0,
+     "proporcao": 0.066815,
+     "pequena": true
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 23826670.34,
+   "principal": 509214.71,
+   "confirmado": 324179.99,
+   "generico": 185034.72,
+   "provavel": 0.0,
+   "proporcao": 0.021372,
+   "n_candidatos": 67,
+   "n_gastaram": 28,
+   "n_elegiveis": 47,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 10,
+     "pct_acima": 0.212766,
+     "excedente": 184755.45
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 5,
+     "pct_acima": 0.106383,
+     "excedente": 73934.73
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.021277,
+     "excedente": 9124.4
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.021277,
+     "excedente": 4499.2
+    }
+   ],
+   "top": [
+    {
+     "sq": "10002545231",
+     "nome": "Maria do Socorro Neri Medeiros de Souza",
+     "cargo": "Deputado Federal",
+     "uf": "AC",
+     "principal": 125000.0,
+     "confirmado": 50000.0,
+     "total": 879000.5,
+     "proporcao": 0.142207,
+     "pequena": false
+    },
+    {
+     "sq": "10002532418",
+     "nome": "Joziney Alves Amorim",
+     "cargo": "Deputado Federal",
+     "uf": "AC",
+     "principal": 96000.0,
+     "confirmado": 96000.0,
+     "total": 790552.8,
+     "proporcao": 0.121434,
+     "pequena": false
+    },
+    {
+     "sq": "10002532422",
+     "nome": "Pedro Luis Longo",
+     "cargo": "Deputado Federal",
+     "uf": "AC",
+     "principal": 50000.0,
+     "confirmado": 0.0,
+     "total": 968859.0,
+     "proporcao": 0.051607,
+     "pequena": false
+    },
+    {
+     "sq": "10002538358",
+     "nome": "Maria Perpetua de Almeida",
+     "cargo": "Deputado Federal",
+     "uf": "AC",
+     "principal": 33000.0,
+     "confirmado": 33000.0,
+     "total": 529762.86,
+     "proporcao": 0.062292,
+     "pequena": false
+    },
+    {
+     "sq": "10002532489",
+     "nome": "Roberto Duarte Junior",
+     "cargo": "Deputado Federal",
+     "uf": "AC",
+     "principal": 30000.0,
+     "confirmado": 0.0,
+     "total": 1295611.6,
+     "proporcao": 0.023155,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 13273881.49,
+   "principal": 336775.91,
+   "confirmado": 168375.91,
+   "generico": 168400.0,
+   "provavel": 39.99,
+   "proporcao": 0.025371,
+   "n_candidatos": 132,
+   "n_gastaram": 30,
+   "n_elegiveis": 50,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 10,
+     "pct_acima": 0.2,
+     "excedente": 146971.44
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 6,
+     "pct_acima": 0.12,
+     "excedente": 89373.42
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 5,
+     "pct_acima": 0.1,
+     "excedente": 52418.48
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 4,
+     "pct_acima": 0.08,
+     "excedente": 21893.39
+    }
+   ],
+   "top": [
+    {
+     "sq": "10002544537",
+     "nome": "Joana D Arc Figueiredo de Melo",
+     "cargo": "Deputado Estadual",
+     "uf": "AC",
+     "principal": 67000.0,
+     "confirmado": 0.0,
+     "total": 347176.3,
+     "proporcao": 0.192986,
+     "pequena": false
+    },
+    {
+     "sq": "10002544529",
+     "nome": "Michelle de Oliveira Melo",
+     "cargo": "Deputado Estadual",
+     "uf": "AC",
+     "principal": 50000.0,
+     "confirmado": 50000.0,
+     "total": 904319.81,
+     "proporcao": 0.05529,
+     "pequena": false
+    },
+    {
+     "sq": "10002544541",
+     "nome": "Nicolau Candido da Silva Junior",
+     "cargo": "Deputado Estadual",
+     "uf": "AC",
+     "principal": 30300.0,
+     "confirmado": 0.0,
+     "total": 99739.21,
+     "proporcao": 0.303792,
+     "pequena": false
+    },
+    {
+     "sq": "10002545650",
+     "nome": "Kiefer Roberto Cavalcante Lima",
+     "cargo": "Deputado Estadual",
+     "uf": "AC",
+     "principal": 25000.0,
+     "confirmado": 0.0,
+     "total": 210053.93,
+     "proporcao": 0.119017,
+     "pequena": false
+    },
+    {
+     "sq": "10002544042",
+     "nome": "Edvaldo Soares de Magalhaes",
+     "cargo": "Deputado Estadual",
+     "uf": "AC",
+     "principal": 20000.0,
+     "confirmado": 20000.0,
+     "total": 78001.5,
+     "proporcao": 0.256405,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

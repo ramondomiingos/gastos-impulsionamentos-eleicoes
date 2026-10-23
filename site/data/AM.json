@@ -1,0 +1,480 @@
+{
+ "uf": "AM",
+ "nome": "Amazonas",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 2,
+ "n_candidatos_total": 449,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 103568092.36,
+   "principal": 9945460.16,
+   "confirmado": 7859370.17,
+   "generico": 2086089.99,
+   "provavel": 569.65,
+   "proporcao": 0.096028,
+   "n_candidatos": 332,
+   "n_gastaram": 143,
+   "n_elegiveis": 164,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 65,
+     "pct_acima": 0.396341,
+     "excedente": 6247699.37
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 39,
+     "pct_acima": 0.237805,
+     "excedente": 4337604.1
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 26,
+     "pct_acima": 0.158537,
+     "excedente": 3145990.13
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 21,
+     "pct_acima": 0.128049,
+     "excedente": 2340134.51
+    }
+   ],
+   "top": [
+    {
+     "sq": "40002537344",
+     "nome": "Francisco Plinio Valerio Tomaz",
+     "cargo": "Senador",
+     "uf": "AM",
+     "principal": 1017500.0,
+     "confirmado": 1017500.0,
+     "total": 2606255.25,
+     "proporcao": 0.390407,
+     "pequena": false
+    },
+    {
+     "sq": "40002541741",
+     "nome": "Roberto Maia Cidade Filho",
+     "cargo": "Governador",
+     "uf": "AM",
+     "principal": 830000.0,
+     "confirmado": 710000.0,
+     "total": 5971953.0,
+     "proporcao": 0.138983,
+     "pequena": false
+    },
+    {
+     "sq": "40002532761",
+     "nome": "Sidney Ricardo de Oliveira Leite",
+     "cargo": "Deputado Federal",
+     "uf": "AM",
+     "principal": 745000.0,
+     "confirmado": 745000.0,
+     "total": 2558160.09,
+     "proporcao": 0.291225,
+     "pequena": false
+    },
+    {
+     "sq": "40002540484",
+     "nome": "Ubirajara Rosses do Nascimento Junior",
+     "cargo": "Deputado Federal",
+     "uf": "AM",
+     "principal": 651199.5,
+     "confirmado": 651199.5,
+     "total": 841587.94,
+     "proporcao": 0.773775,
+     "pequena": false
+    },
+    {
+     "sq": "40002541744",
+     "nome": "Wilson Miranda Lima",
+     "cargo": "Senador",
+     "uf": "AM",
+     "principal": 621200.0,
+     "confirmado": 399000.0,
+     "total": 2478904.93,
+     "proporcao": 0.250595,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 23243873.08,
+   "principal": 1738827.39,
+   "confirmado": 1568827.39,
+   "generico": 170000.0,
+   "provavel": 0.0,
+   "proporcao": 0.074808,
+   "n_candidatos": 5,
+   "n_gastaram": 5,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 3,
+     "pct_acima": 0.75,
+     "excedente": 597067.65
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 232804.7
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "40002541741",
+     "nome": "Roberto Maia Cidade Filho",
+     "cargo": "Governador",
+     "uf": "AM",
+     "principal": 830000.0,
+     "confirmado": 710000.0,
+     "total": 5971953.0,
+     "proporcao": 0.138983,
+     "pequena": false
+    },
+    {
+     "sq": "40002541626",
+     "nome": "Maria do Carmo Seffair Lins de Albuquerque",
+     "cargo": "Governador",
+     "uf": "AM",
+     "principal": 368997.99,
+     "confirmado": 368997.99,
+     "total": 6268396.25,
+     "proporcao": 0.058866,
+     "pequena": false
+    },
+    {
+     "sq": "40002532272",
+     "nome": "Omar Jose Abdelaziz",
+     "cargo": "Governador",
+     "uf": "AM",
+     "principal": 318829.4,
+     "confirmado": 318829.4,
+     "total": 6792766.24,
+     "proporcao": 0.046937,
+     "pequena": false
+    },
+    {
+     "sq": "40002536086",
+     "nome": "David Antônio Abisai Pereira de Almeida",
+     "cargo": "Governador",
+     "uf": "AM",
+     "principal": 220000.0,
+     "confirmado": 170000.0,
+     "total": 4198257.59,
+     "proporcao": 0.052403,
+     "pequena": false
+    },
+    {
+     "sq": "40002535267",
+     "nome": "Gilberto Vasconcelos da Silva",
+     "cargo": "Governador",
+     "uf": "AM",
+     "principal": 1000.0,
+     "confirmado": 1000.0,
+     "total": 12500.0,
+     "proporcao": 0.08,
+     "pequena": true
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 10627155.45,
+   "principal": 2187800.0,
+   "confirmado": 1965600.0,
+   "generico": 222200.0,
+   "provavel": 0.0,
+   "proporcao": 0.205869,
+   "n_candidatos": 7,
+   "n_gastaram": 4,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 1.0,
+     "excedente": 1658462.33
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 3,
+     "pct_acima": 0.75,
+     "excedente": 1144457.79
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 875925.97
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 621667.96
+    }
+   ],
+   "top": [
+    {
+     "sq": "40002537344",
+     "nome": "Francisco Plinio Valerio Tomaz",
+     "cargo": "Senador",
+     "uf": "AM",
+     "principal": 1017500.0,
+     "confirmado": 1017500.0,
+     "total": 2606255.25,
+     "proporcao": 0.390407,
+     "pequena": false
+    },
+    {
+     "sq": "40002541744",
+     "nome": "Wilson Miranda Lima",
+     "cargo": "Senador",
+     "uf": "AM",
+     "principal": 621200.0,
+     "confirmado": 399000.0,
+     "total": 2478904.93,
+     "proporcao": 0.250595,
+     "pequena": false
+    },
+    {
+     "sq": "40002531447",
+     "nome": "Carlos Eduardo de Souza Braga",
+     "cargo": "Senador",
+     "uf": "AM",
+     "principal": 329000.0,
+     "confirmado": 329000.0,
+     "total": 3443331.4,
+     "proporcao": 0.095547,
+     "pequena": false
+    },
+    {
+     "sq": "40002542686",
+     "nome": "Alberto Barros Cavalcante Neto",
+     "cargo": "Senador",
+     "uf": "AM",
+     "principal": 220100.0,
+     "confirmado": 220100.0,
+     "total": 2058261.87,
+     "proporcao": 0.106935,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 39339688.49,
+   "principal": 3509337.96,
+   "confirmado": 2583449.35,
+   "generico": 925888.61,
+   "provavel": 569.65,
+   "proporcao": 0.089206,
+   "n_candidatos": 101,
+   "n_gastaram": 49,
+   "n_elegiveis": 57,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 20,
+     "pct_acima": 0.350877,
+     "excedente": 2402904.78
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 12,
+     "pct_acima": 0.210526,
+     "excedente": 1845849.12
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 11,
+     "pct_acima": 0.192982,
+     "excedente": 1468904.22
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 8,
+     "pct_acima": 0.140351,
+     "excedente": 1176666.48
+    }
+   ],
+   "top": [
+    {
+     "sq": "40002532761",
+     "nome": "Sidney Ricardo de Oliveira Leite",
+     "cargo": "Deputado Federal",
+     "uf": "AM",
+     "principal": 745000.0,
+     "confirmado": 745000.0,
+     "total": 2558160.09,
+     "proporcao": 0.291225,
+     "pequena": false
+    },
+    {
+     "sq": "40002540484",
+     "nome": "Ubirajara Rosses do Nascimento Junior",
+     "cargo": "Deputado Federal",
+     "uf": "AM",
+     "principal": 651199.5,
+     "confirmado": 651199.5,
+     "total": 841587.94,
+     "proporcao": 0.773775,
+     "pequena": false
+    },
+    {
+     "sq": "40002533204",
+     "nome": "Hissa Nagib Abrahao Filho",
+     "cargo": "Deputado Federal",
+     "uf": "AM",
+     "principal": 476914.5,
+     "confirmado": 476914.5,
+     "total": 572301.5,
+     "proporcao": 0.833327,
+     "pequena": false
+    },
+    {
+     "sq": "40002540481",
+     "nome": "Alfredo Pereira do Nascimento",
+     "cargo": "Deputado Federal",
+     "uf": "AM",
+     "principal": 255000.0,
+     "confirmado": 120000.0,
+     "total": 1858676.22,
+     "proporcao": 0.137194,
+     "pequena": false
+    },
+    {
+     "sq": "40002542671",
+     "nome": "Therezinha Ruiz de Oliveira",
+     "cargo": "Deputado Federal",
+     "uf": "AM",
+     "principal": 200000.0,
+     "confirmado": 100000.0,
+     "total": 1035909.51,
+     "proporcao": 0.193067,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 30357375.34,
+   "principal": 2509494.81,
+   "confirmado": 1741493.43,
+   "generico": 768001.38,
+   "provavel": 0.0,
+   "proporcao": 0.082665,
+   "n_candidatos": 219,
+   "n_gastaram": 85,
+   "n_elegiveis": 99,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 38,
+     "pct_acima": 0.383838,
+     "excedente": 1589264.61
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 23,
+     "pct_acima": 0.232323,
+     "excedente": 1114492.48
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 13,
+     "pct_acima": 0.131313,
+     "excedente": 801159.94
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 11,
+     "pct_acima": 0.111111,
+     "excedente": 541800.06
+    }
+   ],
+   "top": [
+    {
+     "sq": "40002534377",
+     "nome": "Rodrigo Guedes Oliveira de Araujo",
+     "cargo": "Deputado Estadual",
+     "uf": "AM",
+     "principal": 320000.0,
+     "confirmado": 265000.0,
+     "total": 765293.16,
+     "proporcao": 0.41814,
+     "pequena": false
+    },
+    {
+     "sq": "40002532771",
+     "nome": "Eurico de Angelo Tavares",
+     "cargo": "Deputado Estadual",
+     "uf": "AM",
+     "principal": 250000.0,
+     "confirmado": 250000.0,
+     "total": 957435.88,
+     "proporcao": 0.261114,
+     "pequena": false
+    },
+    {
+     "sq": "40002542965",
+     "nome": "Pericles Rodrigues do Nascimento",
+     "cargo": "Deputado Estadual",
+     "uf": "AM",
+     "principal": 235000.0,
+     "confirmado": 135000.0,
+     "total": 602846.81,
+     "proporcao": 0.389817,
+     "pequena": false
+    },
+    {
+     "sq": "40002542655",
+     "nome": "Marcellus Jose Barroso Campelo",
+     "cargo": "Deputado Estadual",
+     "uf": "AM",
+     "principal": 223338.0,
+     "confirmado": 223338.0,
+     "total": 766929.74,
+     "proporcao": 0.291211,
+     "pequena": false
+    },
+    {
+     "sq": "40002542971",
+     "nome": "Debora Salgueiro de Menezes",
+     "cargo": "Deputado Estadual",
+     "uf": "AM",
+     "principal": 125000.0,
+     "confirmado": 125000.0,
+     "total": 614270.5,
+     "proporcao": 0.203493,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

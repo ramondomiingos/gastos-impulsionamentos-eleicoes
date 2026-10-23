@@ -1,0 +1,347 @@
+{
+ "versao": 1,
+ "gerado_em": "2026-10-23",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "22/10/2026",
+ "piso_campanha": 50000,
+ "tetos": [
+  0.05,
+  0.1,
+  0.15,
+  0.2
+ ],
+ "ufs": [
+  {
+   "uf": "BR",
+   "nome": "Brasil",
+   "artigo": "do",
+   "cargos": [
+    "presidente"
+   ]
+  },
+  {
+   "uf": "AC",
+   "nome": "Acre",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "AL",
+   "nome": "Alagoas",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "AM",
+   "nome": "Amazonas",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "AP",
+   "nome": "Amapá",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "BA",
+   "nome": "Bahia",
+   "artigo": "da",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "CE",
+   "nome": "Ceará",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "DF",
+   "nome": "Distrito Federal",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-distrital"
+   ]
+  },
+  {
+   "uf": "ES",
+   "nome": "Espírito Santo",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "GO",
+   "nome": "Goiás",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "MA",
+   "nome": "Maranhão",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "MG",
+   "nome": "Minas Gerais",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "MS",
+   "nome": "Mato Grosso do Sul",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "MT",
+   "nome": "Mato Grosso",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "PA",
+   "nome": "Pará",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "PB",
+   "nome": "Paraíba",
+   "artigo": "da",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "PE",
+   "nome": "Pernambuco",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "PI",
+   "nome": "Piauí",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "PR",
+   "nome": "Paraná",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "RJ",
+   "nome": "Rio de Janeiro",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "RN",
+   "nome": "Rio Grande do Norte",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "RO",
+   "nome": "Rondônia",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "RR",
+   "nome": "Roraima",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "RS",
+   "nome": "Rio Grande do Sul",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "SC",
+   "nome": "Santa Catarina",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "SE",
+   "nome": "Sergipe",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "SP",
+   "nome": "São Paulo",
+   "artigo": "de",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  },
+  {
+   "uf": "TO",
+   "nome": "Tocantins",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  }
+ ]
+}

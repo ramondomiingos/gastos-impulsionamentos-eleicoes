@@ -1,0 +1,447 @@
+{
+ "uf": "CE",
+ "nome": "Ceará",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "22/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 689,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 177754513.07,
+   "principal": 20382580.96,
+   "confirmado": 12533491.65,
+   "generico": 7849089.31,
+   "provavel": 2647.71,
+   "proporcao": 0.114667,
+   "n_candidatos": 514,
+   "n_gastaram": 259,
+   "n_elegiveis": 304,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 107,
+     "pct_acima": 0.351974,
+     "excedente": 14532001.71
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 70,
+     "pct_acima": 0.230263,
+     "excedente": 11051622.81
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 57,
+     "pct_acima": 0.1875,
+     "excedente": 8506025.15
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 40,
+     "pct_acima": 0.131579,
+     "excedente": 6345767.34
+    }
+   ],
+   "top": [
+    {
+     "sq": "60002543969",
+     "nome": "Elmano de Freitas da Costa",
+     "cargo": "Governador",
+     "uf": "CE",
+     "principal": 3913511.0,
+     "confirmado": 0.0,
+     "total": 8425966.69,
+     "proporcao": 0.464458,
+     "pequena": false
+    },
+    {
+     "sq": "60002531351",
+     "nome": "Ciro Ferreira Gomes",
+     "cargo": "Governador",
+     "uf": "CE",
+     "principal": 2600000.0,
+     "confirmado": 2399999.99,
+     "total": 12139081.58,
+     "proporcao": 0.214184,
+     "pequena": false
+    },
+    {
+     "sq": "60002537016",
+     "nome": "Celio Studart Barbosa",
+     "cargo": "Deputado Federal",
+     "uf": "CE",
+     "principal": 2401700.0,
+     "confirmado": 2401700.0,
+     "total": 3052778.12,
+     "proporcao": 0.786726,
+     "pequena": false
+    },
+    {
+     "sq": "60002542476",
+     "nome": "Luizianne de Oliveira Lins",
+     "cargo": "Senador",
+     "uf": "CE",
+     "principal": 1000000.0,
+     "confirmado": 1000000.0,
+     "total": 3211705.24,
+     "proporcao": 0.311361,
+     "pequena": false
+    },
+    {
+     "sq": "60002536979",
+     "nome": "Andre Fernandes de Moura",
+     "cargo": "Deputado Federal",
+     "uf": "CE",
+     "principal": 625000.0,
+     "confirmado": 625000.0,
+     "total": 1523636.79,
+     "proporcao": 0.410203,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 20941787.01,
+   "principal": 6513511.0,
+   "confirmado": 2399999.99,
+   "generico": 4113511.01,
+   "provavel": 0.0,
+   "proporcao": 0.311029,
+   "n_candidatos": 6,
+   "n_gastaram": 2,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 5485258.59
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 4457006.17
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 3428753.76
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 2400501.35
+    }
+   ],
+   "top": [
+    {
+     "sq": "60002543969",
+     "nome": "Elmano de Freitas da Costa",
+     "cargo": "Governador",
+     "uf": "CE",
+     "principal": 3913511.0,
+     "confirmado": 0.0,
+     "total": 8425966.69,
+     "proporcao": 0.464458,
+     "pequena": false
+    },
+    {
+     "sq": "60002531351",
+     "nome": "Ciro Ferreira Gomes",
+     "cargo": "Governador",
+     "uf": "CE",
+     "principal": 2600000.0,
+     "confirmado": 2399999.99,
+     "total": 12139081.58,
+     "proporcao": 0.214184,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 13249903.97,
+   "principal": 1915999.0,
+   "confirmado": 1506000.0,
+   "generico": 409999.0,
+   "provavel": 0.0,
+   "proporcao": 0.144605,
+   "n_candidatos": 7,
+   "n_gastaram": 4,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 1.0,
+     "excedente": 1255147.38
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 764106.85
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 518244.21
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 357658.95
+    }
+   ],
+   "top": [
+    {
+     "sq": "60002542476",
+     "nome": "Luizianne de Oliveira Lins",
+     "cargo": "Senador",
+     "uf": "CE",
+     "principal": 1000000.0,
+     "confirmado": 1000000.0,
+     "total": 3211705.24,
+     "proporcao": 0.311361,
+     "pequena": false
+    },
+    {
+     "sq": "60002540753",
+     "nome": "Wagner Sousa Gomes",
+     "cargo": "Senador",
+     "uf": "CE",
+     "principal": 409999.0,
+     "confirmado": 0.0,
+     "total": 3247216.28,
+     "proporcao": 0.126262,
+     "pequena": false
+    },
+    {
+     "sq": "60002540754",
+     "nome": "Alcides Fernandes da Silva",
+     "cargo": "Senador",
+     "uf": "CE",
+     "principal": 306000.0,
+     "confirmado": 306000.0,
+     "total": 3676957.5,
+     "proporcao": 0.083221,
+     "pequena": false
+    },
+    {
+     "sq": "60002542479",
+     "nome": "Cid Ferreira Gomes",
+     "cargo": "Senador",
+     "uf": "CE",
+     "principal": 200000.0,
+     "confirmado": 200000.0,
+     "total": 3081153.47,
+     "proporcao": 0.064911,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 100513320.5,
+   "principal": 8336777.66,
+   "confirmado": 5971604.76,
+   "generico": 2365172.9,
+   "provavel": 2189.89,
+   "proporcao": 0.082942,
+   "n_candidatos": 211,
+   "n_gastaram": 108,
+   "n_elegiveis": 148,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 41,
+     "pct_acima": 0.277027,
+     "excedente": 5569820.82
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 24,
+     "pct_acima": 0.162162,
+     "excedente": 4253226.26
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 21,
+     "pct_acima": 0.141892,
+     "excedente": 3453441.4
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 14,
+     "pct_acima": 0.094595,
+     "excedente": 2805439.8
+    }
+   ],
+   "top": [
+    {
+     "sq": "60002537016",
+     "nome": "Celio Studart Barbosa",
+     "cargo": "Deputado Federal",
+     "uf": "CE",
+     "principal": 2401700.0,
+     "confirmado": 2401700.0,
+     "total": 3052778.12,
+     "proporcao": 0.786726,
+     "pequena": false
+    },
+    {
+     "sq": "60002536979",
+     "nome": "Andre Fernandes de Moura",
+     "cargo": "Deputado Federal",
+     "uf": "CE",
+     "principal": 625000.0,
+     "confirmado": 625000.0,
+     "total": 1523636.79,
+     "proporcao": 0.410203,
+     "pequena": false
+    },
+    {
+     "sq": "60002534893",
+     "nome": "Moses Haendel Melo Spíndola Rodrigues",
+     "cargo": "Deputado Federal",
+     "uf": "CE",
+     "principal": 335000.0,
+     "confirmado": 20000.0,
+     "total": 1828908.01,
+     "proporcao": 0.183169,
+     "pequena": false
+    },
+    {
+     "sq": "60002536974",
+     "nome": "Priscila Bezerra da Costa",
+     "cargo": "Deputado Federal",
+     "uf": "CE",
+     "principal": 330000.0,
+     "confirmado": 115000.0,
+     "total": 1115547.95,
+     "proporcao": 0.295819,
+     "pequena": false
+    },
+    {
+     "sq": "60002536699",
+     "nome": "Antonio Idilvan de Lima Alencar",
+     "cargo": "Deputado Federal",
+     "uf": "CE",
+     "principal": 302000.0,
+     "confirmado": 0.0,
+     "total": 1184377.81,
+     "proporcao": 0.254986,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 43049501.59,
+   "principal": 3616293.3,
+   "confirmado": 2655886.9,
+   "generico": 960406.4,
+   "provavel": 457.82,
+   "proporcao": 0.084003,
+   "n_candidatos": 290,
+   "n_gastaram": 145,
+   "n_elegiveis": 148,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 60,
+     "pct_acima": 0.405405,
+     "excedente": 2221774.92
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 42,
+     "pct_acima": 0.283784,
+     "excedente": 1577283.53
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 33,
+     "pct_acima": 0.222973,
+     "excedente": 1105585.77
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 23,
+     "pct_acima": 0.155405,
+     "excedente": 782167.23
+    }
+   ],
+   "top": [
+    {
+     "sq": "60002540708",
+     "nome": "Jade Afonso Romero",
+     "cargo": "Deputado Estadual",
+     "uf": "CE",
+     "principal": 242189.0,
+     "confirmado": 242189.0,
+     "total": 523544.75,
+     "proporcao": 0.462595,
+     "pequena": false
+    },
+    {
+     "sq": "60002537659",
+     "nome": "Erich Douglas Moreira Chaves",
+     "cargo": "Deputado Estadual",
+     "uf": "CE",
+     "principal": 219970.0,
+     "confirmado": 219970.0,
+     "total": 369959.97,
+     "proporcao": 0.594578,
+     "pequena": false
+    },
+    {
+     "sq": "60002540715",
+     "nome": "Jose Acrisio de Sena",
+     "cargo": "Deputado Estadual",
+     "uf": "CE",
+     "principal": 140000.0,
+     "confirmado": 85000.0,
+     "total": 210060.11,
+     "proporcao": 0.666476,
+     "pequena": false
+    },
+    {
+     "sq": "60002540710",
+     "nome": "Bruno Torquato Pedrosa",
+     "cargo": "Deputado Estadual",
+     "uf": "CE",
+     "principal": 119772.0,
+     "confirmado": 5000.0,
+     "total": 370000.5,
+     "proporcao": 0.323708,
+     "pequena": false
+    },
+    {
+     "sq": "60002540728",
+     "nome": "Adriana de Sousa Almeida",
+     "cargo": "Deputado Estadual",
+     "uf": "CE",
+     "principal": 118000.0,
+     "confirmado": 32000.0,
+     "total": 370579.16,
+     "proporcao": 0.31842,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

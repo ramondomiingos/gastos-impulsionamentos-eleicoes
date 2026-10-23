@@ -1,0 +1,491 @@
+{
+ "uf": "RO",
+ "nome": "Rondônia",
+ "artigo": "de",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 410,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 109024193.68,
+   "principal": 6414012.47,
+   "confirmado": 5977616.37,
+   "generico": 436396.1,
+   "provavel": 630.56,
+   "proporcao": 0.058831,
+   "n_candidatos": 313,
+   "n_gastaram": 206,
+   "n_elegiveis": 194,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 62,
+     "pct_acima": 0.319588,
+     "excedente": 2685523.89
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 28,
+     "pct_acima": 0.14433,
+     "excedente": 1170666.48
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 14,
+     "pct_acima": 0.072165,
+     "excedente": 467806.97
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 8,
+     "pct_acima": 0.041237,
+     "excedente": 177022.26
+    }
+   ],
+   "top": [
+    {
+     "sq": "220002539996",
+     "nome": "Fernando Rodrigues Máximo",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 700000.0,
+     "confirmado": 700000.0,
+     "total": 3442651.82,
+     "proporcao": 0.203332,
+     "pequena": false
+    },
+    {
+     "sq": "220002539995",
+     "nome": "Bruno Scheid",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 500000.0,
+     "confirmado": 500000.0,
+     "total": 3644301.13,
+     "proporcao": 0.137201,
+     "pequena": false
+    },
+    {
+     "sq": "220002541939",
+     "nome": "Marcos Rogerio da Silva Brito",
+     "cargo": "Governador",
+     "uf": "RO",
+     "principal": 450000.0,
+     "confirmado": 450000.0,
+     "total": 6341643.48,
+     "proporcao": 0.07096,
+     "pequena": false
+    },
+    {
+     "sq": "220002542916",
+     "nome": "Hildon de Lima Chaves",
+     "cargo": "Governador",
+     "uf": "RO",
+     "principal": 440000.0,
+     "confirmado": 440000.0,
+     "total": 3505480.89,
+     "proporcao": 0.125518,
+     "pequena": false
+    },
+    {
+     "sq": "220002541490",
+     "nome": "Acir Marcos Gurgacz",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 285000.0,
+     "confirmado": 285000.0,
+     "total": 2912184.48,
+     "proporcao": 0.097865,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 17604467.44,
+   "principal": 1193000.0,
+   "confirmado": 1193000.0,
+   "generico": 0.0,
+   "provavel": 0.0,
+   "proporcao": 0.067767,
+   "n_candidatos": 5,
+   "n_gastaram": 5,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 3,
+     "pct_acima": 0.6,
+     "excedente": 413605.95
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 89451.91
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "220002541939",
+     "nome": "Marcos Rogerio da Silva Brito",
+     "cargo": "Governador",
+     "uf": "RO",
+     "principal": 450000.0,
+     "confirmado": 450000.0,
+     "total": 6341643.48,
+     "proporcao": 0.07096,
+     "pequena": false
+    },
+    {
+     "sq": "220002542916",
+     "nome": "Hildon de Lima Chaves",
+     "cargo": "Governador",
+     "uf": "RO",
+     "principal": 440000.0,
+     "confirmado": 440000.0,
+     "total": 3505480.89,
+     "proporcao": 0.125518,
+     "pequena": false
+    },
+    {
+     "sq": "220002536806",
+     "nome": "Adailton Antunes Ferreira",
+     "cargo": "Governador",
+     "uf": "RO",
+     "principal": 262000.0,
+     "confirmado": 262000.0,
+     "total": 4920756.61,
+     "proporcao": 0.053244,
+     "pequena": false
+    },
+    {
+     "sq": "220002551251",
+     "nome": "Pedro Abib Hecktheuer",
+     "cargo": "Governador",
+     "uf": "RO",
+     "principal": 24000.0,
+     "confirmado": 24000.0,
+     "total": 1037503.92,
+     "proporcao": 0.023132,
+     "pequena": false
+    },
+    {
+     "sq": "220002542185",
+     "nome": "Expedito Goncalves Ferreira Netto",
+     "cargo": "Governador",
+     "uf": "RO",
+     "principal": 17000.0,
+     "confirmado": 17000.0,
+     "total": 1799082.54,
+     "proporcao": 0.009449,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 17583902.62,
+   "principal": 1952000.0,
+   "confirmado": 1952000.0,
+   "generico": 0.0,
+   "provavel": 91.08,
+   "proporcao": 0.111011,
+   "n_candidatos": 10,
+   "n_gastaram": 8,
+   "n_elegiveis": 9,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.444444,
+     "excedente": 1145090.38
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 3,
+     "pct_acima": 0.333333,
+     "excedente": 561399.21
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.111111,
+     "excedente": 183602.23
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.111111,
+     "excedente": 11469.64
+    }
+   ],
+   "top": [
+    {
+     "sq": "220002539996",
+     "nome": "Fernando Rodrigues Máximo",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 700000.0,
+     "confirmado": 700000.0,
+     "total": 3442651.82,
+     "proporcao": 0.203332,
+     "pequena": false
+    },
+    {
+     "sq": "220002539995",
+     "nome": "Bruno Scheid",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 500000.0,
+     "confirmado": 500000.0,
+     "total": 3644301.13,
+     "proporcao": 0.137201,
+     "pequena": false
+    },
+    {
+     "sq": "220002541490",
+     "nome": "Acir Marcos Gurgacz",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 285000.0,
+     "confirmado": 285000.0,
+     "total": 2912184.48,
+     "proporcao": 0.097865,
+     "pequena": false
+    },
+    {
+     "sq": "220002547310",
+     "nome": "Mariana Fonseca Ribeiro Carvalho de Moraes",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 250000.0,
+     "confirmado": 250000.0,
+     "total": 1799054.95,
+     "proporcao": 0.138962,
+     "pequena": false
+    },
+    {
+     "sq": "220002547309",
+     "nome": "Silvia Cristina Amancio Chagas",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 135000.0,
+     "confirmado": 135000.0,
+     "total": 2990678.56,
+     "proporcao": 0.04514,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 47046293.1,
+   "principal": 1802375.42,
+   "confirmado": 1445596.6,
+   "generico": 356778.82,
+   "provavel": 405.96,
+   "proporcao": 0.038311,
+   "n_candidatos": 105,
+   "n_gastaram": 67,
+   "n_elegiveis": 86,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 19,
+     "pct_acima": 0.22093,
+     "excedente": 613693.69
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 9,
+     "pct_acima": 0.104651,
+     "excedente": 303196.23
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 4,
+     "pct_acima": 0.046512,
+     "excedente": 153729.25
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 3,
+     "pct_acima": 0.034884,
+     "excedente": 71868.82
+    }
+   ],
+   "top": [
+    {
+     "sq": "220002536882",
+     "nome": "Lucio Antonio Mosquini",
+     "cargo": "Deputado Federal",
+     "uf": "RO",
+     "principal": 200000.0,
+     "confirmado": 200000.0,
+     "total": 813102.63,
+     "proporcao": 0.245971,
+     "pequena": false
+    },
+    {
+     "sq": "220002536041",
+     "nome": "Jaime Gazola Filho",
+     "cargo": "Deputado Federal",
+     "uf": "RO",
+     "principal": 153000.0,
+     "confirmado": 153000.0,
+     "total": 1366667.46,
+     "proporcao": 0.111951,
+     "pequena": false
+    },
+    {
+     "sq": "220002536035",
+     "nome": "Rafael Bento Pereira",
+     "cargo": "Deputado Federal",
+     "uf": "RO",
+     "principal": 133996.0,
+     "confirmado": 73997.0,
+     "total": 1563621.3,
+     "proporcao": 0.085696,
+     "pequena": false
+    },
+    {
+     "sq": "220002536881",
+     "nome": "Maria Luiza França Cardoso",
+     "cargo": "Deputado Federal",
+     "uf": "RO",
+     "principal": 110000.0,
+     "confirmado": 0.0,
+     "total": 412256.5,
+     "proporcao": 0.266824,
+     "pequena": false
+    },
+    {
+     "sq": "220002542943",
+     "nome": "Mauricio Fonseca Ribeiro Carvalho de Moraes",
+     "cargo": "Deputado Federal",
+     "uf": "RO",
+     "principal": 80000.0,
+     "confirmado": 80000.0,
+     "total": 1561099.64,
+     "proporcao": 0.051246,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 26789530.52,
+   "principal": 1466637.05,
+   "confirmado": 1387019.77,
+   "generico": 79617.28,
+   "provavel": 133.52,
+   "proporcao": 0.054747,
+   "n_candidatos": 193,
+   "n_gastaram": 126,
+   "n_elegiveis": 94,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 36,
+     "pct_acima": 0.382979,
+     "excedente": 513133.86
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 15,
+     "pct_acima": 0.159574,
+     "excedente": 216619.13
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 9,
+     "pct_acima": 0.095745,
+     "excedente": 130475.49
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 4,
+     "pct_acima": 0.042553,
+     "excedente": 93683.81
+    }
+   ],
+   "top": [
+    {
+     "sq": "220002547336",
+     "nome": "Rozangela Henrique Pereira Donadon",
+     "cargo": "Deputado Estadual",
+     "uf": "RO",
+     "principal": 116379.78,
+     "confirmado": 112879.78,
+     "total": 175897.64,
+     "proporcao": 0.661634,
+     "pequena": false
+    },
+    {
+     "sq": "220002542936",
+     "nome": "Laerte Gomes",
+     "cargo": "Deputado Estadual",
+     "uf": "RO",
+     "principal": 84000.0,
+     "confirmado": 84000.0,
+     "total": 952132.83,
+     "proporcao": 0.088223,
+     "pequena": false
+    },
+    {
+     "sq": "220002547346",
+     "nome": "Pedro Marcelo Fernandes Pereira",
+     "cargo": "Deputado Estadual",
+     "uf": "RO",
+     "principal": 80000.0,
+     "confirmado": 80000.0,
+     "total": 818740.2,
+     "proporcao": 0.097711,
+     "pequena": false
+    },
+    {
+     "sq": "220002547372",
+     "nome": "Alex Mendonça Alves",
+     "cargo": "Deputado Estadual",
+     "uf": "RO",
+     "principal": 74149.12,
+     "confirmado": 74149.12,
+     "total": 754480.17,
+     "proporcao": 0.098278,
+     "pequena": false
+    },
+    {
+     "sq": "220002542189",
+     "nome": "Paulo Roberto Oliveira de Moraes Junior",
+     "cargo": "Deputado Estadual",
+     "uf": "RO",
+     "principal": 68000.0,
+     "confirmado": 68000.0,
+     "total": 416716.29,
+     "proporcao": 0.163181,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

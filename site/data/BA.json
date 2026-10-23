@@ -1,0 +1,480 @@
+{
+ "uf": "BA",
+ "nome": "Bahia",
+ "artigo": "da",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "22/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 1195,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 268035744.57,
+   "principal": 9778421.81,
+   "confirmado": 7910248.53,
+   "generico": 1868173.28,
+   "provavel": 1040.33,
+   "proporcao": 0.036482,
+   "n_candidatos": 896,
+   "n_gastaram": 311,
+   "n_elegiveis": 431,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 88,
+     "pct_acima": 0.204176,
+     "excedente": 3837418.48
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 54,
+     "pct_acima": 0.12529,
+     "excedente": 1758637.15
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 31,
+     "pct_acima": 0.071926,
+     "excedente": 981024.49
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 18,
+     "pct_acima": 0.041763,
+     "excedente": 633178.31
+    }
+   ],
+   "top": [
+    {
+     "sq": "50002533190",
+     "nome": "Antonio Carlos Peixoto de Magalhães Neto",
+     "cargo": "Governador",
+     "uf": "BA",
+     "principal": 850000.0,
+     "confirmado": 830000.0,
+     "total": 13511772.16,
+     "proporcao": 0.062908,
+     "pequena": false
+    },
+    {
+     "sq": "50002535012",
+     "nome": "Cibele Isaura Marques dos Santos",
+     "cargo": "Deputado Federal",
+     "uf": "BA",
+     "principal": 755000.0,
+     "confirmado": 755000.0,
+     "total": 2490192.0,
+     "proporcao": 0.303189,
+     "pequena": false
+    },
+    {
+     "sq": "50002536314",
+     "nome": "Jeronimo Rodrigues Souza",
+     "cargo": "Governador",
+     "uf": "BA",
+     "principal": 500000.0,
+     "confirmado": 20000.0,
+     "total": 7073960.76,
+     "proporcao": 0.070682,
+     "pequena": false
+    },
+    {
+     "sq": "50002533123",
+     "nome": "João Inácio Ribeiro Roma Neto",
+     "cargo": "Senador",
+     "uf": "BA",
+     "principal": 450001.0,
+     "confirmado": 450001.0,
+     "total": 4499809.6,
+     "proporcao": 0.100004,
+     "pequena": false
+    },
+    {
+     "sq": "50002534985",
+     "nome": "Dayane Jamille Carneiro dos Santos Pimentel",
+     "cargo": "Deputado Federal",
+     "uf": "BA",
+     "principal": 443494.47,
+     "confirmado": 443494.47,
+     "total": 3011465.9,
+     "proporcao": 0.147269,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 20729779.52,
+   "principal": 1360800.0,
+   "confirmado": 850800.0,
+   "generico": 510000.0,
+   "provavel": 0.0,
+   "proporcao": 0.065645,
+   "n_candidatos": 5,
+   "n_gastaram": 4,
+   "n_elegiveis": 3,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 3,
+     "pct_acima": 1.0,
+     "excedente": 323599.04
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "50002533190",
+     "nome": "Antonio Carlos Peixoto de Magalhães Neto",
+     "cargo": "Governador",
+     "uf": "BA",
+     "principal": 850000.0,
+     "confirmado": 830000.0,
+     "total": 13511772.16,
+     "proporcao": 0.062908,
+     "pequena": false
+    },
+    {
+     "sq": "50002536314",
+     "nome": "Jeronimo Rodrigues Souza",
+     "cargo": "Governador",
+     "uf": "BA",
+     "principal": 500000.0,
+     "confirmado": 20000.0,
+     "total": 7073960.76,
+     "proporcao": 0.070682,
+     "pequena": false
+    },
+    {
+     "sq": "50002532269",
+     "nome": "Ronaldo Mansur Santos Silva",
+     "cargo": "Governador",
+     "uf": "BA",
+     "principal": 10000.0,
+     "confirmado": 0.0,
+     "total": 142286.3,
+     "proporcao": 0.070281,
+     "pequena": false
+    },
+    {
+     "sq": "50002535253",
+     "nome": "Ariel da Silva Capistrano",
+     "cargo": "Governador",
+     "uf": "BA",
+     "principal": 800.0,
+     "confirmado": 800.0,
+     "total": 1300.5,
+     "proporcao": 0.615148,
+     "pequena": true
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 16951460.4,
+   "principal": 1149941.37,
+   "confirmado": 1111941.37,
+   "generico": 38000.0,
+   "provavel": 29.99,
+   "proporcao": 0.067837,
+   "n_candidatos": 6,
+   "n_gastaram": 6,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 2,
+     "pct_acima": 0.4,
+     "excedente": 401459.67
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 20.04
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "50002533123",
+     "nome": "João Inácio Ribeiro Roma Neto",
+     "cargo": "Senador",
+     "uf": "BA",
+     "principal": 450001.0,
+     "confirmado": 450001.0,
+     "total": 4499809.6,
+     "proporcao": 0.100004,
+     "pequena": false
+    },
+    {
+     "sq": "50002533124",
+     "nome": "Angelo Mario Coronel de Azevedo Martins",
+     "cargo": "Senador",
+     "uf": "BA",
+     "principal": 415000.0,
+     "confirmado": 415000.0,
+     "total": 4771017.0,
+     "proporcao": 0.086984,
+     "pequena": false
+    },
+    {
+     "sq": "50002536321",
+     "nome": "Rui Costa dos Santos",
+     "cargo": "Senador",
+     "uf": "BA",
+     "principal": 176000.0,
+     "confirmado": 160000.0,
+     "total": 3660072.17,
+     "proporcao": 0.048086,
+     "pequena": false
+    },
+    {
+     "sq": "50002536317",
+     "nome": "Jaques Wagner",
+     "cargo": "Senador",
+     "uf": "BA",
+     "principal": 106000.0,
+     "confirmado": 84000.0,
+     "total": 3898522.64,
+     "proporcao": 0.02719,
+     "pequena": false
+    },
+    {
+     "sq": "50002534769",
+     "nome": "Delliana Ricelli Ribeiro da Silva",
+     "cargo": "Senador",
+     "uf": "BA",
+     "principal": 2371.37,
+     "confirmado": 2371.37,
+     "total": 121400.0,
+     "proporcao": 0.019534,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 161555667.47,
+   "principal": 4733333.26,
+   "confirmado": 4157311.88,
+   "generico": 576021.38,
+   "provavel": 710.58,
+   "proporcao": 0.029298,
+   "n_candidatos": 425,
+   "n_gastaram": 159,
+   "n_elegiveis": 223,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 33,
+     "pct_acima": 0.147982,
+     "excedente": 1945561.91
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 22,
+     "pct_acima": 0.098655,
+     "excedente": 1187856.78
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 13,
+     "pct_acima": 0.058296,
+     "excedente": 699661.23
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 9,
+     "pct_acima": 0.040359,
+     "excedente": 489781.85
+    }
+   ],
+   "top": [
+    {
+     "sq": "50002535012",
+     "nome": "Cibele Isaura Marques dos Santos",
+     "cargo": "Deputado Federal",
+     "uf": "BA",
+     "principal": 755000.0,
+     "confirmado": 755000.0,
+     "total": 2490192.0,
+     "proporcao": 0.303189,
+     "pequena": false
+    },
+    {
+     "sq": "50002534985",
+     "nome": "Dayane Jamille Carneiro dos Santos Pimentel",
+     "cargo": "Deputado Federal",
+     "uf": "BA",
+     "principal": 443494.47,
+     "confirmado": 443494.47,
+     "total": 3011465.9,
+     "proporcao": 0.147269,
+     "pequena": false
+    },
+    {
+     "sq": "50002532902",
+     "nome": "Leandro Silva de Jesus",
+     "cargo": "Deputado Federal",
+     "uf": "BA",
+     "principal": 385584.9,
+     "confirmado": 315584.9,
+     "total": 2806496.8,
+     "proporcao": 0.13739,
+     "pequena": false
+    },
+    {
+     "sq": "50002534749",
+     "nome": "Marcelo de Souza Emerenciano",
+     "cargo": "Deputado Federal",
+     "uf": "BA",
+     "principal": 173800.0,
+     "confirmado": 173800.0,
+     "total": 457219.75,
+     "proporcao": 0.380124,
+     "pequena": false
+    },
+    {
+     "sq": "50002538758",
+     "nome": "Deyvid Souza Bacelar da Silva",
+     "cargo": "Deputado Federal",
+     "uf": "BA",
+     "principal": 115000.0,
+     "confirmado": 115000.0,
+     "total": 167626.8,
+     "proporcao": 0.686048,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 68798837.18,
+   "principal": 2534347.18,
+   "confirmado": 1790195.28,
+   "generico": 744151.9,
+   "provavel": 299.76,
+   "proporcao": 0.036837,
+   "n_candidatos": 460,
+   "n_gastaram": 142,
+   "n_elegiveis": 200,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 50,
+     "pct_acima": 0.25,
+     "excedente": 1166797.86
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 31,
+     "pct_acima": 0.155,
+     "excedente": 570760.33
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 18,
+     "pct_acima": 0.09,
+     "excedente": 281363.27
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 9,
+     "pct_acima": 0.045,
+     "excedente": 143396.46
+    }
+   ],
+   "top": [
+    {
+     "sq": "50002535120",
+     "nome": "Janio Natal Andrade Borges Junior",
+     "cargo": "Deputado Estadual",
+     "uf": "BA",
+     "principal": 129238.88,
+     "confirmado": 129238.88,
+     "total": 1019575.23,
+     "proporcao": 0.126758,
+     "pequena": false
+    },
+    {
+     "sq": "50002538730",
+     "nome": "Heber de Sousa Santana",
+     "cargo": "Deputado Estadual",
+     "uf": "BA",
+     "principal": 110000.0,
+     "confirmado": 110000.0,
+     "total": 592937.6,
+     "proporcao": 0.185517,
+     "pequena": false
+    },
+    {
+     "sq": "50002535892",
+     "nome": "Hilton Barros Coelho",
+     "cargo": "Deputado Estadual",
+     "uf": "BA",
+     "principal": 103000.0,
+     "confirmado": 48000.0,
+     "total": 953457.77,
+     "proporcao": 0.108028,
+     "pequena": false
+    },
+    {
+     "sq": "50002532690",
+     "nome": "Artur Ribeiro Barachisio Lisboa",
+     "cargo": "Deputado Estadual",
+     "uf": "BA",
+     "principal": 96899.5,
+     "confirmado": 96899.5,
+     "total": 215000.0,
+     "proporcao": 0.450695,
+     "pequena": false
+    },
+    {
+     "sq": "50002535102",
+     "nome": "Diego Castro Barbosa",
+     "cargo": "Deputado Estadual",
+     "uf": "BA",
+     "principal": 95000.0,
+     "confirmado": 0.0,
+     "total": 365122.5,
+     "proporcao": 0.260187,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

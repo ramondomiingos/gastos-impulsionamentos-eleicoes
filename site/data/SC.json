@@ -1,0 +1,480 @@
+{
+ "uf": "SC",
+ "nome": "Santa Catarina",
+ "artigo": "de",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 666,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 167973879.54,
+   "principal": 17498571.72,
+   "confirmado": 14722437.96,
+   "generico": 2776133.76,
+   "provavel": 10429.04,
+   "proporcao": 0.104174,
+   "n_candidatos": 585,
+   "n_gastaram": 385,
+   "n_elegiveis": 337,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 197,
+     "pct_acima": 0.58457,
+     "excedente": 10742019.79
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 133,
+     "pct_acima": 0.394659,
+     "excedente": 6891469.73
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 95,
+     "pct_acima": 0.281899,
+     "excedente": 4677000.34
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 68,
+     "pct_acima": 0.20178,
+     "excedente": 3153716.54
+    }
+   ],
+   "top": [
+    {
+     "sq": "240002541931",
+     "nome": "Caroline Rodrigues de Toni",
+     "cargo": "Senador",
+     "uf": "SC",
+     "principal": 1647000.0,
+     "confirmado": 1647000.0,
+     "total": 4321226.47,
+     "proporcao": 0.381142,
+     "pequena": false
+    },
+    {
+     "sq": "240002537073",
+     "nome": "Jorginho dos Santos Mello",
+     "cargo": "Governador",
+     "uf": "SC",
+     "principal": 549997.0,
+     "confirmado": 549997.0,
+     "total": 7739464.86,
+     "proporcao": 0.071064,
+     "pequena": false
+    },
+    {
+     "sq": "240002539378",
+     "nome": "Julia Pedroso Zanatta",
+     "cargo": "Deputado Federal",
+     "uf": "SC",
+     "principal": 406000.0,
+     "confirmado": 6000.0,
+     "total": 1591782.37,
+     "proporcao": 0.25506,
+     "pequena": false
+    },
+    {
+     "sq": "240002535425",
+     "nome": "Beatriz Ignácio Borba",
+     "cargo": "Deputado Federal",
+     "uf": "SC",
+     "principal": 391623.6,
+     "confirmado": 124123.6,
+     "total": 572625.18,
+     "proporcao": 0.683909,
+     "pequena": false
+    },
+    {
+     "sq": "240002551001",
+     "nome": "Joao Rodrigues",
+     "cargo": "Governador",
+     "uf": "SC",
+     "principal": 370300.0,
+     "confirmado": 370300.0,
+     "total": 5729093.46,
+     "proporcao": 0.064635,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 15770431.06,
+   "principal": 1273907.0,
+   "confirmado": 1273907.0,
+   "generico": 0.0,
+   "provavel": 0.0,
+   "proporcao": 0.080778,
+   "n_candidatos": 6,
+   "n_gastaram": 4,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 3,
+     "pct_acima": 0.75,
+     "excedente": 492409.08
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 138040.0
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 30540.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "240002537073",
+     "nome": "Jorginho dos Santos Mello",
+     "cargo": "Governador",
+     "uf": "SC",
+     "principal": 549997.0,
+     "confirmado": 549997.0,
+     "total": 7739464.86,
+     "proporcao": 0.071064,
+     "pequena": false
+    },
+    {
+     "sq": "240002551001",
+     "nome": "Joao Rodrigues",
+     "cargo": "Governador",
+     "uf": "SC",
+     "principal": 370300.0,
+     "confirmado": 370300.0,
+     "total": 5729093.46,
+     "proporcao": 0.064635,
+     "pequena": false
+    },
+    {
+     "sq": "240002548628",
+     "nome": "Gelson Luiz Merisio",
+     "cargo": "Governador",
+     "uf": "SC",
+     "principal": 353040.0,
+     "confirmado": 353040.0,
+     "total": 2150000.0,
+     "proporcao": 0.164205,
+     "pequena": false
+    },
+    {
+     "sq": "240002541913",
+     "nome": "Marcus Alexandre Sodre",
+     "cargo": "Governador",
+     "uf": "SC",
+     "principal": 570.0,
+     "confirmado": 570.0,
+     "total": 16545.0,
+     "proporcao": 0.034451,
+     "pequena": true
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 15206415.71,
+   "principal": 2601533.04,
+   "confirmado": 2300533.04,
+   "generico": 301000.0,
+   "provavel": 0.0,
+   "proporcao": 0.171081,
+   "n_candidatos": 12,
+   "n_gastaram": 7,
+   "n_elegiveis": 7,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 6,
+     "pct_acima": 0.857143,
+     "excedente": 1851298.09
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.571429,
+     "excedente": 1328719.97
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 3,
+     "pct_acima": 0.428571,
+     "excedente": 1006949.98
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.142857,
+     "excedente": 782754.71
+    }
+   ],
+   "top": [
+    {
+     "sq": "240002541931",
+     "nome": "Caroline Rodrigues de Toni",
+     "cargo": "Senador",
+     "uf": "SC",
+     "principal": 1647000.0,
+     "confirmado": 1647000.0,
+     "total": 4321226.47,
+     "proporcao": 0.381142,
+     "pequena": false
+    },
+    {
+     "sq": "240002533898",
+     "nome": "Decio Nery de Lima",
+     "cargo": "Senador",
+     "uf": "SC",
+     "principal": 326000.0,
+     "confirmado": 25000.0,
+     "total": 2319033.63,
+     "proporcao": 0.140576,
+     "pequena": false
+    },
+    {
+     "sq": "240002541935",
+     "nome": "Carlos Nantes Bolsonaro",
+     "cargo": "Senador",
+     "uf": "SC",
+     "principal": 314563.0,
+     "confirmado": 314563.0,
+     "total": 4298464.8,
+     "proporcao": 0.07318,
+     "pequena": false
+    },
+    {
+     "sq": "240002548630",
+     "nome": "Antidio Aleixo Lunelli",
+     "cargo": "Senador",
+     "uf": "SC",
+     "principal": 170000.0,
+     "confirmado": 170000.0,
+     "total": 1813733.51,
+     "proporcao": 0.093729,
+     "pequena": false
+    },
+    {
+     "sq": "240002548632",
+     "nome": "Esperidiao Amin Helou Filho",
+     "cargo": "Senador",
+     "uf": "SC",
+     "principal": 101000.0,
+     "confirmado": 101000.0,
+     "total": 2193721.55,
+     "proporcao": 0.04604,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 85617218.31,
+   "principal": 7040137.66,
+   "confirmado": 5393376.35,
+   "generico": 1646761.31,
+   "provavel": 5252.07,
+   "proporcao": 0.082228,
+   "n_candidatos": 208,
+   "n_gastaram": 131,
+   "n_elegiveis": 131,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 67,
+     "pct_acima": 0.51145,
+     "excedente": 4092368.82
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 39,
+     "pct_acima": 0.29771,
+     "excedente": 2524867.55
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 25,
+     "pct_acima": 0.19084,
+     "excedente": 1677632.91
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 17,
+     "pct_acima": 0.129771,
+     "excedente": 1098124.27
+    }
+   ],
+   "top": [
+    {
+     "sq": "240002539378",
+     "nome": "Julia Pedroso Zanatta",
+     "cargo": "Deputado Federal",
+     "uf": "SC",
+     "principal": 406000.0,
+     "confirmado": 6000.0,
+     "total": 1591782.37,
+     "proporcao": 0.25506,
+     "pequena": false
+    },
+    {
+     "sq": "240002535425",
+     "nome": "Beatriz Ignácio Borba",
+     "cargo": "Deputado Federal",
+     "uf": "SC",
+     "principal": 391623.6,
+     "confirmado": 124123.6,
+     "total": 572625.18,
+     "proporcao": 0.683909,
+     "pequena": false
+    },
+    {
+     "sq": "240002533823",
+     "nome": "Vanessa da Rosa",
+     "cargo": "Deputado Federal",
+     "uf": "SC",
+     "principal": 350000.0,
+     "confirmado": 350000.0,
+     "total": 1238398.43,
+     "proporcao": 0.282623,
+     "pequena": false
+    },
+    {
+     "sq": "240002533833",
+     "nome": "Pedro Francisco Uczai",
+     "cargo": "Deputado Federal",
+     "uf": "SC",
+     "principal": 343186.53,
+     "confirmado": 273186.53,
+     "total": 1979701.74,
+     "proporcao": 0.173353,
+     "pequena": false
+    },
+    {
+     "sq": "240002533825",
+     "nome": "Carla Simara Luciana da Silva Ayres",
+     "cargo": "Deputado Federal",
+     "uf": "SC",
+     "principal": 328750.0,
+     "confirmado": 328750.0,
+     "total": 1335494.35,
+     "proporcao": 0.246164,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 51379814.46,
+   "principal": 6582994.02,
+   "confirmado": 5754621.57,
+   "generico": 828372.45,
+   "provavel": 5176.97,
+   "proporcao": 0.128124,
+   "n_candidatos": 359,
+   "n_gastaram": 243,
+   "n_elegiveis": 195,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 121,
+     "pct_acima": 0.620513,
+     "excedente": 4305943.79
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 89,
+     "pct_acima": 0.45641,
+     "excedente": 2899842.21
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 66,
+     "pct_acima": 0.338462,
+     "excedente": 1961877.45
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 50,
+     "pct_acima": 0.25641,
+     "excedente": 1272837.57
+    }
+   ],
+   "top": [
+    {
+     "sq": "240002539584",
+     "nome": "Vinicius Ganem Sanches Faile",
+     "cargo": "Deputado Estadual",
+     "uf": "SC",
+     "principal": 255000.0,
+     "confirmado": 255000.0,
+     "total": 355002.0,
+     "proporcao": 0.718306,
+     "pequena": false
+    },
+    {
+     "sq": "240002539988",
+     "nome": "Oscar Gutz",
+     "cargo": "Deputado Estadual",
+     "uf": "SC",
+     "principal": 206000.0,
+     "confirmado": 206000.0,
+     "total": 516821.65,
+     "proporcao": 0.39859,
+     "pequena": false
+    },
+    {
+     "sq": "240002539957",
+     "nome": "Alexander Brasil Alves Pereira",
+     "cargo": "Deputado Estadual",
+     "uf": "SC",
+     "principal": 198000.0,
+     "confirmado": 198000.0,
+     "total": 752208.74,
+     "proporcao": 0.263225,
+     "pequena": false
+    },
+    {
+     "sq": "240002539960",
+     "nome": "Wilian Martini Tonezi",
+     "cargo": "Deputado Estadual",
+     "uf": "SC",
+     "principal": 182560.85,
+     "confirmado": 173560.85,
+     "total": 484784.75,
+     "proporcao": 0.376581,
+     "pequena": false
+    },
+    {
+     "sq": "240002551477",
+     "nome": "Mario Pinto da Motta Junior",
+     "cargo": "Deputado Estadual",
+     "uf": "SC",
+     "principal": 160000.0,
+     "confirmado": 160000.0,
+     "total": 599717.32,
+     "proporcao": 0.266792,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

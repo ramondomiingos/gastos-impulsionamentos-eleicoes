@@ -1,0 +1,480 @@
+{
+ "uf": "ES",
+ "nome": "Espírito Santo",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 2,
+ "n_candidatos_total": 563,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 99741303.66,
+   "principal": 8570661.75,
+   "confirmado": 6195311.28,
+   "generico": 2375350.47,
+   "provavel": 12971.72,
+   "proporcao": 0.085929,
+   "n_candidatos": 432,
+   "n_gastaram": 252,
+   "n_elegiveis": 199,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 97,
+     "pct_acima": 0.487437,
+     "excedente": 5016250.22
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 68,
+     "pct_acima": 0.341709,
+     "excedente": 3304700.96
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 45,
+     "pct_acima": 0.226131,
+     "excedente": 2324083.85
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 34,
+     "pct_acima": 0.170854,
+     "excedente": 1551687.99
+    }
+   ],
+   "top": [
+    {
+     "sq": "80002552172",
+     "nome": "Ricardo de Rezende Ferraço",
+     "cargo": "Governador",
+     "uf": "ES",
+     "principal": 1123965.0,
+     "confirmado": 1123965.0,
+     "total": 4399550.75,
+     "proporcao": 0.255473,
+     "pequena": false
+    },
+    {
+     "sq": "80002541001",
+     "nome": "Felipe Rigoni Lopes",
+     "cargo": "Deputado Federal",
+     "uf": "ES",
+     "principal": 733000.0,
+     "confirmado": 23000.0,
+     "total": 1832634.82,
+     "proporcao": 0.399971,
+     "pequena": false
+    },
+    {
+     "sq": "80002541002",
+     "nome": "Maria Emanuela Alves Pedroso",
+     "cargo": "Deputado Federal",
+     "uf": "ES",
+     "principal": 422000.0,
+     "confirmado": 28000.0,
+     "total": 1150931.15,
+     "proporcao": 0.36666,
+     "pequena": false
+    },
+    {
+     "sq": "80002551370",
+     "nome": "José Renato Casagrande",
+     "cargo": "Senador",
+     "uf": "ES",
+     "principal": 342000.0,
+     "confirmado": 342000.0,
+     "total": 2855570.53,
+     "proporcao": 0.119766,
+     "pequena": false
+    },
+    {
+     "sq": "80002541007",
+     "nome": "Vitor Amorim de Angelo",
+     "cargo": "Deputado Federal",
+     "uf": "ES",
+     "principal": 311500.0,
+     "confirmado": 70200.0,
+     "total": 951429.77,
+     "proporcao": 0.327402,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 12734580.85,
+   "principal": 1241465.0,
+   "confirmado": 1234965.0,
+   "generico": 6500.0,
+   "provavel": 0.0,
+   "proporcao": 0.097488,
+   "n_candidatos": 5,
+   "n_gastaram": 4,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 903987.46
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 684009.93
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 464032.39
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 244054.85
+    }
+   ],
+   "top": [
+    {
+     "sq": "80002552172",
+     "nome": "Ricardo de Rezende Ferraço",
+     "cargo": "Governador",
+     "uf": "ES",
+     "principal": 1123965.0,
+     "confirmado": 1123965.0,
+     "total": 4399550.75,
+     "proporcao": 0.255473,
+     "pequena": false
+    },
+    {
+     "sq": "80002552682",
+     "nome": "Lorenzo Silva de Pazolini",
+     "cargo": "Governador",
+     "uf": "ES",
+     "principal": 110000.0,
+     "confirmado": 110000.0,
+     "total": 5113344.5,
+     "proporcao": 0.021512,
+     "pequena": false
+    },
+    {
+     "sq": "80002551833",
+     "nome": "Helder Ignacio Salomao",
+     "cargo": "Governador",
+     "uf": "ES",
+     "principal": 5500.0,
+     "confirmado": 0.0,
+     "total": 3126268.42,
+     "proporcao": 0.001759,
+     "pequena": false
+    },
+    {
+     "sq": "80002541012",
+     "nome": "Breno Augusto Fagundes Barcelos",
+     "cargo": "Governador",
+     "uf": "ES",
+     "principal": 2000.0,
+     "confirmado": 1000.0,
+     "total": 95395.62,
+     "proporcao": 0.020965,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 14407568.35,
+   "principal": 709327.05,
+   "confirmado": 683327.05,
+   "generico": 26000.0,
+   "provavel": 0.0,
+   "proporcao": 0.049233,
+   "n_candidatos": 11,
+   "n_gastaram": 10,
+   "n_elegiveis": 9,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 5,
+     "pct_acima": 0.555556,
+     "excedente": 306827.17
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.444444,
+     "excedente": 106765.3
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.222222,
+     "excedente": 39012.9
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.222222,
+     "excedente": 30017.2
+    }
+   ],
+   "top": [
+    {
+     "sq": "80002551370",
+     "nome": "José Renato Casagrande",
+     "cargo": "Senador",
+     "uf": "ES",
+     "principal": 342000.0,
+     "confirmado": 342000.0,
+     "total": 2855570.53,
+     "proporcao": 0.119766,
+     "pequena": false
+    },
+    {
+     "sq": "80002553265",
+     "nome": "Evair Vieira de Melo",
+     "cargo": "Senador",
+     "uf": "ES",
+     "principal": 160000.0,
+     "confirmado": 160000.0,
+     "total": 2411109.62,
+     "proporcao": 0.066359,
+     "pequena": false
+    },
+    {
+     "sq": "80002551368",
+     "nome": "Rosilda de Freitas",
+     "cargo": "Senador",
+     "uf": "ES",
+     "principal": 70000.0,
+     "confirmado": 50000.0,
+     "total": 3169781.5,
+     "proporcao": 0.022084,
+     "pequena": false
+    },
+    {
+     "sq": "80002542401",
+     "nome": "Wellington Callegari",
+     "cargo": "Senador",
+     "uf": "ES",
+     "principal": 36000.0,
+     "confirmado": 36000.0,
+     "total": 111501.98,
+     "proporcao": 0.322864,
+     "pequena": false
+    },
+    {
+     "sq": "80002553269",
+     "nome": "Magda Santos Malta",
+     "cargo": "Senador",
+     "uf": "ES",
+     "principal": 30000.0,
+     "confirmado": 30000.0,
+     "total": 4012540.2,
+     "proporcao": 0.007477,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 48212217.72,
+   "principal": 3759922.56,
+   "confirmado": 1677876.94,
+   "generico": 2082045.62,
+   "provavel": 12581.97,
+   "proporcao": 0.077987,
+   "n_candidatos": 112,
+   "n_gastaram": 68,
+   "n_elegiveis": 69,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 26,
+     "pct_acima": 0.376812,
+     "excedente": 2120711.09
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 15,
+     "pct_acima": 0.217391,
+     "excedente": 1402039.13
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 9,
+     "pct_acima": 0.130435,
+     "excedente": 1065408.34
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 7,
+     "pct_acima": 0.101449,
+     "excedente": 793307.29
+    }
+   ],
+   "top": [
+    {
+     "sq": "80002541001",
+     "nome": "Felipe Rigoni Lopes",
+     "cargo": "Deputado Federal",
+     "uf": "ES",
+     "principal": 733000.0,
+     "confirmado": 23000.0,
+     "total": 1832634.82,
+     "proporcao": 0.399971,
+     "pequena": false
+    },
+    {
+     "sq": "80002541002",
+     "nome": "Maria Emanuela Alves Pedroso",
+     "cargo": "Deputado Federal",
+     "uf": "ES",
+     "principal": 422000.0,
+     "confirmado": 28000.0,
+     "total": 1150931.15,
+     "proporcao": 0.36666,
+     "pequena": false
+    },
+    {
+     "sq": "80002541007",
+     "nome": "Vitor Amorim de Angelo",
+     "cargo": "Deputado Federal",
+     "uf": "ES",
+     "principal": 311500.0,
+     "confirmado": 70200.0,
+     "total": 951429.77,
+     "proporcao": 0.327402,
+     "pequena": false
+    },
+    {
+     "sq": "80002541008",
+     "nome": "Tyago Ribeiro Hoffmann",
+     "cargo": "Deputado Federal",
+     "uf": "ES",
+     "principal": 150000.0,
+     "confirmado": 150000.0,
+     "total": 1695063.86,
+     "proporcao": 0.088492,
+     "pequena": false
+    },
+    {
+     "sq": "80002542390",
+     "nome": "Alexandre Ofranti Ramalho",
+     "cargo": "Deputado Federal",
+     "uf": "ES",
+     "principal": 141807.95,
+     "confirmado": 141807.95,
+     "total": 1353171.05,
+     "proporcao": 0.104797,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 24386936.74,
+   "principal": 2859947.14,
+   "confirmado": 2599142.29,
+   "generico": 260804.85,
+   "provavel": 389.75,
+   "proporcao": 0.117274,
+   "n_candidatos": 304,
+   "n_gastaram": 170,
+   "n_elegiveis": 117,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 65,
+     "pct_acima": 0.555556,
+     "excedente": 1684724.49
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 48,
+     "pct_acima": 0.410256,
+     "excedente": 1111886.61
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 33,
+     "pct_acima": 0.282051,
+     "excedente": 755630.21
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 24,
+     "pct_acima": 0.205128,
+     "excedente": 484308.65
+    }
+   ],
+   "top": [
+    {
+     "sq": "80002549457",
+     "nome": "Denner Januario da Silva",
+     "cargo": "Deputado Estadual",
+     "uf": "ES",
+     "principal": 164646.78,
+     "confirmado": 164646.78,
+     "total": 530308.0,
+     "proporcao": 0.310474,
+     "pequena": false
+    },
+    {
+     "sq": "80002549452",
+     "nome": "Audifax Charles Pimentel Barcelos",
+     "cargo": "Deputado Estadual",
+     "uf": "ES",
+     "principal": 158195.0,
+     "confirmado": 158195.0,
+     "total": 534087.85,
+     "proporcao": 0.296197,
+     "pequena": false
+    },
+    {
+     "sq": "80002535795",
+     "nome": "Marco Antonio Vieira de Novaes",
+     "cargo": "Deputado Estadual",
+     "uf": "ES",
+     "principal": 125261.88,
+     "confirmado": 125261.88,
+     "total": 483000.5,
+     "proporcao": 0.259341,
+     "pequena": false
+    },
+    {
+     "sq": "80002549412",
+     "nome": "Evandro de Souza Ferreira Braga",
+     "cargo": "Deputado Estadual",
+     "uf": "ES",
+     "principal": 94900.0,
+     "confirmado": 84900.0,
+     "total": 455000.01,
+     "proporcao": 0.208571,
+     "pequena": false
+    },
+    {
+     "sq": "80002537475",
+     "nome": "Franco Fiorot",
+     "cargo": "Deputado Estadual",
+     "uf": "ES",
+     "principal": 87946.65,
+     "confirmado": 87946.65,
+     "total": 420066.61,
+     "proporcao": 0.209364,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

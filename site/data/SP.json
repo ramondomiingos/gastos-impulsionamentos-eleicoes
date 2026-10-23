@@ -1,0 +1,469 @@
+{
+ "uf": "SP",
+ "nome": "São Paulo",
+ "artigo": "de",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "22/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 2586,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 657685743.63,
+   "principal": 103913594.91,
+   "confirmado": 84280593.16,
+   "generico": 19633001.75,
+   "provavel": 24724.33,
+   "proporcao": 0.157999,
+   "n_candidatos": 1921,
+   "n_gastaram": 1211,
+   "n_elegiveis": 1138,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 662,
+     "pct_acima": 0.581722,
+     "excedente": 76530612.86
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 492,
+     "pct_acima": 0.432337,
+     "excedente": 56810476.69
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 370,
+     "pct_acima": 0.325132,
+     "excedente": 42071278.02
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 283,
+     "pct_acima": 0.248682,
+     "excedente": 31586362.85
+    }
+   ],
+   "top": [
+    {
+     "sq": "250002541303",
+     "nome": "Tarcisio Gomes de Freitas",
+     "cargo": "Governador",
+     "uf": "SP",
+     "principal": 3500000.0,
+     "confirmado": 300000.0,
+     "total": 25487215.37,
+     "proporcao": 0.137324,
+     "pequena": false
+    },
+    {
+     "sq": "250002551502",
+     "nome": "Simone Nassar Tebet Rocha",
+     "cargo": "Senador",
+     "uf": "SP",
+     "principal": 2757015.0,
+     "confirmado": 2757015.0,
+     "total": 6741465.03,
+     "proporcao": 0.408964,
+     "pequena": false
+    },
+    {
+     "sq": "250002549705",
+     "nome": "Fernando Haddad",
+     "cargo": "Governador",
+     "uf": "SP",
+     "principal": 2539890.0,
+     "confirmado": 2539890.0,
+     "total": 13976199.73,
+     "proporcao": 0.18173,
+     "pequena": false
+    },
+    {
+     "sq": "250002544341",
+     "nome": "Bruno Marcello de Oliveira Lima",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1495999.98,
+     "confirmado": 1495999.98,
+     "total": 2727305.33,
+     "proporcao": 0.548527,
+     "pequena": false
+    },
+    {
+     "sq": "250002537970",
+     "nome": "Tome Abduch",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1401853.7,
+     "confirmado": 1401853.7,
+     "total": 2612138.46,
+     "proporcao": 0.536669,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 40022050.25,
+   "principal": 6042490.0,
+   "confirmado": 2842490.0,
+   "generico": 3200000.0,
+   "provavel": 0.0,
+   "proporcao": 0.150979,
+   "n_candidatos": 5,
+   "n_gastaram": 3,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 4066719.24
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 2093548.49
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 443460.04
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "250002541303",
+     "nome": "Tarcisio Gomes de Freitas",
+     "cargo": "Governador",
+     "uf": "SP",
+     "principal": 3500000.0,
+     "confirmado": 300000.0,
+     "total": 25487215.37,
+     "proporcao": 0.137324,
+     "pequena": false
+    },
+    {
+     "sq": "250002549705",
+     "nome": "Fernando Haddad",
+     "cargo": "Governador",
+     "uf": "SP",
+     "principal": 2539890.0,
+     "confirmado": 2539890.0,
+     "total": 13976199.73,
+     "proporcao": 0.18173,
+     "pequena": false
+    },
+    {
+     "sq": "250002536915",
+     "nome": "Vera Lúcia Pereira da Silva Salgado",
+     "cargo": "Governador",
+     "uf": "SP",
+     "principal": 2600.0,
+     "confirmado": 2600.0,
+     "total": 431331.69,
+     "proporcao": 0.006028,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 25825530.15,
+   "principal": 5453110.0,
+   "confirmado": 4539110.0,
+   "generico": 914000.0,
+   "provavel": 0.0,
+   "proporcao": 0.211152,
+   "n_candidatos": 11,
+   "n_gastaram": 8,
+   "n_elegiveis": 9,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 5,
+     "pct_acima": 0.555556,
+     "excedente": 4286459.01
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.444444,
+     "excedente": 3230409.63
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 4,
+     "pct_acima": 0.444444,
+     "excedente": 2176859.44
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.111111,
+     "excedente": 1408721.99
+    }
+   ],
+   "top": [
+    {
+     "sq": "250002551502",
+     "nome": "Simone Nassar Tebet Rocha",
+     "cargo": "Senador",
+     "uf": "SP",
+     "principal": 2757015.0,
+     "confirmado": 2757015.0,
+     "total": 6741465.03,
+     "proporcao": 0.408964,
+     "pequena": false
+    },
+    {
+     "sq": "250002541312",
+     "nome": "Guilherme Muraro Derrite",
+     "cargo": "Senador",
+     "uf": "SP",
+     "principal": 1020000.0,
+     "confirmado": 1020000.0,
+     "total": 5418078.02,
+     "proporcao": 0.188259,
+     "pequena": false
+    },
+    {
+     "sq": "250002541308",
+     "nome": "Andre Luis do Prado",
+     "cargo": "Senador",
+     "uf": "SP",
+     "principal": 901000.0,
+     "confirmado": 486000.0,
+     "total": 4523736.5,
+     "proporcao": 0.199172,
+     "pequena": false
+    },
+    {
+     "sq": "250002532794",
+     "nome": "Ricardo de Aquino Salles",
+     "cargo": "Senador",
+     "uf": "SP",
+     "principal": 659495.0,
+     "confirmado": 184495.0,
+     "total": 4387724.19,
+     "proporcao": 0.150305,
+     "pequena": false
+    },
+    {
+     "sq": "250002551501",
+     "nome": "Maria Osmarina Marina da Silva Vaz de Lima",
+     "cargo": "Senador",
+     "uf": "SP",
+     "principal": 62100.0,
+     "confirmado": 62100.0,
+     "total": 2749733.01,
+     "proporcao": 0.022584,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 374873880.26,
+   "principal": 56326386.52,
+   "confirmado": 46840729.84,
+   "generico": 9485656.68,
+   "provavel": 20869.64,
+   "proporcao": 0.150254,
+   "n_candidatos": 883,
+   "n_gastaram": 574,
+   "n_elegiveis": 546,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 312,
+     "pct_acima": 0.571429,
+     "excedente": 41102289.66
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 230,
+     "pct_acima": 0.421245,
+     "excedente": 30559095.91
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 166,
+     "pct_acima": 0.304029,
+     "excedente": 23132164.03
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 131,
+     "pct_acima": 0.239927,
+     "excedente": 17322485.47
+    }
+   ],
+   "top": [
+    {
+     "sq": "250002544341",
+     "nome": "Bruno Marcello de Oliveira Lima",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1495999.98,
+     "confirmado": 1495999.98,
+     "total": 2727305.33,
+     "proporcao": 0.548527,
+     "pequena": false
+    },
+    {
+     "sq": "250002537970",
+     "nome": "Tome Abduch",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1401853.7,
+     "confirmado": 1401853.7,
+     "total": 2612138.46,
+     "proporcao": 0.536669,
+     "pequena": false
+    },
+    {
+     "sq": "250002544330",
+     "nome": "Ana Carolina Cunha de Oliveira Francomano",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1400000.0,
+     "confirmado": 1230000.0,
+     "total": 2484271.73,
+     "proporcao": 0.563545,
+     "pequena": false
+    },
+    {
+     "sq": "250002535995",
+     "nome": "Lucas Pavanato de Oliveira",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1352000.0,
+     "confirmado": 382000.0,
+     "total": 2682190.92,
+     "proporcao": 0.504066,
+     "pequena": false
+    },
+    {
+     "sq": "250002536743",
+     "nome": "Edson Antonio Edinho da Silva",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1346247.07,
+     "confirmado": 1346247.07,
+     "total": 3082969.11,
+     "proporcao": 0.436672,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 216964282.97,
+   "principal": 36091608.39,
+   "confirmado": 30058263.32,
+   "generico": 6033345.07,
+   "provavel": 3854.69,
+   "proporcao": 0.166348,
+   "n_candidatos": 1022,
+   "n_gastaram": 626,
+   "n_elegiveis": 579,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 343,
+     "pct_acima": 0.592401,
+     "excedente": 27075144.95
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 256,
+     "pct_acima": 0.442142,
+     "excedente": 20927422.67
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 199,
+     "pct_acima": 0.343696,
+     "excedente": 16318794.51
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 151,
+     "pct_acima": 0.260794,
+     "excedente": 12855155.39
+    }
+   ],
+   "top": [
+    {
+     "sq": "250002536412",
+     "nome": "Paulo Hugenneyer Kogos",
+     "cargo": "Deputado Estadual",
+     "uf": "SP",
+     "principal": 785917.5,
+     "confirmado": 785917.5,
+     "total": 863500.0,
+     "proporcao": 0.910153,
+     "pequena": false
+    },
+    {
+     "sq": "250002536344",
+     "nome": "Mosart Aragão Pereira",
+     "cargo": "Deputado Estadual",
+     "uf": "SP",
+     "principal": 650898.5,
+     "confirmado": 650898.5,
+     "total": 724206.43,
+     "proporcao": 0.898775,
+     "pequena": false
+    },
+    {
+     "sq": "250002530268",
+     "nome": "Gerson dos Santos Pires",
+     "cargo": "Deputado Estadual",
+     "uf": "SP",
+     "principal": 625000.0,
+     "confirmado": 625000.0,
+     "total": 944899.76,
+     "proporcao": 0.661446,
+     "pequena": false
+    },
+    {
+     "sq": "250002545143",
+     "nome": "Amanda Beatriz Foltran Ganem",
+     "cargo": "Deputado Estadual",
+     "uf": "SP",
+     "principal": 611000.0,
+     "confirmado": 611000.0,
+     "total": 959035.63,
+     "proporcao": 0.637098,
+     "pequena": false
+    },
+    {
+     "sq": "250002536846",
+     "nome": "Antonio Donato Madormo",
+     "cargo": "Deputado Estadual",
+     "uf": "SP",
+     "principal": 550000.0,
+     "confirmado": 550000.0,
+     "total": 821154.7,
+     "proporcao": 0.669789,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

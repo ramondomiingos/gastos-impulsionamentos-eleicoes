@@ -1,0 +1,480 @@
+{
+ "uf": "GO",
+ "nome": "Goiás",
+ "artigo": "de",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 877,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 171490691.23,
+   "principal": 13743472.01,
+   "confirmado": 9362782.95,
+   "generico": 4380689.06,
+   "provavel": 1037.97,
+   "proporcao": 0.080141,
+   "n_candidatos": 606,
+   "n_gastaram": 299,
+   "n_elegiveis": 319,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 124,
+     "pct_acima": 0.388715,
+     "excedente": 7765335.85
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 72,
+     "pct_acima": 0.225705,
+     "excedente": 4171705.35
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 49,
+     "pct_acima": 0.153605,
+     "excedente": 2704790.61
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 33,
+     "pct_acima": 0.103448,
+     "excedente": 1843780.23
+    }
+   ],
+   "top": [
+    {
+     "sq": "90002551791",
+     "nome": "Wilder Pedro de Morais",
+     "cargo": "Governador",
+     "uf": "GO",
+     "principal": 1296000.0,
+     "confirmado": 117025.0,
+     "total": 10640161.96,
+     "proporcao": 0.121803,
+     "pequena": false
+    },
+    {
+     "sq": "90002543463",
+     "nome": "Marconi Ferreira Perillo Junior",
+     "cargo": "Governador",
+     "uf": "GO",
+     "principal": 1070705.0,
+     "confirmado": 1070705.0,
+     "total": 10881531.84,
+     "proporcao": 0.098397,
+     "pequena": false
+    },
+    {
+     "sq": "90002543556",
+     "nome": "Gustavo Gayer Machado de Araujo",
+     "cargo": "Senador",
+     "uf": "GO",
+     "principal": 1065000.0,
+     "confirmado": 965000.0,
+     "total": 2167343.61,
+     "proporcao": 0.491385,
+     "pequena": false
+    },
+    {
+     "sq": "90002540993",
+     "nome": "Daniel Elias Carvalho Vilela",
+     "cargo": "Governador",
+     "uf": "GO",
+     "principal": 595000.0,
+     "confirmado": 0.0,
+     "total": 7708687.22,
+     "proporcao": 0.077186,
+     "pequena": false
+    },
+    {
+     "sq": "90002543215",
+     "nome": "Vanderlan Vieira Cardoso",
+     "cargo": "Senador",
+     "uf": "GO",
+     "principal": 540000.0,
+     "confirmado": 430000.0,
+     "total": 2254960.52,
+     "proporcao": 0.239472,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 32158961.6,
+   "principal": 3250705.0,
+   "confirmado": 1476730.0,
+   "generico": 1773975.0,
+   "provavel": 0.0,
+   "proporcao": 0.101082,
+   "n_candidatos": 5,
+   "n_gastaram": 4,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 1.0,
+     "excedente": 1643363.14
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 231983.8
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "90002551791",
+     "nome": "Wilder Pedro de Morais",
+     "cargo": "Governador",
+     "uf": "GO",
+     "principal": 1296000.0,
+     "confirmado": 117025.0,
+     "total": 10640161.96,
+     "proporcao": 0.121803,
+     "pequena": false
+    },
+    {
+     "sq": "90002543463",
+     "nome": "Marconi Ferreira Perillo Junior",
+     "cargo": "Governador",
+     "uf": "GO",
+     "principal": 1070705.0,
+     "confirmado": 1070705.0,
+     "total": 10881531.84,
+     "proporcao": 0.098397,
+     "pequena": false
+    },
+    {
+     "sq": "90002540993",
+     "nome": "Daniel Elias Carvalho Vilela",
+     "cargo": "Governador",
+     "uf": "GO",
+     "principal": 595000.0,
+     "confirmado": 0.0,
+     "total": 7708687.22,
+     "proporcao": 0.077186,
+     "pequena": false
+    },
+    {
+     "sq": "90002545476",
+     "nome": "Luis Cesar Bueno e Freitas",
+     "cargo": "Governador",
+     "uf": "GO",
+     "principal": 289000.0,
+     "confirmado": 289000.0,
+     "total": 2916456.12,
+     "proporcao": 0.099093,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 15664616.76,
+   "principal": 2754542.52,
+   "confirmado": 2104542.52,
+   "generico": 650000.0,
+   "provavel": 0.0,
+   "proporcao": 0.175845,
+   "n_candidatos": 10,
+   "n_gastaram": 10,
+   "n_elegiveis": 8,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 7,
+     "pct_acima": 0.875,
+     "excedente": 1967896.68
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.5,
+     "excedente": 1270872.94
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 3,
+     "pct_acima": 0.375,
+     "excedente": 1015619.26
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 3,
+     "pct_acima": 0.375,
+     "excedente": 769159.02
+    }
+   ],
+   "top": [
+    {
+     "sq": "90002543556",
+     "nome": "Gustavo Gayer Machado de Araujo",
+     "cargo": "Senador",
+     "uf": "GO",
+     "principal": 1065000.0,
+     "confirmado": 965000.0,
+     "total": 2167343.61,
+     "proporcao": 0.491385,
+     "pequena": false
+    },
+    {
+     "sq": "90002543215",
+     "nome": "Vanderlan Vieira Cardoso",
+     "cargo": "Senador",
+     "uf": "GO",
+     "principal": 540000.0,
+     "confirmado": 430000.0,
+     "total": 2254960.52,
+     "proporcao": 0.239472,
+     "pequena": false
+    },
+    {
+     "sq": "90002540997",
+     "nome": "Maria das Graças Landim de Carvalho Caiado",
+     "cargo": "Senador",
+     "uf": "GO",
+     "principal": 390000.0,
+     "confirmado": 0.0,
+     "total": 4162431.68,
+     "proporcao": 0.093695,
+     "pequena": false
+    },
+    {
+     "sq": "90002546974",
+     "nome": "Zacarias Calil Hamu",
+     "cargo": "Senador",
+     "uf": "GO",
+     "principal": 336660.0,
+     "confirmado": 286660.0,
+     "total": 3278665.72,
+     "proporcao": 0.102682,
+     "pequena": false
+    },
+    {
+     "sq": "90002540998",
+     "nome": "Gustavo Mendanha Melo",
+     "cargo": "Senador",
+     "uf": "GO",
+     "principal": 235000.0,
+     "confirmado": 235000.0,
+     "total": 2608829.1,
+     "proporcao": 0.090079,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 77097623.41,
+   "principal": 3992991.47,
+   "confirmado": 2833128.39,
+   "generico": 1159863.08,
+   "provavel": 654.72,
+   "proporcao": 0.051791,
+   "n_candidatos": 211,
+   "n_gastaram": 108,
+   "n_elegiveis": 136,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 40,
+     "pct_acima": 0.294118,
+     "excedente": 2054869.34
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 22,
+     "pct_acima": 0.161765,
+     "excedente": 1324269.65
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 14,
+     "pct_acima": 0.102941,
+     "excedente": 801233.14
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 10,
+     "pct_acima": 0.073529,
+     "excedente": 455293.57
+    }
+   ],
+   "top": [
+    {
+     "sq": "90002543471",
+     "nome": "Ismael Alexandrino Junior",
+     "cargo": "Deputado Federal",
+     "uf": "GO",
+     "principal": 530000.0,
+     "confirmado": 530000.0,
+     "total": 2397267.1,
+     "proporcao": 0.221085,
+     "pequena": false
+    },
+    {
+     "sq": "90002539161",
+     "nome": "Fabio Tokarski",
+     "cargo": "Deputado Federal",
+     "uf": "GO",
+     "principal": 454685.05,
+     "confirmado": 0.0,
+     "total": 1087870.84,
+     "proporcao": 0.417959,
+     "pequena": false
+    },
+    {
+     "sq": "90002543474",
+     "nome": "Aparecida de Fátima Gavioli Soares Pereira",
+     "cargo": "Deputado Federal",
+     "uf": "GO",
+     "principal": 269977.1,
+     "confirmado": 100000.0,
+     "total": 2058729.98,
+     "proporcao": 0.131138,
+     "pequena": false
+    },
+    {
+     "sq": "90002542618",
+     "nome": "Frederico Gustavo Rodrigues Cunha",
+     "cargo": "Deputado Federal",
+     "uf": "GO",
+     "principal": 260000.0,
+     "confirmado": 260000.0,
+     "total": 897794.98,
+     "proporcao": 0.289598,
+     "pequena": false
+    },
+    {
+     "sq": "90002543220",
+     "nome": "Lucas de Castro Santos",
+     "cargo": "Deputado Federal",
+     "uf": "GO",
+     "principal": 235000.0,
+     "confirmado": 235000.0,
+     "total": 1410311.24,
+     "proporcao": 0.16663,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 46569489.46,
+   "principal": 3745233.02,
+   "confirmado": 2948382.04,
+   "generico": 796850.98,
+   "provavel": 383.25,
+   "proporcao": 0.080422,
+   "n_candidatos": 380,
+   "n_gastaram": 177,
+   "n_elegiveis": 171,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 73,
+     "pct_acima": 0.426901,
+     "excedente": 2099206.69
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 45,
+     "pct_acima": 0.263158,
+     "excedente": 1344578.96
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 32,
+     "pct_acima": 0.187135,
+     "excedente": 887938.21
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 20,
+     "pct_acima": 0.116959,
+     "excedente": 619327.64
+    }
+   ],
+   "top": [
+    {
+     "sq": "90002543799",
+     "nome": "Wellington de Urzeda Mota",
+     "cargo": "Deputado Estadual",
+     "uf": "GO",
+     "principal": 164271.16,
+     "confirmado": 164271.16,
+     "total": 551055.23,
+     "proporcao": 0.298103,
+     "pequena": false
+    },
+    {
+     "sq": "90002543783",
+     "nome": "Eduardo José do Prado",
+     "cargo": "Deputado Estadual",
+     "uf": "GO",
+     "principal": 126000.0,
+     "confirmado": 0.0,
+     "total": 347560.0,
+     "proporcao": 0.362527,
+     "pequena": false
+    },
+    {
+     "sq": "90002543142",
+     "nome": "Nataniel de Sena Soares",
+     "cargo": "Deputado Estadual",
+     "uf": "GO",
+     "principal": 123000.0,
+     "confirmado": 123000.0,
+     "total": 294859.0,
+     "proporcao": 0.417149,
+     "pequena": false
+    },
+    {
+     "sq": "90002540978",
+     "nome": "Paulo Vitor Gonçalves Marques",
+     "cargo": "Deputado Estadual",
+     "uf": "GO",
+     "principal": 123000.0,
+     "confirmado": 123000.0,
+     "total": 190192.5,
+     "proporcao": 0.646713,
+     "pequena": false
+    },
+    {
+     "sq": "90002537458",
+     "nome": "Eder Gean Silva",
+     "cargo": "Deputado Estadual",
+     "uf": "GO",
+     "principal": 110000.0,
+     "confirmado": 110000.0,
+     "total": 274949.66,
+     "proporcao": 0.400073,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

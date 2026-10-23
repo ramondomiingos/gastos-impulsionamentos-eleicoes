@@ -1,0 +1,469 @@
+{
+ "uf": "SE",
+ "nome": "Sergipe",
+ "artigo": "de",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 380,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 98972307.32,
+   "principal": 2403988.73,
+   "confirmado": 1452651.53,
+   "generico": 951337.2,
+   "provavel": 0.0,
+   "proporcao": 0.02429,
+   "n_candidatos": 306,
+   "n_gastaram": 102,
+   "n_elegiveis": 155,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 22,
+     "pct_acima": 0.141935,
+     "excedente": 729634.62
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 8,
+     "pct_acima": 0.051613,
+     "excedente": 222800.11
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.006452,
+     "excedente": 127327.06
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.006452,
+     "excedente": 103102.75
+    }
+   ],
+   "top": [
+    {
+     "sq": "260002551550",
+     "nome": "Edvaldo Nogueira Filho",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 285000.0,
+     "confirmado": 65000.0,
+     "total": 2306291.58,
+     "proporcao": 0.123575,
+     "pequena": false
+    },
+    {
+     "sq": "260002547285",
+     "nome": "Rogerio Carvalho Santos",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 267000.0,
+     "confirmado": 250000.0,
+     "total": 3002139.36,
+     "proporcao": 0.088937,
+     "pequena": false
+    },
+    {
+     "sq": "260002540205",
+     "nome": "Priscilla Lima da Costa Pinto",
+     "cargo": "Deputado Estadual",
+     "uf": "SE",
+     "principal": 200000.0,
+     "confirmado": 190000.0,
+     "total": 484486.25,
+     "proporcao": 0.412808,
+     "pequena": false
+    },
+    {
+     "sq": "260002549127",
+     "nome": "Eduardo Alves do Amorim",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 150000.0,
+     "confirmado": 10000.0,
+     "total": 2382859.13,
+     "proporcao": 0.06295,
+     "pequena": false
+    },
+    {
+     "sq": "260002533084",
+     "nome": "Alessandro Vieira",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 110000.0,
+     "confirmado": 110000.0,
+     "total": 3115566.02,
+     "proporcao": 0.035307,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 13021689.18,
+   "principal": 113900.0,
+   "confirmado": 10900.0,
+   "generico": 103000.0,
+   "provavel": 0.0,
+   "proporcao": 0.008747,
+   "n_candidatos": 6,
+   "n_gastaram": 3,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 1120.82
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "260002542491",
+     "nome": "Fabio Cruz Mitidieri",
+     "cargo": "Governador",
+     "uf": "SE",
+     "principal": 60000.0,
+     "confirmado": 10000.0,
+     "total": 6529696.59,
+     "proporcao": 0.009189,
+     "pequena": false
+    },
+    {
+     "sq": "260002532010",
+     "nome": "Valmir dos Santos Costa",
+     "cargo": "Governador",
+     "uf": "SE",
+     "principal": 50000.0,
+     "confirmado": 0.0,
+     "total": 5938947.27,
+     "proporcao": 0.008419,
+     "pequena": false
+    },
+    {
+     "sq": "260002547415",
+     "nome": "Jose Helton Silva Monteiro",
+     "cargo": "Governador",
+     "uf": "SE",
+     "principal": 3900.0,
+     "confirmado": 900.0,
+     "total": 55583.5,
+     "proporcao": 0.070165,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 16969760.29,
+   "principal": 937000.0,
+   "confirmado": 490000.0,
+   "generico": 447000.0,
+   "provavel": 0.0,
+   "proporcao": 0.055216,
+   "n_candidatos": 10,
+   "n_gastaram": 8,
+   "n_elegiveis": 9,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.444444,
+     "excedente": 322637.82
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.222222,
+     "excedente": 54775.49
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "260002551550",
+     "nome": "Edvaldo Nogueira Filho",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 285000.0,
+     "confirmado": 65000.0,
+     "total": 2306291.58,
+     "proporcao": 0.123575,
+     "pequena": false
+    },
+    {
+     "sq": "260002547285",
+     "nome": "Rogerio Carvalho Santos",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 267000.0,
+     "confirmado": 250000.0,
+     "total": 3002139.36,
+     "proporcao": 0.088937,
+     "pequena": false
+    },
+    {
+     "sq": "260002549127",
+     "nome": "Eduardo Alves do Amorim",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 150000.0,
+     "confirmado": 10000.0,
+     "total": 2382859.13,
+     "proporcao": 0.06295,
+     "pequena": false
+    },
+    {
+     "sq": "260002533084",
+     "nome": "Alessandro Vieira",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 110000.0,
+     "confirmado": 110000.0,
+     "total": 3115566.02,
+     "proporcao": 0.035307,
+     "pequena": false
+    },
+    {
+     "sq": "260002547290",
+     "nome": "Andre Luis Dantas Ferreira",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 45000.0,
+     "confirmado": 15000.0,
+     "total": 2553017.79,
+     "proporcao": 0.017626,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 45271570.46,
+   "principal": 818216.84,
+   "confirmado": 486894.62,
+   "generico": 331322.22,
+   "provavel": 0.0,
+   "proporcao": 0.018074,
+   "n_candidatos": 109,
+   "n_gastaram": 47,
+   "n_elegiveis": 67,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 9,
+     "pct_acima": 0.134328,
+     "excedente": 148120.59
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.059701,
+     "excedente": 11859.31
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "260002547440",
+     "nome": "Marcio Costa Macedo",
+     "cargo": "Deputado Federal",
+     "uf": "SE",
+     "principal": 110000.0,
+     "confirmado": 50000.0,
+     "total": 1171700.75,
+     "proporcao": 0.093881,
+     "pequena": false
+    },
+    {
+     "sq": "260002533075",
+     "nome": "Marta Susane Vidal Santos",
+     "cargo": "Deputado Federal",
+     "uf": "SE",
+     "principal": 110000.0,
+     "confirmado": 80000.0,
+     "total": 1020447.0,
+     "proporcao": 0.107796,
+     "pequena": false
+    },
+    {
+     "sq": "260002547412",
+     "nome": "Samuel Alves Barreto",
+     "cargo": "Deputado Federal",
+     "uf": "SE",
+     "principal": 100000.0,
+     "confirmado": 100000.0,
+     "total": 1969025.05,
+     "proporcao": 0.050787,
+     "pequena": false
+    },
+    {
+     "sq": "260002547408",
+     "nome": "Yandra Barreto Ferreira",
+     "cargo": "Deputado Federal",
+     "uf": "SE",
+     "principal": 84000.0,
+     "confirmado": 0.0,
+     "total": 2271206.75,
+     "proporcao": 0.036985,
+     "pequena": false
+    },
+    {
+     "sq": "260002547442",
+     "nome": "Joao Somariva Daniel",
+     "cargo": "Deputado Federal",
+     "uf": "SE",
+     "principal": 31360.0,
+     "confirmado": 31360.0,
+     "total": 2314565.32,
+     "proporcao": 0.013549,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 23709287.39,
+   "principal": 534871.89,
+   "confirmado": 464856.91,
+   "generico": 70014.98,
+   "provavel": 0.0,
+   "proporcao": 0.02256,
+   "n_candidatos": 181,
+   "n_gastaram": 44,
+   "n_elegiveis": 74,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 8,
+     "pct_acima": 0.108108,
+     "excedente": 257755.38
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.027027,
+     "excedente": 156165.31
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.013514,
+     "excedente": 127327.06
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.013514,
+     "excedente": 103102.75
+    }
+   ],
+   "top": [
+    {
+     "sq": "260002540205",
+     "nome": "Priscilla Lima da Costa Pinto",
+     "cargo": "Deputado Estadual",
+     "uf": "SE",
+     "principal": 200000.0,
+     "confirmado": 190000.0,
+     "total": 484486.25,
+     "proporcao": 0.412808,
+     "pequena": false
+    },
+    {
+     "sq": "260002547426",
+     "nome": "Linda Brasil Azevedo Santos",
+     "cargo": "Deputado Estadual",
+     "uf": "SE",
+     "principal": 60400.0,
+     "confirmado": 60400.0,
+     "total": 751851.98,
+     "proporcao": 0.080335,
+     "pequena": false
+    },
+    {
+     "sq": "260002549386",
+     "nome": "Vitor Diego Lima Fortunato",
+     "cargo": "Deputado Estadual",
+     "uf": "SE",
+     "principal": 50000.0,
+     "confirmado": 50000.0,
+     "total": 685552.74,
+     "proporcao": 0.072934,
+     "pequena": false
+    },
+    {
+     "sq": "260002547486",
+     "nome": "Alexsandro Ribeiro de Souza",
+     "cargo": "Deputado Estadual",
+     "uf": "SE",
+     "principal": 37500.0,
+     "confirmado": 37500.0,
+     "total": 380957.95,
+     "proporcao": 0.098436,
+     "pequena": false
+    },
+    {
+     "sq": "260002535754",
+     "nome": "Antônio Menezes Leite Neto",
+     "cargo": "Deputado Estadual",
+     "uf": "SE",
+     "principal": 22500.0,
+     "confirmado": 22500.0,
+     "total": 178860.67,
+     "proporcao": 0.125796,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

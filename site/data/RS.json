@@ -1,0 +1,491 @@
+{
+ "uf": "RS",
+ "nome": "Rio Grande do Sul",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "22/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 1021,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 214512908.6,
+   "principal": 17245003.5,
+   "confirmado": 13835010.93,
+   "generico": 3409992.57,
+   "provavel": 1043.17,
+   "proporcao": 0.080391,
+   "n_candidatos": 866,
+   "n_gastaram": 525,
+   "n_elegiveis": 481,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 224,
+     "pct_acima": 0.465696,
+     "excedente": 9455968.54
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 145,
+     "pct_acima": 0.301455,
+     "excedente": 5423053.46
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 99,
+     "pct_acima": 0.205821,
+     "excedente": 3438856.86
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 70,
+     "pct_acima": 0.14553,
+     "excedente": 2202887.41
+    }
+   ],
+   "top": [
+    {
+     "sq": "210002547857",
+     "nome": "Luciano Lorenzini Zucco",
+     "cargo": "Governador",
+     "uf": "RS",
+     "principal": 1200000.0,
+     "confirmado": 0.0,
+     "total": 11227285.84,
+     "proporcao": 0.106882,
+     "pequena": false
+    },
+    {
+     "sq": "210002542892",
+     "nome": "Gabriel Vieira de Souza",
+     "cargo": "Governador",
+     "uf": "RS",
+     "principal": 505000.0,
+     "confirmado": 495000.0,
+     "total": 6045016.84,
+     "proporcao": 0.08354,
+     "pequena": false
+    },
+    {
+     "sq": "210002541514",
+     "nome": "Alceu Moreira da Silva",
+     "cargo": "Deputado Federal",
+     "uf": "RS",
+     "principal": 452000.0,
+     "confirmado": 445000.0,
+     "total": 1513225.58,
+     "proporcao": 0.2987,
+     "pequena": false
+    },
+    {
+     "sq": "210002536933",
+     "nome": "Gustavo Adolfo Victorino Grehs",
+     "cargo": "Deputado Federal",
+     "uf": "RS",
+     "principal": 451623.0,
+     "confirmado": 451623.0,
+     "total": 1617539.66,
+     "proporcao": 0.279204,
+     "pequena": false
+    },
+    {
+     "sq": "210002533902",
+     "nome": "Fernanda Melchionna e Silva",
+     "cargo": "Deputado Federal",
+     "uf": "RS",
+     "principal": 437000.0,
+     "confirmado": 2000.0,
+     "total": 1956095.07,
+     "proporcao": 0.223404,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 25294897.11,
+   "principal": 1986500.0,
+   "confirmado": 571500.0,
+   "generico": 1415000.0,
+   "provavel": 0.0,
+   "proporcao": 0.078534,
+   "n_candidatos": 6,
+   "n_gastaram": 5,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 2,
+     "pct_acima": 0.4,
+     "excedente": 841384.87
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 77271.42
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "210002547857",
+     "nome": "Luciano Lorenzini Zucco",
+     "cargo": "Governador",
+     "uf": "RS",
+     "principal": 1200000.0,
+     "confirmado": 0.0,
+     "total": 11227285.84,
+     "proporcao": 0.106882,
+     "pequena": false
+    },
+    {
+     "sq": "210002542892",
+     "nome": "Gabriel Vieira de Souza",
+     "cargo": "Governador",
+     "uf": "RS",
+     "principal": 505000.0,
+     "confirmado": 495000.0,
+     "total": 6045016.84,
+     "proporcao": 0.08354,
+     "pequena": false
+    },
+    {
+     "sq": "210002551508",
+     "nome": "Juliana Brizola",
+     "cargo": "Governador",
+     "uf": "RS",
+     "principal": 205000.0,
+     "confirmado": 0.0,
+     "total": 5383183.67,
+     "proporcao": 0.038082,
+     "pequena": false
+    },
+    {
+     "sq": "210002535802",
+     "nome": "Marcelo Maranata Soares Reinaldo",
+     "cargo": "Governador",
+     "uf": "RS",
+     "principal": 75000.0,
+     "confirmado": 75000.0,
+     "total": 2523189.0,
+     "proporcao": 0.029724,
+     "pequena": false
+    },
+    {
+     "sq": "210002541367",
+     "nome": "Rejane Silva de Oliveira",
+     "cargo": "Governador",
+     "uf": "RS",
+     "principal": 1500.0,
+     "confirmado": 1500.0,
+     "total": 42553.0,
+     "proporcao": 0.03525,
+     "pequena": true
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 17917516.77,
+   "principal": 1224038.3,
+   "confirmado": 1224038.3,
+   "generico": 0.0,
+   "provavel": 0.0,
+   "proporcao": 0.068315,
+   "n_candidatos": 11,
+   "n_gastaram": 7,
+   "n_elegiveis": 6,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 570112.58
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.333333,
+     "excedente": 116772.22
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "210002543863",
+     "nome": "Germano Antonio Rigotto",
+     "cargo": "Senador",
+     "uf": "RS",
+     "principal": 425000.0,
+     "confirmado": 425000.0,
+     "total": 3143013.11,
+     "proporcao": 0.135221,
+     "pequena": false
+    },
+    {
+     "sq": "210002547819",
+     "nome": "Marcel Van Hattem",
+     "cargo": "Senador",
+     "uf": "RS",
+     "principal": 265000.0,
+     "confirmado": 265000.0,
+     "total": 2589264.67,
+     "proporcao": 0.102346,
+     "pequena": false
+    },
+    {
+     "sq": "210002547816",
+     "nome": "Ubiratan Antunes Sanderson",
+     "cargo": "Senador",
+     "uf": "RS",
+     "principal": 260000.0,
+     "confirmado": 260000.0,
+     "total": 3887542.1,
+     "proporcao": 0.06688,
+     "pequena": false
+    },
+    {
+     "sq": "210002543865",
+     "nome": "Frederico Cantori Antunes",
+     "cargo": "Senador",
+     "uf": "RS",
+     "principal": 210000.0,
+     "confirmado": 210000.0,
+     "total": 2177928.45,
+     "proporcao": 0.096422,
+     "pequena": false
+    },
+    {
+     "sq": "210002533584",
+     "nome": "Paulo Roberto Severo Pimenta",
+     "cargo": "Senador",
+     "uf": "RS",
+     "principal": 60000.0,
+     "confirmado": 60000.0,
+     "total": 3034800.16,
+     "proporcao": 0.019771,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 99777285.63,
+   "principal": 7261484.18,
+   "confirmado": 6212756.94,
+   "generico": 1048727.24,
+   "provavel": 526.5,
+   "proporcao": 0.072777,
+   "n_candidatos": 376,
+   "n_gastaram": 220,
+   "n_elegiveis": 201,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 85,
+     "pct_acima": 0.422886,
+     "excedente": 3892044.85
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 49,
+     "pct_acima": 0.243781,
+     "excedente": 2579472.93
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 38,
+     "pct_acima": 0.189055,
+     "excedente": 1758363.76
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 30,
+     "pct_acima": 0.149254,
+     "excedente": 1141274.43
+    }
+   ],
+   "top": [
+    {
+     "sq": "210002541514",
+     "nome": "Alceu Moreira da Silva",
+     "cargo": "Deputado Federal",
+     "uf": "RS",
+     "principal": 452000.0,
+     "confirmado": 445000.0,
+     "total": 1513225.58,
+     "proporcao": 0.2987,
+     "pequena": false
+    },
+    {
+     "sq": "210002536933",
+     "nome": "Gustavo Adolfo Victorino Grehs",
+     "cargo": "Deputado Federal",
+     "uf": "RS",
+     "principal": 451623.0,
+     "confirmado": 451623.0,
+     "total": 1617539.66,
+     "proporcao": 0.279204,
+     "pequena": false
+    },
+    {
+     "sq": "210002533902",
+     "nome": "Fernanda Melchionna e Silva",
+     "cargo": "Deputado Federal",
+     "uf": "RS",
+     "principal": 437000.0,
+     "confirmado": 2000.0,
+     "total": 1956095.07,
+     "proporcao": 0.223404,
+     "pequena": false
+    },
+    {
+     "sq": "210002534897",
+     "nome": "Giovani Cherini",
+     "cargo": "Deputado Federal",
+     "uf": "RS",
+     "principal": 405000.0,
+     "confirmado": 405000.0,
+     "total": 3194112.73,
+     "proporcao": 0.126796,
+     "pequena": false
+    },
+    {
+     "sq": "210002534270",
+     "nome": "Rony de Assis Gabriel",
+     "cargo": "Deputado Federal",
+     "uf": "RS",
+     "principal": 359600.0,
+     "confirmado": 359600.0,
+     "total": 1333126.46,
+     "proporcao": 0.269742,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 71523209.09,
+   "principal": 6772981.02,
+   "confirmado": 5826715.69,
+   "generico": 946265.33,
+   "provavel": 516.67,
+   "proporcao": 0.094696,
+   "n_candidatos": 473,
+   "n_gastaram": 293,
+   "n_elegiveis": 269,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 133,
+     "pct_acima": 0.494424,
+     "excedente": 4152426.24
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 93,
+     "pct_acima": 0.345725,
+     "excedente": 2649536.89
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 61,
+     "pct_acima": 0.226766,
+     "excedente": 1680493.1
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 40,
+     "pct_acima": 0.148699,
+     "excedente": 1061612.98
+    }
+   ],
+   "top": [
+    {
+     "sq": "210002539072",
+     "nome": "Martim Todesco Adreani",
+     "cargo": "Deputado Estadual",
+     "uf": "RS",
+     "principal": 280357.42,
+     "confirmado": 20000.0,
+     "total": 448616.47,
+     "proporcao": 0.624938,
+     "pequena": false
+    },
+    {
+     "sq": "210002535710",
+     "nome": "Adriane Cerini",
+     "cargo": "Deputado Estadual",
+     "uf": "RS",
+     "principal": 251000.0,
+     "confirmado": 251000.0,
+     "total": 831745.98,
+     "proporcao": 0.301775,
+     "pequena": false
+    },
+    {
+     "sq": "210002535671",
+     "nome": "Claudio Maximiliano Branchieri",
+     "cargo": "Deputado Estadual",
+     "uf": "RS",
+     "principal": 230000.0,
+     "confirmado": 230000.0,
+     "total": 1312473.2,
+     "proporcao": 0.175242,
+     "pequena": false
+    },
+    {
+     "sq": "210002539057",
+     "nome": "Rodrigo Lorenzini Zucco",
+     "cargo": "Deputado Estadual",
+     "uf": "RS",
+     "principal": 201882.5,
+     "confirmado": 201882.5,
+     "total": 705198.68,
+     "proporcao": 0.286277,
+     "pequena": false
+    },
+    {
+     "sq": "210002537885",
+     "nome": "Nicole Garske Weber Covatti",
+     "cargo": "Deputado Estadual",
+     "uf": "RS",
+     "principal": 200000.0,
+     "confirmado": 200000.0,
+     "total": 1240331.24,
+     "proporcao": 0.161247,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

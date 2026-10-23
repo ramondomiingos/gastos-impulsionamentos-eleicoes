@@ -1,0 +1,491 @@
+{
+ "uf": "MT",
+ "nome": "Mato Grosso",
+ "artigo": "de",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 423,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 128769596.25,
+   "principal": 13904199.2,
+   "confirmado": 12000148.52,
+   "generico": 1904050.68,
+   "provavel": 1490.36,
+   "proporcao": 0.107977,
+   "n_candidatos": 345,
+   "n_gastaram": 214,
+   "n_elegiveis": 204,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 109,
+     "pct_acima": 0.534314,
+     "excedente": 8632311.22
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 73,
+     "pct_acima": 0.357843,
+     "excedente": 4955903.21
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 49,
+     "pct_acima": 0.240196,
+     "excedente": 2646497.08
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 31,
+     "pct_acima": 0.151961,
+     "excedente": 1173002.99
+    }
+   ],
+   "top": [
+    {
+     "sq": "110002551737",
+     "nome": "Wellington Antonio Fagundes",
+     "cargo": "Governador",
+     "uf": "MT",
+     "principal": 1526000.0,
+     "confirmado": 1526000.0,
+     "total": 7838234.29,
+     "proporcao": 0.194687,
+     "pequena": false
+    },
+    {
+     "sq": "110002552693",
+     "nome": "Jose Antonio dos Santos Medeiros",
+     "cargo": "Senador",
+     "uf": "MT",
+     "principal": 1000000.0,
+     "confirmado": 1000000.0,
+     "total": 4264502.91,
+     "proporcao": 0.234494,
+     "pequena": false
+    },
+    {
+     "sq": "110002551480",
+     "nome": "Otaviano Olavo Pivetta",
+     "cargo": "Governador",
+     "uf": "MT",
+     "principal": 864000.0,
+     "confirmado": 864000.0,
+     "total": 7625213.89,
+     "proporcao": 0.113308,
+     "pequena": false
+    },
+    {
+     "sq": "110002544986",
+     "nome": "Carlos Henrique Baqueta Favaro",
+     "cargo": "Senador",
+     "uf": "MT",
+     "principal": 585000.0,
+     "confirmado": 585000.0,
+     "total": 2397437.68,
+     "proporcao": 0.244011,
+     "pequena": false
+    },
+    {
+     "sq": "110002550866",
+     "nome": "Virginia Raquel Taveira e Silva Mendes Ferreira",
+     "cargo": "Deputado Federal",
+     "uf": "MT",
+     "principal": 525000.0,
+     "confirmado": 525000.0,
+     "total": 2189439.85,
+     "proporcao": 0.239787,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 20324167.3,
+   "principal": 2931741.33,
+   "confirmado": 2921741.33,
+   "generico": 10000.0,
+   "provavel": 0.0,
+   "proporcao": 0.144249,
+   "n_candidatos": 6,
+   "n_gastaram": 5,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.8,
+     "excedente": 1918275.55
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.8,
+     "excedente": 905351.1
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.4,
+     "excedente": 361402.64
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 6117.04
+    }
+   ],
+   "top": [
+    {
+     "sq": "110002551737",
+     "nome": "Wellington Antonio Fagundes",
+     "cargo": "Governador",
+     "uf": "MT",
+     "principal": 1526000.0,
+     "confirmado": 1526000.0,
+     "total": 7838234.29,
+     "proporcao": 0.194687,
+     "pequena": false
+    },
+    {
+     "sq": "110002551480",
+     "nome": "Otaviano Olavo Pivetta",
+     "cargo": "Governador",
+     "uf": "MT",
+     "principal": 864000.0,
+     "confirmado": 864000.0,
+     "total": 7625213.89,
+     "proporcao": 0.113308,
+     "pequena": false
+    },
+    {
+     "sq": "110002544985",
+     "nome": "Natasha Slhessarenko Fraife Barreto",
+     "cargo": "Governador",
+     "uf": "MT",
+     "principal": 515000.0,
+     "confirmado": 515000.0,
+     "total": 4694626.0,
+     "proporcao": 0.1097,
+     "pequena": false
+    },
+    {
+     "sq": "110002543953",
+     "nome": "Rafaell Milas de Oliveira",
+     "cargo": "Governador",
+     "uf": "MT",
+     "principal": 26200.0,
+     "confirmado": 16200.0,
+     "total": 100414.79,
+     "proporcao": 0.260918,
+     "pequena": false
+    },
+    {
+     "sq": "110002553058",
+     "nome": "Mauricio Coelho de Souza Junior",
+     "cargo": "Governador",
+     "uf": "MT",
+     "principal": 541.33,
+     "confirmado": 541.33,
+     "total": 657.83,
+     "proporcao": 0.822903,
+     "pequena": true
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 17778153.15,
+   "principal": 2923346.62,
+   "confirmado": 2637121.83,
+   "generico": 286224.79,
+   "provavel": 0.0,
+   "proporcao": 0.164435,
+   "n_candidatos": 10,
+   "n_gastaram": 8,
+   "n_elegiveis": 8,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 8,
+     "pct_acima": 1.0,
+     "excedente": 2036902.54
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 5,
+     "pct_acima": 0.625,
+     "excedente": 1216952.87
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 5,
+     "pct_acima": 0.625,
+     "excedente": 681255.99
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 3,
+     "pct_acima": 0.375,
+     "excedente": 273857.45
+    }
+   ],
+   "top": [
+    {
+     "sq": "110002552693",
+     "nome": "Jose Antonio dos Santos Medeiros",
+     "cargo": "Senador",
+     "uf": "MT",
+     "principal": 1000000.0,
+     "confirmado": 1000000.0,
+     "total": 4264502.91,
+     "proporcao": 0.234494,
+     "pequena": false
+    },
+    {
+     "sq": "110002544986",
+     "nome": "Carlos Henrique Baqueta Favaro",
+     "cargo": "Senador",
+     "uf": "MT",
+     "principal": 585000.0,
+     "confirmado": 585000.0,
+     "total": 2397437.68,
+     "proporcao": 0.244011,
+     "pequena": false
+    },
+    {
+     "sq": "110002551966",
+     "nome": "Mauro Mendes Ferreira",
+     "cargo": "Senador",
+     "uf": "MT",
+     "principal": 475000.0,
+     "confirmado": 425000.0,
+     "total": 2986091.7,
+     "proporcao": 0.159071,
+     "pequena": false
+    },
+    {
+     "sq": "110002551967",
+     "nome": "Margareth Gettert Busetti",
+     "cargo": "Senador",
+     "uf": "MT",
+     "principal": 287000.0,
+     "confirmado": 287000.0,
+     "total": 2984424.93,
+     "proporcao": 0.096166,
+     "pequena": false
+    },
+    {
+     "sq": "110002544988",
+     "nome": "Jose Pedro Goncalves Taques",
+     "cargo": "Senador",
+     "uf": "MT",
+     "principal": 198000.0,
+     "confirmado": 198000.0,
+     "total": 2272490.04,
+     "proporcao": 0.087129,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 46895825.99,
+   "principal": 3908819.44,
+   "confirmado": 3114862.27,
+   "generico": 793957.17,
+   "provavel": 375.65,
+   "proporcao": 0.083351,
+   "n_candidatos": 110,
+   "n_gastaram": 70,
+   "n_elegiveis": 63,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 30,
+     "pct_acima": 0.47619,
+     "excedente": 2231440.44
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 20,
+     "pct_acima": 0.31746,
+     "excedente": 1422323.81
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 13,
+     "pct_acima": 0.206349,
+     "excedente": 831221.88
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 8,
+     "pct_acima": 0.126984,
+     "excedente": 455846.93
+    }
+   ],
+   "top": [
+    {
+     "sq": "110002550866",
+     "nome": "Virginia Raquel Taveira e Silva Mendes Ferreira",
+     "cargo": "Deputado Federal",
+     "uf": "MT",
+     "principal": 525000.0,
+     "confirmado": 525000.0,
+     "total": 2189439.85,
+     "proporcao": 0.239787,
+     "pequena": false
+    },
+    {
+     "sq": "110002538411",
+     "nome": "Rubia Fernanda Diniz Robson Santos de Siqueira",
+     "cargo": "Deputado Federal",
+     "uf": "MT",
+     "principal": 510000.0,
+     "confirmado": 510000.0,
+     "total": 3011035.36,
+     "proporcao": 0.169377,
+     "pequena": false
+    },
+    {
+     "sq": "110002550864",
+     "nome": "Nilson Aparecido Leitao",
+     "cargo": "Deputado Federal",
+     "uf": "MT",
+     "principal": 308000.21,
+     "confirmado": 308000.21,
+     "total": 1718537.69,
+     "proporcao": 0.179222,
+     "pequena": false
+    },
+    {
+     "sq": "110002538410",
+     "nome": "Jonildo José de Assis",
+     "cargo": "Deputado Federal",
+     "uf": "MT",
+     "principal": 250000.0,
+     "confirmado": 80000.0,
+     "total": 2290595.72,
+     "proporcao": 0.109142,
+     "pequena": false
+    },
+    {
+     "sq": "110002538408",
+     "nome": "Rafael Beal Ranalli",
+     "cargo": "Deputado Federal",
+     "uf": "MT",
+     "principal": 250000.0,
+     "confirmado": 250000.0,
+     "total": 756373.5,
+     "proporcao": 0.330525,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 43771449.81,
+   "principal": 4140291.81,
+   "confirmado": 3326423.09,
+   "generico": 813868.72,
+   "provavel": 1114.71,
+   "proporcao": 0.094589,
+   "n_candidatos": 219,
+   "n_gastaram": 131,
+   "n_elegiveis": 128,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 67,
+     "pct_acima": 0.523438,
+     "excedente": 2445692.69
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 44,
+     "pct_acima": 0.34375,
+     "excedente": 1411275.43
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 29,
+     "pct_acima": 0.226562,
+     "excedente": 772616.56
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 19,
+     "pct_acima": 0.148438,
+     "excedente": 437181.57
+    }
+   ],
+   "top": [
+    {
+     "sq": "110002542640",
+     "nome": "Max Joel Russi",
+     "cargo": "Deputado Estadual",
+     "uf": "MT",
+     "principal": 243000.0,
+     "confirmado": 103000.0,
+     "total": 1009037.65,
+     "proporcao": 0.240824,
+     "pequena": false
+    },
+    {
+     "sq": "110002547803",
+     "nome": "Maysa do Prado Leao Gomes",
+     "cargo": "Deputado Estadual",
+     "uf": "MT",
+     "principal": 200000.0,
+     "confirmado": 100000.0,
+     "total": 691272.14,
+     "proporcao": 0.289322,
+     "pequena": false
+    },
+    {
+     "sq": "110002547796",
+     "nome": "Paulo Alves Palhano",
+     "cargo": "Deputado Estadual",
+     "uf": "MT",
+     "principal": 171000.0,
+     "confirmado": 156000.0,
+     "total": 562394.34,
+     "proporcao": 0.304057,
+     "pequena": false
+    },
+    {
+     "sq": "110002547794",
+     "nome": "Alan Resende Porto",
+     "cargo": "Deputado Estadual",
+     "uf": "MT",
+     "principal": 160000.0,
+     "confirmado": 160000.0,
+     "total": 860095.18,
+     "proporcao": 0.186026,
+     "pequena": false
+    },
+    {
+     "sq": "110002547799",
+     "nome": "Diego Arruda Vaz Guimaraes",
+     "cargo": "Deputado Estadual",
+     "uf": "MT",
+     "principal": 150700.0,
+     "confirmado": 150700.0,
+     "total": 871645.85,
+     "proporcao": 0.172891,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,480 @@
+{
+ "uf": "MS",
+ "nome": "Mato Grosso do Sul",
+ "artigo": "de",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 395,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 86633459.61,
+   "principal": 6884091.13,
+   "confirmado": 4143375.86,
+   "generico": 2740715.27,
+   "provavel": 102.09,
+   "proporcao": 0.079462,
+   "n_candidatos": 298,
+   "n_gastaram": 164,
+   "n_elegiveis": 157,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 60,
+     "pct_acima": 0.382166,
+     "excedente": 3989133.42
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 37,
+     "pct_acima": 0.235669,
+     "excedente": 2401521.56
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 22,
+     "pct_acima": 0.140127,
+     "excedente": 1409436.56
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 12,
+     "pct_acima": 0.076433,
+     "excedente": 875788.58
+    }
+   ],
+   "top": [
+    {
+     "sq": "120002536582",
+     "nome": "Eduardo Correa Riedel",
+     "cargo": "Governador",
+     "uf": "MS",
+     "principal": 1629000.0,
+     "confirmado": 25000.0,
+     "total": 6156326.55,
+     "proporcao": 0.264606,
+     "pequena": false
+    },
+    {
+     "sq": "120002535764",
+     "nome": "Reinaldo Azambuja Silva",
+     "cargo": "Senador",
+     "uf": "MS",
+     "principal": 555000.0,
+     "confirmado": 555000.0,
+     "total": 3470688.47,
+     "proporcao": 0.159911,
+     "pequena": false
+    },
+    {
+     "sq": "120002537361",
+     "nome": "Jaime Elias Verruck",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 243000.0,
+     "confirmado": 243000.0,
+     "total": 1937187.14,
+     "proporcao": 0.12544,
+     "pequena": false
+    },
+    {
+     "sq": "120002536287",
+     "nome": "Luana Ruiz Silva",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 228000.0,
+     "confirmado": 228000.0,
+     "total": 1263174.04,
+     "proporcao": 0.180498,
+     "pequena": false
+    },
+    {
+     "sq": "120002535769",
+     "nome": "Renan Barbosa Contar",
+     "cargo": "Senador",
+     "uf": "MS",
+     "principal": 220000.0,
+     "confirmado": 220000.0,
+     "total": 2137727.29,
+     "proporcao": 0.102913,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 9686140.88,
+   "principal": 1673550.0,
+   "confirmado": 69400.0,
+   "generico": 1604150.0,
+   "provavel": 0.0,
+   "proporcao": 0.172778,
+   "n_candidatos": 5,
+   "n_gastaram": 4,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 1322276.02
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 1013367.34
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 705551.02
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 397734.69
+    }
+   ],
+   "top": [
+    {
+     "sq": "120002536582",
+     "nome": "Eduardo Correa Riedel",
+     "cargo": "Governador",
+     "uf": "MS",
+     "principal": 1629000.0,
+     "confirmado": 25000.0,
+     "total": 6156326.55,
+     "proporcao": 0.264606,
+     "pequena": false
+    },
+    {
+     "sq": "120002539834",
+     "nome": "Fabio Ricardo Trad",
+     "cargo": "Governador",
+     "uf": "MS",
+     "principal": 25000.0,
+     "confirmado": 25000.0,
+     "total": 3149014.34,
+     "proporcao": 0.007939,
+     "pequena": false
+    },
+    {
+     "sq": "120002552155",
+     "nome": "Delcidio do Amaral Gomez",
+     "cargo": "Governador",
+     "uf": "MS",
+     "principal": 10150.0,
+     "confirmado": 10000.0,
+     "total": 181153.0,
+     "proporcao": 0.05603,
+     "pequena": false
+    },
+    {
+     "sq": "120002552191",
+     "nome": "João Henrique Miranda Soares Catan",
+     "cargo": "Governador",
+     "uf": "MS",
+     "principal": 9400.0,
+     "confirmado": 9400.0,
+     "total": 196646.99,
+     "proporcao": 0.047801,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 8630127.75,
+   "principal": 948387.5,
+   "confirmado": 948387.5,
+   "generico": 0.0,
+   "provavel": 0.0,
+   "proporcao": 0.109893,
+   "n_candidatos": 7,
+   "n_gastaram": 5,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.8,
+     "excedente": 547688.93
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.4,
+     "excedente": 214158.42
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 34396.73
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "120002535764",
+     "nome": "Reinaldo Azambuja Silva",
+     "cargo": "Senador",
+     "uf": "MS",
+     "principal": 555000.0,
+     "confirmado": 555000.0,
+     "total": 3470688.47,
+     "proporcao": 0.159911,
+     "pequena": false
+    },
+    {
+     "sq": "120002535769",
+     "nome": "Renan Barbosa Contar",
+     "cargo": "Senador",
+     "uf": "MS",
+     "principal": 220000.0,
+     "confirmado": 220000.0,
+     "total": 2137727.29,
+     "proporcao": 0.102913,
+     "pequena": false
+    },
+    {
+     "sq": "120002547435",
+     "nome": "Vander Luiz dos Santos Loubet",
+     "cargo": "Senador",
+     "uf": "MS",
+     "principal": 150000.0,
+     "confirmado": 150000.0,
+     "total": 2032226.36,
+     "proporcao": 0.073811,
+     "pequena": false
+    },
+    {
+     "sq": "120002552115",
+     "nome": "Roberto Tarashigue Oshiro Junior",
+     "cargo": "Senador",
+     "uf": "MS",
+     "principal": 13000.0,
+     "confirmado": 13000.0,
+     "total": 165579.36,
+     "proporcao": 0.078512,
+     "pequena": false
+    },
+    {
+     "sq": "120002552183",
+     "nome": "Valter Juvenal de Oliveira",
+     "cargo": "Senador",
+     "uf": "MS",
+     "principal": 10387.5,
+     "confirmado": 10387.5,
+     "total": 26500.0,
+     "proporcao": 0.391981,
+     "pequena": true
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 37349332.61,
+   "principal": 2418851.34,
+   "confirmado": 1727650.84,
+   "generico": 691200.5,
+   "provavel": 0.0,
+   "proporcao": 0.064763,
+   "n_candidatos": 96,
+   "n_gastaram": 53,
+   "n_elegiveis": 51,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 16,
+     "pct_acima": 0.313725,
+     "excedente": 1243466.19
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 13,
+     "pct_acima": 0.254902,
+     "excedente": 728877.81
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 7,
+     "pct_acima": 0.137255,
+     "excedente": 470117.88
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 6,
+     "pct_acima": 0.117647,
+     "excedente": 356591.98
+    }
+   ],
+   "top": [
+    {
+     "sq": "120002537361",
+     "nome": "Jaime Elias Verruck",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 243000.0,
+     "confirmado": 243000.0,
+     "total": 1937187.14,
+     "proporcao": 0.12544,
+     "pequena": false
+    },
+    {
+     "sq": "120002536287",
+     "nome": "Luana Ruiz Silva",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 228000.0,
+     "confirmado": 228000.0,
+     "total": 1263174.04,
+     "proporcao": 0.180498,
+     "pequena": false
+    },
+    {
+     "sq": "120002537468",
+     "nome": "Sandro Omar de Oliveira Santos",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 206500.0,
+     "confirmado": 0.0,
+     "total": 462065.3,
+     "proporcao": 0.446907,
+     "pequena": false
+    },
+    {
+     "sq": "120002536281",
+     "nome": "Rodolfo Oliveira Nogueira",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 200000.0,
+     "confirmado": 200000.0,
+     "total": 1762809.06,
+     "proporcao": 0.113455,
+     "pequena": false
+    },
+    {
+     "sq": "120002536280",
+     "nome": "Andre de Arruda Campos",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 178400.0,
+     "confirmado": 8400.0,
+     "total": 243302.5,
+     "proporcao": 0.733244,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 30967858.37,
+   "principal": 1843302.29,
+   "confirmado": 1397937.52,
+   "generico": 445364.77,
+   "provavel": 102.09,
+   "proporcao": 0.059523,
+   "n_candidatos": 190,
+   "n_gastaram": 102,
+   "n_elegiveis": 97,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 38,
+     "pct_acima": 0.391753,
+     "excedente": 875702.28
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 21,
+     "pct_acima": 0.216495,
+     "excedente": 445117.99
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 13,
+     "pct_acima": 0.134021,
+     "excedente": 199370.93
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 5,
+     "pct_acima": 0.051546,
+     "excedente": 121461.91
+    }
+   ],
+   "top": [
+    {
+     "sq": "120002536068",
+     "nome": "Andre Luis Sanches Salineiro",
+     "cargo": "Deputado Estadual",
+     "uf": "MS",
+     "principal": 150000.0,
+     "confirmado": 150000.0,
+     "total": 956027.66,
+     "proporcao": 0.156899,
+     "pequena": false
+    },
+    {
+     "sq": "120002536070",
+     "nome": "Viviane Moura de Azevedo Tobias",
+     "cargo": "Deputado Estadual",
+     "uf": "MS",
+     "principal": 120000.0,
+     "confirmado": 0.0,
+     "total": 400589.85,
+     "proporcao": 0.299558,
+     "pequena": false
+    },
+    {
+     "sq": "120002537503",
+     "nome": "Herculano Borges Daniel",
+     "cargo": "Deputado Estadual",
+     "uf": "MS",
+     "principal": 96000.0,
+     "confirmado": 96000.0,
+     "total": 639923.15,
+     "proporcao": 0.150018,
+     "pequena": false
+    },
+    {
+     "sq": "120002536054",
+     "nome": "Gianni Dias Aguillar Nogueira",
+     "cargo": "Deputado Estadual",
+     "uf": "MS",
+     "principal": 85000.0,
+     "confirmado": 85000.0,
+     "total": 692461.75,
+     "proporcao": 0.12275,
+     "pequena": false
+    },
+    {
+     "sq": "120002536060",
+     "nome": "Daverson Munhoz de Matos",
+     "cargo": "Deputado Estadual",
+     "uf": "MS",
+     "principal": 82000.0,
+     "confirmado": 52000.0,
+     "total": 212963.0,
+     "proporcao": 0.385043,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

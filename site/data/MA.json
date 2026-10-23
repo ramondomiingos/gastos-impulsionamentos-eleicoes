@@ -1,0 +1,491 @@
+{
+ "uf": "MA",
+ "nome": "Maranhão",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 586,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 160492856.66,
+   "principal": 9587167.92,
+   "confirmado": 6156737.77,
+   "generico": 3430430.15,
+   "provavel": 265.86,
+   "proporcao": 0.059736,
+   "n_candidatos": 428,
+   "n_gastaram": 203,
+   "n_elegiveis": 301,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 92,
+     "pct_acima": 0.305648,
+     "excedente": 4730203.0
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 56,
+     "pct_acima": 0.186047,
+     "excedente": 2619801.1
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 34,
+     "pct_acima": 0.112957,
+     "excedente": 1523947.79
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 24,
+     "pct_acima": 0.079734,
+     "excedente": 986971.46
+    }
+   ],
+   "top": [
+    {
+     "sq": "100002544444",
+     "nome": "Fernando Salim Braide",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 468006.4,
+     "confirmado": 319006.4,
+     "total": 1561550.79,
+     "proporcao": 0.299706,
+     "pequena": false
+    },
+    {
+     "sq": "100002542556",
+     "nome": "Felipe Costa Camarao",
+     "cargo": "Governador",
+     "uf": "MA",
+     "principal": 380000.0,
+     "confirmado": 0.0,
+     "total": 2907741.85,
+     "proporcao": 0.130686,
+     "pequena": false
+    },
+    {
+     "sq": "100002537259",
+     "nome": "Tacilla Mariana Carvalho Silva",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 340000.0,
+     "confirmado": 340000.0,
+     "total": 2012468.4,
+     "proporcao": 0.168947,
+     "pequena": false
+    },
+    {
+     "sq": "100002546922",
+     "nome": "Rubens Pereira e Silva Junior",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 317955.0,
+     "confirmado": 20000.0,
+     "total": 1169198.1,
+     "proporcao": 0.271943,
+     "pequena": false
+    },
+    {
+     "sq": "100002550746",
+     "nome": "Hildelis Silva Duarte Junior",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 270000.0,
+     "confirmado": 0.0,
+     "total": 2012009.7,
+     "proporcao": 0.134194,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 12678099.43,
+   "principal": 936985.0,
+   "confirmado": 555985.0,
+   "generico": 381000.0,
+   "provavel": 0.0,
+   "proporcao": 0.073906,
+   "n_candidatos": 7,
+   "n_gastaram": 6,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.8,
+     "excedente": 336447.23
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 3,
+     "pct_acima": 0.6,
+     "excedente": 116727.07
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 10341.21
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 5121.61
+    }
+   ],
+   "top": [
+    {
+     "sq": "100002542556",
+     "nome": "Felipe Costa Camarao",
+     "cargo": "Governador",
+     "uf": "MA",
+     "principal": 380000.0,
+     "confirmado": 0.0,
+     "total": 2907741.85,
+     "proporcao": 0.130686,
+     "pequena": false
+    },
+    {
+     "sq": "100002545679",
+     "nome": "Eduardo Salim Braide",
+     "cargo": "Governador",
+     "uf": "MA",
+     "principal": 234925.0,
+     "confirmado": 234925.0,
+     "total": 4146826.0,
+     "proporcao": 0.056652,
+     "pequena": false
+    },
+    {
+     "sq": "100002543869",
+     "nome": "Carlos Orleans Braide Brandão",
+     "cargo": "Governador",
+     "uf": "MA",
+     "principal": 199000.0,
+     "confirmado": 199000.0,
+     "total": 4657497.79,
+     "proporcao": 0.042727,
+     "pequena": false
+    },
+    {
+     "sq": "100002551399",
+     "nome": "Roberto Coelho Rocha",
+     "cargo": "Governador",
+     "uf": "MA",
+     "principal": 95000.0,
+     "confirmado": 95000.0,
+     "total": 830595.5,
+     "proporcao": 0.114376,
+     "pequena": false
+    },
+    {
+     "sq": "100002544076",
+     "nome": "André Luís Caetano dos Santos",
+     "cargo": "Governador",
+     "uf": "MA",
+     "principal": 26000.0,
+     "confirmado": 25000.0,
+     "total": 104391.96,
+     "proporcao": 0.249061,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 14133450.29,
+   "principal": 1135895.0,
+   "confirmado": 873895.0,
+   "generico": 262000.0,
+   "provavel": 0.0,
+   "proporcao": 0.080369,
+   "n_candidatos": 10,
+   "n_gastaram": 7,
+   "n_elegiveis": 7,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 6,
+     "pct_acima": 0.857143,
+     "excedente": 472862.61
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.285714,
+     "excedente": 231428.17
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.285714,
+     "excedente": 179642.25
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.285714,
+     "excedente": 127856.34
+    }
+   ],
+   "top": [
+    {
+     "sq": "100002537338",
+     "nome": "Weverton Rocha Marques de Sousa",
+     "cargo": "Senador",
+     "uf": "MA",
+     "principal": 255000.0,
+     "confirmado": 255000.0,
+     "total": 3156150.44,
+     "proporcao": 0.080795,
+     "pequena": false
+    },
+    {
+     "sq": "100002541459",
+     "nome": "Eliziane Pereira Gama Melo",
+     "cargo": "Senador",
+     "uf": "MA",
+     "principal": 186000.0,
+     "confirmado": 186000.0,
+     "total": 3555314.01,
+     "proporcao": 0.052316,
+     "pequena": false
+    },
+    {
+     "sq": "100002550418",
+     "nome": "Hilton Goncalo de Sousa",
+     "cargo": "Senador",
+     "uf": "MA",
+     "principal": 185000.0,
+     "confirmado": 185000.0,
+     "total": 635732.25,
+     "proporcao": 0.291003,
+     "pequena": false
+    },
+    {
+     "sq": "100002542867",
+     "nome": "Andre Luiz Carvalho Ribeiro",
+     "cargo": "Senador",
+     "uf": "MA",
+     "principal": 182000.0,
+     "confirmado": 0.0,
+     "total": 2135850.16,
+     "proporcao": 0.085212,
+     "pequena": false
+    },
+    {
+     "sq": "100002537364",
+     "nome": "Cidonio Goncalves dos Santos",
+     "cargo": "Senador",
+     "uf": "MA",
+     "principal": 150000.0,
+     "confirmado": 140000.0,
+     "total": 399986.07,
+     "proporcao": 0.375013,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 103956489.84,
+   "principal": 5152436.98,
+   "confirmado": 3074135.39,
+   "generico": 2078301.59,
+   "provavel": 85.98,
+   "proporcao": 0.049563,
+   "n_candidatos": 225,
+   "n_gastaram": 99,
+   "n_elegiveis": 179,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 35,
+     "pct_acima": 0.195531,
+     "excedente": 2478862.77
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 20,
+     "pct_acima": 0.111732,
+     "excedente": 1326827.52
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 13,
+     "pct_acima": 0.072626,
+     "excedente": 699168.74
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 8,
+     "pct_acima": 0.044693,
+     "excedente": 430226.84
+    }
+   ],
+   "top": [
+    {
+     "sq": "100002544444",
+     "nome": "Fernando Salim Braide",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 468006.4,
+     "confirmado": 319006.4,
+     "total": 1561550.79,
+     "proporcao": 0.299706,
+     "pequena": false
+    },
+    {
+     "sq": "100002537259",
+     "nome": "Tacilla Mariana Carvalho Silva",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 340000.0,
+     "confirmado": 340000.0,
+     "total": 2012468.4,
+     "proporcao": 0.168947,
+     "pequena": false
+    },
+    {
+     "sq": "100002546922",
+     "nome": "Rubens Pereira e Silva Junior",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 317955.0,
+     "confirmado": 20000.0,
+     "total": 1169198.1,
+     "proporcao": 0.271943,
+     "pequena": false
+    },
+    {
+     "sq": "100002550746",
+     "nome": "Hildelis Silva Duarte Junior",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 270000.0,
+     "confirmado": 0.0,
+     "total": 2012009.7,
+     "proporcao": 0.134194,
+     "pequena": false
+    },
+    {
+     "sq": "100002542884",
+     "nome": "Josivaldo dos Santos Melo",
+     "cargo": "Deputado Federal",
+     "uf": "MA",
+     "principal": 250000.0,
+     "confirmado": 0.0,
+     "total": 1964820.1,
+     "proporcao": 0.127238,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 29724817.1,
+   "principal": 2361850.94,
+   "confirmado": 1652722.38,
+   "generico": 709128.56,
+   "provavel": 179.88,
+   "proporcao": 0.079457,
+   "n_candidatos": 186,
+   "n_gastaram": 91,
+   "n_elegiveis": 110,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 47,
+     "pct_acima": 0.427273,
+     "excedente": 1442030.37
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 31,
+     "pct_acima": 0.281818,
+     "excedente": 944818.35
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 18,
+     "pct_acima": 0.163636,
+     "excedente": 634795.59
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 13,
+     "pct_acima": 0.118182,
+     "excedente": 423766.68
+    }
+   ],
+   "top": [
+    {
+     "sq": "100002537283",
+     "nome": "Ulisses Vieira Coutinho dos Santos",
+     "cargo": "Deputado Estadual",
+     "uf": "MA",
+     "principal": 245000.0,
+     "confirmado": 245000.0,
+     "total": 792999.47,
+     "proporcao": 0.308954,
+     "pequena": false
+    },
+    {
+     "sq": "100002537291",
+     "nome": "Josimar Cunha Rodrigues Júnior",
+     "cargo": "Deputado Estadual",
+     "uf": "MA",
+     "principal": 187865.0,
+     "confirmado": 187865.0,
+     "total": 607396.49,
+     "proporcao": 0.309295,
+     "pequena": false
+    },
+    {
+     "sq": "100002537278",
+     "nome": "Maria Deusdete Lima Cunha Rodrigues",
+     "cargo": "Deputado Estadual",
+     "uf": "MA",
+     "principal": 177865.0,
+     "confirmado": 177865.0,
+     "total": 672717.43,
+     "proporcao": 0.264398,
+     "pequena": false
+    },
+    {
+     "sq": "100002550343",
+     "nome": "Carlos Wellington de Castro Bezerra",
+     "cargo": "Deputado Estadual",
+     "uf": "MA",
+     "principal": 141500.0,
+     "confirmado": 141500.0,
+     "total": 300142.7,
+     "proporcao": 0.471442,
+     "pequena": false
+    },
+    {
+     "sq": "100002540264",
+     "nome": "Sebastiao Torres Madeira",
+     "cargo": "Deputado Estadual",
+     "uf": "MA",
+     "principal": 131200.0,
+     "confirmado": 131200.0,
+     "total": 1206069.0,
+     "proporcao": 0.108783,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

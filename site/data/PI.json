@@ -1,0 +1,491 @@
+{
+ "uf": "PI",
+ "nome": "Piauí",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 348,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 103419745.66,
+   "principal": 4509336.8,
+   "confirmado": 3273166.32,
+   "generico": 1236170.48,
+   "provavel": 2315.5,
+   "proporcao": 0.043602,
+   "n_candidatos": 269,
+   "n_gastaram": 124,
+   "n_elegiveis": 187,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 28,
+     "pct_acima": 0.149733,
+     "excedente": 2261015.85
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 17,
+     "pct_acima": 0.090909,
+     "excedente": 1401623.23
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 10,
+     "pct_acima": 0.053476,
+     "excedente": 802094.6
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 7,
+     "pct_acima": 0.037433,
+     "excedente": 475550.81
+    }
+   ],
+   "top": [
+    {
+     "sq": "180002533964",
+     "nome": "Julio Cesar de Carvalho Lima",
+     "cargo": "Senador",
+     "uf": "PI",
+     "principal": 730000.0,
+     "confirmado": 710000.0,
+     "total": 3510347.41,
+     "proporcao": 0.207957,
+     "pequena": false
+    },
+    {
+     "sq": "180002533967",
+     "nome": "Marcelo Costa e Castro",
+     "cargo": "Senador",
+     "uf": "PI",
+     "principal": 430000.0,
+     "confirmado": 430000.0,
+     "total": 2689590.67,
+     "proporcao": 0.159876,
+     "pequena": false
+    },
+    {
+     "sq": "180002540446",
+     "nome": "Ciro Nogueira Lima Filho",
+     "cargo": "Senador",
+     "uf": "PI",
+     "principal": 420000.0,
+     "confirmado": 50000.0,
+     "total": 1464650.97,
+     "proporcao": 0.286758,
+     "pequena": false
+    },
+    {
+     "sq": "180002539040",
+     "nome": "José Jesus Trabulo de Sousa Neto",
+     "cargo": "Deputado Estadual",
+     "uf": "PI",
+     "principal": 368834.53,
+     "confirmado": 368834.53,
+     "total": 500071.5,
+     "proporcao": 0.737564,
+     "pequena": false
+    },
+    {
+     "sq": "180002538530",
+     "nome": "Joel Rodrigues da Silva",
+     "cargo": "Governador",
+     "uf": "PI",
+     "principal": 300000.0,
+     "confirmado": 150000.0,
+     "total": 2068164.51,
+     "proporcao": 0.145056,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 8286461.43,
+   "principal": 575968.0,
+   "confirmado": 406000.0,
+   "generico": 169968.0,
+   "provavel": 707.86,
+   "proporcao": 0.069507,
+   "n_candidatos": 7,
+   "n_gastaram": 5,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 196591.77
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 93183.55
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "180002538530",
+     "nome": "Joel Rodrigues da Silva",
+     "cargo": "Governador",
+     "uf": "PI",
+     "principal": 300000.0,
+     "confirmado": 150000.0,
+     "total": 2068164.51,
+     "proporcao": 0.145056,
+     "pequena": false
+    },
+    {
+     "sq": "180002532987",
+     "nome": "Rafael Tajra Fonteles",
+     "cargo": "Governador",
+     "uf": "PI",
+     "principal": 268468.0,
+     "confirmado": 250000.0,
+     "total": 6021255.59,
+     "proporcao": 0.044587,
+     "pequena": false
+    },
+    {
+     "sq": "180002549920",
+     "nome": "Elizeu Morais de Aguiar",
+     "cargo": "Governador",
+     "uf": "PI",
+     "principal": 3000.0,
+     "confirmado": 1500.0,
+     "total": 36912.71,
+     "proporcao": 0.081273,
+     "pequena": true
+    },
+    {
+     "sq": "180002550421",
+     "nome": "Gustavo Henrique Leite Feijó",
+     "cargo": "Governador",
+     "uf": "PI",
+     "principal": 2500.0,
+     "confirmado": 2500.0,
+     "total": 2500.0,
+     "proporcao": 1.0,
+     "pequena": true
+    },
+    {
+     "sq": "180002544216",
+     "nome": "Lúcia Maria de Sousa Aguiar dos Santos",
+     "cargo": "Governador",
+     "uf": "PI",
+     "principal": 2000.0,
+     "confirmado": 2000.0,
+     "total": 56402.0,
+     "proporcao": 0.03546,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 8321232.97,
+   "principal": 1647830.0,
+   "confirmado": 1247830.0,
+   "generico": 400000.0,
+   "provavel": 0.0,
+   "proporcao": 0.198027,
+   "n_candidatos": 14,
+   "n_gastaram": 8,
+   "n_elegiveis": 6,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 1231620.47
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 833240.94
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 434861.42
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.333333,
+     "excedente": 155000.32
+    }
+   ],
+   "top": [
+    {
+     "sq": "180002533964",
+     "nome": "Julio Cesar de Carvalho Lima",
+     "cargo": "Senador",
+     "uf": "PI",
+     "principal": 730000.0,
+     "confirmado": 710000.0,
+     "total": 3510347.41,
+     "proporcao": 0.207957,
+     "pequena": false
+    },
+    {
+     "sq": "180002533967",
+     "nome": "Marcelo Costa e Castro",
+     "cargo": "Senador",
+     "uf": "PI",
+     "principal": 430000.0,
+     "confirmado": 430000.0,
+     "total": 2689590.67,
+     "proporcao": 0.159876,
+     "pequena": false
+    },
+    {
+     "sq": "180002540446",
+     "nome": "Ciro Nogueira Lima Filho",
+     "cargo": "Senador",
+     "uf": "PI",
+     "principal": 420000.0,
+     "confirmado": 50000.0,
+     "total": 1464650.97,
+     "proporcao": 0.286758,
+     "pequena": false
+    },
+    {
+     "sq": "180002540449",
+     "nome": "Tiago Maximiano Junqueira",
+     "cargo": "Senador",
+     "uf": "PI",
+     "principal": 50000.0,
+     "confirmado": 50000.0,
+     "total": 303001.5,
+     "proporcao": 0.165016,
+     "pequena": false
+    },
+    {
+     "sq": "180002549933",
+     "nome": "Antonio de Barros Araujo Filho",
+     "cargo": "Senador",
+     "uf": "PI",
+     "principal": 10000.0,
+     "confirmado": 0.0,
+     "total": 19568.62,
+     "proporcao": 0.511022,
+     "pequena": true
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 53417758.86,
+   "principal": 1192845.04,
+   "confirmado": 817270.16,
+   "generico": 375574.88,
+   "provavel": 1487.76,
+   "proporcao": 0.02233,
+   "n_candidatos": 113,
+   "n_gastaram": 56,
+   "n_elegiveis": 67,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 8,
+     "pct_acima": 0.119403,
+     "excedente": 330847.21
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.059701,
+     "excedente": 103836.9
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.029851,
+     "excedente": 43760.83
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.029851,
+     "excedente": 31014.45
+    }
+   ],
+   "top": [
+    {
+     "sq": "180002539134",
+     "nome": "Samantha Cavalca Sobreira Dutra",
+     "cargo": "Deputado Federal",
+     "uf": "PI",
+     "principal": 230000.0,
+     "confirmado": 230000.0,
+     "total": 1827435.52,
+     "proporcao": 0.125859,
+     "pequena": false
+    },
+    {
+     "sq": "180002544106",
+     "nome": "Jadyel Silva Alencar",
+     "cargo": "Deputado Federal",
+     "uf": "PI",
+     "principal": 190000.0,
+     "confirmado": 165000.0,
+     "total": 2115512.73,
+     "proporcao": 0.089813,
+     "pequena": false
+    },
+    {
+     "sq": "180002539133",
+     "nome": "Atila de Melo Lira",
+     "cargo": "Deputado Federal",
+     "uf": "PI",
+     "principal": 90000.0,
+     "confirmado": 75000.0,
+     "total": 3023703.74,
+     "proporcao": 0.029765,
+     "pequena": false
+    },
+    {
+     "sq": "180002536456",
+     "nome": "Anamelka Albuquerque Formiga Adad",
+     "cargo": "Deputado Federal",
+     "uf": "PI",
+     "principal": 60000.0,
+     "confirmado": 0.0,
+     "total": 599267.75,
+     "proporcao": 0.100122,
+     "pequena": false
+    },
+    {
+     "sq": "180002539127",
+     "nome": "Julio Ferraz Arcoverde",
+     "cargo": "Deputado Federal",
+     "uf": "PI",
+     "principal": 55000.0,
+     "confirmado": 0.0,
+     "total": 3086050.09,
+     "proporcao": 0.017822,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 33394292.4,
+   "principal": 1092693.76,
+   "confirmado": 802066.16,
+   "generico": 290627.6,
+   "provavel": 119.88,
+   "proporcao": 0.032721,
+   "n_candidatos": 135,
+   "n_gastaram": 55,
+   "n_elegiveis": 110,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 15,
+     "pct_acima": 0.136364,
+     "excedente": 501956.39
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 8,
+     "pct_acima": 0.072727,
+     "excedente": 371361.84
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 4,
+     "pct_acima": 0.036364,
+     "excedente": 323472.35
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 3,
+     "pct_acima": 0.027273,
+     "excedente": 289536.04
+    }
+   ],
+   "top": [
+    {
+     "sq": "180002539040",
+     "nome": "José Jesus Trabulo de Sousa Neto",
+     "cargo": "Deputado Estadual",
+     "uf": "PI",
+     "principal": 368834.53,
+     "confirmado": 368834.53,
+     "total": 500071.5,
+     "proporcao": 0.737564,
+     "pequena": false
+    },
+    {
+     "sq": "180002536223",
+     "nome": "Maria das Gracas de Moraes Souza Nunes",
+     "cargo": "Deputado Estadual",
+     "uf": "PI",
+     "principal": 56000.0,
+     "confirmado": 0.0,
+     "total": 932189.6,
+     "proporcao": 0.060074,
+     "pequena": false
+    },
+    {
+     "sq": "180002533543",
+     "nome": "Fabio Nunez Novo",
+     "cargo": "Deputado Estadual",
+     "uf": "PI",
+     "principal": 40000.0,
+     "confirmado": 0.0,
+     "total": 477142.12,
+     "proporcao": 0.083832,
+     "pequena": false
+    },
+    {
+     "sq": "180002536216",
+     "nome": "Jose Helio de Carvalho Oliveira",
+     "cargo": "Deputado Estadual",
+     "uf": "PI",
+     "principal": 35300.0,
+     "confirmado": 35300.0,
+     "total": 546868.52,
+     "proporcao": 0.064549,
+     "pequena": false
+    },
+    {
+     "sq": "180002533561",
+     "nome": "Flavio Rodrigues Nogueira Junior",
+     "cargo": "Deputado Estadual",
+     "uf": "PI",
+     "principal": 35000.0,
+     "confirmado": 35000.0,
+     "total": 892489.63,
+     "proporcao": 0.039216,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

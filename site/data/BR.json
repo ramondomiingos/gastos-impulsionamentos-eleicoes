@@ -1,0 +1,107 @@
+{
+ "uf": "BR",
+ "nome": "Brasil",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "22/10/2026",
+ "segundo_turno": 2,
+ "n_candidatos_total": 14,
+ "recortes": {
+  "presidente": {
+   "rotulo": "Presidência",
+   "cargo": "Presidente",
+   "total": 187080180.86,
+   "principal": 20425733.0,
+   "confirmado": 17586733.0,
+   "generico": 2839000.0,
+   "provavel": 0.0,
+   "proporcao": 0.109182,
+   "n_candidatos": 12,
+   "n_gastaram": 10,
+   "n_elegiveis": 10,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 6,
+     "pct_acima": 0.6,
+     "excedente": 12289902.83
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 6,
+     "pct_acima": 0.6,
+     "excedente": 7411772.67
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 4,
+     "pct_acima": 0.4,
+     "excedente": 2786579.22
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.2,
+     "excedente": 723701.84
+    }
+   ],
+   "top": [
+    {
+     "sq": "280002551544",
+     "nome": "Flavio Nantes Bolsonaro",
+     "cargo": "Presidente",
+     "uf": "BR",
+     "principal": 15025000.0,
+     "confirmado": 12850000.0,
+     "total": 87463578.05,
+     "proporcao": 0.171786,
+     "pequena": false
+    },
+    {
+     "sq": "280002542548",
+     "nome": "Luiz Inácio Lula da Silva",
+     "cargo": "Presidente",
+     "uf": "BR",
+     "principal": 2690000.0,
+     "confirmado": 2590000.0,
+     "total": 65679887.48,
+     "proporcao": 0.040956,
+     "pequena": false
+    },
+    {
+     "sq": "280002551547",
+     "nome": "Augusto Jorge Cury",
+     "cargo": "Presidente",
+     "uf": "BR",
+     "principal": 690000.0,
+     "confirmado": 690000.0,
+     "total": 1506091.13,
+     "proporcao": 0.45814,
+     "pequena": false
+    },
+    {
+     "sq": "280002548139",
+     "nome": "Wilson Grassi Junior",
+     "cargo": "Presidente",
+     "uf": "BR",
+     "principal": 550500.0,
+     "confirmado": 145500.0,
+     "total": 1077899.66,
+     "proporcao": 0.510715,
+     "pequena": false
+    },
+    {
+     "sq": "280002551932",
+     "nome": "Ronaldo Ramos Caiado",
+     "cargo": "Presidente",
+     "uf": "BR",
+     "principal": 546700.0,
+     "confirmado": 546700.0,
+     "total": 22107406.5,
+     "proporcao": 0.024729,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

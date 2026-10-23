@@ -1,0 +1,491 @@
+{
+ "uf": "PR",
+ "nome": "Paraná",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 1062,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 234374811.06,
+   "principal": 28406141.21,
+   "confirmado": 24411845.69,
+   "generico": 3994295.52,
+   "provavel": 447.9,
+   "proporcao": 0.1212,
+   "n_candidatos": 846,
+   "n_gastaram": 523,
+   "n_elegiveis": 428,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 224,
+     "pct_acima": 0.523364,
+     "excedente": 18982917.36
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 157,
+     "pct_acima": 0.366822,
+     "excedente": 13916076.24
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 118,
+     "pct_acima": 0.275701,
+     "excedente": 10202858.88
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 87,
+     "pct_acima": 0.203271,
+     "excedente": 7526060.04
+    }
+   ],
+   "top": [
+    {
+     "sq": "160002547963",
+     "nome": "Alexandre Maranhao Khury",
+     "cargo": "Senador",
+     "uf": "PR",
+     "principal": 1400000.0,
+     "confirmado": 1400000.0,
+     "total": 4353749.0,
+     "proporcao": 0.321562,
+     "pequena": false
+    },
+    {
+     "sq": "160002542218",
+     "nome": "Roberto Requiao de Mello e Silva",
+     "cargo": "Deputado Federal",
+     "uf": "PR",
+     "principal": 1248526.06,
+     "confirmado": 1248526.06,
+     "total": 2970857.42,
+     "proporcao": 0.420258,
+     "pequena": false
+    },
+    {
+     "sq": "160002549555",
+     "nome": "Cristina Reis Graeml",
+     "cargo": "Senador",
+     "uf": "PR",
+     "principal": 1163950.0,
+     "confirmado": 1163950.0,
+     "total": 3236103.69,
+     "proporcao": 0.359676,
+     "pequena": false
+    },
+    {
+     "sq": "160002547656",
+     "nome": "Gleisi Helena Hoffmann",
+     "cargo": "Senador",
+     "uf": "PR",
+     "principal": 1117850.0,
+     "confirmado": 350000.0,
+     "total": 3169800.56,
+     "proporcao": 0.352656,
+     "pequena": false
+    },
+    {
+     "sq": "160002549553",
+     "nome": "Sandro Alex Cruz de Oliveira",
+     "cargo": "Governador",
+     "uf": "PR",
+     "principal": 964850.0,
+     "confirmado": 964850.0,
+     "total": 7118116.13,
+     "proporcao": 0.135549,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 25969225.97,
+   "principal": 2062397.99,
+   "confirmado": 2046368.0,
+   "generico": 16029.99,
+   "provavel": 0.0,
+   "proporcao": 0.079417,
+   "n_candidatos": 7,
+   "n_gastaram": 6,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 1.0,
+     "excedente": 750217.55
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 253038.39
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "160002549553",
+     "nome": "Sandro Alex Cruz de Oliveira",
+     "cargo": "Governador",
+     "uf": "PR",
+     "principal": 964850.0,
+     "confirmado": 964850.0,
+     "total": 7118116.13,
+     "proporcao": 0.135549,
+     "pequena": false
+    },
+    {
+     "sq": "160002547666",
+     "nome": "Mauricio Thadeu de Mello e Silva",
+     "cargo": "Governador",
+     "uf": "PR",
+     "principal": 600029.99,
+     "confirmado": 600000.0,
+     "total": 10781768.43,
+     "proporcao": 0.055652,
+     "pequena": false
+    },
+    {
+     "sq": "160002540833",
+     "nome": "Sergio Fernando Moro",
+     "cargo": "Governador",
+     "uf": "PR",
+     "principal": 470018.0,
+     "confirmado": 470018.0,
+     "total": 7838838.58,
+     "proporcao": 0.05996,
+     "pequena": false
+    },
+    {
+     "sq": "160002547594",
+     "nome": "Alexandre Salomao",
+     "cargo": "Governador",
+     "uf": "PR",
+     "principal": 16000.0,
+     "confirmado": 0.0,
+     "total": 33980.5,
+     "proporcao": 0.470858,
+     "pequena": true
+    },
+    {
+     "sq": "160002551353",
+     "nome": "Luiz Felipe Martins Franca",
+     "cargo": "Governador",
+     "uf": "PR",
+     "principal": 10000.0,
+     "confirmado": 10000.0,
+     "total": 154885.56,
+     "proporcao": 0.064564,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 18952773.37,
+   "principal": 5313764.88,
+   "confirmado": 4520914.88,
+   "generico": 792850.0,
+   "provavel": 0.0,
+   "proporcao": 0.280369,
+   "n_candidatos": 8,
+   "n_gastaram": 7,
+   "n_elegiveis": 6,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 5,
+     "pct_acima": 0.833333,
+     "excedente": 4383304.53
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 5,
+     "pct_acima": 0.833333,
+     "excedente": 3479809.05
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 5,
+     "pct_acima": 0.833333,
+     "excedente": 2576313.58
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 1845448.86
+    }
+   ],
+   "top": [
+    {
+     "sq": "160002547963",
+     "nome": "Alexandre Maranhao Khury",
+     "cargo": "Senador",
+     "uf": "PR",
+     "principal": 1400000.0,
+     "confirmado": 1400000.0,
+     "total": 4353749.0,
+     "proporcao": 0.321562,
+     "pequena": false
+    },
+    {
+     "sq": "160002549555",
+     "nome": "Cristina Reis Graeml",
+     "cargo": "Senador",
+     "uf": "PR",
+     "principal": 1163950.0,
+     "confirmado": 1163950.0,
+     "total": 3236103.69,
+     "proporcao": 0.359676,
+     "pequena": false
+    },
+    {
+     "sq": "160002547656",
+     "nome": "Gleisi Helena Hoffmann",
+     "cargo": "Senador",
+     "uf": "PR",
+     "principal": 1117850.0,
+     "confirmado": 350000.0,
+     "total": 3169800.56,
+     "proporcao": 0.352656,
+     "pequena": false
+    },
+    {
+     "sq": "160002547661",
+     "nome": "Deltan Martinazzo Dallagnol",
+     "cargo": "Senador",
+     "uf": "PR",
+     "principal": 945000.0,
+     "confirmado": 945000.0,
+     "total": 5588153.79,
+     "proporcao": 0.169108,
+     "pequena": false
+    },
+    {
+     "sq": "160002547660",
+     "nome": "Filipe Barros Baptista de Toledo Ribeiro",
+     "cargo": "Senador",
+     "uf": "PR",
+     "principal": 660000.0,
+     "confirmado": 660000.0,
+     "total": 1722102.43,
+     "proporcao": 0.383252,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 131062916.57,
+   "principal": 13792128.66,
+   "confirmado": 11875302.98,
+   "generico": 1916825.68,
+   "provavel": 156.96,
+   "proporcao": 0.105233,
+   "n_candidatos": 371,
+   "n_gastaram": 229,
+   "n_elegiveis": 201,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 94,
+     "pct_acima": 0.467662,
+     "excedente": 9213112.34
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 63,
+     "pct_acima": 0.313433,
+     "excedente": 6769458.22
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 43,
+     "pct_acima": 0.21393,
+     "excedente": 5130308.97
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 34,
+     "pct_acima": 0.169154,
+     "excedente": 3887323.73
+    }
+   ],
+   "top": [
+    {
+     "sq": "160002542218",
+     "nome": "Roberto Requiao de Mello e Silva",
+     "cargo": "Deputado Federal",
+     "uf": "PR",
+     "principal": 1248526.06,
+     "confirmado": 1248526.06,
+     "total": 2970857.42,
+     "proporcao": 0.420258,
+     "pequena": false
+    },
+    {
+     "sq": "160002532878",
+     "nome": "Matheus Araujo Laiola",
+     "cargo": "Deputado Federal",
+     "uf": "PR",
+     "principal": 945200.0,
+     "confirmado": 894200.0,
+     "total": 1618799.88,
+     "proporcao": 0.583889,
+     "pequena": false
+    },
+    {
+     "sq": "160002542296",
+     "nome": "Guilherme Ferreira Kilter Lira",
+     "cargo": "Deputado Federal",
+     "uf": "PR",
+     "principal": 780000.0,
+     "confirmado": 780000.0,
+     "total": 2037311.59,
+     "proporcao": 0.382857,
+     "pequena": false
+    },
+    {
+     "sq": "160002536517",
+     "nome": "Elton Carlos Welter",
+     "cargo": "Deputado Federal",
+     "uf": "PR",
+     "principal": 586820.0,
+     "confirmado": 529000.0,
+     "total": 2393928.93,
+     "proporcao": 0.245128,
+     "pequena": false
+    },
+    {
+     "sq": "160002547582",
+     "nome": "Reinhold Stephanes Junior",
+     "cargo": "Deputado Federal",
+     "uf": "PR",
+     "principal": 581000.0,
+     "confirmado": 581000.0,
+     "total": 2301082.34,
+     "proporcao": 0.25249,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 58389895.15,
+   "principal": 7237849.68,
+   "confirmado": 5969259.83,
+   "generico": 1268589.85,
+   "provavel": 290.94,
+   "proporcao": 0.123957,
+   "n_candidatos": 460,
+   "n_gastaram": 281,
+   "n_elegiveis": 217,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 121,
+     "pct_acima": 0.557604,
+     "excedente": 4636282.94
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 88,
+     "pct_acima": 0.40553,
+     "excedente": 3413770.59
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 70,
+     "pct_acima": 0.322581,
+     "excedente": 2496236.33
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 49,
+     "pct_acima": 0.225806,
+     "excedente": 1793287.44
+    }
+   ],
+   "top": [
+    {
+     "sq": "160002533475",
+     "nome": "Andressa Eli Bianchessi",
+     "cargo": "Deputado Estadual",
+     "uf": "PR",
+     "principal": 415000.0,
+     "confirmado": 365000.0,
+     "total": 811676.4,
+     "proporcao": 0.511288,
+     "pequena": false
+    },
+    {
+     "sq": "160002547552",
+     "nome": "Ney Leprevost Neto",
+     "cargo": "Deputado Estadual",
+     "uf": "PR",
+     "principal": 280000.0,
+     "confirmado": 280000.0,
+     "total": 1240779.97,
+     "proporcao": 0.225665,
+     "pequena": false
+    },
+    {
+     "sq": "160002546804",
+     "nome": "Oziel Luiz de Souza",
+     "cargo": "Deputado Estadual",
+     "uf": "PR",
+     "principal": 210000.0,
+     "confirmado": 210000.0,
+     "total": 624835.09,
+     "proporcao": 0.336089,
+     "pequena": false
+    },
+    {
+     "sq": "160002547632",
+     "nome": "Paulo Henrique Rivera de Melo",
+     "cargo": "Deputado Estadual",
+     "uf": "PR",
+     "principal": 189500.0,
+     "confirmado": 189500.0,
+     "total": 315816.44,
+     "proporcao": 0.600032,
+     "pequena": false
+    },
+    {
+     "sq": "160002542263",
+     "nome": "Yasmin Victoria Souza Hachem",
+     "cargo": "Deputado Estadual",
+     "uf": "PR",
+     "principal": 158500.0,
+     "confirmado": 158500.0,
+     "total": 260469.81,
+     "proporcao": 0.608516,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

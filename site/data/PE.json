@@ -1,0 +1,469 @@
+{
+ "uf": "PE",
+ "nome": "Pernambuco",
+ "artigo": "de",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 929,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 202110141.33,
+   "principal": 22459358.01,
+   "confirmado": 18427313.34,
+   "generico": 4032044.67,
+   "provavel": 40350.92,
+   "proporcao": 0.111124,
+   "n_candidatos": 699,
+   "n_gastaram": 316,
+   "n_elegiveis": 376,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 134,
+     "pct_acima": 0.356383,
+     "excedente": 15248857.96
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 86,
+     "pct_acima": 0.228723,
+     "excedente": 10633168.88
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 63,
+     "pct_acima": 0.167553,
+     "excedente": 7455093.88
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 47,
+     "pct_acima": 0.125,
+     "excedente": 5211505.26
+    }
+   ],
+   "top": [
+    {
+     "sq": "170002537230",
+     "nome": "João Henrique de Andrade Lima Campos",
+     "cargo": "Governador",
+     "uf": "PE",
+     "principal": 2000000.0,
+     "confirmado": 1145000.0,
+     "total": 7878298.94,
+     "proporcao": 0.253862,
+     "pequena": false
+    },
+    {
+     "sq": "170002552102",
+     "nome": "Eduardo Henrique da Fonte de Albuquerque Silva",
+     "cargo": "Senador",
+     "uf": "PE",
+     "principal": 1400000.0,
+     "confirmado": 1400000.0,
+     "total": 3535482.75,
+     "proporcao": 0.395986,
+     "pequena": false
+    },
+    {
+     "sq": "170002540297",
+     "nome": "Andreza Bandeira Ferreira de Oliveira Melo Albuquerque",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 1012504.7,
+     "confirmado": 1012504.7,
+     "total": 1562321.7,
+     "proporcao": 0.648077,
+     "pequena": false
+    },
+    {
+     "sq": "170002544065",
+     "nome": "Miguel de Souza Leão Coelho",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 900000.0,
+     "confirmado": 890000.0,
+     "total": 2969257.38,
+     "proporcao": 0.303106,
+     "pequena": false
+    },
+    {
+     "sq": "170002540291",
+     "nome": "Felipe Augusto Lyra Carreras",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 770854.5,
+     "confirmado": 470854.5,
+     "total": 2951897.67,
+     "proporcao": 0.261139,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 16264276.38,
+   "principal": 2296068.04,
+   "confirmado": 1431068.04,
+   "generico": 865000.0,
+   "provavel": 0.0,
+   "proporcao": 0.141172,
+   "n_candidatos": 6,
+   "n_gastaram": 3,
+   "n_elegiveis": 4,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 1606085.05
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 1212170.11
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 818255.16
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 424340.21
+    }
+   ],
+   "top": [
+    {
+     "sq": "170002537230",
+     "nome": "João Henrique de Andrade Lima Campos",
+     "cargo": "Governador",
+     "uf": "PE",
+     "principal": 2000000.0,
+     "confirmado": 1145000.0,
+     "total": 7878298.94,
+     "proporcao": 0.253862,
+     "pequena": false
+    },
+    {
+     "sq": "170002537227",
+     "nome": "Raquel Teixeira Lyra Lucena",
+     "cargo": "Governador",
+     "uf": "PE",
+     "principal": 293778.22,
+     "confirmado": 283778.22,
+     "total": 7676239.12,
+     "proporcao": 0.038271,
+     "pequena": false
+    },
+    {
+     "sq": "170002540337",
+     "nome": "Renan Lucio Sant Anna Hallais",
+     "cargo": "Governador",
+     "uf": "PE",
+     "principal": 2289.82,
+     "confirmado": 2289.82,
+     "total": 104858.62,
+     "proporcao": 0.021837,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 19872673.28,
+   "principal": 3099681.7,
+   "confirmado": 2859695.7,
+   "generico": 239986.0,
+   "provavel": 0.0,
+   "proporcao": 0.155977,
+   "n_candidatos": 11,
+   "n_gastaram": 7,
+   "n_elegiveis": 6,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 5,
+     "pct_acima": 0.833333,
+     "excedente": 2119471.87
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 3,
+     "pct_acima": 0.5,
+     "excedente": 1382369.52
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.333333,
+     "excedente": 930419.26
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.166667,
+     "excedente": 692903.45
+    }
+   ],
+   "top": [
+    {
+     "sq": "170002552102",
+     "nome": "Eduardo Henrique da Fonte de Albuquerque Silva",
+     "cargo": "Senador",
+     "uf": "PE",
+     "principal": 1400000.0,
+     "confirmado": 1400000.0,
+     "total": 3535482.75,
+     "proporcao": 0.395986,
+     "pequena": false
+    },
+    {
+     "sq": "170002539456",
+     "nome": "José Mendonça Bezerra Filho",
+     "cargo": "Senador",
+     "uf": "PE",
+     "principal": 741381.7,
+     "confirmado": 741381.7,
+     "total": 4537600.21,
+     "proporcao": 0.163386,
+     "pequena": false
+    },
+    {
+     "sq": "170002547773",
+     "nome": "Humberto Sergio Costa Lima",
+     "cargo": "Senador",
+     "uf": "PE",
+     "principal": 450000.0,
+     "confirmado": 450000.0,
+     "total": 4017038.83,
+     "proporcao": 0.112023,
+     "pequena": false
+    },
+    {
+     "sq": "170002547771",
+     "nome": "Marília Valença Rocha Arraes de Alencar",
+     "cargo": "Senador",
+     "uf": "PE",
+     "principal": 239986.0,
+     "confirmado": 0.0,
+     "total": 2591554.7,
+     "proporcao": 0.092603,
+     "pequena": false
+    },
+    {
+     "sq": "170002552097",
+     "nome": "Tulio Gadelha Sales de Melo",
+     "cargo": "Senador",
+     "uf": "PE",
+     "principal": 177000.0,
+     "confirmado": 177000.0,
+     "total": 3775433.81,
+     "proporcao": 0.046882,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 113306811.62,
+   "principal": 11533053.09,
+   "confirmado": 9630399.54,
+   "generico": 1902653.55,
+   "provavel": 81.07,
+   "proporcao": 0.101786,
+   "n_candidatos": 314,
+   "n_gastaram": 138,
+   "n_elegiveis": 198,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 51,
+     "pct_acima": 0.257576,
+     "excedente": 7820411.44
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 34,
+     "pct_acima": 0.171717,
+     "excedente": 5385239.1
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 24,
+     "pct_acima": 0.121212,
+     "excedente": 3719499.66
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 19,
+     "pct_acima": 0.09596,
+     "excedente": 2578547.17
+    }
+   ],
+   "top": [
+    {
+     "sq": "170002540297",
+     "nome": "Andreza Bandeira Ferreira de Oliveira Melo Albuquerque",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 1012504.7,
+     "confirmado": 1012504.7,
+     "total": 1562321.7,
+     "proporcao": 0.648077,
+     "pequena": false
+    },
+    {
+     "sq": "170002544065",
+     "nome": "Miguel de Souza Leão Coelho",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 900000.0,
+     "confirmado": 890000.0,
+     "total": 2969257.38,
+     "proporcao": 0.303106,
+     "pequena": false
+    },
+    {
+     "sq": "170002540291",
+     "nome": "Felipe Augusto Lyra Carreras",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 770854.5,
+     "confirmado": 470854.5,
+     "total": 2951897.67,
+     "proporcao": 0.261139,
+     "pequena": false
+    },
+    {
+     "sq": "170002544066",
+     "nome": "Fernando Bezerra de Souza Coelho Filho",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 675000.0,
+     "confirmado": 550000.0,
+     "total": 3038140.45,
+     "proporcao": 0.222175,
+     "pequena": false
+    },
+    {
+     "sq": "170002533313",
+     "nome": "Rosa Karina Souza de Amorim",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 631500.0,
+     "confirmado": 600000.0,
+     "total": 1798959.88,
+     "proporcao": 0.351036,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 52666380.05,
+   "principal": 5530555.18,
+   "confirmado": 4506150.06,
+   "generico": 1024405.12,
+   "provavel": 40269.85,
+   "proporcao": 0.105011,
+   "n_candidatos": 368,
+   "n_gastaram": 168,
+   "n_elegiveis": 168,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 77,
+     "pct_acima": 0.458333,
+     "excedente": 3702889.6
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 48,
+     "pct_acima": 0.285714,
+     "excedente": 2653390.15
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 36,
+     "pct_acima": 0.214286,
+     "excedente": 1986919.81
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 26,
+     "pct_acima": 0.154762,
+     "excedente": 1515714.43
+    }
+   ],
+   "top": [
+    {
+     "sq": "170002532296",
+     "nome": "Paulo Renato Antunes Guimaraes",
+     "cargo": "Deputado Estadual",
+     "uf": "PE",
+     "principal": 519000.0,
+     "confirmado": 519000.0,
+     "total": 681033.27,
+     "proporcao": 0.762077,
+     "pequena": false
+    },
+    {
+     "sq": "170002539474",
+     "nome": "Alberto Jorge do Nascimento Feitosa",
+     "cargo": "Deputado Estadual",
+     "uf": "PE",
+     "principal": 365000.0,
+     "confirmado": 113500.0,
+     "total": 856630.68,
+     "proporcao": 0.426088,
+     "pequena": false
+    },
+    {
+     "sq": "170002543757",
+     "nome": "Antonio de Souza Leao Coelho",
+     "cargo": "Deputado Estadual",
+     "uf": "PE",
+     "principal": 350000.0,
+     "confirmado": 350000.0,
+     "total": 981858.27,
+     "proporcao": 0.356467,
+     "pequena": false
+    },
+    {
+     "sq": "170002543737",
+     "nome": "Jose Ivanildo de Moura Júnior",
+     "cargo": "Deputado Estadual",
+     "uf": "PE",
+     "principal": 272700.0,
+     "confirmado": 272700.0,
+     "total": 1051652.11,
+     "proporcao": 0.259306,
+     "pequena": false
+    },
+    {
+     "sq": "170002542900",
+     "nome": "Romero Lima Bezerra de Albuquerque",
+     "cargo": "Deputado Estadual",
+     "uf": "PE",
+     "principal": 181775.0,
+     "confirmado": 181775.0,
+     "total": 293720.0,
+     "proporcao": 0.618872,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,491 @@
+{
+ "uf": "TO",
+ "nome": "Tocantins",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 2,
+ "n_candidatos_total": 328,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 90860092.73,
+   "principal": 5604687.38,
+   "confirmado": 4400835.84,
+   "generico": 1203851.54,
+   "provavel": 145.98,
+   "proporcao": 0.061685,
+   "n_candidatos": 255,
+   "n_gastaram": 107,
+   "n_elegiveis": 156,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 43,
+     "pct_acima": 0.275641,
+     "excedente": 2918725.72
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 22,
+     "pct_acima": 0.141026,
+     "excedente": 1600118.01
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 14,
+     "pct_acima": 0.089744,
+     "excedente": 1052548.32
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 11,
+     "pct_acima": 0.070513,
+     "excedente": 917781.53
+    }
+   ],
+   "top": [
+    {
+     "sq": "270002544599",
+     "nome": "Maria Auxiliadora Seabra Rezende",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 910000.0,
+     "confirmado": 910000.0,
+     "total": 8302885.68,
+     "proporcao": 0.1096,
+     "pequena": false
+    },
+    {
+     "sq": "270002544544",
+     "nome": "Vicente Alves de Oliveira Júnior",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 700000.0,
+     "confirmado": 250000.0,
+     "total": 4691535.39,
+     "proporcao": 0.149205,
+     "pequena": false
+    },
+    {
+     "sq": "270002546039",
+     "nome": "Vanderlei Luxemburgo da Silva",
+     "cargo": "Senador",
+     "uf": "TO",
+     "principal": 574760.3,
+     "confirmado": 300000.0,
+     "total": 744751.0,
+     "proporcao": 0.771748,
+     "pequena": false
+    },
+    {
+     "sq": "270002548412",
+     "nome": "Ataides de Oliveira",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 351500.0,
+     "confirmado": 351500.0,
+     "total": 441405.0,
+     "proporcao": 0.796321,
+     "pequena": false
+    },
+    {
+     "sq": "270002548525",
+     "nome": "Lucas Gomes Pinheiro Neto",
+     "cargo": "Deputado Federal",
+     "uf": "TO",
+     "principal": 297965.0,
+     "confirmado": 189965.0,
+     "total": 2380224.15,
+     "proporcao": 0.125184,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 19262387.21,
+   "principal": 2173571.33,
+   "confirmado": 1711730.0,
+   "generico": 461841.33,
+   "provavel": 0.0,
+   "proporcao": 0.11284,
+   "n_candidatos": 6,
+   "n_gastaram": 5,
+   "n_elegiveis": 6,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 1298776.46
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.666667,
+     "excedente": 623981.59
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.333333,
+     "excedente": 288349.88
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.333333,
+     "excedente": 263276.06
+    }
+   ],
+   "top": [
+    {
+     "sq": "270002544599",
+     "nome": "Maria Auxiliadora Seabra Rezende",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 910000.0,
+     "confirmado": 910000.0,
+     "total": 8302885.68,
+     "proporcao": 0.1096,
+     "pequena": false
+    },
+    {
+     "sq": "270002544544",
+     "nome": "Vicente Alves de Oliveira Júnior",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 700000.0,
+     "confirmado": 250000.0,
+     "total": 4691535.39,
+     "proporcao": 0.149205,
+     "pequena": false
+    },
+    {
+     "sq": "270002548412",
+     "nome": "Ataides de Oliveira",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 351500.0,
+     "confirmado": 351500.0,
+     "total": 441405.0,
+     "proporcao": 0.796321,
+     "pequena": false
+    },
+    {
+     "sq": "270002544494",
+     "nome": "Laurez da Rocha Moreira",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 200000.0,
+     "confirmado": 200000.0,
+     "total": 5695384.61,
+     "proporcao": 0.035116,
+     "pequena": false
+    },
+    {
+     "sq": "270002550458",
+     "nome": "Ivaildo Pereira da Cruz",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 12071.33,
+     "confirmado": 230.0,
+     "total": 60071.33,
+     "proporcao": 0.20095,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 13832523.62,
+   "principal": 1310115.07,
+   "confirmado": 1035218.61,
+   "generico": 274896.46,
+   "provavel": 0.0,
+   "proporcao": 0.094713,
+   "n_candidatos": 10,
+   "n_gastaram": 9,
+   "n_elegiveis": 8,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 6,
+     "pct_acima": 0.75,
+     "excedente": 722187.95
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.125,
+     "excedente": 500285.2
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.125,
+     "excedente": 463047.65
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 1,
+     "pct_acima": 0.125,
+     "excedente": 425810.1
+    }
+   ],
+   "top": [
+    {
+     "sq": "270002546039",
+     "nome": "Vanderlei Luxemburgo da Silva",
+     "cargo": "Senador",
+     "uf": "TO",
+     "principal": 574760.3,
+     "confirmado": 300000.0,
+     "total": 744751.0,
+     "proporcao": 0.771748,
+     "pequena": false
+    },
+    {
+     "sq": "270002546333",
+     "nome": "Carlos Eduardo Torres Gomes",
+     "cargo": "Senador",
+     "uf": "TO",
+     "principal": 220000.0,
+     "confirmado": 220000.0,
+     "total": 3135796.56,
+     "proporcao": 0.070158,
+     "pequena": false
+    },
+    {
+     "sq": "270002548344",
+     "nome": "José Alexandre Domingues Guimarães",
+     "cargo": "Senador",
+     "uf": "TO",
+     "principal": 197240.0,
+     "confirmado": 197240.0,
+     "total": 2938630.38,
+     "proporcao": 0.06712,
+     "pequena": false
+    },
+    {
+     "sq": "270002548231",
+     "nome": "Carlos Henrique Amorim",
+     "cargo": "Senador",
+     "uf": "TO",
+     "principal": 120000.0,
+     "confirmado": 120000.0,
+     "total": 1458051.2,
+     "proporcao": 0.082302,
+     "pequena": false
+    },
+    {
+     "sq": "270002548409",
+     "nome": "Eli Dias Borges",
+     "cargo": "Senador",
+     "uf": "TO",
+     "principal": 84800.0,
+     "confirmado": 84800.0,
+     "total": 1218862.18,
+     "proporcao": 0.069573,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 35394178.01,
+   "principal": 1209311.68,
+   "confirmado": 970571.68,
+   "generico": 238740.0,
+   "provavel": 145.98,
+   "proporcao": 0.034167,
+   "n_candidatos": 72,
+   "n_gastaram": 35,
+   "n_elegiveis": 49,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 12,
+     "pct_acima": 0.244898,
+     "excedente": 377952.33
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.081633,
+     "excedente": 101548.95
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 1,
+     "pct_acima": 0.020408,
+     "excedente": 3653.64
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "270002548525",
+     "nome": "Lucas Gomes Pinheiro Neto",
+     "cargo": "Deputado Federal",
+     "uf": "TO",
+     "principal": 297965.0,
+     "confirmado": 189965.0,
+     "total": 2380224.15,
+     "proporcao": 0.125184,
+     "pequena": false
+    },
+    {
+     "sq": "270002548522",
+     "nome": "Ricardo Ayres de Carvalho",
+     "cargo": "Deputado Federal",
+     "uf": "TO",
+     "principal": 200000.0,
+     "confirmado": 200000.0,
+     "total": 2839999.51,
+     "proporcao": 0.070423,
+     "pequena": false
+    },
+    {
+     "sq": "270002542122",
+     "nome": "Cinthia Alves Caetano Ribeiro Mantoan",
+     "cargo": "Deputado Federal",
+     "uf": "TO",
+     "principal": 76000.0,
+     "confirmado": 76000.0,
+     "total": 558369.92,
+     "proporcao": 0.13611,
+     "pequena": false
+    },
+    {
+     "sq": "270002542116",
+     "nome": "Iratã Abreu Silvestre",
+     "cargo": "Deputado Federal",
+     "uf": "TO",
+     "principal": 72000.0,
+     "confirmado": 72000.0,
+     "total": 1104881.63,
+     "proporcao": 0.065165,
+     "pequena": false
+    },
+    {
+     "sq": "270002548520",
+     "nome": "Alfredo Falcão Costa Júnior",
+     "cargo": "Deputado Federal",
+     "uf": "TO",
+     "principal": 70000.0,
+     "confirmado": 70000.0,
+     "total": 1135236.68,
+     "proporcao": 0.061661,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 22371003.89,
+   "principal": 911689.3,
+   "confirmado": 683315.55,
+   "generico": 228373.75,
+   "provavel": 0.0,
+   "proporcao": 0.040753,
+   "n_candidatos": 167,
+   "n_gastaram": 58,
+   "n_elegiveis": 93,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 21,
+     "pct_acima": 0.225806,
+     "excedente": 519808.97
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 13,
+     "pct_acima": 0.139785,
+     "excedente": 374302.26
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 10,
+     "pct_acima": 0.107527,
+     "excedente": 297497.15
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 8,
+     "pct_acima": 0.086022,
+     "excedente": 228695.37
+    }
+   ],
+   "top": [
+    {
+     "sq": "270002548424",
+     "nome": "Carlos Enrique Franco Amastha",
+     "cargo": "Deputado Estadual",
+     "uf": "TO",
+     "principal": 114000.0,
+     "confirmado": 114000.0,
+     "total": 242898.1,
+     "proporcao": 0.469333,
+     "pequena": false
+    },
+    {
+     "sq": "270002550087",
+     "nome": "Marcus Vinicius Camargo Pires",
+     "cargo": "Deputado Estadual",
+     "uf": "TO",
+     "principal": 101000.0,
+     "confirmado": 101000.0,
+     "total": 315023.5,
+     "proporcao": 0.320611,
+     "pequena": false
+    },
+    {
+     "sq": "270002544636",
+     "nome": "Diego Saraiva Pires",
+     "cargo": "Deputado Estadual",
+     "uf": "TO",
+     "principal": 59983.33,
+     "confirmado": 45983.33,
+     "total": 117960.2,
+     "proporcao": 0.508505,
+     "pequena": false
+    },
+    {
+     "sq": "270002548429",
+     "nome": "Marcos Antonio Rodrigues Júnior",
+     "cargo": "Deputado Estadual",
+     "uf": "TO",
+     "principal": 54000.0,
+     "confirmado": 54000.0,
+     "total": 629311.61,
+     "proporcao": 0.085808,
+     "pequena": false
+    },
+    {
+     "sq": "270002548420",
+     "nome": "Mariana Carla de Almeida",
+     "cargo": "Deputado Estadual",
+     "uf": "TO",
+     "principal": 53300.0,
+     "confirmado": 0.0,
+     "total": 94680.4,
+     "proporcao": 0.562947,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

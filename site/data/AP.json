@@ -1,0 +1,458 @@
+{
+ "uf": "AP",
+ "nome": "Amapá",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "22/10/2026",
+ "segundo_turno": 0,
+ "n_candidatos_total": 299,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 73118887.59,
+   "principal": 1376665.25,
+   "confirmado": 893978.83,
+   "generico": 482686.42,
+   "provavel": 241.49,
+   "proporcao": 0.018828,
+   "n_candidatos": 244,
+   "n_gastaram": 75,
+   "n_elegiveis": 158,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 12,
+     "pct_acima": 0.075949,
+     "excedente": 282709.64
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 4,
+     "pct_acima": 0.025316,
+     "excedente": 115175.04
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.012658,
+     "excedente": 73393.75
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.012658,
+     "excedente": 32225.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "30002536311",
+     "nome": "Clécio Luís Vilhena Vieira",
+     "cargo": "Governador",
+     "uf": "AP",
+     "principal": 180000.0,
+     "confirmado": 180000.0,
+     "total": 2556652.77,
+     "proporcao": 0.070405,
+     "pequena": false
+    },
+    {
+     "sq": "30002532847",
+     "nome": "Kleber Luiz Santos dos Santos",
+     "cargo": "Deputado Federal",
+     "uf": "AP",
+     "principal": 140000.0,
+     "confirmado": 0.0,
+     "total": 544470.0,
+     "proporcao": 0.257131,
+     "pequena": false
+    },
+    {
+     "sq": "30002536304",
+     "nome": "Aline Paranhos Varonil Gurgel",
+     "cargo": "Deputado Federal",
+     "uf": "AP",
+     "principal": 125000.0,
+     "confirmado": 2000.0,
+     "total": 1947787.0,
+     "proporcao": 0.064175,
+     "pequena": false
+    },
+    {
+     "sq": "30002530014",
+     "nome": "Antonio Paulo de Oliveira Furlan",
+     "cargo": "Governador",
+     "uf": "AP",
+     "principal": 111000.0,
+     "confirmado": 111000.0,
+     "total": 2682955.32,
+     "proporcao": 0.041372,
+     "pequena": false
+    },
+    {
+     "sq": "30002551576",
+     "nome": "Alliny Sousa da Rocha Serrao",
+     "cargo": "Senador",
+     "uf": "AP",
+     "principal": 103000.0,
+     "confirmado": 103000.0,
+     "total": 1890318.08,
+     "proporcao": 0.054488,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 5259610.09,
+   "principal": 291000.0,
+   "confirmado": 291000.0,
+   "generico": 0.0,
+   "provavel": 241.49,
+   "proporcao": 0.055327,
+   "n_candidatos": 3,
+   "n_gastaram": 2,
+   "n_elegiveis": 2,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.5,
+     "excedente": 52167.36
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "30002536311",
+     "nome": "Clécio Luís Vilhena Vieira",
+     "cargo": "Governador",
+     "uf": "AP",
+     "principal": 180000.0,
+     "confirmado": 180000.0,
+     "total": 2556652.77,
+     "proporcao": 0.070405,
+     "pequena": false
+    },
+    {
+     "sq": "30002530014",
+     "nome": "Antonio Paulo de Oliveira Furlan",
+     "cargo": "Governador",
+     "uf": "AP",
+     "principal": 111000.0,
+     "confirmado": 111000.0,
+     "total": 2682955.32,
+     "proporcao": 0.041372,
+     "pequena": false
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 9101870.84,
+   "principal": 292214.93,
+   "confirmado": 243714.93,
+   "generico": 48500.0,
+   "provavel": 0.0,
+   "proporcao": 0.032105,
+   "n_candidatos": 8,
+   "n_gastaram": 7,
+   "n_elegiveis": 5,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.2,
+     "excedente": 8484.1
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "30002551576",
+     "nome": "Alliny Sousa da Rocha Serrao",
+     "cargo": "Senador",
+     "uf": "AP",
+     "principal": 103000.0,
+     "confirmado": 103000.0,
+     "total": 1890318.08,
+     "proporcao": 0.054488,
+     "pequena": false
+    },
+    {
+     "sq": "30002549909",
+     "nome": "Randolph Frederich Rodrigues Alves",
+     "cargo": "Senador",
+     "uf": "AP",
+     "principal": 54500.0,
+     "confirmado": 44500.0,
+     "total": 1094924.6,
+     "proporcao": 0.049775,
+     "pequena": false
+    },
+    {
+     "sq": "30002549911",
+     "nome": "Acacio da Silva Favacho Neto",
+     "cargo": "Senador",
+     "uf": "AP",
+     "principal": 51264.93,
+     "confirmado": 23264.93,
+     "total": 1675600.43,
+     "proporcao": 0.030595,
+     "pequena": false
+    },
+    {
+     "sq": "30002530071",
+     "nome": "Rayssa Cadena Furlan",
+     "cargo": "Senador",
+     "uf": "AP",
+     "principal": 50000.0,
+     "confirmado": 50000.0,
+     "total": 2496810.23,
+     "proporcao": 0.020026,
+     "pequena": false
+    },
+    {
+     "sq": "30002530069",
+     "nome": "Luiz Cantuaria Barreto",
+     "cargo": "Senador",
+     "uf": "AP",
+     "principal": 20000.0,
+     "confirmado": 20000.0,
+     "total": 1903916.57,
+     "proporcao": 0.010505,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-federal": {
+   "rotulo": "Deputados federais",
+   "cargo": "Deputado Federal",
+   "total": 40517396.44,
+   "principal": 649158.61,
+   "confirmado": 279911.92,
+   "generico": 369246.69,
+   "provavel": 0.0,
+   "proporcao": 0.016022,
+   "n_candidatos": 71,
+   "n_gastaram": 39,
+   "n_elegiveis": 63,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 3,
+     "pct_acima": 0.047619,
+     "excedente": 183341.9
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.031746,
+     "excedente": 114562.5
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 2,
+     "pct_acima": 0.031746,
+     "excedente": 73393.75
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 2,
+     "pct_acima": 0.031746,
+     "excedente": 32225.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "30002532847",
+     "nome": "Kleber Luiz Santos dos Santos",
+     "cargo": "Deputado Federal",
+     "uf": "AP",
+     "principal": 140000.0,
+     "confirmado": 0.0,
+     "total": 544470.0,
+     "proporcao": 0.257131,
+     "pequena": false
+    },
+    {
+     "sq": "30002536304",
+     "nome": "Aline Paranhos Varonil Gurgel",
+     "cargo": "Deputado Federal",
+     "uf": "AP",
+     "principal": 125000.0,
+     "confirmado": 2000.0,
+     "total": 1947787.0,
+     "proporcao": 0.064175,
+     "pequena": false
+    },
+    {
+     "sq": "30002549849",
+     "nome": "Kauri Waiãpi",
+     "cargo": "Deputado Federal",
+     "uf": "AP",
+     "principal": 56900.0,
+     "confirmado": 0.0,
+     "total": 278905.0,
+     "proporcao": 0.204012,
+     "pequena": false
+    },
+    {
+     "sq": "30002532842",
+     "nome": "Dorinaldo Barbosa Malafaia",
+     "cargo": "Deputado Federal",
+     "uf": "AP",
+     "principal": 40000.0,
+     "confirmado": 40000.0,
+     "total": 1257943.15,
+     "proporcao": 0.031798,
+     "pequena": false
+    },
+    {
+     "sq": "30002538088",
+     "nome": "Rondinele Marques dos Santos",
+     "cargo": "Deputado Federal",
+     "uf": "AP",
+     "principal": 30000.0,
+     "confirmado": 30000.0,
+     "total": 816705.4,
+     "proporcao": 0.036733,
+     "pequena": false
+    }
+   ]
+  },
+  "deputado-estadual": {
+   "rotulo": "Deputados estaduais",
+   "cargo": "Deputado Estadual",
+   "total": 18240010.22,
+   "principal": 144291.71,
+   "confirmado": 79351.98,
+   "generico": 64939.73,
+   "provavel": 0.0,
+   "proporcao": 0.007911,
+   "n_candidatos": 162,
+   "n_gastaram": 27,
+   "n_elegiveis": 88,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 7,
+     "pct_acima": 0.079545,
+     "excedente": 38716.28
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 2,
+     "pct_acima": 0.022727,
+     "excedente": 612.54
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "30002532237",
+     "nome": "Jacqueline Magalhães Amaral",
+     "cargo": "Deputado Estadual",
+     "uf": "AP",
+     "principal": 25000.0,
+     "confirmado": 0.0,
+     "total": 249174.6,
+     "proporcao": 0.100331,
+     "pequena": false
+    },
+    {
+     "sq": "30002549864",
+     "nome": "Amiraldo da Silva Favacho Junior",
+     "cargo": "Deputado Estadual",
+     "uf": "AP",
+     "principal": 20000.0,
+     "confirmado": 0.0,
+     "total": 311661.5,
+     "proporcao": 0.064172,
+     "pequena": false
+    },
+    {
+     "sq": "30002533719",
+     "nome": "Rosileia dos Santos de Oliveira Pelaes",
+     "cargo": "Deputado Estadual",
+     "uf": "AP",
+     "principal": 20000.0,
+     "confirmado": 20000.0,
+     "total": 205382.56,
+     "proporcao": 0.097379,
+     "pequena": false
+    },
+    {
+     "sq": "30002539120",
+     "nome": "Ana Beatriz Moreira Pombo",
+     "cargo": "Deputado Estadual",
+     "uf": "AP",
+     "principal": 16750.0,
+     "confirmado": 16750.0,
+     "total": 275738.17,
+     "proporcao": 0.060746,
+     "pequena": false
+    },
+    {
+     "sq": "30002532040",
+     "nome": "Elenice Maria Marmett Scherer",
+     "cargo": "Deputado Estadual",
+     "uf": "AP",
+     "principal": 10000.0,
+     "confirmado": 0.0,
+     "total": 94700.0,
+     "proporcao": 0.105597,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}
