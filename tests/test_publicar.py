@@ -97,10 +97,12 @@ def zips(tmp_path):
     return z, e
 
 
-def _shares(rows):
+def _shares(rows, pago=None, pago_publico=None):
     df = pd.DataFrame(rows, columns=["sq_candidato", "uf", "cargo", "partido", "candidato", "total",
                                      "confirmado", "generico", "provavel"])
     df["principal"] = df["confirmado"] + df["generico"]
+    df["pago"] = 0.0 if pago is None else pago
+    df["pago_publico"] = 0.0 if pago_publico is None else pago_publico
     df["proporcao"] = (df["principal"] / df["total"].where(df["total"] != 0)).fillna(0.0)
     return df
 
@@ -320,10 +322,10 @@ def test_pago_split_proportionally_when_sq_has_non_ad_items():
     })
     pagos = pd.DataFrame({"sq_despesa": ["10", "10", "11"], "fonte": [FEFC, OR, FP],
                           "valor": [2000.0, 2000.0, 500.0]})
-    out, sem_linha = publicar.alocar_pagamentos(df, pagos)
+    out, sem_linha, desconhecidas = publicar.alocar_pagamentos(df, pagos)
     assert list(out["pago"]) == [1000.0, 0.0, 500.0]  # 4000 pagos x 1000/4000; item "nenhum" fora
     assert list(out["pago_publico"]) == [500.0, 0.0, 500.0]
-    assert sem_linha == (0, 0.0)
+    assert sem_linha == (0, 0.0) and desconhecidas == {}
 
 
 def test_pct_publico_zero_when_nothing_paid(zips, tmp_path):
@@ -394,3 +396,92 @@ def test_candidate_missing_from_consulta_cand_falls_back_to_expense_name(zips, t
 def test_gravar_rejects_nan(tmp_path):
     with pytest.raises(ValueError):
         publicar._gravar(tmp_path / "x.json", {"a": float("nan")})
+
+
+# --- fix round 1 ---
+
+def _rec(s):
+    return publicar.montar_recorte(s, "Governo", "Governador", {}, [0.05], 50000.0)
+
+
+def test_cobertura_clamped_at_one_when_pago_exceeds_principal():
+    r = _rec(_shares([_sh("1", 1000.0, 100.0)], pago=130.0, pago_publico=65.0))
+    assert r["cobertura_pago"] == 1.0
+    assert r["pago"] == 130.0 and r["pct_publico"] == 0.5  # pago e pct_publico nao mudam
+
+
+def test_cobertura_not_clamped_below_one_and_zero_without_principal():
+    r = _rec(_shares([_sh("1", 1000.0, 100.0)], pago=40.0, pago_publico=0.0))
+    assert r["cobertura_pago"] == 0.4
+    r0 = _rec(_shares([_sh("1", 1000.0, 0.0)], pago=0.0, pago_publico=0.0))
+    assert r0["cobertura_pago"] == 0.0
+
+
+def test_montar_recorte_requires_pago_columns():
+    s = _shares([_sh("1", 1000.0, 100.0)]).drop(columns=["pago", "pago_publico"])
+    with pytest.raises(ValueError, match="pago"):
+        _rec(s)
+
+
+def test_fonte_matching_ignores_accent_case_and_spaces_and_reports_unknown():
+    df = pd.DataFrame({"sq_despesa": ["1", "2", "3", "4", "5"], "sq_candidato": ["a"] * 5,
+                       "valor": [100.0] * 5, "nivel": ["confirmado"] * 5})
+    pagos = pd.DataFrame({
+        "sq_despesa": ["1", "2", "3", "4", "5"],
+        "fonte": ["FUNDO ESPECIAL DE FINANCIAMENTO DE CAMPANHA", "  fundo  partidario ", "Fundo Partidário",
+                  "outros recursos", "Fonte Nova"],
+        "valor": [10.0, 20.0, 30.0, 40.0, 50.0]})
+    out, _, desconhecidas = publicar.alocar_pagamentos(df, pagos)
+    assert list(out["pago_publico"]) == [10.0, 20.0, 30.0, 0.0, 0.0]
+    assert list(out["pago"]) == [10.0, 20.0, 30.0, 40.0, 50.0]
+    assert desconhecidas == {"Fonte Nova": 50.0}
+
+
+def test_paid_sq_with_zero_contracted_total_is_unmatched():
+    df = pd.DataFrame({"sq_despesa": ["1"], "sq_candidato": ["a"], "valor": [0.0], "nivel": ["confirmado"]})
+    pagos = pd.DataFrame({"sq_despesa": ["1"], "fonte": [FEFC], "valor": [70.0]})
+    out, sem_linha, _ = publicar.alocar_pagamentos(df, pagos)
+    assert sem_linha == (1, 70.0) and list(out["pago"]) == [0.0]
+
+
+def _zip_custom(tmp_path, linhas, pagos):
+    z = tmp_path / "c.zip"
+    with zipfile.ZipFile(z, "w") as f:
+        f.writestr("despesas_contratadas_candidatos_2026_BRASIL.csv", _csv(CAB_DESP, linhas))
+        f.writestr("despesas_pagas_candidatos_2026_BRASIL.csv", _csv(CAB_PAGO, pagos))
+    return z
+
+
+def _l(uf, sq, cargo, forn, valor, sqd):
+    r = _desp(uf, sq, "NOME " + sq, cargo, forn, valor)
+    r[12] = sqd
+    return r
+
+
+def test_full_flow_two_fontes_partial_ad_lines_and_no_cross_uf_attribution(zips, tmp_path):
+    # mesmo padrao de SQ_DESPESA em duas UFs/cargos, com fontes diferentes: atribuicao errada de UF falharia
+    linhas = [
+        _l("RN", "1", "Governador", FB, "1000,00", "5001"), _l("RN", "1", "Governador", OUTRO, "3000,00", "5001"),
+        _l("DF", "2", "Deputado Distrital", FB, "1000,00", "5002"), _l("DF", "2", "Deputado Distrital", OUTRO, "3000,00", "5002"),
+    ]
+    pagos = [["5001", FEFC, "2000,00"], ["5001", OR, "2000,00"],
+             ["5002", FP, "1000,00"], ["5002", OR, "3000,00"]]
+    z = _zip_custom(tmp_path, linhas, pagos)
+    res = publicar.publicar(z, zips[1], tmp_path / "o")
+    rn = _ler(tmp_path / "o", "RN")["recortes"]["governador"]
+    df_ = _ler(tmp_path / "o", "DF")["recortes"]["deputado-distrital"]
+    # RN: pago 4000 x 1000/4000 = 1000 (FEFC 2000 -> 500 publico)
+    assert (rn["pago"], rn["pago_publico"], rn["pct_publico"]) == (1000.0, 500.0, 0.5)
+    # DF: pago 4000 x 1/4 = 1000 (Fundo Partidario 1000 -> 250 publico)
+    assert (df_["pago"], df_["pago_publico"], df_["pct_publico"]) == (1000.0, 250.0, 0.25)
+    assert res.pagamentos_sem_linha == 0 and res.fontes_desconhecidas == {}
+
+
+def test_publicar_reports_unknown_fontes(zips, tmp_path, capsys):
+    linhas = [_l("RN", "1", "Governador", FB, "1000,00", "5001")]
+    z = _zip_custom(tmp_path, linhas, [["5001", "Fonte Misteriosa", "300,00"]])
+    res = publicar.publicar(z, zips[1], tmp_path / "o")
+    assert res.fontes_desconhecidas == {"Fonte Misteriosa": 300.0}
+    assert _ler(tmp_path / "o", "RN")["recortes"]["governador"]["pago_publico"] == 0.0
+    assert cli.main(["publicar", "--zip", str(z), "--eleitos-zip", str(zips[1]), "--saida", str(tmp_path / "p")]) == 0
+    assert "Fonte Misteriosa" in capsys.readouterr().err

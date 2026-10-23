@@ -159,6 +159,9 @@ def _publicar(args) -> int:
     if res.pagamentos_sem_linha:
         print(f"Aviso: {res.pagamentos_sem_linha} despesas pagas (R$ {res.valor_sem_linha:,.2f}) "
               "sem linha contratada correspondente foram ignoradas", file=sys.stderr)
+    if res.fontes_desconhecidas:
+        lista = "; ".join(f"{k!r}: R$ {v:,.2f}" for k, v in sorted(res.fontes_desconhecidas.items()))
+        print(f"Aviso: fontes de despesa nao reconhecidas (tratadas como nao publicas): {lista}", file=sys.stderr)
     return 0
 
 
