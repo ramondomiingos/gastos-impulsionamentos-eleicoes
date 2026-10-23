@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 from datetime import date
+from typing import NamedTuple
 from pathlib import Path
 
 import pandas as pd
@@ -14,7 +15,7 @@ import pandas as pd
 from gastos import metrics
 from gastos.classify import classify, load_rules
 from gastos.emails import _nome_proprio
-from gastos.loader import load_despesas
+from gastos.loader import load_despesas, load_pagamentos
 from gastos.report import _data_corte, _dt_ultima_prestacao
 from gastos.story import UF_ARTIGO, UF_NOME, linhas_consulta_cand
 from gastos.text import normalize
@@ -34,7 +35,35 @@ CARGOS_SITE = {
 }
 CARGOS_ESTADO = [s for s in CARGOS_SITE if s != "presidente"]
 ROTULO_TODOS = "Todos os cargos"
+FONTES_PUBLICAS = ("Fundo Especial de Financiamento de Campanha", "Fundo Partidário")
+NIVEIS_PRINCIPAL = ("confirmado", "generico")
 VERSAO = 1
+
+
+class Resultado(NamedTuple):
+    pasta: Path
+    pagamentos_sem_linha: int  # pagamentos (SQ_DESPESA) sem linha contratada correspondente
+    valor_sem_linha: float
+
+
+def alocar_pagamentos(df: pd.DataFrame, pagos: pd.DataFrame) -> tuple[pd.DataFrame, tuple[int, float]]:
+    """Acrescenta `pago` e `pago_publico` as linhas contratadas de `df`.
+
+    O pago de cada SQ_DESPESA e repartido entre suas linhas contratadas proporcionalmente ao valor;
+    so linhas de nivel confirmado/generico recebem (as demais ficam em 0). Devolve tambem
+    (quantidade de SQ_DESPESA pagos sem linha contratada, valor pago correspondente).
+    """
+    por_sq = pagos.assign(_pub=pagos["valor"].where(pagos["fonte"].isin(FONTES_PUBLICAS), 0.0))
+    por_sq = por_sq.groupby("sq_despesa").agg(_pago=("valor", "sum"), _pub=("_pub", "sum"))
+    contratado = df.groupby("sq_despesa")["valor"].sum()
+    com_linha = por_sq.index.isin(contratado[contratado != 0].index)
+    sem = por_sq[~com_linha]
+    out = df.copy()
+    peso = (out["valor"] / out["sq_despesa"].map(contratado).replace(0, float("nan"))).fillna(0.0)
+    peso = peso.where(out["nivel"].isin(NIVEIS_PRINCIPAL), 0.0)
+    out["pago"] = peso * out["sq_despesa"].map(por_sq["_pago"]).fillna(0.0)
+    out["pago_publico"] = peso * out["sq_despesa"].map(por_sq["_pub"]).fillna(0.0)
+    return out, (int(len(sem)), float(sem["_pago"].sum()))
 
 
 def slug_cargo(cargo: str) -> str:
@@ -54,6 +83,8 @@ def montar_recorte(shares: pd.DataFrame, rotulo: str, cargo: str | None, nomes: 
     """Formato `Recorte` do desenho a partir de `candidate_shares` do recorte."""
     total = float(shares["total"].sum())
     principal = float(shares["principal"].sum())
+    pago = float(shares["pago"].sum()) if "pago" in shares else 0.0
+    pago_publico = float(shares["pago_publico"].sum()) if "pago_publico" in shares else 0.0
     elegiveis = shares[shares["total"] >= piso_campanha]
     impacto = metrics.cap_impact(elegiveis, tetos)
     top = []
@@ -83,6 +114,10 @@ def montar_recorte(shares: pd.DataFrame, rotulo: str, cargo: str | None, nomes: 
         "n_candidatos": int((shares["total"] > 0).sum()),
         "n_gastaram": int((shares["principal"] > 0).sum()),
         "n_elegiveis": int(len(elegiveis)),
+        "pago": _dinheiro(pago),
+        "pago_publico": _dinheiro(pago_publico),
+        "pct_publico": _prop(pago_publico / pago) if pago else 0.0,
+        "cobertura_pago": _prop(pago / principal) if principal else 0.0,
         "tetos": [{"teto": float(t.teto), "n_acima": int(t.n_acima), "pct_acima": _prop(t.pct_acima),
                    "excedente": _dinheiro(t.excedente)} for t in impacto.itertuples(index=False)],
         "top": top,
@@ -91,6 +126,15 @@ def montar_recorte(shares: pd.DataFrame, rotulo: str, cargo: str | None, nomes: 
 
 def _slugs(df: pd.DataFrame) -> pd.Series:
     return df["cargo"].map(slug_cargo)
+
+
+def _shares(df: pd.DataFrame) -> pd.DataFrame:
+    """`candidate_shares` mais `pago`/`pago_publico` por candidato, quando `df` os traz."""
+    shares = metrics.candidate_shares(df)
+    if "pago" in df.columns:
+        soma = df.groupby("sq_candidato")[["pago", "pago_publico"]].sum()
+        shares = shares.join(soma, on="sq_candidato")
+    return shares
 
 
 def _cargos_do_recorte(uf: str) -> list[str]:
@@ -109,15 +153,15 @@ def montar_uf(df: pd.DataFrame, uf: str, nomes: dict[str, str], info: dict, teto
     df = df[_slugs(df).isin(permitidos)]
     slugs = _slugs(df)
     recortes = {}
-    if uf != "BR":
-        recortes["todos"] = montar_recorte(metrics.candidate_shares(df), ROTULO_TODOS, None, nomes,
+    if uf != "BR" and not df.empty:
+        recortes["todos"] = montar_recorte(_shares(df), ROTULO_TODOS, None, nomes,
                                            tetos, piso_campanha)
     for slug in permitidos:
         sub = df[slugs == slug]
         if sub.empty:
             continue
         nome_cargo, rotulo = CARGOS_SITE[slug]
-        recortes[slug] = montar_recorte(metrics.candidate_shares(sub), rotulo, nome_cargo, nomes,
+        recortes[slug] = montar_recorte(_shares(sub), rotulo, nome_cargo, nomes,
                                         tetos, piso_campanha)
     return {
         "uf": uf,
@@ -155,12 +199,12 @@ def _num(x: float):
 
 
 def _gravar(caminho: Path, dados: dict) -> None:
-    caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    caminho.write_text(json.dumps(dados, ensure_ascii=False, indent=1, allow_nan=False) + "\n", encoding="utf-8")
 
 
 def publicar(zip_path, eleitos_zip, saida: Path, tetos: list[float] | None = None,
-             piso_campanha: float = PISO_CAMPANHA, hoje: date | None = None) -> Path:
-    """Grava `index.json`, `BR.json` e um `<UF>.json` por estado em `saida`; devolve a pasta."""
+             piso_campanha: float = PISO_CAMPANHA, hoje: date | None = None) -> Resultado:
+    """Grava `index.json`, `BR.json` e um `<UF>.json` por estado em `saida`; devolve pasta e aviso de pagamentos sem linha."""
     if not (piso_campanha > 0) or piso_campanha == float("inf"):
         raise ValueError(f"piso_campanha invalido: {piso_campanha!r}")
     tetos = list(TETOS_PADRAO if tetos is None else tetos)
@@ -173,6 +217,7 @@ def publicar(zip_path, eleitos_zip, saida: Path, tetos: list[float] | None = Non
     if df.empty:
         raise FileNotFoundError("Nenhuma despesa no arquivo nacional.")
     df = classify(df, load_rules())
+    df, (n_sem, v_sem) = alocar_pagamentos(df, load_pagamentos(Path(zip_path)))
     meta = {"dt_geracao": _data_corte(df), "dt_ultima_prestacao": _dt_ultima_prestacao(df)}
 
     vazio = {"n_candidatos_total": 0, "segundo_turno": 0}
@@ -195,4 +240,4 @@ def publicar(zip_path, eleitos_zip, saida: Path, tetos: list[float] | None = Non
         "tetos": tetos,
         "ufs": entradas,
     })
-    return saida
+    return Resultado(saida, n_sem, round(v_sem, 2))

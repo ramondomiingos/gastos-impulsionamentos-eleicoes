@@ -27,7 +27,7 @@ def _desp(uf, sq, nome, cargo, forn, valor, ger="22/10/2026", prest="21/10/2026"
     n = str(next(_seq))
     cnpj = "13347016000117" if forn == FB else "11111111000111"
     desc = "Impulsionamento de conteúdos" if forn == FB else "Material gráfico"
-    return [ger, uf, sq, nome, cargo, "ABC", forn, cnpj, desc, "Despesa", valor, "10/09/2026", n, "Parcial", prest]
+    return [ger, uf, sq, nome, cargo, "ZZPART", forn, cnpj, desc, "Despesa", valor, "10/09/2026", n, "Parcial", prest]
 
 
 LINHAS = [
@@ -43,21 +43,44 @@ LINHAS = [
     # DF distrital
     _desp("DF", "5", "ANA DISTRITAL", "Deputado Distrital", FB, "5000,00"),
     _desp("DF", "5", "ANA DISTRITAL", "Deputado Distrital", OUTRO, "95000,00"),
+    # AC: despesa declarada zerada; AP: so vice (fora de CARGOS_SITE); SP: candidato fora do cadastro
+    _desp("AC", "8", "SEM VALOR", "Governador", OUTRO, "0,00"),
+    _desp("AP", "9", "VICE AP", "Vice-Governador", FB, "1000,00"),
+    _desp("SP", "7", "NOME SEM CADASTRO", "Governador", FB, "10000,00"),
     # Presidente
     _desp("BR", "6", "CARLOS PRESIDENTE", "Presidente", FB, "300000,00"),
     _desp("BR", "6", "CARLOS PRESIDENTE", "Presidente", OUTRO, "700000,00"),
 ]
-CAB_CAND = ["SG_UF", "DS_CARGO", "SQ_CANDIDATO", "NM_CANDIDATO", "DS_SIT_TOT_TURNO", "NR_TURNO"]
+CAB_CAND = ["SG_UF", "DS_CARGO", "SQ_CANDIDATO", "NM_CANDIDATO", "DS_SIT_TOT_TURNO", "NR_TURNO", "SG_PARTIDO"]
 CANDS = [
-    ["RN", "GOVERNADOR", "1", "JOÃO D'ÁVILA DA SILVA", "2º TURNO", "1"],
-    ["RN", "GOVERNADOR", "1", "JOÃO D'ÁVILA DA SILVA", "2º TURNO", "2"],
-    ["RN", "GOVERNADOR", "2", "ZÉ PEQUENO", "NÃO ELEITO", "1"],
+    ["RN", "GOVERNADOR", "1", "JOÃO D'ÁVILA DA SILVA", "2º TURNO", "1", "ZZPART"],
+    ["RN", "GOVERNADOR", "1", "JOÃO D'ÁVILA DA SILVA", "2º TURNO", "2", "ZZPART"],
+    ["RN", "GOVERNADOR", "2", "ZÉ PEQUENO", "NÃO ELEITO", "1", "ZZPART"],
     ["RN", "DEPUTADO FEDERAL", "3", "MARIA DE SOUZA LIMA", "ELEITO", "1"],
     ["RN", "DEPUTADO FEDERAL", "30", "SEM DESPESA", "SUPLENTE", "1"],
     ["RN", "DEPUTADO ESTADUAL", "4", "PEDRO LIMA", "ELEITO", "1"],
-    ["RN", "VICE-GOVERNADOR", "40", "VICE", "ELEITO", "1"],
+    ["RN", "VICE-GOVERNADOR", "40", "VICE", "ELEITO", "1", "ZZPART"],
     ["DF", "DEPUTADO DISTRITAL", "5", "ANA DISTRITAL", "ELEITO", "1"],
-    ["BR", "PRESIDENTE", "6", "CARLOS PRESIDENTE", "2º TURNO", "1"],
+    ["BR", "PRESIDENTE", "6", "CARLOS PRESIDENTE", "2º TURNO", "1", "ZZPART"],
+]
+
+
+CAB_PAGO = ["SQ_DESPESA", "DS_FONTE_DESPESA", "VR_PAGTO_DESPESA"]
+FEFC = "Fundo Especial de Financiamento de Campanha"
+FP = "Fundo Partidário"
+OR = "Outros Recursos"
+
+
+def _sq(i):
+    return LINHAS[i][12]
+
+
+PAGOS = [
+    [_sq(0), FEFC, "6000,00"], [_sq(0), FP, "2000,00"], [_sq(0), OR, "1000,00"],  # RN gov, ad
+    [_sq(1), FEFC, "50000,00"],            # RN gov, item que nao e anuncio: fora de `pago`
+    [_sq(2), FEFC, "900,00"],              # RN gov pequena
+    [_sq(3), OR, "5000,00"],               # RN dep. federal, so recurso nao publico
+    ["999999", FEFC, "123,00"],            # sem linha contratada
 ]
 
 
@@ -66,6 +89,7 @@ def zips(tmp_path):
     z = tmp_path / "desp.zip"
     with zipfile.ZipFile(z, "w") as f:
         f.writestr("despesas_contratadas_candidatos_2026_BRASIL.csv", _csv(CAB_DESP, LINHAS))
+        f.writestr("despesas_pagas_candidatos_2026_BRASIL.csv", _csv(CAB_PAGO, PAGOS))
     e = tmp_path / "cand.zip"
     with zipfile.ZipFile(e, "w") as f:
         f.writestr("consulta_cand_2026_BRASIL.csv", _csv(CAB_CAND, CANDS))
@@ -110,7 +134,8 @@ def test_recorte_fields_and_principal_is_confirmado_plus_generico():
     s = _shares([_sh("1", 200000.0, 10000.0, 20000.0, 5000.0), _sh("2", 900.0, 900.0)])
     r = publicar.montar_recorte(s, "Governo", "Governador", {"1": "Nome Um"}, [0.05, 0.10], 50000.0)
     assert list(r) == ["rotulo", "cargo", "total", "principal", "confirmado", "generico", "provavel",
-                       "proporcao", "n_candidatos", "n_gastaram", "n_elegiveis", "tetos", "top"]
+                       "proporcao", "n_candidatos", "n_gastaram", "n_elegiveis", "pago", "pago_publico",
+                       "pct_publico", "cobertura_pago", "tetos", "top"]
     assert r["principal"] == 30900.0 and r["confirmado"] == 10900.0 and r["generico"] == 20000.0
     assert r["provavel"] == 5000.0 and r["total"] == 200900.0
     assert r["proporcao"] == round(30900.0 / 200900.0, 6)
@@ -185,8 +210,13 @@ def test_uf_has_todos_and_cargo_keys_only_for_existing_cargos(zips, tmp_path):
 
 def test_json_has_no_party_field_anywhere(zips, tmp_path):
     _pub(zips, tmp_path / "o")
-    for f in (tmp_path / "o").glob("*.json"):
-        assert "partido" not in set(_chaves(json.loads(f.read_text(encoding="utf-8")))), f.name
+    arquivos = list((tmp_path / "o").glob("*.json"))
+    assert arquivos
+    for f in arquivos:
+        texto = f.read_text(encoding="utf-8")
+        chaves = set(_chaves(json.loads(texto)))
+        assert not [k for k in chaves if "partido" in k.lower()], f.name
+        assert "ZZPART" not in texto and "zzpart" not in texto.lower(), f.name
 
 
 def test_names_title_case_with_accents_from_consulta_cand(zips, tmp_path):
@@ -234,7 +264,7 @@ def test_publicar_writes_index_and_one_file_per_uf_deterministically(zips, tmp_p
     _pub(zips, a)
     _pub(zips, b)
     nomes = sorted(p.name for p in a.iterdir())
-    assert nomes == ["BR.json", "DF.json", "RN.json", "index.json"]
+    assert nomes == ["AC.json", "BR.json", "DF.json", "RN.json", "SP.json", "index.json"]
     for n in nomes:
         assert (a / n).read_bytes() == (b / n).read_bytes()
     assert (a / "RN.json").read_text(encoding="utf-8").startswith('{\n "uf": "RN"')
@@ -267,3 +297,100 @@ def test_cli_publicar_ok(zips, tmp_path, monkeypatch):
     assert cli.main(["publicar", "--zip", str(zips[0]), "--eleitos-zip", str(zips[1]),
                      "--saida", str(tmp_path / "o")]) == 0
     assert (tmp_path / "o" / "index.json").is_file()
+
+
+# --- fonte do dinheiro (despesas pagas) ---
+
+def test_pago_publico_allocates_by_fonte(zips, tmp_path):
+    _pub(zips, tmp_path / "o")
+    rn = _ler(tmp_path / "o", "RN")["recortes"]
+    gov = rn["governador"]
+    assert gov["pago"] == 6000.0 + 2000.0 + 1000.0 + 900.0
+    assert gov["pago_publico"] == 6000.0 + 2000.0 + 900.0  # FEFC + Fundo Partidario; Outros Recursos nao
+    assert gov["pct_publico"] == round(8900.0 / 9900.0, 6)
+    assert rn["deputado-federal"]["pago"] == 5000.0 and rn["deputado-federal"]["pago_publico"] == 0.0
+    assert rn["todos"]["pago"] == 14900.0 and rn["todos"]["pago_publico"] == 8900.0
+    assert rn["todos"]["pct_publico"] == round(8900.0 / 14900.0, 6)
+
+
+def test_pago_split_proportionally_when_sq_has_non_ad_items():
+    df = pd.DataFrame({
+        "sq_despesa": ["10", "10", "11"], "sq_candidato": ["1", "1", "2"],
+        "valor": [1000.0, 3000.0, 500.0], "nivel": ["confirmado", "nenhum", "generico"],
+    })
+    pagos = pd.DataFrame({"sq_despesa": ["10", "10", "11"], "fonte": [FEFC, OR, FP],
+                          "valor": [2000.0, 2000.0, 500.0]})
+    out, sem_linha = publicar.alocar_pagamentos(df, pagos)
+    assert list(out["pago"]) == [1000.0, 0.0, 500.0]  # 4000 pagos x 1000/4000; item "nenhum" fora
+    assert list(out["pago_publico"]) == [500.0, 0.0, 500.0]
+    assert sem_linha == (0, 0.0)
+
+
+def test_pct_publico_zero_when_nothing_paid(zips, tmp_path):
+    _pub(zips, tmp_path / "o")
+    pres = _ler(tmp_path / "o", "BR")["recortes"]["presidente"]
+    assert (pres["pago"], pres["pago_publico"], pres["pct_publico"], pres["cobertura_pago"]) == (0.0, 0.0, 0.0, 0.0)
+    ac = _ler(tmp_path / "o", "AC")["recortes"]["todos"]
+    assert ac["principal"] == 0.0 and ac["cobertura_pago"] == 0.0 and ac["proporcao"] == 0.0
+
+
+def test_cobertura_pago_is_pago_over_principal(zips, tmp_path):
+    _pub(zips, tmp_path / "o")
+    gov = _ler(tmp_path / "o", "RN")["recortes"]["governador"]
+    assert gov["principal"] == 10900.0
+    assert gov["cobertura_pago"] == round(9900.0 / 10900.0, 6)
+
+
+def test_unmatched_payments_ignored(zips, tmp_path):
+    res = _pub(zips, tmp_path / "o")
+    assert res.pagamentos_sem_linha == 1 and res.valor_sem_linha == 123.0
+    assert res.pasta == tmp_path / "o"
+    total_pago = sum(_ler(tmp_path / "o", u)["recortes"]["todos"]["pago"] for u in ("RN", "DF", "SP", "AC"))
+    assert total_pago == 14900.0  # os 123 sem linha e os 50000 de item que nao e anuncio nao entram
+
+
+def test_publicar_fields_present_in_every_recorte(zips, tmp_path):
+    _pub(zips, tmp_path / "o")
+    campos = ["pago", "pago_publico", "pct_publico", "cobertura_pago"]
+    for f in (tmp_path / "o").glob("[A-Z][A-Z].json"):
+        for r in json.loads(f.read_text(encoding="utf-8"))["recortes"].values():
+            keys = list(r)
+            assert keys[keys.index("n_elegiveis") + 1: keys.index("n_elegiveis") + 5] == campos
+            assert "cobertura_pago" in r and r["tetos"] is not None
+
+
+def test_missing_paid_file_in_zip_is_error(zips, tmp_path):
+    z = tmp_path / "sem_pagas.zip"
+    with zipfile.ZipFile(z, "w") as f:
+        f.writestr("despesas_contratadas_candidatos_2026_BRASIL.csv", _csv(CAB_DESP, LINHAS))
+    with pytest.raises(FileNotFoundError):
+        publicar.publicar(z, zips[1], tmp_path / "o")
+
+
+# --- itens do review da Task 1 ---
+
+def test_uf_without_declared_expenses_has_zeroed_valid_json(zips, tmp_path):
+    _pub(zips, tmp_path / "o")
+    ac = _ler(tmp_path / "o", "AC")
+    assert list(ac["recortes"]) == ["todos", "governador"]
+    r = ac["recortes"]["governador"]
+    assert (r["total"], r["n_candidatos"], r["n_gastaram"], r["n_elegiveis"], r["top"]) == (0.0, 0, 0, 0, [])
+    assert all(t["n_acima"] == 0 and t["pct_acima"] == 0.0 for t in r["tetos"])
+
+
+def test_uf_without_site_cargos_has_no_file_nor_index_entry(zips, tmp_path):
+    _pub(zips, tmp_path / "o")
+    assert not (tmp_path / "o" / "AP.json").exists()
+    assert "AP" not in [u["uf"] for u in _ler(tmp_path / "o", "index")["ufs"]]
+
+
+def test_candidate_missing_from_consulta_cand_falls_back_to_expense_name(zips, tmp_path):
+    _pub(zips, tmp_path / "o")
+    sp = _ler(tmp_path / "o", "SP")
+    assert sp["recortes"]["todos"]["top"][0]["nome"] == "Nome Sem Cadastro"
+    assert (sp["n_candidatos_total"], sp["segundo_turno"]) == (0, 0)
+
+
+def test_gravar_rejects_nan(tmp_path):
+    with pytest.raises(ValueError):
+        publicar._gravar(tmp_path / "x.json", {"a": float("nan")})

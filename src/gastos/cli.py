@@ -154,8 +154,11 @@ def _publicar(args) -> int:
             raise _Erro(f"{flag} inexistente ou ilegivel (zip): {valor}", 1)
     zip_path = Path(args.zip) if args.zip else download_candidatos()
     eleitos_zip = Path(args.eleitos_zip) if args.eleitos_zip else download_resultados()
-    pasta = publicar(zip_path, eleitos_zip, Path(args.saida), CAPS_PADRAO, piso)
-    print(f"JSON gravados em {pasta}")
+    res = publicar(zip_path, eleitos_zip, Path(args.saida), CAPS_PADRAO, piso)
+    print(f"JSON gravados em {res.pasta}")
+    if res.pagamentos_sem_linha:
+        print(f"Aviso: {res.pagamentos_sem_linha} despesas pagas (R$ {res.valor_sem_linha:,.2f}) "
+              "sem linha contratada correspondente foram ignoradas", file=sys.stderr)
     return 0
 
 

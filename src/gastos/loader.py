@@ -100,3 +100,34 @@ def load_despesas(zip_path: Path, uf: str | None = None) -> pd.DataFrame:
     # So linhas totalmente identicas colapsam: um SQ_DESPESA repetido com
     # descricao/valor diferentes sao itens do mesmo documento, nao duplicata.
     return df.drop_duplicates().reset_index(drop=True)
+
+
+def load_pagamentos(zip_path: Path) -> pd.DataFrame:
+    """Despesas pagas (arquivo BRASIL): valor pago por (sq_despesa, fonte).
+
+    Le em fluxo (o arquivo tem centenas de MB), guarda so SQ_DESPESA, DS_FONTE_DESPESA e
+    VR_PAGTO_DESPESA e soma os pagamentos (inclusive parcelas) de cada par.
+    """
+    alvo = "despesas_pagas_candidatos_2026_brasil.csv"
+    with zipfile.ZipFile(zip_path) as z:
+        nome = next((n for n in z.namelist() if n.rsplit("/", 1)[-1].lower() == alvo), None)
+        if nome is None:
+            raise FileNotFoundError(f"{alvo} nao encontrado no zip")
+        acumulado: dict[tuple[str, str], float] = {}
+        with z.open(nome) as raw:
+            texto = io.TextIOWrapper(raw, encoding="latin-1", newline="")
+            reader = csv.reader(clean_lines(texto), delimiter=";", quotechar='"')
+            header = next(reader)
+            i_sq, i_fonte, i_valor = (header.index(c) for c in ("SQ_DESPESA", "DS_FONTE_DESPESA", "VR_PAGTO_DESPESA"))
+            for row in reader:
+                if len(row) <= max(i_sq, i_fonte, i_valor):
+                    continue
+                sq = row[i_sq].strip()
+                if sq in PLACEHOLDERS:
+                    continue
+                chave = (sq, row[i_fonte].strip())
+                acumulado[chave] = acumulado.get(chave, 0.0) + parse_valor(row[i_valor])
+    return pd.DataFrame(
+        [(sq, fonte, v) for (sq, fonte), v in acumulado.items()],
+        columns=["sq_despesa", "fonte", "valor"],
+    ).astype({"sq_despesa": str, "fonte": str, "valor": float})
