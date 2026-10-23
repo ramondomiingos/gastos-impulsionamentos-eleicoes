@@ -49,6 +49,10 @@ Se não tiver certeza por onde começar, abra uma issue descrevendo o que você 
 4. Rode `.venv/bin/pytest -q` e `node --test tests/js/*.test.js`. O CI roda os mesmos testes no pull request.
 5. Abra o **pull request** explicando o quê e por quê. Mudanças de regra ou de texto precisam dos números antes e depois.
 
+### Quem aprova e como o merge acontece
+
+A branch `main` é protegida: **ninguém envia direto para ela**. Toda mudança entra por pull request, precisa que os testes passem (`pytest` e `js`) e da **aprovação do mantenedor** ([CODEOWNERS](.github/CODEOWNERS)). Novos commits depois da aprovação pedem uma nova aprovação, e as conversas do review precisam estar resolvidas. A regra está versionada em [`.github/rulesets/main-protegida.json`](.github/rulesets/main-protegida.json). Como o mantenedor não pode aprovar o próprio pull request, só ele pode concluir o merge de um PR seu depois que os testes passarem; nunca por push direto.
+
 ## Padrões de código
 
 - **Teste primeiro.** Todo comportamento novo tem um teste que falha antes da mudança. Os testes **não** podem usar rede nem os arquivos grandes; use `tests/fixtures/` e simule downloads.
