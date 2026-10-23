@@ -1,4 +1,6 @@
-# Gasto de campanha com plataformas estrangeiras
+# Guia de uso
+
+Referência completa dos comandos. Para uma visão geral do projeto, veja o [README](../README.md).
 
 Mede quanto as campanhas de candidatos gastam com anúncios em plataformas estrangeiras (Meta, Google/YouTube, X, TikTok), a partir dos dados abertos de prestação de contas do TSE (despesas **contratadas** dos candidatos; órgãos partidários ficam fora). O objetivo é embasar um pedido de teto percentual para esse tipo de gasto. Cada número publicado tem um CSV com as linhas que o compõem.
 
@@ -92,7 +94,7 @@ Cada UF com candidatos elegíveis ganha **um** `emails/<uf>/amostra-<uf>.csv` (U
 
 O link tem o formato `https://divulgacandcontas.tse.jus.br/divulga/#/candidato/<REGIAO>/<UF>/<ID_ELEICAO>/<SQ_CANDIDATO>/2026/<UF>/prestacao/despesas` (`gastos.links.link_prestacao`). A região vem da UF (IBGE). O `ID_ELEICAO` do portal (ex. `20322002026`) **não é** o `CD_ELEICAO` dos dados abertos (ex. `6259`, que o pipeline já guarda por candidato): a relação só vale se confirmada na API do portal. Por isso o código **nunca adivinha**: só emite o link para combinações (CD_ELEICAO, UF, cargo) listadas em `config/links_verificados.yaml`; as demais saem como `link indisponível` no anexo e entram no `pendencias.md` (seção "Avisos").
 
-Estado atual (22/10/2026): a API do portal respondeu **403 (Access Denied)** ao ambiente em que isto foi desenvolvido, então **nenhuma combinação foi verificada pela API**. A única entrada do YAML é o exemplo real que o Ramon copiou do portal (governador do RN, `fonte: exemplo-do-usuario`); ela cobre só esse cargo/UF. Na prática, os links saem `link indisponível` até alguém rodar, de uma rede que o portal aceite:
+Estado atual (22/10/2026): a API do portal respondeu **403 (Access Denied)** ao ambiente em que isto foi desenvolvido, então **nenhuma combinação foi verificada pela API**. A única entrada do YAML é um exemplo real copiado do portal pelo mantenedor (governador do RN, `fonte: exemplo-do-usuario`); ela cobre só esse cargo/UF. Na prática, os links saem `link indisponível` até alguém rodar, de uma rede que o portal aceite:
 
 ```bash
 .venv/bin/python scripts/verificar_links.py --listar                       # eleicao/ordinarias (ajuda a achar o id)
@@ -100,6 +102,26 @@ Estado atual (22/10/2026): a API do portal respondeu **403 (Access Denied)** ao 
 ```
 
 O script é **somente leitura** (GET na API pública, com timeout e pausa; para no primeiro 403 sem contornar o bloqueio), testa um candidato por (UF, cargo) e só grava o que responder HTTP 200 com o mesmo `SQ_CANDIDATO` (se a resposta trouxer o id da eleição, ele precisa bater com o testado; se não trouxer, a entrada fica com `fonte: api-sem-conferencia-da-eleicao`). Em 403, erro de rede ou timeout ele para, mas grava o que já coletou, e preserva o cabeçalho do YAML. O endpoint de candidato usado no script (`/divulga/rest/v1/candidatura/buscar/<ano>/<UF>/<id>/candidato/<SQ>`) foi escrito de memória e **não foi testado**; confira a resposta antes de confiar nele. Mesmo verificado pela API, o portal é um app JS: abra alguns links à mão. Os testes não usam rede.
+
+## Stories (imagens para redes sociais)
+
+Gera uma página HTML com 4 cards no formato de story (1080×1920), com botão para baixar cada um em PNG. Funciona a partir de uma pasta já gerada por `gastos analisar` e **não** faz parte do comando `gastos` (use `python -m gastos.story`):
+
+```bash
+# por candidato (cargo + UF): quem gastou quanto
+gastos analisar --uf PI --cargo Governador
+python -m gastos.story --run out/<pasta> --uf PI --cargo Governador --saida divulgacao/stories-governador-pi.html
+
+# por estado (todos os cargos, sem nomes): total, por cargo e efeito dos tetos
+gastos analisar --uf PB
+python -m gastos.story --run out/<pasta> --uf PB --saida divulgacao/stories-estado-pb.html
+
+# nacional (presidente)
+gastos analisar --cargo Presidente
+python -m gastos.story --run out/<pasta> --uf BR --cargo Presidente --saida divulgacao/stories-presidente-brasil.html
+```
+
+Opções: `--eleitos-zip` (padrão `data/raw/consulta_cand_2026.zip`, usado para contar candidatos e 2º turno e para os nomes com acento) e `--perfil` (texto do último card; também é editável na própria página). A pasta `divulgacao/` é ignorada pelo git: as páginas geradas citam candidatos pelo nome e não devem ser versionadas sem decisão do mantenedor. Cargos aceitos na versão por candidato: governador, presidente, senador, deputado federal/estadual/distrital.
 
 ## Limitações
 
