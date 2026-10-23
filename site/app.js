@@ -147,7 +147,7 @@
       atual = { uf: uf, cargo: cargo, dados: dados };
       renderizar();
       var r0 = (dados.recortes || {})[cargo];
-      $("status").textContent = "Dados de " + dados.nome + " · " + ((r0 && r0.rotulo) || ROTULOS_CARGO[cargo] || cargo) + " carregados.";
+      $("status").textContent = Lib.statusCarregado(indice.ufs.filter(function (u) { return u.uf === uf; })[0], (r0 && r0.rotulo) || ROTULOS_CARGO[cargo] || cargo);
     }).catch(function (e) {
       if (meu !== seq) return;
       mostrarErro("Não foi possível carregar os dados de " + nomeUf(uf) + " (" + e.message + "). Tente de novo.");

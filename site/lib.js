@@ -170,16 +170,32 @@
     var fp = fontePublica(recorte);
     var segs = [];
     if (fp) {
+      var cob = fp.cobertura ? "; cobertura de " + fp.cobertura + " do contratado" : "";
       segs.push({ t: "As campanhas usam " });
       segs.push({ t: "dinheiro público", forte: true });
-      segs.push({ t: " (Fundo Eleitoral e Fundo Partidário) para pagar anúncios. No recorte escolhido, " });
-      segs.push({ t: fp.pct, forte: true });
-      segs.push({ t: " do valor já pago em impulsionamento saiu desses fundos" + (fp.cobertura ? " (cobertura de " + fp.cobertura + " do contratado)" : "") + ". " });
+      if (recorte.pct_publico === 0) {
+        segs.push({ t: " (Fundo Eleitoral e Fundo Partidário) para pagar anúncios. No recorte escolhido, nenhum valor pago em impulsionamento saiu desses fundos (sobre o valor já pago" + cob + "). " });
+      } else {
+        segs.push({ t: " (Fundo Eleitoral e Fundo Partidário) para pagar anúncios. No recorte escolhido, " });
+        segs.push({ t: fp.pct, forte: true });
+        segs.push({ t: " do valor já pago em impulsionamento saiu desses fundos" + (fp.cobertura ? " (cobertura de " + fp.cobertura + " do contratado)" : "") + ". " });
+      }
     }
-    segs.push({ t: "Esse dinheiro vai para plataformas estrangeiras. " });
+    var p = recorte && recorte.principal, c = recorte && recorte.confirmado;
+    if (typeof p === "number" && p > 0 && typeof c === "number") {
+      segs.push({ t: "Esse dinheiro paga anúncios em plataformas estrangeiras: em " + formatPct(c / p) + " do valor a plataforma aparece citada na nota; o restante é impulsionamento sem plataforma citada. " });
+    } else {
+      segs.push({ t: "Esse dinheiro paga anúncios em plataformas. " });
+    }
     segs.push({ t: "Na nossa visão", posicao: true });
     segs.push({ t: ", elas empregam pouco no país, e esse dinheiro teria mais retorno para as pessoas se circulasse na economia local, em benfeitorias. Por isso propomos um teto percentual." });
     return segs;
+  }
+
+  function statusCarregado(uf, rotulo) {
+    var nome = (uf && uf.nome) || "";
+    var art = uf && uf.artigo ? uf.artigo + " " : "";
+    return "Dados " + art + nome + (nome ? " · " : "· ") + rotulo + " carregados.";
   }
 
   function larguras(valores) {
@@ -350,6 +366,7 @@
     ufsParaCargo: ufsParaCargo,
     escolherUf: escolherUf,
     importaSegmentos: importaSegmentos,
+    statusCarregado: statusCarregado,
     ORDEM_CARGOS: ORDEM_CARGOS,
     HASHTAG: HASHTAG,
   };

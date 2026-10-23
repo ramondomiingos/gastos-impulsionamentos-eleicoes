@@ -195,10 +195,13 @@ test("importaSegmentos com pct_publico baixo (48%) não afirma magnitude", () =>
 
 test("importaSegmentos sem pago*: sem número, sem dinheiro público e sem magnitude", () => {
   const t = juntar(Lib.importaSegmentos(semPago.recortes.governador));
-  assert.match(t, /Esse dinheiro vai para plataformas estrangeiras\./);
+  assert.match(t, /Esse dinheiro paga anúncios em plataformas estrangeiras: em 73,8% do valor a plataforma aparece citada na nota; o restante é impulsionamento sem plataforma citada\./);
   assert.match(t, /Na nossa visão/);
-  assert.doesNotMatch(t, /dinheiro público|%|grande parte|maior parte|undefined/);
-  assert.doesNotMatch(juntar(Lib.importaSegmentos(undefined)), /undefined|dinheiro público/);
+  assert.doesNotMatch(t, /dinheiro público|saiu desses fundos|grande parte|maior parte|undefined/);
+  const u = juntar(Lib.importaSegmentos(undefined));
+  assert.doesNotMatch(u, /undefined|dinheiro público|NaN/);
+  assert.match(u, /Esse dinheiro paga anúncios em plataformas\. /);
+  assert.doesNotMatch(u, /estrangeiras:/);
 });
 
 test("fonteHero: encolhe só quando precisa", () => {
@@ -342,4 +345,34 @@ test("rodapé dos cards traz a data de atualização do Radar", () => {
   for (const c of m.cards) assert.match(c.rodape, /Radar atualizado em 23\/10\/2026/);
   const sem = Lib.modeloCards(rn, "todos", Object.assign({}, indice, { gerado_em: undefined }));
   for (const c of sem.cards) assert.doesNotMatch(c.rodape, /Radar atualizado/);
+});
+
+test("importaSegmentos: cláusula medida de plataforma citada (X = confirmado / principal)", () => {
+  const x = (r) => juntar(Lib.importaSegmentos(r));
+  assert.match(x(rn.recortes.todos), /em 69,1% do valor a plataforma aparece citada na nota; o restante é impulsionamento sem plataforma citada\./);
+  assert.match(x({ principal: 100, confirmado: 0 }), /em 0,0% do valor a plataforma aparece citada/);
+  assert.match(x({ principal: 100, confirmado: 100 }), /em 100,0% do valor a plataforma aparece citada/);
+  for (const r of [{ principal: 0, confirmado: 0 }, { principal: 100 }, { confirmado: 5 }, {}, vazio.recortes.senador]) {
+    const t = x(r);
+    assert.match(t, /Esse dinheiro paga anúncios em plataformas\. /);
+    assert.doesNotMatch(t, /%|NaN|undefined|estrangeiras:/);
+  }
+  assert.doesNotMatch(x(rn.recortes.todos), /Esse dinheiro vai para plataformas estrangeiras/);
+});
+
+test("importaSegmentos: pct_publico 0 com pago > 0 não vira 0,0%", () => {
+  const r = Object.assign({}, rn.recortes.governador, { pago: 1000, pago_publico: 0, pct_publico: 0, cobertura_pago: 0.9 });
+  const t = juntar(Lib.importaSegmentos(r));
+  assert.match(t, /nenhum valor pago em impulsionamento saiu desses fundos \(sobre o valor já pago; cobertura de 90,0% do contratado\)/);
+  assert.doesNotMatch(t, /0,0% do valor já pago/);
+  const fortes = Lib.importaSegmentos(r).filter((s) => s.forte).map((s) => s.t);
+  assert.deepEqual(fortes, ["dinheiro público"]);
+});
+
+test("statusCarregado usa o artigo do índice, ou nenhum se faltar", () => {
+  assert.equal(Lib.statusCarregado({ nome: "Paraíba", artigo: "da" }, "Todos os cargos"), "Dados da Paraíba · Todos os cargos carregados.");
+  assert.equal(Lib.statusCarregado({ nome: "Brasil", artigo: "do" }, "Presidência"), "Dados do Brasil · Presidência carregados.");
+  assert.equal(Lib.statusCarregado({ nome: "Rio Grande do Norte", artigo: "do" }, "Governo"), "Dados do Rio Grande do Norte · Governo carregados.");
+  assert.equal(Lib.statusCarregado({ nome: "Acre" }, "Governo"), "Dados Acre · Governo carregados.");
+  assert.equal(Lib.statusCarregado(undefined, "Governo"), "Dados · Governo carregados.");
 });
