@@ -10,6 +10,7 @@
       <span class="chip">{{ prop_total }} de tudo que foi declarado · dados parciais</span>
       <div class="spacer"></div>
       <p class="source">Fonte: TSE, dados abertos (despesas contratadas). Gerados em {{ dt_geracao }}; entregas até {{ dt_prestacao }}. {{ aviso_valores }}</p>
+      <p class="site-line">{{ site }}</p>
     </section></div>
     <div class="actions"><button class="dl" data-target="c1" data-name="story-1-gancho">Baixar PNG</button></div>
   </div>
@@ -26,6 +27,7 @@
       <p class="axis-note">Barras proporcionais ao valor em R$, somando todos os candidatos de cada cargo. Sem nomes: é o retrato do estado.</p>
       <div class="spacer"></div>
       <p class="source">Fonte: TSE (prestação parcial, até {{ dt_prestacao }}). {{ aviso_valores }} Inclui impulsionamento sem a plataforma citada na nota.</p>
+      <p class="site-line">{{ site }}</p>
     </section></div>
     <div class="actions"><button class="dl" data-target="c2" data-name="story-2-por-cargo">Baixar PNG</button></div>
   </div>
@@ -44,6 +46,7 @@
       {% endif %}
       <div class="spacer"></div>
       <p class="source">Opinião de quem fez este levantamento. Teto = % do total da própria campanha. A proposta de teto é uma sugestão, não uma regra em vigor.</p>
+      <p class="site-line">{{ site }}</p>
     </section></div>
     <div class="actions"><button class="dl" data-target="c3" data-name="story-3-proposta">Baixar PNG</button></div>
   </div>
@@ -51,14 +54,17 @@
   <div class="slot">
     <div class="preview"><section class="card" id="c4">
       <div class="kicker">Participe</div>
-      <h2>Quer ajudar a levar isso adiante?</h2>
-      <p class="lead">Compartilhe este story, me mande a sua opinião e sugestões de números para levantar no seu estado.</p>
+      <h2>Quer ver os números do seu estado?</h2>
+      <p class="lead">Escolha o estado e o cargo, veja quem declarou os maiores valores, baixe os cards e ajude a levar essa proposta adiante.</p>
       <div class="cta-box">
-        Fale comigo e acompanhe a iniciativa:<br>
-        <span class="handle" contenteditable="true" spellcheck="false">{{ perfil }}</span>
+        Acesse:<br>
+        <span class="site-cta">{{ site }}</span><br>
+        <span class="aberto">Projeto aberto: contribua no GitHub</span><br>
+        <span class="hashtag">#TetoNoImpulsionamento</span>
       </div>
       <div class="spacer"></div>
       <p class="source">Dados: TSE, prestação de contas parcial das campanhas de 2026 (arquivo gerado em {{ dt_geracao }}). Os números são estimativas e podem mudar até a prestação final. Os dados completos estão em dadosabertos.tse.jus.br.</p>
+      <p class="site-line">{{ site }}</p>
     </section></div>
     <div class="actions"><button class="dl" data-target="c4" data-name="story-4-participe">Baixar PNG</button></div>
   </div>

@@ -38,7 +38,7 @@ Valores em reais; proporções como fração (0,05 = 5%). Os `top[]` trazem nome
 - **Resumo:** número principal, piso confirmado, proporção sobre o total declarado, candidatos que já declararam, datas dos dados e aviso de dados parciais.
 - **Por que isso importa:** só afirma que o dinheiro é público com a parcela medida (`pct_publico`) e a ressalva de que é sobre o valor já pago; a frase sobre retorno para o país é a posição dos autores e vem marcada como tal.
 - **Maiores valores declarados:** 5 por recorte, ordenados por valor absoluto, com piso confirmado, total e proporção, "campanha pequena" abaixo do piso, e link para o [portal de consulta do TSE](https://divulgacandcontas.tse.jus.br/) (buscar pelo nome; não há link individual, porque os links ainda não foram verificados).
-- **5 cards** (1080×1920): gancho com o número; por cargo (ou confirmado versus sem plataforma citada); maiores valores; efeito dos tetos de 5%, 10% e 20%; convite com o perfil editável (guardado no navegador, se possível). Botões "Baixar PNG" e "Baixar todos".
+- **5 cards** (1080×1920): gancho com o número; por cargo (ou confirmado versus sem plataforma citada); maiores valores; efeito dos tetos de 5%, 10% e 20%; convite para visitar o site. Botões "Baixar PNG" e "Baixar todos".
 - **Como medimos**, aviso "Encontrou um erro?" (link para as issues, porque o site cita pessoas) e rodapé com a fonte. Erros de carregamento mostram mensagem e botão "Tentar de novo".
 
 Os tetos contam só campanhas com pelo menos R$ 50.000 de despesas contratadas (`--piso-campanha`), para campanhas minúsculas não inflarem a conta.

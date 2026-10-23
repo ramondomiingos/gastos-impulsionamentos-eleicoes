@@ -5,6 +5,7 @@ import argparse
 import csv
 import io
 import json
+import re
 import sys
 import zipfile
 from pathlib import Path
@@ -120,7 +121,7 @@ def _consulta_cand(eleitos_zip: Path, uf: str, cargo: str | None) -> tuple[int, 
     return len(sq_todos), len(sq_2turno), nomes
 
 
-def montar(run: Path, uf: str, cargo: str, n_total: int, n_2turno: int, perfil: str = "@seu_perfil", nomes: dict | None = None) -> dict:
+def montar(run: Path, uf: str, cargo: str, n_total: int, n_2turno: int, nomes: dict | None = None) -> dict:
     uf = uf.upper()
     if uf not in UF_NOME:
         raise ValueError(f"UF inválida: {uf!r}")
@@ -157,7 +158,6 @@ def montar(run: Path, uf: str, cargo: str, n_total: int, n_2turno: int, perfil: 
         "linhas": linhas, "compacto": len(linhas) > 6,
         "nota_candidatos": nota, "aviso_valores": aviso,
         "dt_geracao": _data(meta.get("dt_geracao")), "dt_prestacao": _data(meta.get("dt_ultima_prestacao")),
-        "perfil": perfil,
     }
 
 
@@ -195,7 +195,7 @@ def _tetos(tetos) -> list[dict]:
              "pct": pct(float(t["pct_acima"])), "excedente": brl(float(t["excedente"]))} for t in escolhidos]
 
 
-def montar_estado(run: Path, uf: str, n_total: int, n_2turno: int, perfil: str = "@seu_perfil",
+def montar_estado(run: Path, uf: str, n_total: int, n_2turno: int,
                   tetos=None) -> dict:
     uf = uf.upper()
     if uf not in UF_NOME or uf == "BR":
@@ -223,11 +223,23 @@ def montar_estado(run: Path, uf: str, n_total: int, n_2turno: int, perfil: str =
         "linhas": linhas_por_cargo(cands), "tetos": _tetos(tetos),
         "aviso_valores": aviso,
         "dt_geracao": _data(meta.get("dt_geracao")), "dt_prestacao": _data(meta.get("dt_ultima_prestacao")),
-        "perfil": perfil,
     }
 
 
+SITE_PADRAO = "radar-impulsionamento.netlify.app"
+_HOST = re.compile(r"^[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?)*$")
+
+
+def _host(valor: str) -> str:
+    """Valida um host simples (letras, dígitos, pontos e hífens; sem esquema, caminho ou espaços)."""
+    if not _HOST.match(valor):
+        raise argparse.ArgumentTypeError(
+            f"endereço inválido {valor!r}: use só o host, como radar-impulsionamento.netlify.app (sem http://, sem caminho, sem espaços)")
+    return valor
+
+
 def renderizar(contexto: dict) -> str:
+    contexto = {"site": SITE_PADRAO, **contexto}
     env = Environment(loader=FileSystemLoader(TEMPLATES), autoescape=True)
     return env.get_template(contexto.get("template", "story.html.j2")).render(**contexto)
 
@@ -238,7 +250,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--uf", required=True, help="UF do recorte, ou BR para candidaturas nacionais")
     p.add_argument("--cargo", default=None, help='cargo do recorte, por exemplo "Governador" ou "Presidente"; sem ele, gera a página do estado (todos os cargos)')
     p.add_argument("--eleitos-zip", type=Path, default=Path("data/raw/consulta_cand_2026.zip"))
-    p.add_argument("--perfil", default="@seu_perfil")
+    p.add_argument("--site", type=_host, default=SITE_PADRAO, help="endereço do site que aparece nos cards (só o host, sem http://)")
     p.add_argument("--saida", required=True, type=Path)
     a = p.parse_args(argv)
     try:
@@ -246,12 +258,13 @@ def main(argv: list[str] | None = None) -> int:
             raise ValueError("para BR informe --cargo (por exemplo Presidente)")
         n_total, n_2turno, nomes = _consulta_cand(a.eleitos_zip, a.uf.upper(), a.cargo)
         if a.cargo is None:
-            ctx = montar_estado(a.run, a.uf, n_total, n_2turno, a.perfil)
+            ctx = montar_estado(a.run, a.uf, n_total, n_2turno)
         else:
-            ctx = montar(a.run, a.uf, a.cargo, n_total, n_2turno, a.perfil, nomes)
+            ctx = montar(a.run, a.uf, a.cargo, n_total, n_2turno, nomes=nomes)
     except (OSError, ValueError, StopIteration, zipfile.BadZipFile) as e:
         print(f"Erro: {e}", file=sys.stderr)
         return 1
+    ctx["site"] = a.site
     a.saida.parent.mkdir(parents=True, exist_ok=True)
     a.saida.write_text(renderizar(ctx), encoding="utf-8")
     print(f"Gravado em {a.saida}")

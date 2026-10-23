@@ -56,7 +56,10 @@
   .stat .txt b { color: var(--accent); }
   .stat .txt small { display: block; font-size: 31px; color: var(--muted); margin-top: 8px; }
   .cta-box { margin-top: 70px; border: 4px solid var(--accent); border-radius: 36px; padding: 52px; font-size: 56px; line-height: 1.35; }
-  .cta-box .handle { display: inline-block; margin-top: 26px; font-size: 64px; font-weight: 800; color: var(--accent); outline: none; }
+  .site-line { font-size: 30px; line-height: 1.4; font-weight: 700; color: var(--ink2); margin-top: 12px; }
+  .cta-box .site-cta { display: inline-block; margin-top: 20px; font-size: 44px; font-weight: 800; color: var(--accent); overflow-wrap: anywhere; }
+  .cta-box .aberto { display: inline-block; margin-top: 26px; font-size: 40px; color: var(--ink2); }
+  .cta-box .hashtag { display: inline-block; margin-top: 20px; font-size: 48px; font-weight: 700; color: var(--accent); }
   .slot .actions { display: flex; justify-content: center; margin-top: 12px; }
   button.dl { font: inherit; font-size: .9rem; padding: 8px 16px; border-radius: 8px; border: 1px solid #9aa8b8; background: #fff; cursor: pointer; }
   button.dl:hover { background: #f3f6f9; }
@@ -72,7 +75,7 @@
 
 <header class="page">
   <h1>Stories: {{ titulo }}</h1>
-  <p>Quatro cards no formato de story (1080×1920). Clique em “Baixar PNG” em cada um, ou tire print. No último card, clique no perfil para escrever o seu antes de baixar.</p>
+  <p>Quatro cards no formato de story (1080×1920). Clique em “Baixar PNG” em cada um, ou tire print.</p>
 </header>
 
 <main class="grid">{% block cards %}{% endblock %}</main>

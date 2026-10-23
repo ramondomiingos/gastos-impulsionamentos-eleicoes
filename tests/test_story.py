@@ -83,9 +83,9 @@ def test_html_has_numbers_and_never_the_party(tmp_path):
     assert "dinheiro público" not in html.lower()
 
 
-def test_html_escapes_names_and_profile(tmp_path):
+def test_html_escapes_names(tmp_path):
     dados = [_cand("1", "ANA <b>X</b>", "P", 100_000.0, 1_000.0)]
-    html = story.renderizar(story.montar(_run(tmp_path, dados), "PI", "Governador", 1, 0, perfil="@a<script>"))
+    html = story.renderizar(story.montar(_run(tmp_path, dados), "PI", "Governador", 1, 0))
     assert "<b>X</b>" not in html and "<script>" not in html.split("<body>")[1].split("html2canvas")[0]
 
 
@@ -195,3 +195,93 @@ def test_state_page_cli_without_cargo(tmp_path, monkeypatch):
     saida = tmp_path / "pb.html"
     assert story.main(["--run", str(pasta), "--uf", "PB", "--saida", str(saida)]) == 0
     assert "Deputados estaduais" in saida.read_text(encoding="utf-8")
+
+
+# ---------- endereço do site nos cards ----------
+
+SITE_PADRAO = "radar-impulsionamento.netlify.app"
+
+
+def _ctx_candidato(tmp_path, **kw):
+    return story.montar(_run(tmp_path, DADOS), "PI", "Governador", 11, 0, **kw)
+
+
+def test_site_in_every_card_candidate_family(tmp_path):
+    ctx = _ctx_candidato(tmp_path)
+    ctx["site"] = SITE_PADRAO
+    html = story.renderizar(ctx)
+    assert html.count(SITE_PADRAO) == 4 + 1  # rodapé de cada card + destaque no "Participe"
+    assert "#TetoNoImpulsionamento" in html
+
+
+def test_site_in_every_card_state_family(tmp_path):
+    pasta, tetos = _run_estado(tmp_path, ESTADO)
+    ctx = story.montar_estado(pasta, "PB", 9, 0, tetos=tetos)
+    ctx["site"] = "meu.exemplo.com.br"
+    html = story.renderizar(ctx)
+    assert html.count("meu.exemplo.com.br") == 4 + 1
+    assert "#TetoNoImpulsionamento" in html
+
+
+def test_site_in_every_card_national_president(tmp_path):
+    dados = [dict(_cand("1", "FULANO", "P", 1_000_000.0, 100_000.0), uf="BR", cargo="Presidente")]
+    ctx = story.montar(_run(tmp_path, dados), "BR", "Presidente", 1, 1)
+    ctx["site"] = SITE_PADRAO
+    assert story.renderizar(ctx).count(SITE_PADRAO) == 5
+
+
+def test_site_escaped_by_autoescape(tmp_path):
+    ctx = _ctx_candidato(tmp_path)
+    ctx["site"] = "a<script>.com"
+    html = story.renderizar(ctx)
+    assert "a<script>.com" not in html and "a&lt;script&gt;.com" in html
+
+
+def _cli(tmp_path, monkeypatch, *extra):
+    pasta, tetos = _run_estado(tmp_path, ESTADO)
+    pd.DataFrame(tetos).to_csv(pasta / "tetos.csv", sep=";", decimal=",", encoding="utf-8-sig", index=False)
+    monkeypatch.setattr(story, "_consulta_cand", lambda z, uf, cargo: (9, 0, {}))
+    saida = tmp_path / "pb.html"
+    rc = story.main(["--run", str(pasta), "--uf", "PB", "--saida", str(saida), *extra])
+    return rc, saida
+
+
+def test_cli_default_site(tmp_path, monkeypatch):
+    rc, saida = _cli(tmp_path, monkeypatch)
+    assert rc == 0 and saida.read_text(encoding="utf-8").count(SITE_PADRAO) == 5
+
+
+def test_cli_custom_site(tmp_path, monkeypatch):
+    rc, saida = _cli(tmp_path, monkeypatch, "--site", "meu.exemplo.com.br")
+    html = saida.read_text(encoding="utf-8")
+    assert rc == 0 and html.count("meu.exemplo.com.br") == 5 and SITE_PADRAO not in html
+
+
+@pytest.mark.parametrize("ruim", ["http://x.com", "x.com/path", "x y", "<script>", "", "-x.com", "x..com"])
+def test_cli_invalid_site_exits_2(tmp_path, monkeypatch, capsys, ruim):
+    with pytest.raises(SystemExit) as e:
+        _cli(tmp_path, monkeypatch, "--site", ruim)
+    assert e.value.code == 2
+    assert "--site" in capsys.readouterr().err
+
+
+def _ultimo_card(html):
+    return html.split('id="c4"')[1].split("</section>")[0]
+
+
+def test_last_card_is_site_call_without_profile(tmp_path):
+    pasta, tetos = _run_estado(tmp_path, ESTADO)
+    ctxs = [story.montar_estado(pasta, "PB", 9, 0, tetos=tetos),
+            story.montar(pasta, "PB", "Governador", 9, 0)]
+    for ctx in ctxs:
+        ctx["site"] = "meu.exemplo.com.br"
+        card = _ultimo_card(story.renderizar(ctx))
+        assert "meu.exemplo.com.br" in card and "Quer ver os números do seu estado?" in card
+        assert "contribua no GitHub" in card and "#TetoNoImpulsionamento" in card
+        assert "@" not in card and "perfil" not in card.lower()
+
+
+def test_cli_perfil_option_removed(tmp_path, monkeypatch, capsys):
+    with pytest.raises(SystemExit) as e:
+        _cli(tmp_path, monkeypatch, "--perfil", "@x")
+    assert e.value.code == 2 and "--perfil" in capsys.readouterr().err
