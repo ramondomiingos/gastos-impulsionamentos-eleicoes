@@ -21,6 +21,7 @@ from gastos.loader import load_despesas
 from gastos.publicar import PISO_CAMPANHA, publicar
 from gastos.report import write_run
 from gastos.text import normalize
+from gastos.validar import escrever, nome_pasta, validar_recortes
 
 CAPS_PADRAO = [0.05, 0.10, 0.15, 0.20]
 
@@ -188,6 +189,28 @@ def _analisar(args) -> int:
     return 0
 
 
+def _validar(args) -> int:
+    uf = None
+    if args.uf is not None:
+        uf = _parse_uf(args.uf) or "BR"  # valida antes de baixar/carregar
+    if args.zip and not (Path(args.zip).is_file() and zipfile.is_zipfile(args.zip)):
+        raise _Erro(f"--zip inexistente ou ilegivel: {args.zip}", 1)
+    zip_path = Path(args.zip) if args.zip else download_candidatos()
+    df = load_despesas(zip_path, None if uf in (None, "BR") else uf)  # todas as UFs: le o BRASIL uma vez
+    ufs = None if uf is None else [uf]
+    if uf is not None:
+        df = df[df["uf"] == uf] if uf == "BR" else df
+        df = df.assign(uf=uf)
+    if df.empty:
+        raise _Erro(f"Nenhuma despesa encontrada para {uf or 'o pais'}.")
+    df = classify(df, load_rules())
+    res = validar_recortes(df, ufs)
+    pasta = Path(args.saida) if args.saida else Path("out") / nome_pasta(uf)
+    escrever(res, pasta, completo=uf is not None)
+    print(f"Validacao gravada em {pasta}")
+    return 0
+
+
 def _parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="gastos", description="Gasto de campanha com plataformas estrangeiras (TSE).")
     sub = p.add_subparsers(dest="comando", required=True)
@@ -214,6 +237,10 @@ def _parser() -> argparse.ArgumentParser:
     b.add_argument("--saida", default="site/data", help="pasta de saida (padrao: site/data)")
     b.add_argument("--piso-campanha", dest="piso_campanha", default=str(PISO_CAMPANHA),
                    help=f"total minimo da campanha (R$) para entrar na contagem dos tetos (padrao: {PISO_CAMPANHA:g})")
+    v = sub.add_parser("validar", help="checa a classificacao por UF (nucleo, periferia, possiveis perdas)")
+    v.add_argument("--uf", help="duas letras (ex. RN) ou BR (Presidente); padrao: todas as UFs mais BR")
+    v.add_argument("--zip", help="zip do TSE ja baixado (pula o download)")
+    v.add_argument("--saida", help="pasta de saida (padrao: out/<data>_validacao[_uf-XX])")
     return p
 
 
@@ -223,7 +250,7 @@ def main(argv: list[str] | None = None) -> int:
     except SystemExit as e:  # argparse sai sozinho em erro/--help
         return e.code if isinstance(e.code, int) else 2
     try:
-        return {"emails": _emails, "publicar": _publicar}.get(args.comando, _analisar)(args)
+        return {"emails": _emails, "publicar": _publicar, "validar": _validar}.get(args.comando, _analisar)(args)
     except _Erro as e:
         print(f"Erro: {e}", file=sys.stderr)
         return e.codigo
