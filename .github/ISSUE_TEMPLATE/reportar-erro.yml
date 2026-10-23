@@ -1,0 +1,53 @@
+name: Reportar erro nos dados ou no site
+description: Encontrou um número, nome, valor ou texto incorreto, ou um problema na página? Conte aqui.
+title: "[erro] "
+labels: ["erro-de-dados"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por ajudar a corrigir. Este projeto usa apenas dados públicos do TSE.
+        **Não inclua dados pessoais** (CPF, telefone, e-mail pessoal). Respondemos e corrigimos o quanto antes.
+  - type: input
+    id: recorte
+    attributes:
+      label: Qual recorte você estava vendo?
+      description: Copie o endereço da página; ele inclui o estado e o cargo (por exemplo `...#PB/governador`).
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de problema
+      options:
+        - Valor ou número errado
+        - Nome, cargo ou estado errado
+        - Gasto classificado errado (não é impulsionamento, ou faltou um)
+        - Texto da página confuso ou enganoso
+        - Problema técnico (a página não carrega, imagem cortada)
+        - Outro
+    validations:
+      required: true
+  - type: textarea
+    id: o-que-esta-errado
+    attributes:
+      label: O que está errado?
+      description: Diga qual número, nome ou texto, e o que você viu.
+    validations:
+      required: true
+  - type: textarea
+    id: o-que-seria-correto
+    attributes:
+      label: O que você acha que seria o correto?
+  - type: input
+    id: fonte
+    attributes:
+      label: Fonte ou evidência (link, se tiver)
+      description: Por exemplo, o link da prestação de contas no portal do TSE (DivulgaCandContas) ou do arquivo de dados abertos.
+  - type: checkboxes
+    id: confirmacao
+    attributes:
+      label: Confirmação
+      options:
+        - label: Não incluí dados pessoais sensíveis nesta mensagem.
+          required: true

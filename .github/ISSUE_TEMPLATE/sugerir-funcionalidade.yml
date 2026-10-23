@@ -1,0 +1,20 @@
+name: Sugerir uma funcionalidade
+description: Tem uma ideia para o Radar do Impulsionamento? Conte aqui.
+title: "[feature] "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: ideia
+    attributes:
+      label: Qual é a ideia?
+      description: Descreva o que você gostaria de ver e para quem isso ajuda.
+    validations:
+      required: true
+  - type: textarea
+    id: por-que
+    attributes:
+      label: Por que isso importa?
+  - type: markdown
+    attributes:
+      value: |
+        Lembrete das regras do projeto: sem partido do candidato, linguagem neutra ("valores declarados"), nada é enviado automaticamente. Veja o [CONTRIBUTING](../blob/main/CONTRIBUTING.md).

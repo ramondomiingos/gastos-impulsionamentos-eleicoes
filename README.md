@@ -74,6 +74,18 @@ Os dados baixados (`data/raw/`) e as saídas (`out/`, `divulgacao/`) **não** v�
 - Os links para a prestação oficial de cada candidato ainda **não estão verificados**; o site aponta para o portal de consulta do TSE.
 - **O site cita pessoas:** lista os 5 maiores valores declarados por recorte, pelo nome, sem partido. É uma lista de valores declarados, não de irregularidades; erros podem ser reportados em [issues](https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes/issues).
 
+## Reportar um erro
+
+Encontrou um número, um nome ou um texto errado no site ou nos dados? **Avise, é a ajuda mais valiosa.**
+
+1. Abra o formulário: **[Reportar erro nos dados ou no site](https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes/issues/new?template=reportar-erro.yml)** (é preciso ter conta no GitHub).
+2. Cole o **endereço da página** que você estava vendo (ele já guarda o estado e o cargo, por exemplo `#PB/governador`) e diga o que está errado e, se souber, qual seria o correto, com um link de fonte.
+3. A issue recebe automaticamente a etiqueta **`erro-de-dados`**. Quem mantém o projeto avalia, corrige o quanto antes e registra a correção no histórico do repositório.
+
+Não inclua dados pessoais (CPF, telefone, e-mail pessoal). Antes de reportar um gasto classificado errado, vale ler a [metodologia](docs/metodologia.md): ela explica o que o método conta e os casos já conhecidos. Sem conta no GitHub, procure o canal de contato indicado na seção "Quem faz e como pedir correção" do site.
+
+Etiquetas das issues: `erro-de-dados` (algo está incorreto), `feature` (ideia de funcionalidade), `question` (decisão em aberto), `help wanted` e `good first issue` (onde ajudar).
+
 ## Quer ajudar?
 
 Ajuda é muito bem-vinda, principalmente em validar a classificação em outros estados, no site e nos links. Veja o **[CONTRIBUTING.md](CONTRIBUTING.md)**.

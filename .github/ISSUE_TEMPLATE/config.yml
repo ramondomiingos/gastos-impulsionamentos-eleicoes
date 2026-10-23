@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Como medimos (metodologia)
+    url: https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes/blob/main/docs/metodologia.md
+    about: Antes de reportar, veja como classificamos cada gasto e os limites conhecidos do método.

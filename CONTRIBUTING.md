@@ -31,6 +31,16 @@ Os testes rodam offline e levam poucos segundos. Para rodar o pipeline com dados
 
 Se não tiver certeza por onde começar, abra uma issue descrevendo o que você gostaria de fazer.
 
+## Etiquetas das issues
+
+| Etiqueta | Uso |
+| --- | --- |
+| `erro-de-dados` | número, nome ou texto incorreto no site ou nos dados (formulário "Reportar erro") |
+| `feature` | ideia de funcionalidade nova |
+| `question` | decisão em aberto, que precisa de discussão |
+| `help wanted`, `good first issue` | onde a ajuda é mais bem-vinda, e boas primeiras tarefas |
+| `accessibility` | barreiras de acessibilidade |
+
 ## Fluxo de trabalho
 
 1. Abra uma **issue** (ou comente numa existente) antes de mudanças grandes.
