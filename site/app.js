@@ -74,30 +74,38 @@
   }
 
   function montarSeletores() {
-    var sel = $("sel-uf");
-    sel.textContent = "";
-    var brasil = indice.ufs.filter(function (u) { return u.uf === "BR"; });
-    var resto = indice.ufs.filter(function (u) { return u.uf !== "BR"; })
-      .sort(function (a, b) { return a.nome.localeCompare(b.nome, "pt-BR"); });
-    brasil.concat(resto).forEach(function (u) {
-      var o = el("option", "", u.nome);
-      o.value = u.uf;
-      sel.appendChild(o);
-    });
-    sel.disabled = false;
-    $("sel-cargo").disabled = false;
-  }
-
-  function atualizarCargos(uf, cargoEscolhido) {
-    var cargos = cargosPorUf()[uf] || [];
     var sel = $("sel-cargo");
     sel.textContent = "";
-    cargos.forEach(function (c) {
+    Lib.cargosGlobais(indice).forEach(function (c) {
       var o = el("option", "", ROTULOS_CARGO[c] || c);
       o.value = c;
       sel.appendChild(o);
     });
-    sel.value = cargoEscolhido;
+    sel.disabled = false;
+  }
+
+  // Estados válidos para o cargo; com uma opção só (Presidente, Deputado distrital) o seletor fica desabilitado, mas visível.
+  function preencherUfs(cargo, ufEscolhida) {
+    var sel = $("sel-uf");
+    var ufs = Lib.ufsParaCargo(indice, cargo);
+    sel.textContent = "";
+    ufs.forEach(function (u) {
+      var o = el("option", "", u.nome);
+      o.value = u.uf;
+      sel.appendChild(o);
+    });
+    sel.value = ufEscolhida;
+    sel.disabled = ufs.length <= 1;
+    var ajuda = "";
+    if (cargo === "presidente") ajuda = "Presidente é uma disputa nacional: não há divisão por estado.";
+    else if (cargo === "deputado-distrital") ajuda = "Deputado distrital existe só no Distrito Federal.";
+    $("ajuda-uf").textContent = ajuda;
+  }
+
+  function avisoFiltro(texto) {
+    var p = $("msg-filtro");
+    p.textContent = texto || "";
+    p.hidden = !texto;
   }
 
   function aplicarHash() {
@@ -113,8 +121,8 @@
 
   function mostrar(uf, cargo, corrigirHash) {
     var meu = ++seq;
-    $("sel-uf").value = uf;
-    atualizarCargos(uf, cargo);
+    $("sel-cargo").value = cargo;
+    preencherUfs(cargo, uf);
     if (corrigirHash && location.hash !== Lib.buildHash(uf, cargo)) {
       try { history.replaceState(null, "", Lib.buildHash(uf, cargo)); } catch (e) { /* ignora */ }
     }
@@ -187,19 +195,11 @@
   function renderImporta(r) {
     var alvo = $("importa-texto");
     limpar(alvo);
-    var fp = Lib.fontePublica(r);
-    if (fp) {
-      alvo.appendChild(document.createTextNode("As campanhas são financiadas, em grande parte, com "));
-      alvo.appendChild(el("strong", "", "dinheiro público"));
-      alvo.appendChild(document.createTextNode(" (Fundo Eleitoral e Fundo Partidário). No recorte escolhido, " + fp.pct +
-        " do valor já pago em impulsionamento saiu desses fundos (sobre o valor já pago" +
-        (fp.cobertura ? "; cobertura de " + fp.cobertura + " do contratado" : "") + "). "));
-    } else {
-      alvo.appendChild(document.createTextNode("O gasto com impulsionamento vai, em sua maior parte, para plataformas estrangeiras. "));
-    }
-    alvo.appendChild(document.createTextNode("Esse dinheiro vai para plataformas estrangeiras que empregam pouco no país. "));
-    alvo.appendChild(el("mark", "posicao", "Na nossa visão"));
-    alvo.appendChild(document.createTextNode(", ele teria mais retorno para as pessoas se circulasse na economia local, em benfeitorias. Por isso propomos um teto percentual."));
+    Lib.importaSegmentos(r).forEach(function (seg) {
+      if (seg.forte) alvo.appendChild(el("strong", "", seg.t));
+      else if (seg.posicao) alvo.appendChild(el("mark", "posicao", seg.t));
+      else alvo.appendChild(document.createTextNode(seg.t));
+    });
   }
 
   function renderMaiores(r) {
@@ -443,11 +443,22 @@
   // ---------- eventos ----------
   function ligar() {
     $("sel-uf").addEventListener("change", function () {
-      var uf = $("sel-uf").value;
-      var cargos = cargosPorUf()[uf] || [];
-      escolher(uf, cargos.indexOf(atual.cargo) >= 0 ? atual.cargo : cargos[0]);
+      avisoFiltro("");
+      escolher($("sel-uf").value, $("sel-cargo").value);
     });
-    $("sel-cargo").addEventListener("change", function () { escolher($("sel-uf").value, $("sel-cargo").value); });
+    $("sel-cargo").addEventListener("change", function () {
+      var cargo = $("sel-cargo").value;
+      var ufAntiga = atual.uf || $("sel-uf").value;
+      var r = Lib.escolherUf(indice, ufAntiga, cargo);
+      if (r.mudou) {
+        avisoFiltro(cargo === "presidente"
+          ? "Presidente é uma disputa nacional: o estado foi ajustado para Brasil."
+          : "O cargo " + (ROTULOS_CARGO[cargo] || cargo).toLowerCase() + " não existe em " + nomeUf(ufAntiga) + ": o estado foi ajustado para " + nomeUf(r.uf) + ".");
+      } else {
+        avisoFiltro("");
+      }
+      escolher(r.uf, cargo);
+    });
     window.addEventListener("hashchange", function () { if (indice) aplicarHash(); });
     window.addEventListener("resize", ajustarEscala);
     $("btn-tentar").addEventListener("click", function () {

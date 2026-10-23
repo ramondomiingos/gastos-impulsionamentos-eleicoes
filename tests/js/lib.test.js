@@ -142,3 +142,58 @@ test("fontePublica: com e sem campos", () => {
   assert.equal(Lib.fontePublica(semPago.recortes.governador), null);
   assert.equal(Lib.fontePublica(vazio.recortes.senador), null);
 });
+
+test("cargosGlobais: Presidente primeiro, depois Todos e os demais na ordem", () => {
+  assert.deepEqual(Lib.cargosGlobais(indice), ["presidente", "todos", "governador", "senador", "deputado-federal", "deputado-estadual", "deputado-distrital"]);
+  const so = { ufs: [{ uf: "BR", cargos: ["presidente"] }, { uf: "AC", cargos: ["todos", "senador"] }] };
+  assert.deepEqual(Lib.cargosGlobais(so), ["presidente", "todos", "senador"]);
+});
+
+test("ufsParaCargo", () => {
+  assert.deepEqual(Lib.ufsParaCargo(indice, "presidente").map((u) => u.uf), ["BR"]);
+  assert.deepEqual(Lib.ufsParaCargo(indice, "deputado-distrital").map((u) => u.uf), ["DF"]);
+  const g = Lib.ufsParaCargo(indice, "governador").map((u) => u.uf);
+  assert.deepEqual(g, ["DF", "RN"]);
+  assert.equal(g.includes("BR"), false);
+  assert.deepEqual(Lib.ufsParaCargo(indice, "inexistente"), []);
+});
+
+test("ufsParaCargo ordena por nome (pt-BR)", () => {
+  const i = { ufs: [{ uf: "BR", nome: "Brasil", cargos: ["presidente"] }, { uf: "SP", nome: "São Paulo", cargos: ["todos"] }, { uf: "AC", nome: "Acre", cargos: ["todos"] }, { uf: "AP", nome: "Amapá", cargos: ["todos"] }] };
+  assert.deepEqual(Lib.ufsParaCargo(i, "todos").map((u) => u.uf), ["AC", "AP", "SP"]);
+});
+
+test("escolherUf: mantém a UF quando serve; senão a primeira válida", () => {
+  assert.deepEqual(Lib.escolherUf(indice, "RN", "governador"), { uf: "RN", mudou: false });
+  assert.deepEqual(Lib.escolherUf(indice, "RN", "presidente"), { uf: "BR", mudou: true });
+  assert.deepEqual(Lib.escolherUf(indice, "RN", "deputado-distrital"), { uf: "DF", mudou: true });
+  assert.deepEqual(Lib.escolherUf(indice, "BR", "governador"), { uf: "DF", mudou: true });
+  assert.deepEqual(Lib.escolherUf(indice, "BR", "presidente"), { uf: "BR", mudou: false });
+});
+
+const juntar = (segs) => segs.map((s) => s.t).join("");
+
+test("importaSegmentos com pago*: frase de fundos medida, sem palavras de magnitude", () => {
+  const t = juntar(Lib.importaSegmentos(rn.recortes.governador));
+  assert.match(t, /As campanhas usam dinheiro público \(Fundo Eleitoral e Fundo Partidário\) para pagar anúncios\./);
+  assert.match(t, /No recorte escolhido, 71,6% do valor já pago em impulsionamento saiu desses fundos \(cobertura de 100,0% do contratado\)\./);
+  assert.match(t, /Na nossa visão/);
+  assert.doesNotMatch(t, /grande parte|maior parte/);
+  const fortes = Lib.importaSegmentos(rn.recortes.governador).filter((s) => s.forte).map((s) => s.t);
+  assert.deepEqual(fortes, ["dinheiro público", "71,6%"]);
+});
+
+test("importaSegmentos com pct_publico baixo (48%) não afirma magnitude", () => {
+  const r = Object.assign({}, br.recortes.presidente, { pct_publico: 0.48, pago: 1000, cobertura_pago: 0.9 });
+  const t = juntar(Lib.importaSegmentos(r));
+  assert.match(t, /48,0% do valor já pago/);
+  assert.doesNotMatch(t, /grande parte|maior parte|maioria/);
+});
+
+test("importaSegmentos sem pago*: sem número, sem dinheiro público e sem magnitude", () => {
+  const t = juntar(Lib.importaSegmentos(semPago.recortes.governador));
+  assert.match(t, /Esse dinheiro vai para plataformas estrangeiras\./);
+  assert.match(t, /Na nossa visão/);
+  assert.doesNotMatch(t, /dinheiro público|%|grande parte|maior parte|undefined/);
+  assert.doesNotMatch(juntar(Lib.importaSegmentos(undefined)), /undefined|dinheiro público/);
+});

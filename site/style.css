@@ -25,7 +25,7 @@ a { color: var(--accent); overflow-wrap: anywhere; }
 h1 { margin: 0 0 8px; font-size: 1.9rem; line-height: 1.2; }
 .apoio { margin: 0; max-width: 60ch; color: var(--topo-sub); font-size: 1.05rem; }
 
-main { padding-top: 20px; padding-bottom: 40px; }
+main.miolo { padding-top: 20px; padding-bottom: 40px; }
 .filtros { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 12px; }
 .campo { display: flex; flex-direction: column; gap: 4px; flex: 1 1 220px; min-width: 0; }
 .campo label { font-size: .85rem; font-weight: 700; color: var(--muted); }
@@ -36,6 +36,8 @@ select, input[type=text] { font: inherit; padding: 10px 12px; border: 1px solid 
 .btn:hover { border-color: var(--accent-strong); }
 .btn[disabled] { opacity: .6; cursor: progress; }
 .btn-forte { background: var(--accent-strong); color: #1a1100; border-color: var(--accent-strong); }
+.ajuda { margin: 0; font-size: .85rem; color: var(--muted); min-height: 1.2em; }
+select[disabled] { opacity: .8; }
 .status { color: var(--muted); min-height: 1.5em; margin: 4px 0 8px; }
 .erro { background: var(--err-bg); color: var(--err-ink); border-radius: 10px; padding: 14px 16px; margin: 8px 0 16px; }
 .erro p { margin: 0 0 10px; }

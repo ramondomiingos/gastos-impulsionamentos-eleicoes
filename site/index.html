@@ -20,15 +20,17 @@
 <main id="conteudo" class="miolo">
   <section class="filtros" aria-label="Filtros">
     <div class="campo">
-      <label for="sel-uf">Estado</label>
-      <select id="sel-uf" disabled></select>
-    </div>
-    <div class="campo">
       <label for="sel-cargo">Cargo</label>
       <select id="sel-cargo" disabled></select>
     </div>
+    <div class="campo">
+      <label for="sel-uf">Estado</label>
+      <select id="sel-uf" disabled aria-describedby="ajuda-uf"></select>
+      <p id="ajuda-uf" class="ajuda"></p>
+    </div>
   </section>
 
+  <p id="msg-filtro" class="aviso" role="status" aria-live="polite" hidden></p>
   <div id="status" class="status" role="status" aria-live="polite">Carregando os dados…</div>
   <div id="erro" class="erro" role="alert" hidden>
     <p id="erro-msg"></p>

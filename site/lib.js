@@ -81,6 +81,52 @@
     };
   }
 
+  var ORDEM_GLOBAL = ["presidente", "todos", "governador", "senador", "deputado-federal", "deputado-estadual", "deputado-distrital"];
+
+  /* Lista global de cargos do seletor (Presidente primeiro), só os que existem em algum recorte do índice. */
+  function cargosGlobais(indice) {
+    var vistos = {};
+    ((indice && indice.ufs) || []).forEach(function (u) {
+      (u.cargos || []).forEach(function (c) { vistos[c] = true; });
+    });
+    var lista = ORDEM_GLOBAL.filter(function (c) { return vistos[c]; });
+    Object.keys(vistos).forEach(function (c) { if (lista.indexOf(c) < 0) lista.push(c); });
+    return lista;
+  }
+
+  /* Estados válidos para o cargo: Presidente só Brasil; os demais, os estados (sem Brasil) em ordem alfabética. */
+  function ufsParaCargo(indice, cargo) {
+    var ufs = ((indice && indice.ufs) || []).filter(function (u) { return (u.cargos || []).indexOf(cargo) >= 0; });
+    if (cargo === "presidente") return ufs.filter(function (u) { return u.uf === "BR"; });
+    return ufs.filter(function (u) { return u.uf !== "BR"; })
+      .sort(function (a, b) { return String(a.nome).localeCompare(String(b.nome), "pt-BR"); });
+  }
+
+  /* Mantém a UF atual se ela serve ao cargo; senão, a primeira válida. */
+  function escolherUf(indice, ufAtual, cargo) {
+    var validas = ufsParaCargo(indice, cargo);
+    if (validas.some(function (u) { return u.uf === ufAtual; })) return { uf: ufAtual, mudou: false };
+    return { uf: validas.length ? validas[0].uf : ufAtual, mudou: true };
+  }
+
+  /* Segmentos do texto "Por que isso importa": [{t, forte?, posicao?}]. Sem pago*, nada de número nem de magnitude. */
+  function importaSegmentos(recorte) {
+    var fp = fontePublica(recorte);
+    var segs = [];
+    if (fp) {
+      segs.push({ t: "As campanhas usam " });
+      segs.push({ t: "dinheiro público", forte: true });
+      segs.push({ t: " (Fundo Eleitoral e Fundo Partidário) para pagar anúncios. No recorte escolhido, " });
+      segs.push({ t: fp.pct, forte: true });
+      segs.push({ t: " do valor já pago em impulsionamento saiu desses fundos" + (fp.cobertura ? " (cobertura de " + fp.cobertura + " do contratado)" : "") + ". Esse dinheiro vai para plataformas estrangeiras que empregam pouco no país. " });
+    } else {
+      segs.push({ t: "Esse dinheiro vai para plataformas estrangeiras. " });
+    }
+    segs.push({ t: "Na nossa visão", posicao: true });
+    segs.push({ t: ", ele teria mais retorno para as pessoas se circulasse na economia local, em benfeitorias. Por isso propomos um teto percentual." });
+    return segs;
+  }
+
   function larguras(valores) {
     var max = Math.max.apply(null, valores.concat([0]));
     return valores.map(function (v) {
@@ -233,6 +279,10 @@
     modeloCards: modeloCards,
     escapeHtml: escapeHtml,
     fontePublica: fontePublica,
+    cargosGlobais: cargosGlobais,
+    ufsParaCargo: ufsParaCargo,
+    escolherUf: escolherUf,
+    importaSegmentos: importaSegmentos,
     ORDEM_CARGOS: ORDEM_CARGOS,
     HASHTAG: HASHTAG,
   };
