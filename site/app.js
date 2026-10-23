@@ -167,7 +167,7 @@
     $("painel").hidden = false;
     renderResumo(dados, r);
     renderImporta(r);
-    renderMaiores(r);
+    renderMaiores(r, Lib.ocultarNomes(dados, atual.cargo));
     renderCards();
   }
 
@@ -201,6 +201,7 @@
     var g = dados.dt_geracao || indice.dt_geracao || "data indisponível";
     var p = dados.dt_ultima_prestacao || indice.dt_ultima_prestacao || "data indisponível";
     $("resumo-datas").textContent = "Dados gerados pelo TSE em " + g + "; prestações mais recentes até " + p + ".";
+    $("resumo-atualizacao").textContent = "Atualizado no Radar em " + Lib.formatarData(indice.gerado_em) + ". Os números mudam conforme o TSE recebe novas prestações de contas; este site é atualizado de tempos em tempos, confira as datas.";
     var parcial = "Dados parciais: as campanhas ainda entregam prestações e os números podem mudar. São estimativas.";
     if (dados.segundo_turno > 0) parcial += " Há " + dados.segundo_turno + " candidatura(s) em 2º turno, ainda em disputa.";
     $("resumo-parcial").textContent = parcial;
@@ -216,16 +217,17 @@
     });
   }
 
-  function renderMaiores(r) {
+  function renderMaiores(r, oculto) {
     var lista = $("maiores-lista");
     limpar(lista);
-    var top = r && Array.isArray(r.top) ? r.top : [];
+    var top = !oculto && r && Array.isArray(r.top) ? r.top : [];
     var vazio = $("maiores-vazio");
     $("maiores-sub").textContent = top.length
       ? "Até 5 candidaturas com maior valor declarado em plataformas neste recorte, em ordem de valor."
       : "";
     vazio.hidden = top.length > 0;
-    vazio.textContent = "Nenhuma campanha deste recorte declarou impulsionamento em plataformas até agora.";
+    $("maiores-aviso").hidden = !!oculto;
+    vazio.textContent = oculto ? Lib.MSG_NOMES_OCULTOS : "Nenhuma campanha deste recorte declarou impulsionamento em plataformas até agora.";
     top.forEach(function (t) {
       var li = el("li");
       var nome = el("span", "nome", t.nome);

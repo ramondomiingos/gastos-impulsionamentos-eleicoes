@@ -71,6 +71,24 @@
     return protocolo === "file:";
   }
 
+  var MSG_NOMES_OCULTOS = "Os nomes dos candidatos que ainda disputam o 2º turno ficam ocultos até o fim da votação (25/10/2026). Os números agregados deste recorte continuam disponíveis.";
+
+  /* Com candidatos ainda no 2º turno, esconde nomes dos cargos que têm segundo turno (e da visão "todos"). */
+  function ocultarNomes(dados, cargoKey) {
+    var n = dados && dados.segundo_turno;
+    if (typeof n !== "number" || !(n > 0)) return false;
+    return cargoKey === "presidente" || cargoKey === "governador" || cargoKey === "todos";
+  }
+
+  /* "2026-10-23" -> "23/10/2026"; qualquer outra coisa -> "data indisponível". */
+  function formatarData(iso) {
+    var m = typeof iso === "string" && /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+    if (!m) return "data indisponível";
+    var d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+    if (d.getUTCFullYear() !== +m[1] || d.getUTCMonth() !== +m[2] - 1 || d.getUTCDate() !== +m[3]) return "data indisponível";
+    return m[3] + "/" + m[2] + "/" + m[1];
+  }
+
   /* Caminho do JSON de uma UF, só se ela existe no índice. */
   function caminhoUf(indice, uf) {
     if (typeof uf !== "string") return null;
@@ -183,9 +201,10 @@
   function rodapeDe(dados, indice) {
     var g = dados.dt_geracao || (indice && indice.dt_geracao) || "data indisponível";
     var p = dados.dt_ultima_prestacao || (indice && indice.dt_ultima_prestacao) || "data indisponível";
+    var atualizado = indice && formatarData(indice.gerado_em) !== "data indisponível" ? " Radar atualizado em " + formatarData(indice.gerado_em) + "." : "";
     return (
       "Fonte: TSE, dados abertos (despesas contratadas). Dados parciais: gerados em " + g +
-      "; prestações de contas até " + p + ". Valores são estimativas e incluem impulsionamento sem plataforma citada."
+      "; prestações de contas até " + p + "." + atualizado + " Valores são estimativas e incluem impulsionamento sem plataforma citada."
     );
   }
 
@@ -257,7 +276,8 @@
     }
 
     // 3. maiores valores declarados
-    var top = Array.isArray(r.top) ? r.top : [];
+    var oculto = ocultarNomes(dados, cargoKey);
+    var top = !oculto && Array.isArray(r.top) ? r.top : [];
     var topCard = {
       tipo: "top",
       kicker: nome + " · " + (r.rotulo || cargoKey),
@@ -272,7 +292,8 @@
         };
       }),
       vazio: top.length === 0,
-      textoVazio: "Nenhuma campanha deste recorte declarou impulsionamento em plataformas até agora.",
+      oculto: oculto,
+      textoVazio: oculto ? MSG_NOMES_OCULTOS : "Nenhuma campanha deste recorte declarou impulsionamento em plataformas até agora.",
       nota: "Valores absolutos declarados; não é lista de irregularidades.",
       rodape: rodape,
     };
@@ -332,6 +353,9 @@
     enderecoDoSite: enderecoDoSite,
     ENDERECO_PADRAO: ENDERECO_PADRAO,
     caminhoUf: caminhoUf,
+    ocultarNomes: ocultarNomes,
+    formatarData: formatarData,
+    MSG_NOMES_OCULTOS: MSG_NOMES_OCULTOS,
     modoArquivoLocal: modoArquivoLocal,
     avisoTrocaUf: avisoTrocaUf,
     fontePublica: fontePublica,

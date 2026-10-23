@@ -11,6 +11,7 @@ const semPago = fx("RN_sem_pago.json");
 const vazio = fx("RN_vazio.json");
 const br = fx("BR.json");
 const hostil = fx("RN_hostil.json");
+const turno2 = fx("RN_turno2.json");
 const HOSTIL = `<img src=x onerror=alert(1)> & "Zé" O'Brien`;
 
 test("formatBRL", () => {
@@ -313,4 +314,60 @@ test("fonteEndereco: uma linha para endereços curtos e longos", () => {
   const f = Lib.fonteEndereco(Lib.ENDERECO_PADRAO);
   assert.ok(f >= 40 && f < 72);
   assert.ok(Lib.fonteEndereco("x".repeat(80) + ".com") >= 34);
+});
+
+test("ocultarNomes: 2º turno em curso esconde nomes de presidente, governador e todos", () => {
+  assert.equal(Lib.ocultarNomes(br, "presidente"), true);
+  assert.equal(Lib.ocultarNomes(turno2, "governador"), true);
+  assert.equal(Lib.ocultarNomes(turno2, "todos"), true);
+  assert.equal(Lib.ocultarNomes(turno2, "senador"), false);
+  assert.equal(Lib.ocultarNomes(turno2, "deputado-federal"), false);
+  assert.equal(Lib.ocultarNomes(turno2, "deputado-estadual"), false);
+  assert.equal(Lib.ocultarNomes(rn, "governador"), false); // segundo_turno 0
+  assert.equal(Lib.ocultarNomes(rn, "todos"), false);
+});
+
+test("ocultarNomes: segundo_turno ausente ou inválido mostra os nomes", () => {
+  const sem = Object.assign({}, rn); delete sem.segundo_turno;
+  assert.equal(Lib.ocultarNomes(sem, "governador"), false);
+  assert.equal(Lib.ocultarNomes({ segundo_turno: "2" }, "governador"), false);
+  assert.equal(Lib.ocultarNomes({ segundo_turno: null }, "presidente"), false);
+  assert.equal(Lib.ocultarNomes(undefined, "presidente"), false);
+});
+
+test("recorte com nomes ocultos nunca põe nome nos modelos", () => {
+  const nomes = [];
+  for (const k of ["governador", "todos"]) turno2.recortes[k].top.forEach((t) => nomes.push(t.nome));
+  for (const t of br.recortes.presidente.top) nomes.push(t.nome);
+  assert.ok(nomes.length >= 10);
+  for (const [d, k] of [[turno2, "governador"], [turno2, "todos"], [br, "presidente"]]) {
+    const m = Lib.modeloCards(d, k, indice);
+    const j = JSON.stringify(m);
+    for (const n of nomes) assert.equal(j.includes(n), false, n);
+    assert.equal(m.cards[2].oculto, true);
+    assert.equal(m.cards[2].vazio, true);
+    assert.equal(m.cards[2].linhas.length, 0);
+    assert.equal(m.cards[2].textoVazio, Lib.MSG_NOMES_OCULTOS);
+  }
+  assert.match(Lib.MSG_NOMES_OCULTOS, /2º turno ficam ocultos até o fim da votação \(25\/10\/2026\)/);
+  assert.match(Lib.MSG_NOMES_OCULTOS, /números agregados deste recorte continuam disponíveis/);
+  // senador no mesmo estado segue com nomes
+  const s = Lib.modeloCards(turno2, "senador", indice);
+  assert.equal(s.cards[2].oculto, false);
+  assert.equal(s.cards[2].linhas.length, 5);
+});
+
+test("formatarData", () => {
+  assert.equal(Lib.formatarData("2026-10-23"), "23/10/2026");
+  assert.equal(Lib.formatarData("2026-01-05"), "05/01/2026");
+  for (const v of [undefined, null, "", "23/10/2026", "2026-13-01", "2026-10-32", "abc", "2026-10", 20261023, "2026-02-30"]) {
+    assert.equal(Lib.formatarData(v), "data indisponível", String(v));
+  }
+});
+
+test("rodapé dos cards traz a data de atualização do Radar", () => {
+  const m = Lib.modeloCards(rn, "todos", indice);
+  for (const c of m.cards) assert.match(c.rodape, /Radar atualizado em 23\/10\/2026/);
+  const sem = Lib.modeloCards(rn, "todos", Object.assign({}, indice, { gerado_em: undefined }));
+  for (const c of sem.cards) assert.doesNotMatch(c.rodape, /Radar atualizado/);
 });
