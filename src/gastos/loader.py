@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import io
 import re
+import warnings
 import zipfile
 from pathlib import Path
 from typing import Iterable, Iterator
@@ -74,8 +75,8 @@ def load_despesas(zip_path: Path, uf: str | None = None) -> pd.DataFrame:
     """Le as despesas contratadas; uf=None le o arquivo BRASIL.
 
     Le em fluxo, guardando so as colunas necessarias, descarta linhas de
-    preenchimento (SQ_DESPESA == "-1" / "#NULO") e remove apenas linhas
-    totalmente identicas (todas as colunas normalizadas).
+    preenchimento (SQ_DESPESA == "-1" / "#NULO"). NAO remove linhas repetidas: linhas contratadas
+    identicas sao itens reais distintos (o valor pago bate com a soma delas).
     """
     with zipfile.ZipFile(zip_path) as z:
         nome = _member(z.namelist(), uf)
@@ -97,9 +98,20 @@ def load_despesas(zip_path: Path, uf: str | None = None) -> pd.DataFrame:
                 linhas.append([row[i] for i in idx])
     df = pd.DataFrame(linhas, columns=list(cols.values()), dtype=str)
     df["valor"] = df["valor"].map(parse_valor).astype(float)
-    # So linhas totalmente identicas colapsam: um SQ_DESPESA repetido com
-    # descricao/valor diferentes sao itens do mesmo documento, nao duplicata.
-    return df.drop_duplicates().reset_index(drop=True)
+    _avisa_sq_em_varios_tipos(df)
+    return df.reset_index(drop=True)
+
+
+def _avisa_sq_em_varios_tipos(df: pd.DataFrame) -> None:
+    """Guarda contra dupla contagem: a mesma despesa reportada em mais de um tipo de prestacao."""
+    n_tipos = df.groupby("sq_despesa")["tp_prestacao"].nunique()
+    sqs = n_tipos[n_tipos > 1].index
+    if len(sqs):
+        valor = float(df.loc[df["sq_despesa"].isin(sqs), "valor"].sum())
+        brl = f"R$ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        warnings.warn(
+            f"{len(sqs)} SQ_DESPESA aparecem em mais de um tipo de prestação ({brl} em linhas contratadas): "
+            "possível dupla contagem; confira antes de publicar.", UserWarning, stacklevel=3)
 
 
 def load_pagamentos(zip_path: Path) -> pd.DataFrame:

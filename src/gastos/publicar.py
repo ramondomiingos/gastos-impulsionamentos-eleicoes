@@ -126,7 +126,7 @@ def montar_recorte(shares: pd.DataFrame, rotulo: str, cargo: str | None, nomes: 
         "pago": _dinheiro(pago),
         "pago_publico": _dinheiro(pago_publico),
         "pct_publico": _prop(pago_publico / pago) if pago else 0.0,
-        # limitada a 1: pago pode passar do principal (aditivos; linhas identicas colapsadas pelo loader)
+        # limitada a 1: pago pode passar do principal (aditivos pagos acima do contratado)
         "cobertura_pago": _prop(min(1.0, pago / principal)) if principal else 0.0,
         "tetos": [{"teto": float(t.teto), "n_acima": int(t.n_acima), "pct_acima": _prop(t.pct_acima),
                    "excedente": _dinheiro(t.excedente)} for t in impacto.itertuples(index=False)],
