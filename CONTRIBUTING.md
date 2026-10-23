@@ -21,7 +21,7 @@ Os testes rodam offline e levam poucos segundos. Para rodar o pipeline com dados
 
 | Tarefa | Precisa de | Como começar |
 | --- | --- | --- |
-| **Validar a classificação em outro estado** | olhar planilhas, sem programar | faça a [checagem automática](docs/metodologia.md#validação-por-estado-checagem-automática) e o passo a passo de [como validar](docs/metodologia.md#como-validar-um-estado-novo); abra uma issue com os achados |
+| **Validar a classificação em outro estado** | olhar planilhas, sem programar | rode `gastos validar --uf XX` (a [checagem automática](docs/metodologia.md#validação-por-estado-checagem-automática)) e siga o passo a passo de [como validar](docs/metodologia.md#como-validar-um-estado-novo); abra uma issue com os achados |
 | **Decidir a regra dos honorários de agência** | opinião fundamentada | veja os números em [docs/metodologia.md](docs/metodologia.md#o-que-o-método-ainda-erra-conhecido) (cerca de R$ 6,7 milhões de periferia incerta) e comente na issue |
 | **Melhorar o site** | HTML/JS | leia [docs/site-e-publicacao.md](docs/site-e-publicacao.md); acessibilidade, celular e textos são bem-vindos; rode `node --test tests/js/*.test.js` |
 | **Rotina agendada de atualização** | GitHub Actions | baixar o TSE, rodar `gastos publicar` e abrir um PR com `site/data/` (veja [como atualizar](docs/site-e-publicacao.md#como-atualizar-os-dados)) |

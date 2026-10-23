@@ -61,6 +61,23 @@ gastos publicar --saida /tmp/teste --piso-campanha 100000
 
 **Custo:** cerca de 40 s e 2 GB de RAM com os dados nacionais. **Avisos** (stderr): despesas pagas sem linha contratada correspondente (ignoradas) e fontes de despesa não reconhecidas (tratadas como não públicas). Depois de rodar, confira as datas em `site/data/index.json`, rode os testes e faça `commit` e `push`; a Netlify republica.
 
+## `gastos validar`: checagem por estado
+
+Confere a classificação de cada recorte sem scripts avulsos. Sem `--uf`, carrega o arquivo nacional **uma vez** (cerca de 35 s) e fatia por estado, mais o recorte BR (Presidente).
+
+```bash
+gastos validar --uf RN                               # um estado, linhas completas
+gastos validar --zip data/raw/<zip> --saida /tmp/v   # todos os estados e BR
+```
+
+| opção | efeito |
+| --- | --- |
+| `--uf` | duas letras (ex. RN) ou BR (Presidente); padrão: todas as UFs mais BR |
+| `--zip` | zip de despesas do TSE já baixado (pula o download) |
+| `--saida` | pasta de saída (padrão `out/<data>_validacao[_uf-XX]`) |
+
+**Saída:** `validacao.md` (tabela por estado ordenada pela periferia, legenda, datas e as 10 maiores linhas de periferia e de possíveis perdas por estado), `validacao.csv` (`;`, vírgula decimal, uma linha por estado) e `periferia_<UF>.csv` e `possiveis_perdas_<UF>.csv`. Com `--uf` os dois últimos trazem todas as linhas; sem `--uf`, as 50 maiores por estado. **Núcleo** é o principal cuja origem no TSE é "Despesa com Impulsionamento de Conteúdos"; **periferia** é o principal fora dela; **possíveis perdas** são linhas `nenhum` com termos de anúncio na descrição (a maioria é serviço de agência deliberadamente não contado). Nada de partido, CPF ou nome de candidato. Erros: UF inválida sai com código 2; zip inexistente ou UF ausente do zip, com 1.
+
 ## O que sai na pasta
 
 | arquivo | conteúdo |
@@ -142,7 +159,7 @@ gastos analisar --cargo Presidente
 python -m gastos.story --run out/<pasta> --uf BR --cargo Presidente --saida divulgacao/stories-presidente-brasil.html
 ```
 
-Opções: `--eleitos-zip` (padrão `data/raw/consulta_cand_2026.zip`, usado para contar candidatos e 2º turno e para os nomes com acento) e `--perfil` (texto do último card; também é editável na própria página). A pasta `divulgacao/` é ignorada pelo git: as páginas geradas citam candidatos pelo nome e não devem ser versionadas sem decisão do mantenedor. Cargos aceitos na versão por candidato: governador, presidente, senador, deputado federal/estadual/distrital.
+Opções: `--eleitos-zip` (padrão `data/raw/consulta_cand_2026.zip`, usado para contar candidatos e 2º turno e para os nomes com acento) e `--site` (endereço do site mostrado no rodapé de todos os cards e em destaque no último; só o host, padrão `radar-impulsionamento.netlify.app`, valores com `http://`, caminho ou espaços encerram com erro). A pasta `divulgacao/` é ignorada pelo git: as páginas geradas citam candidatos pelo nome e não devem ser versionadas sem decisão do mantenedor. Cargos aceitos na versão por candidato: governador, presidente, senador, deputado federal/estadual/distrital.
 
 ## Limitações
 

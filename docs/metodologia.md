@@ -56,14 +56,14 @@ Em 23/10/2026 conferiu-se, para cada recorte, quanto do principal vem de linhas 
 - Nacional: **98,5%** do principal (R$ 431,6 milhões de R$ 438,3 milhões).
 - **26 dos 28 recortes** (27 UFs mais Brasil) ficam em 95% ou mais; os menores são AC (90,4%) e RR (94,3%).
 
-Isso mostra que o núcleo é sólido, mas **não substitui** a revisão linha a linha, feita só no RN. Para repetir a checagem em um estado, some o `valor` de `evidencia_confirmado.csv` e `evidencia_generico.csv` onde a coluna `origem` é "Despesa com Impulsionamento de Conteúdos" e divida pelo `principal` do `resumo.csv`.
+Isso mostra que o núcleo é sólido, mas **não substitui** a revisão linha a linha, feita só no RN. Hoje a checagem é automática: `gastos validar` (todas as UFs mais Brasil) ou `gastos validar --uf XX` calcula o núcleo (origem "Despesa com Impulsionamento de Conteúdos"), a periferia e as possíveis perdas de cada recorte. Em dados de 22/10/2026 ele reproduz os números acima (principal R$ 438.271.144,99; periferia R$ 6,7 milhões; possíveis perdas R$ 14,6 milhões, em sua maioria serviços de agência deliberadamente não contados). O recorte BR é o de Presidente.
 
 ## Como validar um estado novo
 
 A classificação foi conferida à mão só no RN. Para outro estado:
 
-1. Rode `gastos analisar --uf XX` e abra `out/<pasta>/qualidade.md`. Faça também a [checagem automática](#validação-por-estado-checagem-automática).
-2. Em cada nível, olhe as 10 maiores linhas e confira se são mesmo anúncios em plataforma. Olhe também as 10 maiores linhas de `nenhum`, para achar o que ficou de fora.
+1. Rode `gastos validar --uf XX` e abra `out/<data>_validacao_uf-XX/validacao.md` (a [checagem automática](#validação-por-estado-checagem-automática)). Se o núcleo ficar abaixo de 95%, ou a periferia ou as possíveis perdas forem grandes, siga os passos abaixo. Rode também `gastos analisar --uf XX` para ter `qualidade.md` e as evidências.
+2. Em `validacao.md` e `periferia_XX.csv`, confira se as maiores linhas da periferia são mesmo anúncios em plataforma (e não taxa de agência ou jingle). Em `possiveis_perdas_XX.csv`, veja o que ficou de fora: quase tudo é serviço de agência de propósito, mas um anúncio direto numa plataforma seria erro de regra.
 3. Para um achado, abra `evidencia_confirmado.csv` ou `evidencia_generico.csv` e agrupe por fornecedor e por descrição.
 4. Se for erro de regra, proponha a mudança em `config/plataformas.yaml` **com as linhas de exemplo e os valores** (veja o [CONTRIBUTING](../CONTRIBUTING.md)). Se for ruído isolado, só registre.
 5. Confira o efeito: rode de novo e compare o total antes e depois.
