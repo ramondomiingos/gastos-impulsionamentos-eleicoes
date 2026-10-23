@@ -22,7 +22,7 @@
    "pago": 10053243.64,
    "pago_publico": 8479637.84,
    "pct_publico": 0.843473,
-   "cobertura_pago": 1.028105,
+   "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
@@ -122,7 +122,7 @@
    "pago": 1435800.0,
    "pago_publico": 1405000.0,
    "pct_publico": 0.978549,
-   "cobertura_pago": 1.055115,
+   "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
@@ -311,7 +311,7 @@
    "pago": 4992094.11,
    "pago_publico": 4381060.64,
    "pct_publico": 0.8776,
-   "cobertura_pago": 1.054668,
+   "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,

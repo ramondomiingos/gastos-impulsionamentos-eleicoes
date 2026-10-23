@@ -200,7 +200,7 @@
    "pago": 5728110.0,
    "pago_publico": 5550880.0,
    "pct_publico": 0.96906,
-   "cobertura_pago": 1.05043,
+   "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
