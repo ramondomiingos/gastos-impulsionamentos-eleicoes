@@ -3,33 +3,106 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gastos com impulsionamento nas eleições</title>
-<style>
-  :root { --bg: #f6f8fb; --ink: #1d2733; --muted: #5a6b7d; --accent: #b36b00; --card: #ffffff; --line: #d9e0e8; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0f1b2d; --ink: #f1f4f8; --muted: #a9b9cb; --accent: #ffb703; --card: #16263d; --line: #2b4263; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.55; }
-  main { max-width: 640px; margin: 0 auto; padding: 48px 16px; }
-  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 12px; }
-  p { margin: 0 0 14px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-top: 24px; }
-  .tag { display: inline-block; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
-  a { color: var(--accent); }
-  small { color: var(--muted); }
-</style>
+<title>Radar do Impulsionamento</title>
+<meta name="description" content="Quanto as campanhas gastam com anúncios em plataformas estrangeiras, e por que um teto faz sentido. Dados abertos do TSE, por estado e cargo.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <span class="tag">Em construção</span>
-  <h1>Quanto as campanhas gastam com anúncios em plataformas estrangeiras?</h1>
-  <p>Esta página vai permitir filtrar por estado e cargo e gerar imagens para compartilhar, a partir dos dados abertos do TSE.</p>
-  <div class="card">
-    <p><strong>Enquanto isso:</strong> o projeto é aberto e você pode acompanhar ou ajudar no repositório.</p>
-    <p><a href="https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes">github.com/ramondomiingos/gastos-impulsionamentos-eleicoes</a></p>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="miolo">
+    <p class="selo">Eleições 2026 · dados abertos do TSE</p>
+    <h1>Radar do Impulsionamento</h1>
+    <p class="apoio">Quanto as campanhas gastam com anúncios em plataformas estrangeiras, e por que um teto faz sentido.</p>
   </div>
-  <p style="margin-top:24px"><small>Os dados de prestação de contas do TSE são parciais e mudam até a prestação final. Impulsionamento de conteúdo é legal e declarado; este projeto mede o tamanho do gasto, não julga ninguém.</small></p>
+</header>
+
+<main id="conteudo" class="miolo">
+  <section class="filtros" aria-label="Filtros">
+    <div class="campo">
+      <label for="sel-uf">Estado</label>
+      <select id="sel-uf" disabled></select>
+    </div>
+    <div class="campo">
+      <label for="sel-cargo">Cargo</label>
+      <select id="sel-cargo" disabled></select>
+    </div>
+  </section>
+
+  <div id="status" class="status" role="status" aria-live="polite">Carregando os dados…</div>
+  <div id="erro" class="erro" role="alert" hidden>
+    <p id="erro-msg"></p>
+    <button type="button" id="btn-tentar" class="btn">Tentar de novo</button>
+  </div>
+
+  <div id="painel" hidden>
+    <section id="resumo" class="bloco" aria-labelledby="h-resumo">
+      <h2 id="h-resumo">Resumo</h2>
+      <p id="resumo-titulo" class="recorte"></p>
+      <p class="grande" id="resumo-valor"></p>
+      <p id="resumo-legenda" class="legenda"></p>
+      <ul class="fatos" id="resumo-fatos"></ul>
+      <p id="resumo-vazio" class="aviso" hidden></p>
+      <p class="aviso" id="resumo-datas"></p>
+      <p class="aviso" id="resumo-parcial"></p>
+    </section>
+
+    <section id="importa" class="bloco" aria-labelledby="h-importa">
+      <h2 id="h-importa">Por que isso importa</h2>
+      <p id="importa-texto"></p>
+    </section>
+
+    <section id="maiores" class="bloco" aria-labelledby="h-maiores">
+      <h2 id="h-maiores">Maiores valores declarados</h2>
+      <p id="maiores-sub" class="legenda"></p>
+      <p id="maiores-vazio" class="aviso" hidden></p>
+      <ol id="maiores-lista" class="lista-top"></ol>
+      <p class="aviso">O valor inclui impulsionamento sem plataforma citada na nota; o confirmado é o piso. Esta é uma lista de valores declarados, não de irregularidades. Para conferir a prestação de contas, abra o <a href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener noreferrer">portal de consulta do TSE</a> e busque pelo nome.</p>
+    </section>
+
+    <section id="cards" class="bloco" aria-labelledby="h-cards">
+      <h2 id="h-cards">Cards para compartilhar</h2>
+      <p class="legenda">Cinco cards no formato de story (1080×1920), com os números do recorte escolhido. Os mesmos números estão no resumo acima.</p>
+      <div class="acoes-gerais">
+        <button type="button" id="btn-todos" class="btn btn-forte">Baixar todos</button>
+        <div class="campo campo-perfil">
+          <label for="perfil">Seu perfil, para o último card</label>
+          <input id="perfil" type="text" maxlength="40" autocomplete="off" spellcheck="false" placeholder="@seu_perfil">
+        </div>
+      </div>
+      <p id="msg-download" class="legenda" role="status" aria-live="polite"></p>
+      <div id="grade" class="grade"></div>
+    </section>
+  </div>
+
+  <section class="bloco" aria-labelledby="h-medimos">
+    <h2 id="h-medimos">Como medimos</h2>
+    <p>Lemos as despesas contratadas das campanhas nos dados abertos do TSE e separamos o gasto com anúncios em três níveis:</p>
+    <ol class="niveis">
+      <li><strong>Confirmado:</strong> o fornecedor ou a descrição nomeia a plataforma (Facebook, Instagram, Google, YouTube, X, TikTok). É o <em>piso</em>: o valor mínimo que sabemos.</li>
+      <li><strong>Impulsionamento sem plataforma citada:</strong> a despesa é de impulsionamento, mas a nota não diz onde o anúncio rodou.</li>
+      <li><strong>Provável:</strong> indícios, mas sem certeza. Nunca entra no número principal.</li>
+    </ol>
+    <p>O número principal é o confirmado mais o impulsionamento sem plataforma citada. Os tetos (5%, 10%, 20%) contam só campanhas com pelo menos R$ 50.000 de despesas contratadas, para que campanhas minúsculas não inflem a conta. Os dados são parciais e mudam a cada prestação de contas; a classificação só foi conferida à mão no Rio Grande do Norte, então trate os números dos demais estados como estimativas.</p>
+    <p>Código, regras e metodologia completa: <a href="https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes" target="_blank" rel="noopener noreferrer">repositório no GitHub</a> e <a href="https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes/blob/main/docs/metodologia.md" target="_blank" rel="noopener noreferrer">docs/metodologia.md</a>.</p>
+  </section>
+
+  <section class="bloco destaque" aria-labelledby="h-erro">
+    <h2 id="h-erro">Encontrou um erro?</h2>
+    <p>Como este site cita pessoas, queremos corrigir qualquer engano rápido. <a href="https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes/issues" target="_blank" rel="noopener noreferrer">Abra uma issue no repositório</a> contando o que viu.</p>
+  </section>
 </main>
+
+<footer class="rodape">
+  <div class="miolo">
+    <p>Fonte: TSE, dados abertos de prestação de contas (<a href="https://dadosabertos.tse.jus.br/" target="_blank" rel="noopener noreferrer">dadosabertos.tse.jus.br</a>). Os números são parciais e estimativas.</p>
+    <p>Impulsionamento é legal e declarado; este projeto mede o tamanho do gasto, não julga ninguém.</p>
+    <p>Esta página não usa cookies, rastreadores nem serviços externos.</p>
+  </div>
+</footer>
+
+<script src="vendor/html2canvas.min.js"></script>
+<script src="lib.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
