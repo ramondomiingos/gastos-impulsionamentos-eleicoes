@@ -45,13 +45,15 @@ def test_pct_nucleo_zero_sem_principal():
 
 @pytest.mark.parametrize("texto", [
     "Impulsionamento de posts", "IMPULSIONAR conteúdo", "Anúncios no Instagram", "Meta Ads", "FACEBOOK",
-    "Google Ads", "TikTok", "Tráfego Pago", "anuncio", "serviço de impulsão",
+    "Google Ads", "TikTok", "Tráfego Pago", "anuncio", "Impulsionados", "campanha impulsionada",
+    "impulsiona posts",
 ])
 def test_perdas_casam(texto):
     assert validar.casa_perda(texto)
 
 
-@pytest.mark.parametrize("texto", ["metodo", "Metalúrgica", "Material gráfico", "anunciante", "googles", "", None])
+@pytest.mark.parametrize("texto", ["metodo", "Metalúrgica", "Material gráfico", "anunciante", "googles", "", None,
+                                   "impulso", "impulsos de venda", "Impulso Digital"])
 def test_perdas_nao_casam(texto):
     assert not validar.casa_perda(texto)
 
@@ -202,3 +204,86 @@ def test_todas_ufs_limita_50_linhas(tmp_path):
     assert cli.main(["validar", "--zip", str(p), "--saida", str(tmp_path / "s")]) == 0
     per = _ler(tmp_path / "s" / "periferia_RN.csv")
     assert len(per) == 50 and per["valor"].iloc[0] == 60.0
+
+
+# ---------- fix round 1 ----------
+
+def _res(geracao, prestacao):
+    r = validar.analisar_recorte(_df([("RN", "F", "d", ORIGEM_IMP, 1.0, "generico")]), "RN")
+    r["datas"] = {"geracao": geracao, "prestacao": prestacao}
+    return r
+
+
+def test_datas_ordem_cronologica():
+    assert validar.datas_ordenadas(["22/10/2026", "05/11/2026", "01/01/2026", "31/12/2025"]) == [
+        "31/12/2025", "01/01/2026", "22/10/2026", "05/11/2026"]
+    assert validar.datas_ordenadas(["", None, "lixo", "31/02/2026", "01/01/2026"]) == ["01/01/2026"]
+
+
+def test_md_datas_cronologicas():
+    res = [_res("22/10/2026", "22/10/2026"), _res("05/11/2026", "05/11/2026"), _res("31/12/2025", "31/12/2025"),
+           _res("01/01/2026", None), _res("invalida", "")]
+    md = validar._md(res)
+    assert "gerados em 31/12/2025, 01/01/2026, 22/10/2026, 05/11/2026" in md
+    assert "última prestação de contas: 05/11/2026" in md
+
+
+def test_md_sem_datas_validas():
+    md = validar._md([_res(None, "xx")])
+    assert "data desconhecida" in md and "desconhecida." in md
+
+
+def test_top_desempata_por_nivel_e_aceita_nan():
+    df = _df([("RN", "F", "d", ORIGEM_OUTRA, 5.0, "generico"), ("RN", "F", "d", ORIGEM_OUTRA, 5.0, "confirmado")])
+    a = validar._top(df)
+    b = validar._top(df.iloc[::-1])
+    assert list(a["nivel"]) == list(b["nivel"]) == ["confirmado", "generico"]
+    df.loc[0, "valor"] = float("nan")
+    assert len(validar._top(df)) == 2
+
+
+def test_csv_neutraliza_formula(tmp_path):
+    linhas = pd.DataFrame({
+        "fornecedor": ["=CMD()", "  +x", "@a", "-1", "\tTAB", "\rCR", "normal"],
+        "descricao": ["ok"] * 7, "origem": ["=1+1"] + ["o"] * 6, "valor": [1.0] * 7, "nivel": ["generico"] * 7})
+    r = validar.analisar_recorte(_df([("RN", "F", "d", ORIGEM_IMP, 1.0, "generico")]), "RN")
+    r["linhas_periferia"] = linhas
+    validar.escrever([r], tmp_path, completo=True)
+    got = pd.read_csv(tmp_path / "periferia_RN.csv", sep=";", decimal=",", encoding="utf-8-sig", dtype=str,
+                      keep_default_na=False)
+    assert got["fornecedor"][0] == "'=CMD()" and got["fornecedor"][2] == "'@a" and got["fornecedor"][3] == "'-1"
+    assert got["fornecedor"][1].startswith("'") and got["fornecedor"][4].startswith("'")
+    assert got["fornecedor"][5].startswith("'") and got["fornecedor"][6] == "normal"
+    assert got["origem"][0] == "'=1+1"
+
+
+def test_nao_cria_arquivo_com_uf_estranha(tmp_path):
+    r = validar.analisar_recorte(_df([("../X", "F", "d", ORIGEM_OUTRA, 1.0, "generico")]), "../X")
+    ok = validar.analisar_recorte(_df([("RN", "F", "d", ORIGEM_OUTRA, 1.0, "generico")]), "RN")
+    validar.escrever([r, ok], tmp_path / "s", completo=True)
+    nomes = {p.name for p in (tmp_path / "s").iterdir()}
+    assert nomes == {"validacao.md", "validacao.csv", "periferia_RN.csv", "possiveis_perdas_RN.csv"}
+    assert not (tmp_path / "X").exists()
+
+
+def test_cli_saida_nao_gravavel_sai_1(zip_v, tmp_path, capsys):
+    arq = tmp_path / "arquivo"
+    arq.write_text("x")
+    assert cli.main(["validar", "--uf", "RN", "--zip", str(zip_v), "--saida", str(arq / "sub")]) == 1
+    assert "saida" in capsys.readouterr().err.lower()
+
+
+def test_cli_uf_br(zip_v, tmp_path):
+    saida = tmp_path / "s"
+    assert cli.main(["validar", "--uf", "br", "--zip", str(zip_v), "--saida", str(saida)]) == 0
+    v = _ler(saida / "validacao.csv")
+    assert list(v["uf"]) == ["BR"] and v.loc[0, "principal"] == 500.0
+    assert (saida / "periferia_BR.csv").exists()
+
+
+def test_cli_todas_ufs_carrega_uma_vez(zip_v, tmp_path, monkeypatch):
+    chamadas = []
+    real = cli.load_despesas
+    monkeypatch.setattr(cli, "load_despesas", lambda p, uf=None: (chamadas.append(uf), real(p, uf))[1])
+    assert cli.main(["validar", "--zip", str(zip_v), "--saida", str(tmp_path / "s")]) == 0
+    assert chamadas == [None]

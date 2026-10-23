@@ -25,7 +25,7 @@ COLUNAS_LINHA = ["fornecedor", "descricao", "origem", "valor", "nivel"]
 _B = r"(?<![a-z0-9])"
 _F = r"(?![a-z0-9])"
 PADRAO_PERDAS = re.compile(
-    _B + r"(?:impuls[a-z0-9]*|meta ads|facebook|instagram|google ads|tiktok|trafego pago|anuncios?)" + _F
+    _B + r"(?:impulsionamentos?|impulsionar(?:em)?|impulsiona(?:m)?|impulsionad[oa]s?|impulsionou|impulsione|meta ads|facebook|instagram|google ads|tiktok|trafego pago|anuncios?)" + _F
 )
 
 
@@ -37,10 +37,29 @@ def _top(df: pd.DataFrame) -> pd.DataFrame:
     """Maiores valores primeiro; empate decidido por texto, independente da ordem de entrada."""
     cols = COLUNAS_LINHA
     base = df[cols].copy()
-    chave = base.assign(_v=-base["valor"], _f=base["fornecedor"].astype(str), _d=base["descricao"].astype(str),
-                        _o=base["origem"].astype(str))
-    ordem = chave.sort_values(["_v", "_f", "_d", "_o"], kind="mergesort").index
+    chave = base.assign(_v=-pd.to_numeric(base["valor"], errors="coerce").fillna(0.0),
+                        _f=base["fornecedor"].astype(str), _d=base["descricao"].astype(str),
+                        _o=base["origem"].astype(str), _n=base["nivel"].astype(str))
+    ordem = chave.sort_values(["_v", "_f", "_d", "_o", "_n"], kind="mergesort").index
     return base.loc[ordem].reset_index(drop=True)
+
+
+def datas_ordenadas(datas) -> list[str]:
+    """Datas dd/mm/aaaa validas e distintas, em ordem cronologica (invalidas e vazias sao ignoradas)."""
+    vistas = {}
+    for d in datas:
+        t = pd.to_datetime(d, format="%d/%m/%Y", errors="coerce") if isinstance(d, str) else pd.NaT
+        if not pd.isna(t):
+            vistas[t] = t.strftime("%d/%m/%Y")
+    return [vistas[t] for t in sorted(vistas)]
+
+
+def _seguro(v):
+    """Neutraliza injecao de formula em planilha: texto livre que comeca com = + - @ (ou tab/CR) ganha aspa."""
+    t = str(v)
+    if t[:1] in ("\t", "\r") or t.strip()[:1] in ("=", "+", "-", "@"):
+        return "'" + t
+    return t
 
 
 def analisar_recorte(df: pd.DataFrame, uf: str) -> dict:
@@ -93,8 +112,8 @@ def _md(res: list[dict]) -> str:
         "possíveis perdas": [r["possiveis_perdas"] for r in ordem],
     })
     fmt = {"principal": _brl, "núcleo %": _pct, "periferia": _brl, "possíveis perdas": _brl}
-    geracao = sorted({r["datas"]["geracao"] for r in res if r["datas"]["geracao"]})
-    prestacao = sorted({r["datas"]["prestacao"] for r in res if r["datas"]["prestacao"]})
+    geracao = datas_ordenadas(r["datas"]["geracao"] for r in res)
+    prestacao = datas_ordenadas(r["datas"]["prestacao"] for r in res)
     tot = sum(r["principal"] for r in res)
     nuc = sum(r["nucleo"] for r in res)
     per = sum(r["periferia"] for r in res)
@@ -143,7 +162,12 @@ def escrever(res: list[dict], pasta: Path, completo: bool) -> Path:
     cols = ["uf", "principal", "nucleo", "pct_nucleo", "periferia", "possiveis_perdas"]
     pd.DataFrame([{c: r[c] for c in cols} for r in res]).to_csv(pasta / "validacao.csv", **CSV)
     for r in res:
+        if not re.fullmatch(r"[A-Z]{2}", str(r["uf"])):
+            continue  # nunca monta nome de arquivo com UF fora do padrao
         for prefixo, chave in (("periferia", "linhas_periferia"), ("possiveis_perdas", "linhas_perdas")):
             linhas = r[chave] if completo else r[chave].head(TOP_ARQUIVO_TODAS)
+            linhas = linhas.copy()
+            for c in ("fornecedor", "descricao", "origem"):
+                linhas[c] = linhas[c].map(_seguro)
             linhas.to_csv(pasta / f"{prefixo}_{r['uf']}.csv", **CSV)
     return pasta

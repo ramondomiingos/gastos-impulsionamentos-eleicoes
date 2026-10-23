@@ -206,7 +206,10 @@ def _validar(args) -> int:
     df = classify(df, load_rules())
     res = validar_recortes(df, ufs)
     pasta = Path(args.saida) if args.saida else Path("out") / nome_pasta(uf)
-    escrever(res, pasta, completo=uf is not None)
+    try:
+        escrever(res, pasta, completo=uf is not None)
+    except OSError as e:
+        raise _Erro(f"nao foi possivel gravar em --saida {pasta}: {e}", 1)
     print(f"Validacao gravada em {pasta}")
     return 0
 
