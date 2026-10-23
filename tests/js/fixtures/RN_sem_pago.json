@@ -1,0 +1,299 @@
+{
+ "uf": "RN",
+ "nome": "Rio Grande do Norte",
+ "artigo": "do",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "21/10/2026",
+ "segundo_turno": 2,
+ "n_candidatos_total": 289,
+ "recortes": {
+  "todos": {
+   "rotulo": "Todos os cargos",
+   "cargo": null,
+   "total": 92640157.08,
+   "principal": 4240709.51,
+   "confirmado": 2930448.25,
+   "generico": 1310261.26,
+   "provavel": 503.74,
+   "proporcao": 0.045776,
+   "n_candidatos": 244,
+   "n_gastaram": 116,
+   "n_elegiveis": 116,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 38,
+     "pct_acima": 0.327586,
+     "excedente": 1659815.54
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 19,
+     "pct_acima": 0.163793,
+     "excedente": 658469.07
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 7,
+     "pct_acima": 0.060345,
+     "excedente": 261068.34
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 5,
+     "pct_acima": 0.043103,
+     "excedente": 91917.1
+    }
+   ],
+   "top": [
+    {
+     "sq": "200002533841",
+     "nome": "Samanda Alves de Freitas",
+     "cargo": "Senador",
+     "uf": "RN",
+     "principal": 440000.0,
+     "confirmado": 440000.0,
+     "total": 3854032.5,
+     "proporcao": 0.114166,
+     "pequena": false
+    },
+    {
+     "sq": "200002534001",
+     "nome": "Carlos Eduardo Xavier",
+     "cargo": "Governador",
+     "uf": "RN",
+     "principal": 363000.0,
+     "confirmado": 333000.0,
+     "total": 3033561.29,
+     "proporcao": 0.119661,
+     "pequena": false
+    },
+    {
+     "sq": "200002533843",
+     "nome": "Rafael Huete da Motta",
+     "cargo": "Senador",
+     "uf": "RN",
+     "principal": 280000.0,
+     "confirmado": 280000.0,
+     "total": 3401468.22,
+     "proporcao": 0.082317,
+     "pequena": false
+    },
+    {
+     "sq": "200002533877",
+     "nome": "Evandro Goncalves da Silva Junior",
+     "cargo": "Deputado Federal",
+     "uf": "RN",
+     "principal": 206000.0,
+     "confirmado": 0.0,
+     "total": 1125016.68,
+     "proporcao": 0.183108,
+     "pequena": false
+    },
+    {
+     "sq": "200002535507",
+     "nome": "Zenaide Maia Calado Pereira dos Santos",
+     "cargo": "Senador",
+     "uf": "RN",
+     "principal": 202000.0,
+     "confirmado": 202000.0,
+     "total": 3011178.74,
+     "proporcao": 0.067083,
+     "pequena": false
+    }
+   ]
+  },
+  "governador": {
+   "rotulo": "Governo",
+   "cargo": "Governador",
+   "total": 15532470.64,
+   "principal": 574064.22,
+   "confirmado": 423864.22,
+   "generico": 150200.0,
+   "provavel": 195.8,
+   "proporcao": 0.036959,
+   "n_candidatos": 6,
+   "n_gastaram": 5,
+   "n_elegiveis": 3,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 1,
+     "pct_acima": 0.333333,
+     "excedente": 211321.94
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.333333,
+     "excedente": 59643.87
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "200002534001",
+     "nome": "Carlos Eduardo Xavier",
+     "cargo": "Governador",
+     "uf": "RN",
+     "principal": 363000.0,
+     "confirmado": 333000.0,
+     "total": 3033561.29,
+     "proporcao": 0.119661,
+     "pequena": false
+    },
+    {
+     "sq": "200002534442",
+     "nome": "Álvaro Costa Dias",
+     "cargo": "Governador",
+     "uf": "RN",
+     "principal": 115000.0,
+     "confirmado": 0.0,
+     "total": 5624490.37,
+     "proporcao": 0.020446,
+     "pequena": false
+    },
+    {
+     "sq": "200002535255",
+     "nome": "Allyson Leandro Bezerra Silva",
+     "cargo": "Governador",
+     "uf": "RN",
+     "principal": 90664.22,
+     "confirmado": 90664.22,
+     "total": 6779770.08,
+     "proporcao": 0.013373,
+     "pequena": false
+    },
+    {
+     "sq": "200002546757",
+     "nome": "Roberio Paulino Rodrigues",
+     "cargo": "Governador",
+     "uf": "RN",
+     "principal": 5200.0,
+     "confirmado": 0.0,
+     "total": 44926.5,
+     "proporcao": 0.115745,
+     "pequena": true
+    },
+    {
+     "sq": "200002546756",
+     "nome": "Karlo Rodrigo Lucio Vieira",
+     "cargo": "Governador",
+     "uf": "RN",
+     "principal": 200.0,
+     "confirmado": 200.0,
+     "total": 26222.4,
+     "proporcao": 0.007627,
+     "pequena": true
+    }
+   ]
+  },
+  "senador": {
+   "rotulo": "Senado",
+   "cargo": "Senador",
+   "total": 14943374.44,
+   "principal": 1049840.0,
+   "confirmado": 1039800.0,
+   "generico": 10040.0,
+   "provavel": 0.0,
+   "proporcao": 0.070255,
+   "n_candidatos": 12,
+   "n_gastaram": 7,
+   "n_elegiveis": 6,
+   "tetos": [
+    {
+     "teto": 0.05,
+     "n_acima": 3,
+     "pct_acima": 0.5,
+     "excedente": 408666.03
+    },
+    {
+     "teto": 0.1,
+     "n_acima": 1,
+     "pct_acima": 0.166667,
+     "excedente": 54596.75
+    },
+    {
+     "teto": 0.15,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    },
+    {
+     "teto": 0.2,
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
+    }
+   ],
+   "top": [
+    {
+     "sq": "200002533841",
+     "nome": "Samanda Alves de Freitas",
+     "cargo": "Senador",
+     "uf": "RN",
+     "principal": 440000.0,
+     "confirmado": 440000.0,
+     "total": 3854032.5,
+     "proporcao": 0.114166,
+     "pequena": false
+    },
+    {
+     "sq": "200002533843",
+     "nome": "Rafael Huete da Motta",
+     "cargo": "Senador",
+     "uf": "RN",
+     "principal": 280000.0,
+     "confirmado": 280000.0,
+     "total": 3401468.22,
+     "proporcao": 0.082317,
+     "pequena": false
+    },
+    {
+     "sq": "200002535507",
+     "nome": "Zenaide Maia Calado Pereira dos Santos",
+     "cargo": "Senador",
+     "uf": "RN",
+     "principal": 202000.0,
+     "confirmado": 202000.0,
+     "total": 3011178.74,
+     "proporcao": 0.067083,
+     "pequena": false
+    },
+    {
+     "sq": "200002534448",
+     "nome": "Eann Styvenson Valentim Mendes",
+     "cargo": "Senador",
+     "uf": "RN",
+     "principal": 77000.0,
+     "confirmado": 77000.0,
+     "total": 2370175.6,
+     "proporcao": 0.032487,
+     "pequena": false
+    },
+    {
+     "sq": "200002534447",
+     "nome": "Helio Imbrosio Oliveira",
+     "cargo": "Senador",
+     "uf": "RN",
+     "principal": 30000.0,
+     "confirmado": 20000.0,
+     "total": 1106837.0,
+     "proporcao": 0.027104,
+     "pequena": false
+    }
+   ]
+  }
+ }
+}

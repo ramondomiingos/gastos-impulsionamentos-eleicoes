@@ -1,0 +1,47 @@
+{
+ "versao": 1,
+ "gerado_em": "2026-10-23",
+ "dt_geracao": "22/10/2026",
+ "dt_ultima_prestacao": "22/10/2026",
+ "piso_campanha": 50000,
+ "tetos": [
+  0.05,
+  0.1,
+  0.15,
+  0.2
+ ],
+ "ufs": [
+  {
+   "uf": "BR",
+   "nome": "Brasil",
+   "artigo": "do",
+   "cargos": [
+    "presidente"
+   ]
+  },
+  {
+   "uf": "DF",
+   "nome": "Distrito Federal",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-distrital"
+   ]
+  },
+  {
+   "uf": "RN",
+   "nome": "Rio Grande do Norte",
+   "artigo": "do",
+   "cargos": [
+    "todos",
+    "governador",
+    "senador",
+    "deputado-federal",
+    "deputado-estadual"
+   ]
+  }
+ ]
+}
