@@ -316,45 +316,17 @@ test("fonteEndereco: uma linha para endereços curtos e longos", () => {
   assert.ok(Lib.fonteEndereco("x".repeat(80) + ".com") >= 34);
 });
 
-test("ocultarNomes: 2º turno em curso esconde nomes de presidente, governador e todos", () => {
-  assert.equal(Lib.ocultarNomes(br, "presidente"), true);
-  assert.equal(Lib.ocultarNomes(turno2, "governador"), true);
-  assert.equal(Lib.ocultarNomes(turno2, "todos"), true);
-  assert.equal(Lib.ocultarNomes(turno2, "senador"), false);
-  assert.equal(Lib.ocultarNomes(turno2, "deputado-federal"), false);
-  assert.equal(Lib.ocultarNomes(turno2, "deputado-estadual"), false);
-  assert.equal(Lib.ocultarNomes(rn, "governador"), false); // segundo_turno 0
-  assert.equal(Lib.ocultarNomes(rn, "todos"), false);
-});
-
-test("ocultarNomes: segundo_turno ausente ou inválido mostra os nomes", () => {
-  const sem = Object.assign({}, rn); delete sem.segundo_turno;
-  assert.equal(Lib.ocultarNomes(sem, "governador"), false);
-  assert.equal(Lib.ocultarNomes({ segundo_turno: "2" }, "governador"), false);
-  assert.equal(Lib.ocultarNomes({ segundo_turno: null }, "presidente"), false);
-  assert.equal(Lib.ocultarNomes(undefined, "presidente"), false);
-});
-
-test("recorte com nomes ocultos nunca põe nome nos modelos", () => {
-  const nomes = [];
-  for (const k of ["governador", "todos"]) turno2.recortes[k].top.forEach((t) => nomes.push(t.nome));
-  for (const t of br.recortes.presidente.top) nomes.push(t.nome);
-  assert.ok(nomes.length >= 10);
-  for (const [d, k] of [[turno2, "governador"], [turno2, "todos"], [br, "presidente"]]) {
+test("nomes sempre visíveis, inclusive com 2º turno em curso (decisão do dono)", () => {
+  assert.equal(Lib.ocultarNomes, undefined);
+  assert.equal(Lib.MSG_NOMES_OCULTOS, undefined);
+  for (const [d, k] of [[turno2, "governador"], [turno2, "todos"], [turno2, "senador"], [br, "presidente"]]) {
+    assert.ok(d.segundo_turno > 0);
     const m = Lib.modeloCards(d, k, indice);
-    const j = JSON.stringify(m);
-    for (const n of nomes) assert.equal(j.includes(n), false, n);
-    assert.equal(m.cards[2].oculto, true);
-    assert.equal(m.cards[2].vazio, true);
-    assert.equal(m.cards[2].linhas.length, 0);
-    assert.equal(m.cards[2].textoVazio, Lib.MSG_NOMES_OCULTOS);
+    const nomes = d.recortes[k].top.map((x) => x.nome);
+    assert.equal(nomes.length, 5);
+    assert.deepEqual(m.cards[2].linhas.map((l) => l.nome), nomes);
+    assert.equal(m.cards[2].vazio, false);
   }
-  assert.match(Lib.MSG_NOMES_OCULTOS, /2º turno ficam ocultos até o fim da votação \(25\/10\/2026\)/);
-  assert.match(Lib.MSG_NOMES_OCULTOS, /números agregados deste recorte continuam disponíveis/);
-  // senador no mesmo estado segue com nomes
-  const s = Lib.modeloCards(turno2, "senador", indice);
-  assert.equal(s.cards[2].oculto, false);
-  assert.equal(s.cards[2].linhas.length, 5);
 });
 
 test("formatarData", () => {

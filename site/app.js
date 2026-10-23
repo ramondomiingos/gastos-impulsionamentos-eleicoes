@@ -167,7 +167,7 @@
     $("painel").hidden = false;
     renderResumo(dados, r);
     renderImporta(r);
-    renderMaiores(r, Lib.ocultarNomes(dados, atual.cargo));
+    renderMaiores(r);
     renderCards();
   }
 
@@ -217,17 +217,16 @@
     });
   }
 
-  function renderMaiores(r, oculto) {
+  function renderMaiores(r) {
     var lista = $("maiores-lista");
     limpar(lista);
-    var top = !oculto && r && Array.isArray(r.top) ? r.top : [];
+    var top = r && Array.isArray(r.top) ? r.top : [];
     var vazio = $("maiores-vazio");
     $("maiores-sub").textContent = top.length
       ? "Até 5 candidaturas com maior valor declarado em plataformas neste recorte, em ordem de valor."
       : "";
     vazio.hidden = top.length > 0;
-    $("maiores-aviso").hidden = !!oculto;
-    vazio.textContent = oculto ? Lib.MSG_NOMES_OCULTOS : "Nenhuma campanha deste recorte declarou impulsionamento em plataformas até agora.";
+    vazio.textContent = "Nenhuma campanha deste recorte declarou impulsionamento em plataformas até agora.";
     top.forEach(function (t) {
       var li = el("li");
       var nome = el("span", "nome", t.nome);
