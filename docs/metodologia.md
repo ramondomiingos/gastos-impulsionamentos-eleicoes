@@ -56,7 +56,7 @@ Em 23/10/2026 conferiu-se, para cada recorte, quanto do principal vem de linhas 
 - Nacional: **98,5%** do principal (R$ 431,6 milhões de R$ 438,3 milhões).
 - **26 dos 28 recortes** (27 UFs mais Brasil) ficam em 95% ou mais; os menores são AC (90,4%) e RR (94,3%).
 
-Isso mostra que o núcleo é sólido, mas **não substitui** a revisão linha a linha, feita só no RN. Hoje a checagem é automática: `gastos validar` (todas as UFs mais Brasil) ou `gastos validar --uf XX` calcula o núcleo (origem "Despesa com Impulsionamento de Conteúdos"), a periferia e as possíveis perdas de cada recorte. Em dados de 22/10/2026 ele reproduz os números acima (principal R$ 438.271.144,99; periferia R$ 6,7 milhões; possíveis perdas R$ 14,6 milhões, em sua maioria serviços de agência deliberadamente não contados). O recorte BR é o de Presidente.
+Isso mostra que o núcleo é sólido, mas **não substitui** a revisão linha a linha, feita só no RN. Hoje a checagem é automática: `gastos validar` (todas as UFs mais Brasil) ou `gastos validar --uf XX` calcula o núcleo (origem "Despesa com Impulsionamento de Conteúdos"), a periferia e as possíveis perdas de cada recorte. Em dados de 22/10/2026 ele reproduz os números acima (principal R$ 438.271.144,99; periferia R$ 6,7 milhões; possíveis perdas R$ 14,6 milhões, em sua maioria serviços de agência deliberadamente não contados). O recorte BR é o de Presidente. Os CSV de linhas (`periferia_*`, `possiveis_perdas_*`) trazem texto livre das despesas (fornecedor e descrição), que pode conter nomes ou números digitados pelas campanhas: revise antes de compartilhar publicamente. As colunas nunca incluem partido, CPF, CNPJ nem nome de candidato.
 
 ## Como validar um estado novo
 
