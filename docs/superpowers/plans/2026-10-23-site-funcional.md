@@ -59,7 +59,25 @@
 
 ---
 
-### Task 2: página do site
+### Task 2: `gastos publicar` com a parcela paga com fundos públicos
+
+**Arquivos:** alterar `src/gastos/publicar.py`, `src/gastos/loader.py` (leitura do arquivo de despesas pagas, em função própria), `tests/test_publicar.py`; fixtures em `tests/` conforme preciso.
+
+**Contrato:** campos `pago`, `pago_publico`, `pct_publico` e `cobertura_pago` em cada `Recorte`, como no desenho (seção "Fonte do dinheiro"). Fontes públicas: exatamente "Fundo Especial de Financiamento de Campanha" e "Fundo Partidário" (`DS_FONTE_DESPESA`); o resto ("Outros Recursos") não é público. Arquivo: `despesas_pagas_candidatos_2026_BRASIL.csv` dentro do mesmo zip (cerca de 317 MB; ler em fluxo, só as colunas `SQ_DESPESA`, `DS_FONTE_DESPESA` e `VR_PAGTO_DESPESA`, com o mesmo tratamento de bytes nulos, encoding latin-1 e vírgula decimal do loader).
+
+**Regra de alocação:** para cada `SQ_DESPESA`, o valor pago por fonte é repartido entre as linhas contratadas do mesmo `SQ_DESPESA` proporcionalmente ao valor contratado de cada linha; só entra em `pago` a fração que cabe às linhas de nível `confirmado` ou `generico`. A UF e o cargo de cada pagamento vêm da linha contratada correspondente. Pagamento sem linha contratada correspondente é ignorado (e contado em um aviso no resultado de `publicar`, não no JSON).
+
+**Testes:** `test_pago_publico_allocates_by_fonte` (fixture com FEFC, Fundo Partidário e Outros Recursos); `test_pago_split_proportionally_when_sq_has_non_ad_items`; `test_pct_publico_zero_when_nothing_paid`; `test_cobertura_pago_is_pago_over_principal`; `test_unmatched_payments_ignored`; `test_publicar_fields_present_in_every_recorte`.
+
+**Itens do review da Task 1 (fazer junto):** (a) `test_json_has_no_party_field_anywhere` deve reprovar qualquer chave que contenha "partido" (sem diferenciar maiúsculas) e qualquer valor/texto bruto que contenha a sigla de partido da fixture (`SG_PARTIDO`); (b) `recortes["todos"]` só é criado se a UF tiver linhas em `CARGOS_SITE`; (c) `json.dumps(..., allow_nan=False)` ao gravar; (d) testes para UF sem despesa declarada e para candidato fora do arquivo de candidatos no fluxo completo de `publicar`.
+
+- [ ] Testes primeiro (falham), implementar, suíte inteira verde.
+- [ ] Regerar `site/data/` com os dados reais e conferir: para `RN.todos`, `pago` ≈ R$ 4.075.106,55 e `pct_publico` ≈ 0,793 (medição ad hoc de 22/10/2026, que usou ligação direta por `SQ_DESPESA`; pequena diferença é esperada por causa da repartição proporcional, relate e explique). Relatar também `pct_publico` e `cobertura_pago` de Brasil/Presidente, de PB e de SP, e quaisquer recortes com `cobertura_pago` muito baixa.
+- [ ] Commits separados: código/testes e, depois, `site/data/`.
+
+---
+
+### Task 3: página do site
 
 **Arquivos:** criar `site/lib.js`, `site/app.js`, `site/style.css`, `site/vendor/html2canvas.min.js` (1.4.1) com `site/vendor/LEIAME.md` (origem, versão, licença MIT, SHA-256), `tests/js/lib.test.js`; alterar `site/index.html`, `.github/workflows/tests.yml` (passo `node --test tests/js`).
 
@@ -75,7 +93,7 @@
 
 ---
 
-### Task 3: documentação e fechamento
+### Task 4: documentação e fechamento
 
 **Arquivos:** alterar `docs/site-e-publicacao.md`, `docs/uso.md` (`gastos publicar`), `docs/como-funciona.md` (módulo `publicar`), `README.md`, `CONTRIBUTING.md` (tarefas), `site/index.html` (se algum texto ficar desatualizado).
 

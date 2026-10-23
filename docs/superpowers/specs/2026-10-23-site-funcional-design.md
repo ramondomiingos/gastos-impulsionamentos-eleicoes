@@ -28,6 +28,7 @@ Um site público e estático (Netlify, endereço atual `https://gastos-eleicoes.
 ## Decisões (minhas; o mantenedor pode mudar)
 
 - **Nomes só dos 5 maiores por recorte**, a pedido do mantenedor. Ranking pelo **valor absoluto** em plataformas (`principal`), desempate por maior total da campanha e depois por `sq_candidato`. Nome como no cadastro do TSE (`NM_CANDIDATO`), em caixa de título, sem partido.
+- **"Dinheiro público" só com número:** a página só afirma que o dinheiro é público citando `pct_publico` do recorte (por exemplo "79% do valor pago veio de fundos públicos"), com a ressalva de que é sobre o valor já pago. A frase sobre retorno para o país é a **posição dos autores** e aparece marcada como tal. Nos e-mails e nos stories a regra anterior (sem "dinheiro público") continua até decisão do mantenedor.
 - **Linguagem neutra:** a lista se chama "Maiores valores declarados"; nunca "piores" ou "gastadores". Cada nome vem com o `confirmado` (piso) e a proporção sobre o total da campanha, para o leitor ver o tamanho relativo, e com a marca "campanha pequena" quando o total é menor que `piso_campanha`.
 - **Canal de correção:** a página tem um aviso "Encontrou um erro? Abra uma issue no repositório" com o link, porque o site cita pessoas.
 - **Tetos contados só entre campanhas com pelo menos R$ 50.000** de despesas contratadas (`piso_campanha`). Sem isso, campanhas minúsculas que gastaram quase tudo em anúncio (100%) entram em todos os tetos e inflam a contagem. O site diz isso explicitamente.
@@ -81,6 +82,8 @@ Arquivos em `site/data/`: `index.json` e um `<UF>.json` por estado, mais `BR.jso
   "proporcao": 0.0947,
   "n_candidatos": 3,           "n_gastaram": 3,
   "n_elegiveis": 3,
+  "pago": 4075106.55,          "pago_publico": 3232314.46,
+  "pct_publico": 0.7932,       "cobertura_pago": 0.961,
   "tetos": [{"teto": 0.05, "n_acima": 3, "pct_acima": 1.0, "excedente": 123.45}],
   "top": [
     {"sq": "200002534001", "nome": "Carlos Eduardo Xavier", "cargo": "Governador", "uf": "RN",
@@ -89,6 +92,7 @@ Arquivos em `site/data/`: `index.json` e um `<UF>.json` por estado, mais `BR.jso
 }
 ```
 
+- **Fonte do dinheiro** (a partir do arquivo de despesas **pagas**): `pago` = valor já pago das despesas que compõem `principal`; `pago_publico` = parte paga com o Fundo Especial de Financiamento de Campanha ou o Fundo Partidário (`DS_FONTE_DESPESA`); `pct_publico = pago_publico / pago` (0 se `pago` for 0); `cobertura_pago = pago / principal` (quanto do contratado já foi pago). A ligação é por `SQ_DESPESA`: como o mesmo `SQ_DESPESA` pode reunir itens que não são impulsionamento, o valor pago de cada `SQ_DESPESA` é repartido proporcionalmente ao valor contratado dos itens que entram em `principal`. É uma medida do que já foi **pago**, não do contratado.
 - `n_candidatos`: candidatos com despesa declarada (total > 0). `n_gastaram`: com `principal > 0`. `n_elegiveis`: com total >= `piso_campanha` (base dos `tetos`).
 - `tetos[].pct_acima` é fração de `n_elegiveis`; `excedente` = soma de `principal - teto × total` só dos que passam do teto.
 - Chaves de cargo (slug): `presidente`, `governador`, `senador`, `deputado-federal`, `deputado-estadual`, `deputado-distrital`. Só aparecem os cargos de `CARGOS_SITE` que existem no recorte. **`BR.json` tem somente o recorte `presidente`** (sem `todos`). Os arquivos de estado têm `todos` (todos os cargos de `CARGOS_SITE` no estado) mais cada cargo existente; a candidatura a Presidente não entra nos estados.
