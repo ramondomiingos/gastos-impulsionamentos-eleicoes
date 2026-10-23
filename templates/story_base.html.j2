@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stories: {{ titulo }}</title>
+<style>
+  :root {
+    --bg: #0f1b2d; --bg2: #16263d; --ink: #f5f7fa; --ink2: #b8c7d9; --muted: #8da2b8;
+    --accent: #ffb703; --bar-track: #223653; --page: #e9edf2; --page-ink: #1d2733;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--page); color: var(--page-ink); font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 24px 16px 56px; }
+  header.page { max-width: 1200px; margin: 0 auto 24px; }
+  header.page h1 { font-size: 1.25rem; margin-bottom: 6px; }
+  header.page p { font-size: .95rem; line-height: 1.5; max-width: 70ch; }
+  .grid { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+  .slot { width: 360px; }
+  .preview { width: 360px; height: 640px; overflow: hidden; border-radius: 16px; box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+  /* cada card tem 1080x1920 (formato de story) e é exibido a 1/3 do tamanho */
+  .card { width: 1080px; height: 1920px; transform: scale(.3333); transform-origin: top left;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%); color: var(--ink);
+    padding: 215px 88px 190px; /* margens de segurança: o Instagram cobre topo e rodapé do story */
+    display: flex; flex-direction: column; position: relative; }
+  .kicker { font-size: 38px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  h2 { font-size: 88px; line-height: 1.08; font-weight: 800; margin-top: 30px; }
+  .lead { font-size: 46px; line-height: 1.35; color: var(--ink2); margin-top: 32px; }
+  .hero { font-size: 230px; line-height: 1; font-weight: 800; color: var(--accent); margin-top: 90px; letter-spacing: -.02em; white-space: nowrap; }
+  .hero small { font-size: 96px; font-weight: 700; letter-spacing: 0; }
+  .sub { font-size: 50px; line-height: 1.3; margin-top: 30px; }
+  .spacer { flex: 1; }
+  .source { font-size: 30px; line-height: 1.4; color: var(--muted); border-top: 2px solid #2b4263; padding-top: 28px; }
+  .chip { display: inline-block; font-size: 38px; background: #223653; color: var(--ink); padding: 14px 28px; border-radius: 999px; margin-top: 40px; }
+  .bars { margin-top: 34px; display: flex; flex-direction: column; gap: 22px; }
+  .compact .bars { gap: 12px; margin-top: 24px; }
+  .compact .row .name, .compact .row .val { font-size: 37px; }
+  .compact .row .track { height: 20px; margin-top: 8px; }
+  .compact .row .pct { font-size: 27px; margin-top: 4px; }
+  .compact .axis-note { font-size: 27px; margin-top: 20px; }
+  .row .top { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
+  .row .name { font-size: 42px; font-weight: 700; }
+  .row .val { font-size: 42px; font-weight: 800; color: var(--accent); white-space: nowrap; }
+  .row .track { height: 28px; background: var(--bar-track); border-radius: 0 6px 6px 0; margin-top: 14px; }
+  .row .fill { height: 100%; background: var(--accent); border-radius: 0 6px 6px 0; min-width: 4px; }
+  .row .pct { font-size: 31px; color: var(--muted); margin-top: 8px; }
+  .axis-note { font-size: 31px; color: var(--muted); margin-top: 28px; line-height: 1.4; }
+  .big-list { margin-top: 44px; margin-bottom: 36px; display: flex; flex-direction: column; gap: 36px; }
+  .big-list .item { display: flex; gap: 36px; align-items: flex-start; }
+  .big-list .n { flex: 0 0 84px; height: 84px; border-radius: 50%; background: var(--accent); color: #1a1a1a; font-size: 56px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+  .big-list .t { font-size: 46px; line-height: 1.3; }
+  .big-list .t b { color: var(--accent); }
+  .stats { margin-top: 44px; margin-bottom: 36px; display: flex; flex-direction: column; gap: 30px; }
+  .stat { display: flex; gap: 32px; align-items: center; background: #1b2f4b; border-radius: 28px; padding: 34px 40px; }
+  .stat .teto { flex: 0 0 190px; font-size: 76px; font-weight: 800; color: var(--accent); }
+  .stat .txt { font-size: 42px; line-height: 1.3; }
+  .stat .txt b { color: var(--accent); }
+  .stat .txt small { display: block; font-size: 31px; color: var(--muted); margin-top: 8px; }
+  .cta-box { margin-top: 70px; border: 4px solid var(--accent); border-radius: 36px; padding: 52px; font-size: 56px; line-height: 1.35; }
+  .cta-box .handle { display: inline-block; margin-top: 26px; font-size: 64px; font-weight: 800; color: var(--accent); outline: none; }
+  .slot .actions { display: flex; justify-content: center; margin-top: 12px; }
+  button.dl { font: inherit; font-size: .9rem; padding: 8px 16px; border-radius: 8px; border: 1px solid #9aa8b8; background: #fff; cursor: pointer; }
+  button.dl:hover { background: #f3f6f9; }
+  .tip { max-width: 1200px; margin: 28px auto 0; font-size: .9rem; line-height: 1.5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --page: #11161d; --page-ink: #e6ebf1; }
+    button.dl { background: #1b2430; color: #e6ebf1; border-color: #3a4757; }
+    button.dl:hover { background: #222d3a; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <h1>Stories: {{ titulo }}</h1>
+  <p>Quatro cards no formato de story (1080×1920). Clique em “Baixar PNG” em cada um, ou tire print. No último card, clique no perfil para escrever o seu antes de baixar.</p>
+</header>
+
+<main class="grid">{% block cards %}{% endblock %}</main>
+
+<p class="tip">Dica: “Baixar PNG” gera a imagem em 1080×1920. Se o botão não funcionar no seu navegador, aumente o zoom para 100% e tire print do card.</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+  document.querySelectorAll("button.dl").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var card = document.getElementById(btn.dataset.target);
+      if (typeof html2canvas === "undefined") { alert("Não consegui carregar o gerador de imagem. Use o print de tela."); return; }
+      var prev = card.style.transform;
+      card.style.transform = "none";
+      html2canvas(card, { width: 1080, height: 1920, scale: 1, backgroundColor: null }).then(function (canvas) {
+        card.style.transform = prev;
+        var a = document.createElement("a");
+        a.download = btn.dataset.name + ".png";
+        a.href = canvas.toDataURL("image/png");
+        a.click();
+      }).catch(function () { card.style.transform = prev; alert("Não deu para gerar a imagem. Use o print de tela."); });
+    });
+  });
+</script>
+</body>
+</html>

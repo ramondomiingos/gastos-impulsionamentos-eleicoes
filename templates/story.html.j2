@@ -1,0 +1,64 @@
+{% extends "story_base.html.j2" %}
+{% block cards %}
+
+  <div class="slot">
+    <div class="preview"><section class="card" id="c1">
+      <div class="kicker">Eleições 2026 · {{ uf_nome }}</div>
+      <h2>Quanto as campanhas {{ prep_cargo }} gastaram com anúncios em redes sociais?</h2>
+      <div class="hero">{{ hero_valor }}<small>{{ hero_unidade }}</small></div>
+      <p class="sub">em impulsionamento de conteúdo, somando as campanhas {{ prep_cargo }} {{ uf_nome_prep }} que já declararam despesas ao TSE ({{ n_declarados }} de {{ n_total }} candidatos).</p>
+      <span class="chip">Dados parciais · prestação de contas</span>
+      <div class="spacer"></div>
+      <p class="source">Fonte: TSE, dados abertos (despesas contratadas). Gerados em {{ dt_geracao }}; entregas até {{ dt_prestacao }}. {{ aviso_valores }}</p>
+    </section></div>
+    <div class="actions"><button class="dl" data-target="c1" data-name="story-1-gancho">Baixar PNG</button></div>
+  </div>
+
+  <div class="slot">
+    <div class="preview"><section class="card{% if compacto %} compact{% endif %}" id="c2">
+      <div class="kicker">Candidatos {{ prep_cargo_curto }} {{ uf_nome_prep }}</div>
+      <h2>Quem gastou quanto</h2>
+      <div class="bars">
+        {% for l in linhas %}
+        <div class="row"><div class="top"><span class="name">{{ l.nome }}</span><span class="val">{{ l.valor }}</span></div><div class="track"><div class="fill" style="width:{{ l.largura }}%"></div></div><div class="pct">{{ l.pct }}{{ l.nota }}</div></div>
+        {% endfor %}
+      </div>
+      <p class="axis-note">Barras proporcionais ao valor em R$. {{ nota_candidatos }}</p>
+      <div class="spacer"></div>
+      <p class="source">Fonte: TSE (prestação parcial, até {{ dt_prestacao }}). {{ aviso_valores }} Inclui impulsionamento sem a plataforma citada na nota.</p>
+    </section></div>
+    <div class="actions"><button class="dl" data-target="c2" data-name="story-2-grafico">Baixar PNG</button></div>
+  </div>
+
+  <div class="slot">
+    <div class="preview"><section class="card" id="c3">
+      <div class="kicker">A proposta</div>
+      <h2>E se existisse um teto percentual?</h2>
+      <p class="lead">Anúncios em redes sociais são legais e declarados. A discussão é sobre o tamanho do limite.</p>
+      <div class="big-list">
+        <div class="item"><div class="n">1</div><div class="t">Esse dinheiro vai para <b>plataformas estrangeiras</b>, que não têm uma rede nacional equivalente para esse tipo de anúncio.</div></div>
+        <div class="item"><div class="n">2</div><div class="t">Um <b>teto percentual</b> do orçamento da campanha dá previsibilidade e vale para campanhas grandes e pequenas.</div></div>
+        <div class="item"><div class="n">3</div><div class="t">Estou levantando os números <b>estado por estado</b> para apresentar a deputados e senadores.</div></div>
+      </div>
+      <div class="spacer"></div>
+      <p class="source">Opinião de quem fez este levantamento. Os números vêm de dados públicos do TSE; a proposta de teto é uma sugestão, não uma regra em vigor.</p>
+    </section></div>
+    <div class="actions"><button class="dl" data-target="c3" data-name="story-3-proposta">Baixar PNG</button></div>
+  </div>
+
+  <div class="slot">
+    <div class="preview"><section class="card" id="c4">
+      <div class="kicker">Participe</div>
+      <h2>Quer ajudar a levar isso adiante?</h2>
+      <p class="lead">Compartilhe este story, me mande a sua opinião e sugestões de números para levantar no seu estado.</p>
+      <div class="cta-box">
+        Fale comigo e acompanhe a iniciativa:<br>
+        <span class="handle" contenteditable="true" spellcheck="false">{{ perfil }}</span>
+      </div>
+      <div class="spacer"></div>
+      <p class="source">Dados: TSE, prestação de contas parcial das campanhas de 2026 (arquivo gerado em {{ dt_geracao }}). Os números são estimativas e podem mudar até a prestação final. Os dados completos estão em dadosabertos.tse.jus.br.</p>
+    </section></div>
+    <div class="actions"><button class="dl" data-target="c4" data-name="story-4-participe">Baixar PNG</button></div>
+  </div>
+
+{% endblock %}

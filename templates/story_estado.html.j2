@@ -1,0 +1,66 @@
+{% extends "story_base.html.j2" %}
+{% block cards %}
+
+  <div class="slot">
+    <div class="preview"><section class="card" id="c1">
+      <div class="kicker">Eleições 2026 · {{ uf_nome }}</div>
+      <h2>Quanto as campanhas {{ uf_nome_prep }} gastaram com anúncios em redes sociais?</h2>
+      <div class="hero">{{ hero_valor }}<small>{{ hero_unidade }}</small></div>
+      <p class="sub">em impulsionamento de conteúdo, somando todos os cargos: {{ n_declarados }} candidatos já declararam despesas ao TSE (de {{ n_total }}).</p>
+      <span class="chip">{{ prop_total }} de tudo que foi declarado · dados parciais</span>
+      <div class="spacer"></div>
+      <p class="source">Fonte: TSE, dados abertos (despesas contratadas). Gerados em {{ dt_geracao }}; entregas até {{ dt_prestacao }}. {{ aviso_valores }}</p>
+    </section></div>
+    <div class="actions"><button class="dl" data-target="c1" data-name="story-1-gancho">Baixar PNG</button></div>
+  </div>
+
+  <div class="slot">
+    <div class="preview"><section class="card" id="c2">
+      <div class="kicker">{{ uf_nome }} · por cargo</div>
+      <h2>Quem gastou quanto</h2>
+      <div class="bars">
+        {% for l in linhas %}
+        <div class="row"><div class="top"><span class="name">{{ l.rotulo }}</span><span class="val">{{ l.valor }}</span></div><div class="track"><div class="fill" style="width:{{ l.largura }}%"></div></div><div class="pct">{{ l.pct }}</div><div class="pct">{{ l.gastaram }}</div></div>
+        {% endfor %}
+      </div>
+      <p class="axis-note">Barras proporcionais ao valor em R$, somando todos os candidatos de cada cargo. Sem nomes: é o retrato do estado.</p>
+      <div class="spacer"></div>
+      <p class="source">Fonte: TSE (prestação parcial, até {{ dt_prestacao }}). {{ aviso_valores }} Inclui impulsionamento sem a plataforma citada na nota.</p>
+    </section></div>
+    <div class="actions"><button class="dl" data-target="c2" data-name="story-2-por-cargo">Baixar PNG</button></div>
+  </div>
+
+  <div class="slot">
+    <div class="preview"><section class="card" id="c3">
+      <div class="kicker">A proposta</div>
+      <h2>E se existisse um teto percentual?</h2>
+      <p class="lead">Anúncios em redes sociais são legais e declarados. A discussão é sobre o tamanho do limite. Quantas campanhas {{ uf_nome_prep }} passariam de cada teto?</p>
+      {% if tetos %}
+      <div class="stats">
+        {% for t in tetos %}
+        <div class="stat"><div class="teto">{{ t.teto }}</div><div class="txt"><b>{{ t.n_acima }} candidatos</b> acima ({{ t.pct }} dos que declararam)<small>o valor acima do teto somaria {{ t.excedente }}</small></div></div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div class="spacer"></div>
+      <p class="source">Opinião de quem fez este levantamento. Teto = % do total da própria campanha. A proposta de teto é uma sugestão, não uma regra em vigor.</p>
+    </section></div>
+    <div class="actions"><button class="dl" data-target="c3" data-name="story-3-proposta">Baixar PNG</button></div>
+  </div>
+
+  <div class="slot">
+    <div class="preview"><section class="card" id="c4">
+      <div class="kicker">Participe</div>
+      <h2>Quer ajudar a levar isso adiante?</h2>
+      <p class="lead">Compartilhe este story, me mande a sua opinião e sugestões de números para levantar no seu estado.</p>
+      <div class="cta-box">
+        Fale comigo e acompanhe a iniciativa:<br>
+        <span class="handle" contenteditable="true" spellcheck="false">{{ perfil }}</span>
+      </div>
+      <div class="spacer"></div>
+      <p class="source">Dados: TSE, prestação de contas parcial das campanhas de 2026 (arquivo gerado em {{ dt_geracao }}). Os números são estimativas e podem mudar até a prestação final. Os dados completos estão em dadosabertos.tse.jus.br.</p>
+    </section></div>
+    <div class="actions"><button class="dl" data-target="c4" data-name="story-4-participe">Baixar PNG</button></div>
+  </div>
+
+{% endblock %}
