@@ -8,7 +8,9 @@ Um site público e estático (Netlify, endereço atual `https://gastos-eleicoes.
 
 ## Objetivos
 
-1. Filtros por estado (Brasil + 27 UFs) e cargo (todos + os cargos existentes no recorte).
+1. Filtros por estado e cargo, com cargos diferentes por nível (decisão do mantenedor):
+   - **Brasil:** só **Presidente**.
+   - **Estado (27 UFs):** Senador, Deputado Estadual e Deputado Federal. Por minha conta, também **Governador** (cargo estadual que o projeto já analisa) e **Deputado Distrital** (só existe no DF, que não tem deputado estadual), além de "Todos os cargos" como visão geral do estado. A lista fica numa constante (`CARGOS_SITE`) e é fácil de reduzir.
 2. Os números e as 4 imagens refletem o recorte; a escolha vai no endereço (`#PB/governador`), para compartilhar.
 3. Mostrar sempre a **data dos dados** do TSE, o aviso de que são **parciais** e o **piso confirmado** ao lado do número principal.
 4. Atualizar os dados é regenerar arquivos JSON (`gastos publicar`) e dar push; a Netlify republica sozinha.
@@ -47,7 +49,10 @@ Arquivos em `site/data/`: `index.json` e um `<UF>.json` por estado, mais `BR.jso
   "dt_ultima_prestacao": "21/10/2026",
   "piso_campanha": 50000,
   "tetos": [0.05, 0.10, 0.15, 0.20],
-  "ufs": [{"uf": "BR", "nome": "Brasil", "artigo": "do"}, {"uf": "AC", "nome": "Acre", "artigo": "do"}]
+  "ufs": [
+    {"uf": "BR", "nome": "Brasil", "artigo": "do", "cargos": ["presidente"]},
+    {"uf": "AC", "nome": "Acre", "artigo": "do", "cargos": ["todos", "governador", "senador", "deputado-federal", "deputado-estadual"]}
+  ]
 }
 ```
 
@@ -86,13 +91,13 @@ Arquivos em `site/data/`: `index.json` e um `<UF>.json` por estado, mais `BR.jso
 
 - `n_candidatos`: candidatos com despesa declarada (total > 0). `n_gastaram`: com `principal > 0`. `n_elegiveis`: com total >= `piso_campanha` (base dos `tetos`).
 - `tetos[].pct_acima` é fração de `n_elegiveis`; `excedente` = soma de `principal - teto × total` só dos que passam do teto.
-- Chaves de cargo (slug): `governador`, `presidente`, `senador`, `deputado-federal`, `deputado-estadual`, `deputado-distrital`. Só aparecem os cargos que existem no recorte. `BR.json` cobre o país inteiro, inclusive Presidente.
+- Chaves de cargo (slug): `presidente`, `governador`, `senador`, `deputado-federal`, `deputado-estadual`, `deputado-distrital`. Só aparecem os cargos de `CARGOS_SITE` que existem no recorte. **`BR.json` tem somente o recorte `presidente`** (sem `todos`). Os arquivos de estado têm `todos` (todos os cargos de `CARGOS_SITE` no estado) mais cada cargo existente; a candidatura a Presidente não entra nos estados.
 - `segundo_turno`: candidatos do recorte ainda em "2º turno" no arquivo de candidatos do TSE (0 quando não há).
 - `top`: até 5 candidatos do recorte (com `principal > 0`), na ordem do ranking acima. Nome completo do TSE em caixa de título (com acentos, vindo do arquivo de candidatos). **Nenhum campo de partido.** `pequena` é verdadeiro quando `total < piso_campanha`. Em `todos`, o ranking é entre todos os cargos do recorte; em `BR`, entre todos os candidatos do país.
 
 ## Comportamento da página
 
-- Seletores **Estado** (Brasil primeiro) e **Cargo** (Todos + os do recorte). Ao mudar o estado, o cargo volta para "Todos" se o cargo escolhido não existir.
+- Seletores **Estado** (Brasil primeiro) e **Cargo** (os de `ufs[].cargos` do estado escolhido: no Brasil só Presidente; nos estados, "Todos os cargos" e os cargos existentes). Ao mudar o estado, o cargo volta para o primeiro da lista (Presidente no Brasil, "Todos" nos estados) se o cargo escolhido não existir.
 - Painel de resumo: número principal grande, piso confirmado, proporção sobre o total declarado, quantos candidatos já declararam, datas dos dados, aviso de dados parciais.
 - Bloco **"Maiores valores declarados"** com os 5 do recorte: nome, cargo, valor em plataformas, confirmado, total da campanha e proporção; aviso de que o valor inclui impulsionamento sem plataforma citada; link para o portal de consulta do TSE (`https://divulgacandcontas.tse.jus.br/`) com a orientação de buscar pelo nome.
 - Pré-visualização dos **5 cards** (1080×1920, exibidos a 1/3): (1) gancho com o número; (2) por cargo (quando "todos") ou confirmado versus sem plataforma citada (quando um cargo); (3) os 5 maiores valores declarados do recorte; (4) efeito dos tetos de 5%, 10% e 20%; (5) convite, com o perfil editável (guardado no navegador, se possível). Margens de segurança de story no topo e no rodapé.

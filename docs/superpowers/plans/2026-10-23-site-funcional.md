@@ -11,6 +11,7 @@
 ## Restrições globais
 
 - Os JSON seguem **exatamente** o formato do desenho; **nenhum campo de partido**; nomes só em `top` (até 5 por recorte), vindos de `NM_CANDIDATO` do arquivo de candidatos do TSE, em caixa de título.
+- Cargos do site (constante `CARGOS_SITE`): Brasil só `presidente`; estados `governador`, `senador`, `deputado-federal`, `deputado-estadual` e `deputado-distrital` (este só no DF), mais `todos`.
 - `principal = confirmado + generico`; `provavel` nunca entra no principal; todos os números saem do mesmo pipeline (`loader` → `classify` → `metrics`), sem reimplementar regras.
 - Ranking do `top`: `principal` desc, depois `total` desc, depois `sq_candidato` asc; só candidatos com `principal > 0`.
 - Tetos de 5%, 10%, 15% e 20%, contados só entre candidatos com `total >= 50000` (`piso_campanha`).
@@ -22,7 +23,7 @@
 
 ## Revisão (foco)
 
-1. Número que não bate: soma das UFs ≠ `BR`; `principal` diferente do relatório de `gastos analisar` para o mesmo recorte.
+1. Número que não bate: soma das UFs mais Presidente ≠ total nacional; `principal` diferente do relatório de `gastos analisar` para o mesmo recorte.
 2. Recorte vazio ou cargo inexistente na UF: a página não quebra e diz isso; `top` vazio mostra mensagem, não lista vazia.
 3. Nome com acento, apóstrofo, aspas ou `<`: a página escapa (nunca injeta HTML) e o PNG sai legível.
 4. Estado/cargo na URL (`#PB/governador`) inválido: volta para um recorte válido sem erro.
@@ -30,7 +31,7 @@
 
 ---
 
-### Tarefa 1: `gastos publicar` e dados reais
+### Task 1: `gastos publicar` e dados reais
 
 **Arquivos:** criar `src/gastos/publicar.py`, `tests/test_publicar.py`; alterar `src/gastos/cli.py` (subcomando `publicar`), `src/gastos/metrics.py` (ranking por valor), `src/gastos/eleitos.py` (leitura de nomes e contagens por UF, se ainda não houver).
 
@@ -48,17 +49,17 @@
 - `test_uf_has_todos_and_cargo_keys_only_for_existing_cargos`.
 - `test_json_has_no_party_field_anywhere` (varre todas as chaves, recursivamente, e falha se achar `partido`).
 - `test_names_title_case_with_accents_from_consulta_cand`.
-- `test_sum_of_ufs_equals_br_for_total_and_principal` (com a fixture de várias UFs).
+- `test_br_has_only_presidente_recorte_and_states_exclude_presidente`; `test_index_lists_cargos_per_uf` (Brasil só `presidente`; estados com `todos` e os cargos existentes; DF com `deputado-distrital` e sem `deputado-estadual`).
 - `test_publicar_writes_index_and_one_file_per_uf_deterministically` (rodar duas vezes gera arquivos idênticos).
 - `test_cli_publicar_invalid_piso_exit_2` e `test_cli_publicar_missing_zip_exit_1`.
 
 - [ ] Escrever os testes, ver falhar, implementar, ver passar; suíte inteira verde.
-- [ ] Rodar com os dados reais (`data/raw/prestacao_de_contas_eleitorais_candidatos_2026.zip` e `data/raw/consulta_cand_2026.zip`) para `site/data/`. Conferir e relatar: `BR.principal` = R$ 435.968.358,91 e `BR.total` = R$ 4.698.022.635,43 (valores da execução nacional de 22/10/2026); `RN.todos.principal` = R$ 4.240.709,51; soma dos 27 estados mais o recorte nacional de Presidente = `BR`; tamanho total dos JSON.
+- [ ] Rodar com os dados reais (`data/raw/prestacao_de_contas_eleitorais_candidatos_2026.zip` e `data/raw/consulta_cand_2026.zip`) para `site/data/`. Conferir e relatar: `RN.todos.principal` = R$ 4.240.709,51 e `RN.governador.principal` = R$ 574.064,22 (execuções de `gastos analisar` de 22/10/2026); `BR.presidente.principal` = R$ 20.425.733,00 e `.total` = R$ 187.080.180,86; a soma dos `todos.principal` dos 27 estados mais `BR.presidente.principal` = R$ 435.968.358,91 (total nacional de `gastos analisar`); tamanho total dos JSON.
 - [ ] Commit do código e, em commit separado, de `site/data/`.
 
 ---
 
-### Tarefa 2: página do site
+### Task 2: página do site
 
 **Arquivos:** criar `site/lib.js`, `site/app.js`, `site/style.css`, `site/vendor/html2canvas.min.js` (1.4.1) com `site/vendor/LEIAME.md` (origem, versão, licença MIT, SHA-256), `tests/js/lib.test.js`; alterar `site/index.html`, `.github/workflows/tests.yml` (passo `node --test tests/js`).
 
@@ -74,7 +75,7 @@
 
 ---
 
-### Tarefa 3: documentação e fechamento
+### Task 3: documentação e fechamento
 
 **Arquivos:** alterar `docs/site-e-publicacao.md`, `docs/uso.md` (`gastos publicar`), `docs/como-funciona.md` (módulo `publicar`), `README.md`, `CONTRIBUTING.md` (tarefas), `site/index.html` (se algum texto ficar desatualizado).
 
