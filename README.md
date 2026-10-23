@@ -77,4 +77,4 @@ Ajuda é muito bem-vinda, principalmente em validar a classificação em outros 
 
 ## Licença
 
-A definir pelo mantenedor (ainda não há arquivo `LICENSE`). Enquanto isso, valem os direitos autorais padrão. Os dados do TSE seguem os termos do portal de dados abertos.
+[MIT](LICENSE): qualquer pessoa pode usar, copiar, modificar e distribuir o código, inclusive para evoluir o projeto. Os dados vêm do [portal de dados abertos do TSE](https://dadosabertos.tse.jus.br) e são públicos; ao usar os números, cite a fonte e informe que são dados parciais.

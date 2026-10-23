@@ -62,4 +62,4 @@ Estas regras vêm do desenho do projeto e não mudam sem discussão aberta:
 
 ## Licença
 
-Ainda não há licença definida; ela será escolhida pelo mantenedor. Ao contribuir, você concorda que sua contribuição seja distribuída sob a licença que o projeto adotar.
+O projeto usa a licença [MIT](LICENSE). Ao contribuir, você concorda que sua contribuição seja distribuída sob essa licença.

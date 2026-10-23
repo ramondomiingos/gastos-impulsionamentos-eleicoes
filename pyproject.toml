@@ -7,6 +7,7 @@ name = "gastos"
 version = "0.1.0"
 description = "Gasto de campanha com plataformas de anuncio estrangeiras (dados abertos do TSE)"
 requires-python = ">=3.10"
+license = {text = "MIT"}
 dependencies = ["pandas", "pyyaml", "jinja2", "requests"]
 
 [project.optional-dependencies]
