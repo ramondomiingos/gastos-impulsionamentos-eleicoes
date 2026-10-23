@@ -2,7 +2,7 @@
 
 **Quanto as campanhas gastam com anúncios em plataformas estrangeiras, e por que um teto faz sentido.**
 
-Site: **<https://radar-impulsionamento.netlify.app>** (se ainda aparecer a página provisória antiga, a versão nova ainda não foi publicada).
+Site: **<https://radar-impulsionamento.netlify.app>** (no ar desde 23/10/2026).
 
 O projeto mede quanto as campanhas eleitorais brasileiras gastam com **anúncios (impulsionamento) em plataformas estrangeiras** (Meta/Facebook e Instagram, Google/YouTube, X, TikTok), com dados abertos do TSE, e deixa cada número conferível. O objetivo é embasar uma discussão: **um teto percentual** para esse tipo de gasto. O projeto mede o problema; não julga a legalidade de nenhum gasto (impulsionamento é legal e declarado).
 

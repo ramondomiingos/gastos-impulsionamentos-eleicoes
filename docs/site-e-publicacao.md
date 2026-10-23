@@ -1,6 +1,6 @@
 # Site público e publicação
 
-> **Status: funcional.** O site está em <https://radar-impulsionamento.netlify.app> (se ainda mostrar a página provisória antiga, a versão nova ainda não foi mesclada e publicada). A atualização dos dados é manual; a rotina agendada e o domínio próprio ficam para depois.
+> **Status: funcional.** O site está no ar desde 23/10/2026 em <https://radar-impulsionamento.netlify.app>. A atualização dos dados é manual; a rotina agendada e o domínio próprio ficam para depois.
 
 ## O que é
 
