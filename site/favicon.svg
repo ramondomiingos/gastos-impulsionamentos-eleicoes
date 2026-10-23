@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Farol">
+  <rect width="64" height="64" rx="14" fill="#0f1b2d"/>
+  <path d="M32 22.5 L4 11 L4 34 Z" fill="#ffb703" opacity=".7"/>
+  <path d="M32 22.5 L60 11 L60 34 Z" fill="#ffb703" opacity=".7"/>
+  <path d="M23 57 L28 27 H36 L41 57 Z" fill="#f5f7fa"/>
+  <path d="M25.6 45 H38.4 L39.4 51 H24.6 Z" fill="#ffb703"/>
+  <path d="M27 34 H37 L37.9 40 H26.1 Z" fill="#ffb703"/>
+  <rect x="27" y="19" width="10" height="8" fill="#ffd166"/>
+  <path d="M25 19 L32 11 L39 19 Z" fill="#f5f7fa"/>
+  <rect x="19" y="57" width="26" height="4" rx="2" fill="#f5f7fa"/>
+</svg>
