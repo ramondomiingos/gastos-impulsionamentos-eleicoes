@@ -19,6 +19,10 @@
    "n_candidatos": 12,
    "n_gastaram": 10,
    "n_elegiveis": 10,
+   "pago": 19665733.0,
+   "pago_publico": 9437533.0,
+   "pct_publico": 0.479897,
+   "cobertura_pago": 0.962792,
    "tetos": [
     {
      "teto": 0.05,

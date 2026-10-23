@@ -19,6 +19,10 @@
    "n_candidatos": 211,
    "n_gastaram": 69,
    "n_elegiveis": 106,
+   "pago": 936807.42,
+   "pago_publico": 731227.08,
+   "pct_publico": 0.780552,
+   "cobertura_pago": 0.765549,
    "tetos": [
     {
      "teto": 0.05,
@@ -115,6 +119,10 @@
    "n_candidatos": 5,
    "n_gastaram": 5,
    "n_elegiveis": 4,
+   "pago": 135718.8,
+   "pago_publico": 80718.8,
+   "pct_publico": 0.59475,
+   "cobertura_pago": 0.629147,
    "tetos": [
     {
      "teto": 0.05,
@@ -211,6 +219,10 @@
    "n_candidatos": 7,
    "n_gastaram": 6,
    "n_elegiveis": 5,
+   "pago": 158998.0,
+   "pago_publico": 139300.0,
+   "pct_publico": 0.876112,
+   "cobertura_pago": 0.981481,
    "tetos": [
     {
      "teto": 0.05,
@@ -307,6 +319,10 @@
    "n_candidatos": 67,
    "n_gastaram": 28,
    "n_elegiveis": 47,
+   "pago": 381214.71,
+   "pago_publico": 305574.72,
+   "pct_publico": 0.801582,
+   "cobertura_pago": 0.748633,
    "tetos": [
     {
      "teto": 0.05,
@@ -403,6 +419,10 @@
    "n_candidatos": 132,
    "n_gastaram": 30,
    "n_elegiveis": 50,
+   "pago": 260875.91,
+   "pago_publico": 205633.56,
+   "pct_publico": 0.788243,
+   "cobertura_pago": 0.774628,
    "tetos": [
     {
      "teto": 0.05,
