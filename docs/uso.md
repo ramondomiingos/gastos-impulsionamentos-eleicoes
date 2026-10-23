@@ -16,7 +16,7 @@ python3.12 -m venv .venv
 
 ## Dados
 
-O download é automático: na primeira execução o zip do TSE é salvo em `data/raw/` (cerca de 209 MB) e reaproveitado depois. Para pular o download, passe `--zip caminho.zip`. A lista de eleitos (usada só por `gastos emails`) fica em `data/raw/consulta_cand_2026.zip` e é baixada de novo quando o cache tem mais de 12 h. `data/raw/`, `data/interim/` e `out/` não vão para o git.
+O download é automático: na primeira execução o zip do TSE é salvo em `data/raw/` (cerca de 209 MB) e reaproveitado depois. Para pular o download, passe `--zip caminho.zip`. O mesmo zip traz as despesas **pagas**, usadas por `gastos publicar` para medir a fonte do dinheiro. A lista de candidatos e eleitos (`consulta_cand`, usada por `gastos emails` e `gastos publicar`) fica em `data/raw/consulta_cand_2026.zip` e é baixada de novo quando o cache tem mais de 12 h. `data/raw/`, `data/interim/` e `out/` não vão para o git.
 
 ## Rodando `gastos analisar`
 
@@ -39,6 +39,27 @@ Exemplo real do RN (dados de 22/10/2026): as duas primeiras linhas acima geram `
 | --- | --- | --- | --- |
 | RN, todos os cargos | R$ 4.240.709,51 | R$ 2.930.448,25 | 4,5% |
 | RN, Deputado Federal | R$ 1.145.454,73 | R$ 707.060,28 | 3,1% |
+
+## `gastos publicar`: JSON do site
+
+Grava os arquivos que o [site](site-e-publicacao.md) lê: o país e cada estado, por cargo. Carrega e classifica o arquivo nacional **uma vez** e fatia por estado.
+
+```bash
+gastos publicar                              # baixa o que faltar e grava em site/data/
+gastos publicar --zip data/raw/<zip> --eleitos-zip data/raw/consulta_cand_2026.zip
+gastos publicar --saida /tmp/teste --piso-campanha 100000
+```
+
+| opção | efeito |
+| --- | --- |
+| `--zip` | zip de despesas do TSE já baixado (pula o download) |
+| `--eleitos-zip` | zip `consulta_cand` já baixado (pula o download) |
+| `--saida` | pasta de saída (padrão `site/data`) |
+| `--piso-campanha` | total mínimo da campanha, em R$, para entrar na contagem dos tetos (padrão 50000) |
+
+**Saída:** `index.json` (datas, piso, tetos, lista de UFs e cargos), `BR.json` (só o recorte Presidente) e um `<UF>.json` por estado (recorte `todos` mais um por cargo: governador, senador, deputado federal, estadual e, no DF, distrital). Cada recorte tem total, principal, confirmado, genérico, provável, proporção, contagens, a **fonte do dinheiro** (`pago`, `pago_publico`, `pct_publico`, `cobertura_pago`), o efeito dos tetos e os **5 maiores valores declarados** por nome (sem partido). Formato completo no [desenho do site](superpowers/specs/2026-10-23-site-funcional-design.md#formato-dos-dados-contrato-entre-gastos-publicar-e-o-site).
+
+**Custo:** cerca de 40 s e 2 GB de RAM com os dados nacionais. **Avisos** (stderr): despesas pagas sem linha contratada correspondente (ignoradas) e fontes de despesa não reconhecidas (tratadas como não públicas). Depois de rodar, confira as datas em `site/data/index.json`, rode os testes e faça `commit` e `push`; a Netlify republica.
 
 ## O que sai na pasta
 
@@ -105,7 +126,7 @@ O script é **somente leitura** (GET na API pública, com timeout e pausa; para 
 
 ## Stories (imagens para redes sociais)
 
-Gera uma página HTML com 4 cards no formato de story (1080×1920), com botão para baixar cada um em PNG. Funciona a partir de uma pasta já gerada por `gastos analisar` e **não** faz parte do comando `gastos` (use `python -m gastos.story`):
+Gera uma página HTML com 4 cards no formato de story (1080×1920), com botão para baixar cada um em PNG. (O [site](site-e-publicacao.md) já gera 5 cards no navegador, para qualquer estado e cargo, sem rodar nada.) Funciona a partir de uma pasta já gerada por `gastos analisar` e **não** faz parte do comando `gastos` (use `python -m gastos.story`):
 
 ```bash
 # por candidato (cargo + UF): quem gastou quanto
@@ -126,6 +147,6 @@ Opções: `--eleitos-zip` (padrão `data/raw/consulta_cand_2026.zip`, usado para
 ## Limitações
 
 - Os dados são **parciais**: reúnem prestações parciais e relatórios financeiros (algumas campanhas já entregaram a prestação final). `relatorio.md` e os e-mails dizem "dados gerados pelo TSE em X; as prestações de contas mais recentes incluídas foram entregues até Y" (as duas datas também estão em `meta.json`). Os números mudam até a prestação final de todas.
-- A classificação foi validada à mão apenas no RN. Em outros estados, olhe `qualidade.md` antes de usar os números.
+- A classificação foi validada à mão, linha a linha, apenas no RN. Nos outros estados os números são estimativas (há uma [checagem automática por estado](metodologia.md#validação-por-estado-checagem-automática)); olhe `qualidade.md` antes de usar.
 - Em 22/10/2026 o arquivo de resultados do TSE não tinha totalização de alguns cargos (ex.: senadores e governador da PB; disputas de 2º turno), então esses eleitos podem faltar na lista usada pelo `emails`.
 - O CPF vem mascarado; o candidato é identificado por `SQ_CANDIDATO`.
