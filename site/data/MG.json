@@ -2,51 +2,51 @@
  "uf": "MG",
  "nome": "Minas Gerais",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "28/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 1783,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 353537146.32,
-   "principal": 30851897.66,
-   "confirmado": 24465060.58,
-   "generico": 6386837.08,
-   "provavel": 9300.05,
-   "proporcao": 0.087266,
-   "n_candidatos": 1181,
-   "n_gastaram": 672,
-   "n_elegiveis": 645,
-   "pago": 30078608.89,
-   "pago_publico": 21549241.74,
-   "pct_publico": 0.716431,
-   "cobertura_pago": 0.974935,
+   "total": 371057996.7,
+   "principal": 32790843.45,
+   "confirmado": 26077153.04,
+   "generico": 6713690.41,
+   "provavel": 9352.03,
+   "proporcao": 0.088371,
+   "n_candidatos": 1206,
+   "n_gastaram": 684,
+   "n_elegiveis": 667,
+   "pago": 32004977.03,
+   "pago_publico": 22523071.05,
+   "pct_publico": 0.703737,
+   "cobertura_pago": 0.976034,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 290,
-     "pct_acima": 0.449612,
-     "excedente": 17947784.07
+     "n_acima": 307,
+     "pct_acima": 0.46027,
+     "excedente": 19369038.41
     },
     {
      "teto": 0.1,
-     "n_acima": 154,
-     "pct_acima": 0.23876,
-     "excedente": 11767010.26
+     "n_acima": 168,
+     "pct_acima": 0.251874,
+     "excedente": 12701393.24
     },
     {
      "teto": 0.15,
-     "n_acima": 102,
-     "pct_acima": 0.15814,
-     "excedente": 8836212.03
+     "n_acima": 112,
+     "pct_acima": 0.167916,
+     "excedente": 9462441.29
     },
     {
      "teto": 0.2,
-     "n_acima": 66,
-     "pct_acima": 0.102326,
-     "excedente": 6834917.54
+     "n_acima": 73,
+     "pct_acima": 0.109445,
+     "excedente": 7298908.59
     }
    ],
    "top": [
@@ -59,6 +59,17 @@
      "confirmado": 2070000.0,
      "total": 3255802.53,
      "proporcao": 0.635788,
+     "pequena": false
+    },
+    {
+     "sq": "130002545590",
+     "nome": "Carlos Alberto Dias Viana",
+     "cargo": "Senador",
+     "uf": "MG",
+     "principal": 1427000.0,
+     "confirmado": 1427000.0,
+     "total": 5158885.75,
+     "proporcao": 0.27661,
      "pequena": false
     },
     {
@@ -93,29 +104,18 @@
      "total": 10856033.74,
      "proporcao": 0.099955,
      "pequena": false
-    },
-    {
-     "sq": "130002550560",
-     "nome": "Marilia Aparecida Campos",
-     "cargo": "Senador",
-     "uf": "MG",
-     "principal": 1085000.0,
-     "confirmado": 1085000.0,
-     "total": 4821212.29,
-     "proporcao": 0.225047,
-     "pequena": false
     }
    ]
   },
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 43365742.73,
+   "total": 43364286.08,
    "principal": 2063338.0,
    "confirmado": 1563230.0,
    "generico": 500108.0,
    "provavel": 0.0,
-   "proporcao": 0.04758,
+   "proporcao": 0.047582,
    "n_candidatos": 10,
    "n_gastaram": 8,
    "n_elegiveis": 8,
@@ -210,43 +210,43 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 23437360.37,
-   "principal": 5304518.0,
-   "confirmado": 4758121.0,
-   "generico": 546397.0,
+   "total": 24333055.83,
+   "principal": 5873518.0,
+   "confirmado": 5227121.0,
+   "generico": 646397.0,
    "provavel": 0.0,
-   "proporcao": 0.226327,
-   "n_candidatos": 13,
+   "proporcao": 0.24138,
+   "n_candidatos": 14,
    "n_gastaram": 10,
    "n_elegiveis": 10,
-   "pago": 5304518.0,
-   "pago_publico": 4545398.0,
-   "pct_publico": 0.856892,
+   "pago": 5873518.0,
+   "pago_publico": 4695398.0,
+   "pct_publico": 0.799418,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 7,
      "pct_acima": 0.7,
-     "excedente": 4192354.87
+     "excedente": 4717570.09
     },
     {
      "teto": 0.1,
      "n_acima": 6,
      "pct_acima": 0.6,
-     "excedente": 3197627.57
+     "excedente": 3679058.02
     },
     {
      "teto": 0.15,
      "n_acima": 5,
      "pct_acima": 0.5,
-     "excedente": 2436564.18
+     "excedente": 2874209.86
     },
     {
      "teto": 0.2,
      "n_acima": 5,
      "pct_acima": 0.5,
-     "excedente": 1780753.24
+     "excedente": 2174614.15
     }
    ],
    "top": [
@@ -262,6 +262,17 @@
      "pequena": false
     },
     {
+     "sq": "130002545590",
+     "nome": "Carlos Alberto Dias Viana",
+     "cargo": "Senador",
+     "uf": "MG",
+     "principal": 1427000.0,
+     "confirmado": 1427000.0,
+     "total": 5158885.75,
+     "proporcao": 0.27661,
+     "pequena": false
+    },
+    {
      "sq": "130002550560",
      "nome": "Marilia Aparecida Campos",
      "cargo": "Senador",
@@ -270,17 +281,6 @@
      "confirmado": 1085000.0,
      "total": 4821212.29,
      "proporcao": 0.225047,
-     "pequena": false
-    },
-    {
-     "sq": "130002545590",
-     "nome": "Carlos Alberto Dias Viana",
-     "cargo": "Senador",
-     "uf": "MG",
-     "principal": 1008000.0,
-     "confirmado": 1008000.0,
-     "total": 4504549.09,
-     "proporcao": 0.223774,
      "pequena": false
     },
     {
@@ -295,14 +295,14 @@
      "pequena": false
     },
     {
-     "sq": "130002548381",
-     "nome": "Marcelo Guilherme de Aro Ferreira",
+     "sq": "130002551265",
+     "nome": "Ramon Moreira",
      "cargo": "Senador",
      "uf": "MG",
-     "principal": 190000.0,
-     "confirmado": 190000.0,
-     "total": 2029158.34,
-     "proporcao": 0.093635,
+     "principal": 239000.0,
+     "confirmado": 100000.0,
+     "total": 425358.8,
+     "proporcao": 0.561879,
      "pequena": false
     }
    ]
@@ -310,43 +310,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 191110728.28,
-   "principal": 13146867.77,
-   "confirmado": 9699660.38,
-   "generico": 3447207.39,
+   "total": 199403916.07,
+   "principal": 13930951.87,
+   "confirmado": 10296266.91,
+   "generico": 3634684.96,
    "provavel": 301.61,
-   "proporcao": 0.068792,
-   "n_candidatos": 570,
-   "n_gastaram": 318,
-   "n_elegiveis": 342,
-   "pago": 12742957.16,
-   "pago_publico": 10441017.92,
-   "pct_publico": 0.819356,
-   "cobertura_pago": 0.969277,
+   "proporcao": 0.069863,
+   "n_candidatos": 575,
+   "n_gastaram": 325,
+   "n_elegiveis": 353,
+   "pago": 13524053.95,
+   "pago_publico": 11133687.03,
+   "pct_publico": 0.823251,
+   "cobertura_pago": 0.970792,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 124,
-     "pct_acima": 0.362573,
-     "excedente": 6804302.92
+     "n_acima": 134,
+     "pct_acima": 0.379603,
+     "excedente": 7350295.96
     },
     {
      "teto": 0.1,
-     "n_acima": 56,
-     "pct_acima": 0.163743,
-     "excedente": 4417527.65
+     "n_acima": 66,
+     "pct_acima": 0.186969,
+     "excedente": 4633973.21
     },
     {
      "teto": 0.15,
-     "n_acima": 35,
-     "pct_acima": 0.102339,
-     "excedente": 3469360.95
+     "n_acima": 41,
+     "pct_acima": 0.116147,
+     "excedente": 3523086.85
     },
     {
      "teto": 0.2,
-     "n_acima": 21,
-     "pct_acima": 0.061404,
-     "excedente": 2886682.34
+     "n_acima": 25,
+     "pct_acima": 0.070822,
+     "excedente": 2922714.97
     }
    ],
    "top": [
@@ -390,8 +390,8 @@
      "uf": "MG",
      "principal": 521960.99,
      "confirmado": 521960.0,
-     "total": 2869092.2,
-     "proporcao": 0.181925,
+     "total": 3087200.56,
+     "proporcao": 0.169073,
      "pequena": false
     },
     {
@@ -401,8 +401,8 @@
      "uf": "MG",
      "principal": 299541.05,
      "confirmado": 260000.0,
-     "total": 2164733.56,
-     "proporcao": 0.138373,
+     "total": 2165885.86,
+     "proporcao": 0.1383,
      "pequena": false
     }
    ]
@@ -410,43 +410,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 95623314.94,
-   "principal": 10337173.89,
-   "confirmado": 8444049.2,
-   "generico": 1893124.69,
-   "provavel": 8998.44,
-   "proporcao": 0.108103,
-   "n_candidatos": 588,
-   "n_gastaram": 336,
-   "n_elegiveis": 285,
-   "pago": 9967795.73,
-   "pago_publico": 4877605.82,
-   "pct_publico": 0.489336,
-   "cobertura_pago": 0.964267,
+   "total": 103956738.72,
+   "principal": 10923035.58,
+   "confirmado": 8990535.13,
+   "generico": 1932500.45,
+   "provavel": 9050.42,
+   "proporcao": 0.105073,
+   "n_candidatos": 607,
+   "n_gastaram": 341,
+   "n_elegiveis": 296,
+   "pago": 10544067.08,
+   "pago_publico": 5008766.02,
+   "pct_publico": 0.475032,
+   "cobertura_pago": 0.965306,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 157,
-     "pct_acima": 0.550877,
-     "excedente": 6389321.15
+     "n_acima": 164,
+     "pct_acima": 0.554054,
+     "excedente": 6739367.22
     },
     {
      "teto": 0.1,
-     "n_acima": 91,
-     "pct_acima": 0.319298,
-     "excedente": 4137981.4
+     "n_acima": 95,
+     "pct_acima": 0.320946,
+     "excedente": 4374488.38
     },
     {
      "teto": 0.15,
-     "n_acima": 61,
-     "pct_acima": 0.214035,
-     "excedente": 2922026.44
+     "n_acima": 65,
+     "pct_acima": 0.219595,
+     "excedente": 3056884.12
     },
     {
      "teto": 0.2,
-     "n_acima": 39,
-     "pct_acima": 0.136842,
-     "excedente": 2164834.68
+     "n_acima": 42,
+     "pct_acima": 0.141892,
+     "excedente": 2198932.2
     }
    ],
    "top": [
@@ -468,8 +468,8 @@
      "uf": "MG",
      "principal": 288000.0,
      "confirmado": 288000.0,
-     "total": 360006.32,
-     "proporcao": 0.799986,
+     "total": 372587.26,
+     "proporcao": 0.772973,
      "pequena": false
     },
     {
@@ -501,8 +501,8 @@
      "uf": "MG",
      "principal": 250000.0,
      "confirmado": 250000.0,
-     "total": 783745.06,
-     "proporcao": 0.318981,
+     "total": 785923.45,
+     "proporcao": 0.318097,
      "pequena": false
     }
    ]

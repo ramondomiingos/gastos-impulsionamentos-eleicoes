@@ -2,74 +2,74 @@
  "uf": "TO",
  "nome": "Tocantins",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
- "segundo_turno": 2,
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
+ "segundo_turno": 0,
  "n_candidatos_total": 328,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 91315908.61,
-   "principal": 5604687.38,
-   "confirmado": 4400835.84,
-   "generico": 1203851.54,
+   "total": 96692174.49,
+   "principal": 6341432.85,
+   "confirmado": 4746593.3,
+   "generico": 1594839.55,
    "provavel": 145.98,
-   "proporcao": 0.061377,
-   "n_candidatos": 255,
-   "n_gastaram": 107,
-   "n_elegiveis": 156,
-   "pago": 5579840.06,
-   "pago_publico": 4006279.25,
-   "pct_publico": 0.717992,
-   "cobertura_pago": 0.995567,
+   "proporcao": 0.065584,
+   "n_candidatos": 259,
+   "n_gastaram": 110,
+   "n_elegiveis": 157,
+   "pago": 6320767.23,
+   "pago_publico": 4441725.24,
+   "pct_publico": 0.702719,
+   "cobertura_pago": 0.996741,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 43,
-     "pct_acima": 0.275641,
-     "excedente": 2900488.44
+     "n_acima": 45,
+     "pct_acima": 0.286624,
+     "excedente": 3432801.74
     },
     {
      "teto": 0.1,
-     "n_acima": 22,
-     "pct_acima": 0.141026,
-     "excedente": 1586934.48
+     "n_acima": 21,
+     "pct_acima": 0.133758,
+     "excedente": 1950347.39
     },
     {
      "teto": 0.15,
      "n_acima": 14,
-     "pct_acima": 0.089744,
-     "excedente": 1052386.27
+     "pct_acima": 0.089172,
+     "excedente": 1314500.7
     },
     {
      "teto": 0.2,
      "n_acima": 11,
-     "pct_acima": 0.070513,
-     "excedente": 917565.77
+     "pct_acima": 0.070064,
+     "excedente": 914412.17
     }
    ],
    "top": [
-    {
-     "sq": "270002544599",
-     "nome": "Maria Auxiliadora Seabra Rezende",
-     "cargo": "Governador",
-     "uf": "TO",
-     "principal": 910000.0,
-     "confirmado": 910000.0,
-     "total": 8322525.69,
-     "proporcao": 0.109342,
-     "pequena": false
-    },
     {
      "sq": "270002544544",
      "nome": "Vicente Alves de Oliveira Júnior",
      "cargo": "Governador",
      "uf": "TO",
-     "principal": 700000.0,
+     "principal": 1200000.0,
      "confirmado": 250000.0,
-     "total": 4772318.39,
-     "proporcao": 0.146679,
+     "total": 6223298.79,
+     "proporcao": 0.192824,
+     "pequena": false
+    },
+    {
+     "sq": "270002544599",
+     "nome": "Maria Auxiliadora Seabra Rezende",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 1060000.0,
+     "confirmado": 1060000.0,
+     "total": 9659747.28,
+     "proporcao": 0.109734,
      "pequena": false
     },
     {
@@ -110,37 +110,37 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 19363004.44,
-   "principal": 2173571.33,
-   "confirmado": 1711730.0,
-   "generico": 461841.33,
+   "total": 22154342.93,
+   "principal": 2823571.33,
+   "confirmado": 1861730.0,
+   "generico": 961841.33,
    "provavel": 0.0,
-   "proporcao": 0.112254,
+   "proporcao": 0.12745,
    "n_candidatos": 6,
    "n_gastaram": 5,
    "n_elegiveis": 6,
-   "pago": 2161730.0,
-   "pago_publico": 1445000.0,
-   "pct_publico": 0.668446,
-   "cobertura_pago": 0.994552,
+   "pago": 2811730.0,
+   "pago_publico": 1795000.0,
+   "pct_publico": 0.638397,
+   "cobertura_pago": 0.995806,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 4,
      "pct_acima": 0.666667,
-     "excedente": 1293755.31
+     "excedente": 1804345.21
     },
     {
      "teto": 0.1,
      "n_acima": 4,
      "pct_acima": 0.666667,
-     "excedente": 613939.29
+     "excedente": 985119.09
     },
     {
      "teto": 0.15,
-     "n_acima": 2,
-     "pct_acima": 0.333333,
-     "excedente": 288349.88
+     "n_acima": 3,
+     "pct_acima": 0.5,
+     "excedente": 554855.06
     },
     {
      "teto": 0.2,
@@ -151,25 +151,25 @@
    ],
    "top": [
     {
-     "sq": "270002544599",
-     "nome": "Maria Auxiliadora Seabra Rezende",
-     "cargo": "Governador",
-     "uf": "TO",
-     "principal": 910000.0,
-     "confirmado": 910000.0,
-     "total": 8322525.69,
-     "proporcao": 0.109342,
-     "pequena": false
-    },
-    {
      "sq": "270002544544",
      "nome": "Vicente Alves de Oliveira Júnior",
      "cargo": "Governador",
      "uf": "TO",
-     "principal": 700000.0,
+     "principal": 1200000.0,
      "confirmado": 250000.0,
-     "total": 4772318.39,
-     "proporcao": 0.146679,
+     "total": 6223298.79,
+     "proporcao": 0.192824,
+     "pequena": false
+    },
+    {
+     "sq": "270002544599",
+     "nome": "Maria Auxiliadora Seabra Rezende",
+     "cargo": "Governador",
+     "uf": "TO",
+     "principal": 1060000.0,
+     "confirmado": 1060000.0,
+     "total": 9659747.28,
+     "proporcao": 0.109734,
      "pequena": false
     },
     {
@@ -190,8 +190,8 @@
      "uf": "TO",
      "principal": 200000.0,
      "confirmado": 200000.0,
-     "total": 5695578.83,
-     "proporcao": 0.035115,
+     "total": 5698715.33,
+     "proporcao": 0.035096,
      "pequena": false
     },
     {
@@ -210,12 +210,12 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 13893932.22,
+   "total": 13928378.01,
    "principal": 1310115.07,
    "confirmado": 1035218.61,
    "generico": 274896.46,
    "provavel": 0.0,
-   "proporcao": 0.094294,
+   "proporcao": 0.094061,
    "n_candidatos": 10,
    "n_gastaram": 9,
    "n_elegiveis": 8,
@@ -228,7 +228,7 @@
      "teto": 0.05,
      "n_acima": 6,
      "pct_acima": 0.75,
-     "excedente": 719117.52
+     "excedente": 717895.06
     },
     {
      "teto": 0.1,
@@ -268,8 +268,8 @@
      "uf": "TO",
      "principal": 220000.0,
      "confirmado": 220000.0,
-     "total": 3135796.56,
-     "proporcao": 0.070158,
+     "total": 3160245.85,
+     "proporcao": 0.069615,
      "pequena": false
     },
     {
@@ -310,37 +310,37 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 35639101.57,
-   "principal": 1209311.68,
-   "confirmado": 970571.68,
-   "generico": 238740.0,
+   "total": 37571357.64,
+   "principal": 1280325.68,
+   "confirmado": 1105585.68,
+   "generico": 174740.0,
    "provavel": 145.98,
-   "proporcao": 0.033932,
-   "n_candidatos": 72,
+   "proporcao": 0.034077,
+   "n_candidatos": 74,
    "n_gastaram": 35,
    "n_elegiveis": 49,
-   "pago": 1209311.68,
-   "pago_publico": 935161.23,
-   "pct_publico": 0.7733,
+   "pago": 1280325.68,
+   "pago_publico": 1006175.23,
+   "pct_publico": 0.785874,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 12,
      "pct_acima": 0.244898,
-     "excedente": 369521.99
+     "excedente": 392172.88
     },
     {
      "teto": 0.1,
-     "n_acima": 4,
-     "pct_acima": 0.081633,
-     "excedente": 98515.61
+     "n_acima": 3,
+     "pct_acima": 0.061224,
+     "excedente": 93841.24
     },
     {
      "teto": 0.15,
      "n_acima": 1,
      "pct_acima": 0.020408,
-     "excedente": 3653.41
+     "excedente": 3653.26
     },
     {
      "teto": 0.2,
@@ -368,8 +368,19 @@
      "uf": "TO",
      "principal": 200000.0,
      "confirmado": 200000.0,
-     "total": 2924842.71,
-     "proporcao": 0.06838,
+     "total": 3015419.01,
+     "proporcao": 0.066326,
+     "pequena": false
+    },
+    {
+     "sq": "270002548404",
+     "nome": "Márcio Antônio Barbosa de Mendonça",
+     "cargo": "Deputado Federal",
+     "uf": "TO",
+     "principal": 140988.0,
+     "confirmado": 140988.0,
+     "total": 1844755.71,
+     "proporcao": 0.076426,
      "pequena": false
     },
     {
@@ -390,19 +401,8 @@
      "uf": "TO",
      "principal": 72000.0,
      "confirmado": 72000.0,
-     "total": 1105024.25,
-     "proporcao": 0.065157,
-     "pequena": false
-    },
-    {
-     "sq": "270002548520",
-     "nome": "Alfredo Falcão Costa Júnior",
-     "cargo": "Deputado Federal",
-     "uf": "TO",
-     "principal": 70000.0,
-     "confirmado": 70000.0,
-     "total": 1188503.12,
-     "proporcao": 0.058898,
+     "total": 1105038.35,
+     "proporcao": 0.065156,
      "pequena": false
     }
    ]
@@ -410,43 +410,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 22419870.38,
-   "principal": 911689.3,
-   "confirmado": 683315.55,
-   "generico": 228373.75,
+   "total": 23038095.91,
+   "principal": 927420.77,
+   "confirmado": 744059.01,
+   "generico": 183361.76,
    "provavel": 0.0,
-   "proporcao": 0.040664,
-   "n_candidatos": 167,
-   "n_gastaram": 58,
-   "n_elegiveis": 93,
-   "pago": 898683.31,
-   "pago_publico": 472871.11,
-   "pct_publico": 0.526182,
-   "cobertura_pago": 0.985734,
+   "proporcao": 0.040256,
+   "n_candidatos": 169,
+   "n_gastaram": 61,
+   "n_elegiveis": 94,
+   "pago": 918596.48,
+   "pago_publico": 487303.1,
+   "pct_publico": 0.530487,
+   "cobertura_pago": 0.990485,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 21,
-     "pct_acima": 0.225806,
-     "excedente": 518093.62
+     "n_acima": 23,
+     "pct_acima": 0.244681,
+     "excedente": 518388.59
     },
     {
      "teto": 0.1,
      "n_acima": 13,
-     "pct_acima": 0.139785,
-     "excedente": 374194.38
+     "pct_acima": 0.138298,
+     "excedente": 371101.86
     },
     {
      "teto": 0.15,
-     "n_acima": 10,
-     "pct_acima": 0.107527,
-     "excedente": 297335.33
+     "n_acima": 9,
+     "pct_acima": 0.095745,
+     "excedente": 292944.72
     },
     {
      "teto": 0.2,
      "n_acima": 8,
-     "pct_acima": 0.086022,
-     "excedente": 228479.61
+     "pct_acima": 0.085106,
+     "excedente": 225326.0
     }
    ],
    "top": [
@@ -468,8 +468,8 @@
      "uf": "TO",
      "principal": 101000.0,
      "confirmado": 101000.0,
-     "total": 315023.5,
-     "proporcao": 0.320611,
+     "total": 315024.0,
+     "proporcao": 0.32061,
      "pequena": false
     },
     {
@@ -501,8 +501,8 @@
      "uf": "TO",
      "principal": 53300.0,
      "confirmado": 0.0,
-     "total": 94680.4,
-     "proporcao": 0.562947,
+     "total": 118093.9,
+     "proporcao": 0.451336,
      "pequena": false
     }
    ]

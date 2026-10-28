@@ -2,51 +2,51 @@
  "uf": "SC",
  "nome": "Santa Catarina",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "28/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 666,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 168488869.81,
-   "principal": 17498571.72,
-   "confirmado": 14722437.96,
-   "generico": 2776133.76,
+   "total": 173965218.48,
+   "principal": 18219403.58,
+   "confirmado": 15503036.84,
+   "generico": 2716366.74,
    "provavel": 10429.04,
-   "proporcao": 0.103856,
-   "n_candidatos": 585,
-   "n_gastaram": 385,
-   "n_elegiveis": 337,
-   "pago": 17348867.53,
-   "pago_publico": 12725145.72,
-   "pct_publico": 0.733486,
-   "cobertura_pago": 0.991445,
+   "proporcao": 0.10473,
+   "n_candidatos": 596,
+   "n_gastaram": 398,
+   "n_elegiveis": 346,
+   "pago": 18079604.51,
+   "pago_publico": 13199903.56,
+   "pct_publico": 0.730099,
+   "cobertura_pago": 0.992327,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 197,
-     "pct_acima": 0.58457,
-     "excedente": 10725222.58
+     "n_acima": 207,
+     "pct_acima": 0.598266,
+     "excedente": 11117785.62
     },
     {
      "teto": 0.1,
-     "n_acima": 132,
-     "pct_acima": 0.391691,
-     "excedente": 6881315.98
+     "n_acima": 139,
+     "pct_acima": 0.401734,
+     "excedente": 7157634.7
     },
     {
      "teto": 0.15,
-     "n_acima": 95,
-     "pct_acima": 0.281899,
-     "excedente": 4669255.99
+     "n_acima": 100,
+     "pct_acima": 0.289017,
+     "excedente": 4865435.53
     },
     {
      "teto": 0.2,
-     "n_acima": 68,
-     "pct_acima": 0.20178,
-     "excedente": 3147143.63
+     "n_acima": 72,
+     "pct_acima": 0.208092,
+     "excedente": 3257488.72
     }
    ],
    "top": [
@@ -68,8 +68,8 @@
      "uf": "SC",
      "principal": 549997.0,
      "confirmado": 549997.0,
-     "total": 7825028.8,
-     "proporcao": 0.070287,
+     "total": 7844130.67,
+     "proporcao": 0.070116,
      "pequena": false
     },
     {
@@ -110,12 +110,12 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 15859955.0,
+   "total": 15892513.87,
    "principal": 1273907.0,
    "confirmado": 1273907.0,
    "generico": 0.0,
    "provavel": 0.0,
-   "proporcao": 0.080322,
+   "proporcao": 0.080158,
    "n_candidatos": 6,
    "n_gastaram": 4,
    "n_elegiveis": 4,
@@ -128,7 +128,7 @@
      "teto": 0.05,
      "n_acima": 3,
      "pct_acima": 0.75,
-     "excedente": 487932.89
+     "excedente": 486977.79
     },
     {
      "teto": 0.1,
@@ -157,8 +157,8 @@
      "uf": "SC",
      "principal": 549997.0,
      "confirmado": 549997.0,
-     "total": 7825028.8,
-     "proporcao": 0.070287,
+     "total": 7844130.67,
+     "proporcao": 0.070116,
      "pequena": false
     },
     {
@@ -190,8 +190,8 @@
      "uf": "SC",
      "principal": 570.0,
      "confirmado": 570.0,
-     "total": 16545.0,
-     "proporcao": 0.034451,
+     "total": 30002.0,
+     "proporcao": 0.018999,
      "pequena": true
     }
    ]
@@ -199,12 +199,12 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 15206415.71,
+   "total": 15213323.45,
    "principal": 2601533.04,
    "confirmado": 2300533.04,
    "generico": 301000.0,
    "provavel": 0.0,
-   "proporcao": 0.171081,
+   "proporcao": 0.171004,
    "n_candidatos": 12,
    "n_gastaram": 7,
    "n_elegiveis": 7,
@@ -217,7 +217,7 @@
      "teto": 0.05,
      "n_acima": 6,
      "pct_acima": 0.857143,
-     "excedente": 1851298.09
+     "excedente": 1851227.83
     },
     {
      "teto": 0.1,
@@ -279,8 +279,8 @@
      "uf": "SC",
      "principal": 170000.0,
      "confirmado": 170000.0,
-     "total": 1813733.51,
-     "proporcao": 0.093729,
+     "total": 1815138.75,
+     "proporcao": 0.093657,
      "pequena": false
     },
     {
@@ -299,43 +299,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 85895762.48,
-   "principal": 7040137.66,
-   "confirmado": 5393376.35,
-   "generico": 1646761.31,
+   "total": 88129049.61,
+   "principal": 7291313.08,
+   "confirmado": 5644499.79,
+   "generico": 1646813.29,
    "provavel": 5252.07,
-   "proporcao": 0.081961,
-   "n_candidatos": 208,
-   "n_gastaram": 131,
-   "n_elegiveis": 131,
-   "pago": 6961931.97,
-   "pago_publico": 5892811.28,
-   "pct_publico": 0.846433,
-   "cobertura_pago": 0.988891,
+   "proporcao": 0.082735,
+   "n_candidatos": 211,
+   "n_gastaram": 138,
+   "n_elegiveis": 135,
+   "pago": 7210512.51,
+   "pago_publico": 6135891.82,
+   "pct_publico": 0.850965,
+   "cobertura_pago": 0.988918,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 67,
-     "pct_acima": 0.51145,
-     "excedente": 4086349.53
+     "n_acima": 71,
+     "pct_acima": 0.525926,
+     "excedente": 4157873.53
     },
     {
      "teto": 0.1,
-     "n_acima": 39,
-     "pct_acima": 0.29771,
-     "excedente": 2522509.72
+     "n_acima": 41,
+     "pct_acima": 0.303704,
+     "excedente": 2574126.09
     },
     {
      "teto": 0.15,
-     "n_acima": 25,
-     "pct_acima": 0.19084,
-     "excedente": 1674097.66
+     "n_acima": 26,
+     "pct_acima": 0.192593,
+     "excedente": 1709801.32
     },
     {
      "teto": 0.2,
-     "n_acima": 17,
-     "pct_acima": 0.129771,
-     "excedente": 1095700.71
+     "n_acima": 18,
+     "pct_acima": 0.133333,
+     "excedente": 1124273.95
     }
    ],
    "top": [
@@ -399,43 +399,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 51526736.62,
-   "principal": 6582994.02,
-   "confirmado": 5754621.57,
-   "generico": 828372.45,
+   "total": 54730331.55,
+   "principal": 7052650.46,
+   "confirmado": 6284097.01,
+   "generico": 768553.45,
    "provavel": 5176.97,
-   "proporcao": 0.127759,
-   "n_candidatos": 359,
-   "n_gastaram": 243,
-   "n_elegiveis": 195,
-   "pago": 6511495.52,
-   "pago_publico": 3550443.99,
-   "pct_publico": 0.545258,
-   "cobertura_pago": 0.989139,
+   "proporcao": 0.128862,
+   "n_candidatos": 367,
+   "n_gastaram": 249,
+   "n_elegiveis": 200,
+   "pago": 6993651.96,
+   "pago_publico": 3782121.29,
+   "pct_publico": 0.540793,
+   "cobertura_pago": 0.991635,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 121,
-     "pct_acima": 0.620513,
-     "excedente": 4299642.07
+     "n_acima": 127,
+     "pct_acima": 0.635,
+     "excedente": 4621706.47
     },
     {
      "teto": 0.1,
-     "n_acima": 88,
-     "pct_acima": 0.451282,
-     "excedente": 2892046.28
+     "n_acima": 93,
+     "pct_acima": 0.465,
+     "excedente": 3116748.64
     },
     {
      "teto": 0.15,
-     "n_acima": 66,
-     "pct_acima": 0.338462,
-     "excedente": 1957668.34
+     "n_acima": 70,
+     "pct_acima": 0.35,
+     "excedente": 2118144.23
     },
     {
      "teto": 0.2,
-     "n_acima": 50,
-     "pct_acima": 0.25641,
-     "excedente": 1268688.22
+     "n_acima": 53,
+     "pct_acima": 0.265,
+     "excedente": 1350460.06
     }
    ],
    "top": [
@@ -462,25 +462,14 @@
      "pequena": false
     },
     {
-     "sq": "240002539957",
-     "nome": "Alexander Brasil Alves Pereira",
-     "cargo": "Deputado Estadual",
-     "uf": "SC",
-     "principal": 198000.0,
-     "confirmado": 198000.0,
-     "total": 752208.74,
-     "proporcao": 0.263225,
-     "pequena": false
-    },
-    {
      "sq": "240002539960",
      "nome": "Wilian Martini Tonezi",
      "cargo": "Deputado Estadual",
      "uf": "SC",
      "principal": 182560.85,
      "confirmado": 173560.85,
-     "total": 484784.75,
-     "proporcao": 0.376581,
+     "total": 487334.25,
+     "proporcao": 0.374611,
      "pequena": false
     },
     {
@@ -490,8 +479,19 @@
      "uf": "SC",
      "principal": 160000.0,
      "confirmado": 160000.0,
-     "total": 604921.57,
-     "proporcao": 0.264497,
+     "total": 625790.27,
+     "proporcao": 0.255677,
+     "pequena": false
+    },
+    {
+     "sq": "240002539974",
+     "nome": "Tiago Bolan Frigo",
+     "cargo": "Deputado Estadual",
+     "uf": "SC",
+     "principal": 151000.0,
+     "confirmado": 151000.0,
+     "total": 325500.2,
+     "proporcao": 0.463901,
      "pequena": false
     }
    ]

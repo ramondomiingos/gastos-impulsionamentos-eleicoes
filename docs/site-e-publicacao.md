@@ -47,11 +47,11 @@ Os tetos contam só campanhas com pelo menos R$ 50.000 de despesas contratadas (
 
 O TSE refaz os arquivos conforme chegam as prestações de contas. Fluxo **manual** (o atual):
 
-1. Ter os zips em `data/raw/` (ou deixar o comando baixar) e rodar `gastos publicar`: leva cerca de 40 s e usa uns 2 GB de RAM. Detalhes de opções em [uso.md](uso.md#gastos-publicar-json-do-site).
+1. Mover ou apagar o zip de despesas antigo em `data/raw/` (o comando nunca o baixa de novo; o `consulta_cand` é renovado sozinho após 12 h), deixar o comando baixar os arquivos novos e rodar `gastos publicar`: leva cerca de 40 s e usa uns 2 GB de RAM. Detalhes de opções em [uso.md](uso.md#gastos-publicar-json-do-site).
 2. Conferir as datas em `site/data/index.json` (`dt_geracao`, `dt_ultima_prestacao`) e rodar os testes: `.venv/bin/pytest -q` e `node --test tests/js/*.test.js`.
 3. `git commit` de `site/data/` e `git push`. A Netlify republica sozinha.
 
-Fluxo **automático** (depois): uma rotina agendada (GitHub Actions) baixa os dados do TSE, roda `gastos publicar` e abre um pull request com os JSON novos, para alguém revisar. O download tem cerca de 209 MB, então deve rodar no máximo algumas vezes por semana.
+Fluxo **automático** (depois): uma rotina agendada (GitHub Actions) baixa os dados do TSE, roda `gastos publicar` e abre um pull request com os JSON novos, para alguém revisar. O download tem cerca de 250 MB, então deve rodar no máximo algumas vezes por semana.
 
 ## Hospedagem: Netlify
 

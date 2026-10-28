@@ -2,51 +2,51 @@
  "uf": "PI",
  "nome": "Piauí",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 348,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 104185228.17,
-   "principal": 4509336.8,
-   "confirmado": 3273166.32,
-   "generico": 1236170.48,
+   "total": 114651971.98,
+   "principal": 5266044.6,
+   "confirmado": 3680806.68,
+   "generico": 1585237.92,
    "provavel": 2315.5,
-   "proporcao": 0.043282,
+   "proporcao": 0.045931,
    "n_candidatos": 269,
    "n_gastaram": 124,
    "n_elegiveis": 187,
-   "pago": 4508836.8,
-   "pago_publico": 3094641.68,
-   "pct_publico": 0.68635,
-   "cobertura_pago": 0.999889,
+   "pago": 5265544.6,
+   "pago_publico": 3846782.04,
+   "pct_publico": 0.730557,
+   "cobertura_pago": 0.999905,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 28,
-     "pct_acima": 0.149733,
-     "excedente": 2250526.42
+     "n_acima": 29,
+     "pct_acima": 0.15508,
+     "excedente": 2541313.96
     },
     {
      "teto": 0.1,
-     "n_acima": 17,
-     "pct_acima": 0.090909,
-     "excedente": 1382455.38
+     "n_acima": 18,
+     "pct_acima": 0.096257,
+     "excedente": 1351341.92
     },
     {
      "teto": 0.15,
      "n_acima": 10,
      "pct_acima": 0.053476,
-     "excedente": 783491.53
+     "excedente": 777588.97
     },
     {
      "teto": 0.2,
      "n_acima": 7,
      "pct_acima": 0.037433,
-     "excedente": 453600.81
+     "excedente": 450502.41
     }
    ],
    "top": [
@@ -59,6 +59,17 @@
      "confirmado": 710000.0,
      "total": 3620097.41,
      "proporcao": 0.201652,
+     "pequena": false
+    },
+    {
+     "sq": "180002538530",
+     "nome": "Joel Rodrigues da Silva",
+     "cargo": "Governador",
+     "uf": "PI",
+     "principal": 650000.0,
+     "confirmado": 175000.0,
+     "total": 5873468.64,
+     "proporcao": 0.110667,
      "pequena": false
     },
     {
@@ -93,54 +104,43 @@
      "total": 500071.5,
      "proporcao": 0.737564,
      "pequena": false
-    },
-    {
-     "sq": "180002538530",
-     "nome": "Joel Rodrigues da Silva",
-     "cargo": "Governador",
-     "uf": "PI",
-     "principal": 300000.0,
-     "confirmado": 150000.0,
-     "total": 2108677.51,
-     "proporcao": 0.142269,
-     "pequena": false
     }
    ]
   },
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 8349107.76,
-   "principal": 575968.0,
-   "confirmado": 406000.0,
-   "generico": 169968.0,
+   "total": 12128107.17,
+   "principal": 935665.56,
+   "confirmado": 440697.56,
+   "generico": 494968.0,
    "provavel": 707.86,
-   "proporcao": 0.068986,
+   "proporcao": 0.077149,
    "n_candidatos": 7,
    "n_gastaram": 5,
    "n_elegiveis": 4,
-   "pago": 575968.0,
-   "pago_publico": 420000.0,
-   "pct_publico": 0.729207,
+   "pago": 935665.56,
+   "pago_publico": 779697.56,
+   "pct_publico": 0.833308,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 1,
-     "pct_acima": 0.25,
-     "excedente": 194566.12
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 364448.61
     },
     {
      "teto": 0.1,
-     "n_acima": 1,
-     "pct_acima": 0.25,
-     "excedente": 89132.25
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 67199.67
     },
     {
      "teto": 0.15,
-     "n_acima": 0,
-     "pct_acima": 0.0,
-     "excedente": 0.0
+     "n_acima": 1,
+     "pct_acima": 0.25,
+     "excedente": 971.02
     },
     {
      "teto": 0.2,
@@ -155,10 +155,10 @@
      "nome": "Joel Rodrigues da Silva",
      "cargo": "Governador",
      "uf": "PI",
-     "principal": 300000.0,
-     "confirmado": 150000.0,
-     "total": 2108677.51,
-     "proporcao": 0.142269,
+     "principal": 650000.0,
+     "confirmado": 175000.0,
+     "total": 5873468.64,
+     "proporcao": 0.110667,
      "pequena": false
     },
     {
@@ -170,6 +170,17 @@
      "confirmado": 250000.0,
      "total": 6042488.92,
      "proporcao": 0.04443,
+     "pequena": false
+    },
+    {
+     "sq": "180002544216",
+     "nome": "Lúcia Maria de Sousa Aguiar dos Santos",
+     "cargo": "Governador",
+     "uf": "PI",
+     "principal": 11697.56,
+     "confirmado": 11697.56,
+     "total": 71510.28,
+     "proporcao": 0.163579,
      "pequena": false
     },
     {
@@ -193,54 +204,43 @@
      "total": 2500.0,
      "proporcao": 1.0,
      "pequena": true
-    },
-    {
-     "sq": "180002544216",
-     "nome": "Lúcia Maria de Sousa Aguiar dos Santos",
-     "cargo": "Governador",
-     "uf": "PI",
-     "principal": 2000.0,
-     "confirmado": 2000.0,
-     "total": 57302.0,
-     "proporcao": 0.034903,
-     "pequena": false
     }
    ]
   },
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 8446953.47,
-   "principal": 1647830.0,
-   "confirmado": 1247830.0,
+   "total": 12166740.08,
+   "principal": 1897830.0,
+   "confirmado": 1497830.0,
    "generico": 400000.0,
    "provavel": 0.0,
-   "proporcao": 0.19508,
+   "proporcao": 0.155985,
    "n_candidatos": 14,
    "n_gastaram": 8,
    "n_elegiveis": 6,
-   "pago": 1647830.0,
-   "pago_publico": 910000.0,
-   "pct_publico": 0.552241,
+   "pago": 1897830.0,
+   "pago_publico": 1160000.0,
+   "pct_publico": 0.611224,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 4,
      "pct_acima": 0.666667,
-     "excedente": 1225419.45
+     "excedente": 1289962.91
     },
     {
      "teto": 0.1,
-     "n_acima": 4,
-     "pct_acima": 0.666667,
-     "excedente": 820838.89
+     "n_acima": 3,
+     "pct_acima": 0.5,
+     "excedente": 801139.04
     },
     {
      "teto": 0.15,
-     "n_acima": 4,
-     "pct_acima": 0.666667,
-     "excedente": 416258.34
+     "n_acima": 3,
+     "pct_acima": 0.5,
+     "excedente": 411708.57
     },
     {
      "teto": 0.2,
@@ -288,10 +288,10 @@
      "nome": "Tiago Maximiano Junqueira",
      "cargo": "Senador",
      "uf": "PI",
-     "principal": 50000.0,
-     "confirmado": 50000.0,
-     "total": 303001.5,
-     "proporcao": 0.165016,
+     "principal": 300000.0,
+     "confirmado": 300000.0,
+     "total": 4012132.2,
+     "proporcao": 0.074773,
      "pequena": false
     },
     {
@@ -310,43 +310,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 53765320.04,
-   "principal": 1192845.04,
-   "confirmado": 817270.16,
-   "generico": 375574.88,
+   "total": 55334276.43,
+   "principal": 1327845.04,
+   "confirmado": 934270.16,
+   "generico": 393574.88,
    "provavel": 1487.76,
-   "proporcao": 0.022186,
+   "proporcao": 0.023997,
    "n_candidatos": 113,
    "n_gastaram": 56,
    "n_elegiveis": 67,
-   "pago": 1192345.04,
-   "pago_publico": 937382.45,
-   "pct_publico": 0.786167,
-   "cobertura_pago": 0.999581,
+   "pago": 1327345.04,
+   "pago_publico": 1072382.45,
+   "pct_publico": 0.807915,
+   "cobertura_pago": 0.999623,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 8,
-     "pct_acima": 0.119403,
-     "excedente": 329489.96
+     "n_acima": 9,
+     "pct_acima": 0.134328,
+     "excedente": 392499.45
     },
     {
      "teto": 0.1,
-     "n_acima": 4,
-     "pct_acima": 0.059701,
-     "excedente": 101122.4
+     "n_acima": 5,
+     "pct_acima": 0.074627,
+     "excedente": 111641.37
     },
     {
      "teto": 0.15,
      "n_acima": 2,
      "pct_acima": 0.029851,
-     "excedente": 43760.83
+     "excedente": 41437.03
     },
     {
      "teto": 0.2,
      "n_acima": 2,
      "pct_acima": 0.029851,
-     "excedente": 31014.45
+     "excedente": 27916.05
     }
    ],
    "top": [
@@ -373,14 +373,25 @@
      "pequena": false
     },
     {
+     "sq": "180002532478",
+     "nome": "Charles de Holanda Pessoa",
+     "cargo": "Deputado Federal",
+     "uf": "PI",
+     "principal": 115500.0,
+     "confirmado": 115500.0,
+     "total": 1034318.27,
+     "proporcao": 0.111668,
+     "pequena": false
+    },
+    {
      "sq": "180002539133",
      "nome": "Atila de Melo Lira",
      "cargo": "Deputado Federal",
      "uf": "PI",
      "principal": 90000.0,
      "confirmado": 75000.0,
-     "total": 3107703.74,
-     "proporcao": 0.02896,
+     "total": 3108357.14,
+     "proporcao": 0.028954,
      "pequena": false
     },
     {
@@ -393,42 +404,31 @@
      "total": 599267.75,
      "proporcao": 0.100122,
      "pequena": false
-    },
-    {
-     "sq": "180002539127",
-     "nome": "Julio Ferraz Arcoverde",
-     "cargo": "Deputado Federal",
-     "uf": "PI",
-     "principal": 55000.0,
-     "confirmado": 0.0,
-     "total": 3086050.09,
-     "proporcao": 0.017822,
-     "pequena": false
     }
    ]
   },
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 33623846.9,
-   "principal": 1092693.76,
-   "confirmado": 802066.16,
-   "generico": 290627.6,
+   "total": 35022848.3,
+   "principal": 1104704.0,
+   "confirmado": 808008.96,
+   "generico": 296695.04,
    "provavel": 119.88,
-   "proporcao": 0.032498,
+   "proporcao": 0.031542,
    "n_candidatos": 135,
    "n_gastaram": 55,
    "n_elegiveis": 110,
-   "pago": 1092693.76,
-   "pago_publico": 827259.23,
-   "pct_publico": 0.757082,
+   "pago": 1104704.0,
+   "pago_publico": 834702.03,
+   "pct_publico": 0.755589,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 15,
-     "pct_acima": 0.136364,
-     "excedente": 501050.89
+     "n_acima": 14,
+     "pct_acima": 0.127273,
+     "excedente": 494402.99
     },
     {
      "teto": 0.1,

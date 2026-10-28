@@ -23,7 +23,7 @@ flowchart LR
     W --> K[5 cards em PNG<br/>gerados no navegador]
 ```
 
-1. O pipeline baixa o zip de prestação de contas do TSE (~209 MB) e lê as despesas **contratadas** dos candidatos (e as **pagas**, para medir a fonte do dinheiro).
+1. O pipeline baixa o zip de prestação de contas do TSE (~250 MB) e lê as despesas **contratadas** dos candidatos (e as **pagas**, para medir a fonte do dinheiro).
 2. Cada despesa é classificada em um nível: `confirmado` (cita a plataforma), `generico` (impulsionamento sem plataforma citada, contado como plataforma estrangeira porque não existe rede social nacional para isso), `provavel` (pista fraca, fora do número principal) ou `nenhum`.
 3. O **número principal** é `confirmado + generico`; o `confirmado` aparece sempre como **piso**.
 4. `gastos analisar` grava uma pasta datada com relatório, CSVs e **as linhas de despesa que compõem cada número**. `gastos publicar` grava os JSON que alimentam o site.
@@ -47,7 +47,7 @@ Para ver o site localmente, sirva a pasta `site/` (por exemplo `python3 -m http.
 
 A saída vai para `out/<data>_uf-RN/` (abra `relatorio.md`). Todos os comandos, opções e arquivos gerados estão em **[docs/uso.md](docs/uso.md)**.
 
-Exemplo real (dados do TSE de 22/10/2026, Rio Grande do Norte, todos os cargos): R$ 4,24 milhões em plataformas estrangeiras, 4,5% de tudo que as campanhas declararam; piso confirmado de R$ 2,93 milhões. No país todo, o número principal é de cerca de R$ 438 milhões (9,3% do declarado).
+Exemplo real (dados do TSE de 28/10/2026, Rio Grande do Norte, todos os cargos): R$ 4,40 milhões em plataformas estrangeiras, 4,6% de tudo que as campanhas declararam; piso confirmado de R$ 3,08 milhões. No país todo, o número principal é de cerca de R$ 477 milhões (9,6% do declarado).
 
 ## Estrutura do repositório
 
@@ -69,7 +69,7 @@ Os dados baixados (`data/raw/`) e as saídas (`out/`, `divulgacao/`) **não** v�
 
 - **Dados parciais.** Reúnem prestações parciais, relatórios financeiros e algumas finais. Toda saída informa a data de geração dos dados e a da prestação mais recente.
 - **Classificação validada à mão só no RN.** Em outros estados, confira o `qualidade.md` antes de usar os números. Há casos conhecidos de falso positivo (honorários de agência), descritos em [docs/metodologia.md](docs/metodologia.md).
-- **Resultados do TSE incompletos** em alguns cargos na data da última coleta (por exemplo PB), o que afeta a lista de eleitos usada nos e-mails.
+- **Resultados do TSE:** desde 28/10/2026 o arquivo traz todos os cargos totalizados, inclusive o 2º turno. Em coletas futuras, um cargo sem totalização afetaria a lista de eleitos usada nos e-mails.
 - **Estados fora do RN são estimativas.** A checagem automática por estado (veja [docs/metodologia.md](docs/metodologia.md#validação-por-estado-checagem-automática)) dá confiança, mas não substitui a revisão linha a linha.
 - Os links para a prestação oficial de cada candidato ainda **não estão verificados**; o site aponta para o portal de consulta do TSE.
 - **O site cita pessoas:** lista os 5 maiores valores declarados por recorte, pelo nome, sem partido. É uma lista de valores declarados, não de irregularidades; erros podem ser reportados em [issues](https://github.com/ramondomiingos/gastos-impulsionamentos-eleicoes/issues).

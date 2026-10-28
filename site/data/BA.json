@@ -2,51 +2,51 @@
  "uf": "BA",
  "nome": "Bahia",
  "artigo": "da",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "22/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 1195,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 271610903.55,
-   "principal": 10226421.81,
-   "confirmado": 8358248.53,
-   "generico": 1868173.28,
+   "total": 279395386.23,
+   "principal": 10643642.1,
+   "confirmado": 8705518.82,
+   "generico": 1938123.28,
    "provavel": 1040.33,
-   "proporcao": 0.037651,
-   "n_candidatos": 896,
-   "n_gastaram": 311,
-   "n_elegiveis": 432,
-   "pago": 10053243.64,
-   "pago_publico": 8479637.84,
-   "pct_publico": 0.843473,
-   "cobertura_pago": 0.983066,
+   "proporcao": 0.038095,
+   "n_candidatos": 906,
+   "n_gastaram": 318,
+   "n_elegiveis": 441,
+   "pago": 10493083.61,
+   "pago_publico": 8771375.0,
+   "pct_publico": 0.83592,
+   "cobertura_pago": 0.985855,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 91,
-     "pct_acima": 0.210648,
-     "excedente": 4207494.09
+     "n_acima": 96,
+     "pct_acima": 0.217687,
+     "excedente": 4353711.84
     },
     {
      "teto": 0.1,
-     "n_acima": 56,
-     "pct_acima": 0.12963,
-     "excedente": 1969787.51
+     "n_acima": 57,
+     "pct_acima": 0.129252,
+     "excedente": 2089527.66
     },
     {
      "teto": 0.15,
-     "n_acima": 34,
-     "pct_acima": 0.078704,
-     "excedente": 1078684.36
+     "n_acima": 36,
+     "pct_acima": 0.081633,
+     "excedente": 1188584.47
     },
     {
      "teto": 0.2,
-     "n_acima": 19,
-     "pct_acima": 0.043981,
-     "excedente": 643222.81
+     "n_acima": 21,
+     "pct_acima": 0.047619,
+     "excedente": 741778.83
     }
    ],
    "top": [
@@ -79,8 +79,8 @@
      "uf": "BA",
      "principal": 500000.0,
      "confirmado": 20000.0,
-     "total": 7073960.76,
-     "proporcao": 0.070682,
+     "total": 8269795.24,
+     "proporcao": 0.060461,
      "pequena": false
     },
     {
@@ -110,12 +110,12 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 20804779.52,
+   "total": 22000614.0,
    "principal": 1435800.0,
    "confirmado": 925800.0,
    "generico": 510000.0,
    "provavel": 0.0,
-   "proporcao": 0.069013,
+   "proporcao": 0.065262,
    "n_candidatos": 5,
    "n_gastaram": 4,
    "n_elegiveis": 3,
@@ -128,7 +128,7 @@
      "teto": 0.05,
      "n_acima": 3,
      "pct_acima": 1.0,
-     "excedente": 394849.04
+     "excedente": 335057.31
     },
     {
      "teto": 0.1,
@@ -168,8 +168,8 @@
      "uf": "BA",
      "principal": 500000.0,
      "confirmado": 20000.0,
-     "total": 7073960.76,
-     "proporcao": 0.070682,
+     "total": 8269795.24,
+     "proporcao": 0.060461,
      "pequena": false
     },
     {
@@ -199,19 +199,19 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 17084002.0,
-   "principal": 1149941.37,
-   "confirmado": 1111941.37,
+   "total": 17705862.31,
+   "principal": 1159941.37,
+   "confirmado": 1121941.37,
    "generico": 38000.0,
    "provavel": 29.99,
-   "proporcao": 0.067311,
+   "proporcao": 0.065512,
    "n_candidatos": 6,
    "n_gastaram": 6,
    "n_elegiveis": 5,
-   "pago": 1146941.37,
-   "pago_publico": 1065001.0,
-   "pct_publico": 0.928557,
-   "cobertura_pago": 0.997391,
+   "pago": 1156941.37,
+   "pago_publico": 1075001.0,
+   "pct_publico": 0.929175,
+   "cobertura_pago": 0.997414,
    "tetos": [
     {
      "teto": 0.05,
@@ -266,10 +266,10 @@
      "nome": "Rui Costa dos Santos",
      "cargo": "Senador",
      "uf": "BA",
-     "principal": 176000.0,
-     "confirmado": 160000.0,
-     "total": 3663936.17,
-     "proporcao": 0.048036,
+     "principal": 186000.0,
+     "confirmado": 170000.0,
+     "total": 4285796.48,
+     "proporcao": 0.043399,
      "pequena": false
     },
     {
@@ -299,43 +299,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 164143283.78,
-   "principal": 5086333.26,
-   "confirmado": 4510311.88,
-   "generico": 576021.38,
+   "total": 167962332.42,
+   "principal": 5295011.1,
+   "confirmado": 4654039.72,
+   "generico": 640971.38,
    "provavel": 710.58,
-   "proporcao": 0.030987,
-   "n_candidatos": 425,
-   "n_gastaram": 159,
-   "n_elegiveis": 223,
-   "pago": 4992094.11,
-   "pago_publico": 4381060.64,
-   "pct_publico": 0.8776,
-   "cobertura_pago": 0.981472,
+   "proporcao": 0.031525,
+   "n_candidatos": 428,
+   "n_gastaram": 163,
+   "n_elegiveis": 229,
+   "pago": 5221391.63,
+   "pago_publico": 4584445.7,
+   "pct_publico": 0.878012,
+   "cobertura_pago": 0.986096,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 35,
-     "pct_acima": 0.156951,
-     "excedente": 2248306.4
+     "n_acima": 39,
+     "pct_acima": 0.170306,
+     "excedente": 2324076.23
     },
     {
      "teto": 0.1,
      "n_acima": 25,
-     "pct_acima": 0.112108,
-     "excedente": 1399018.37
+     "pct_acima": 0.10917,
+     "excedente": 1400886.39
     },
     {
      "teto": 0.15,
      "n_acima": 16,
-     "pct_acima": 0.071749,
-     "excedente": 792430.1
+     "pct_acima": 0.069869,
+     "excedente": 795233.7
     },
     {
      "teto": 0.2,
-     "n_acima": 10,
-     "pct_acima": 0.044843,
-     "excedente": 491826.35
+     "n_acima": 11,
+     "pct_acima": 0.048035,
+     "excedente": 494382.57
     }
    ],
    "top": [
@@ -379,8 +379,8 @@
      "uf": "BA",
      "principal": 244036.36,
      "confirmado": 244036.36,
-     "total": 1489999.99,
-     "proporcao": 0.163783,
+     "total": 1500059.29,
+     "proporcao": 0.162684,
      "pequena": false
     },
     {
@@ -399,46 +399,57 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 69578838.25,
-   "principal": 2554347.18,
-   "confirmado": 1810195.28,
-   "generico": 744151.9,
+   "total": 71726577.5,
+   "principal": 2752889.63,
+   "confirmado": 2003737.73,
+   "generico": 749151.9,
    "provavel": 299.76,
-   "proporcao": 0.036712,
-   "n_candidatos": 460,
-   "n_gastaram": 142,
-   "n_elegiveis": 201,
-   "pago": 2478408.16,
-   "pago_publico": 1628576.2,
-   "pct_publico": 0.657106,
-   "cobertura_pago": 0.970271,
+   "proporcao": 0.03838,
+   "n_candidatos": 467,
+   "n_gastaram": 145,
+   "n_elegiveis": 204,
+   "pago": 2678950.61,
+   "pago_publico": 1706928.3,
+   "pct_publico": 0.637163,
+   "cobertura_pago": 0.973141,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 51,
-     "pct_acima": 0.253731,
-     "excedente": 1169119.66
+     "n_acima": 52,
+     "pct_acima": 0.254902,
+     "excedente": 1299359.31
     },
     {
      "teto": 0.1,
-     "n_acima": 30,
-     "pct_acima": 0.149254,
-     "excedente": 570750.46
+     "n_acima": 31,
+     "pct_acima": 0.151961,
+     "excedente": 688622.59
     },
     {
      "teto": 0.15,
-     "n_acima": 18,
-     "pct_acima": 0.089552,
-     "excedente": 286254.27
+     "n_acima": 20,
+     "pct_acima": 0.098039,
+     "excedente": 393350.77
     },
     {
      "teto": 0.2,
-     "n_acima": 9,
-     "pct_acima": 0.044776,
-     "excedente": 151396.46
+     "n_acima": 10,
+     "pct_acima": 0.04902,
+     "excedente": 247396.26
     }
    ],
    "top": [
+    {
+     "sq": "50002535064",
+     "nome": "Alessandro Silva de Jesus",
+     "cargo": "Deputado Estadual",
+     "uf": "BA",
+     "principal": 153824.0,
+     "confirmado": 153824.0,
+     "total": 191021.5,
+     "proporcao": 0.805271,
+     "pequena": false
+    },
     {
      "sq": "50002535120",
      "nome": "Janio Natal Andrade Borges Junior",
@@ -446,8 +457,8 @@
      "uf": "BA",
      "principal": 129238.88,
      "confirmado": 129238.88,
-     "total": 1019575.23,
-     "proporcao": 0.126758,
+     "total": 1019705.23,
+     "proporcao": 0.126741,
      "pequena": false
     },
     {
@@ -468,8 +479,8 @@
      "uf": "BA",
      "principal": 103000.0,
      "confirmado": 48000.0,
-     "total": 962457.77,
-     "proporcao": 0.107018,
+     "total": 982277.97,
+     "proporcao": 0.104858,
      "pequena": false
     },
     {
@@ -481,17 +492,6 @@
      "confirmado": 96899.5,
      "total": 215000.0,
      "proporcao": 0.450695,
-     "pequena": false
-    },
-    {
-     "sq": "50002535102",
-     "nome": "Diego Castro Barbosa",
-     "cargo": "Deputado Estadual",
-     "uf": "BA",
-     "principal": 95000.0,
-     "confirmado": 0.0,
-     "total": 365122.5,
-     "proporcao": 0.260187,
      "pequena": false
     }
    ]

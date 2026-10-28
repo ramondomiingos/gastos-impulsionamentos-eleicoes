@@ -2,51 +2,51 @@
  "uf": "PR",
  "nome": "Paraná",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 1062,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 236064154.19,
-   "principal": 28466141.21,
-   "confirmado": 24471845.69,
-   "generico": 3994295.52,
+   "total": 244565399.98,
+   "principal": 30154841.4,
+   "confirmado": 25819695.88,
+   "generico": 4335145.52,
    "provavel": 447.9,
-   "proporcao": 0.120586,
-   "n_candidatos": 846,
-   "n_gastaram": 523,
-   "n_elegiveis": 428,
-   "pago": 26872843.62,
-   "pago_publico": 20327981.31,
-   "pct_publico": 0.756451,
-   "cobertura_pago": 0.944028,
+   "proporcao": 0.1233,
+   "n_candidatos": 859,
+   "n_gastaram": 538,
+   "n_elegiveis": 439,
+   "pago": 28562302.32,
+   "pago_publico": 21758685.49,
+   "pct_publico": 0.761797,
+   "cobertura_pago": 0.947188,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 223,
-     "pct_acima": 0.521028,
-     "excedente": 18995478.52
+     "n_acima": 234,
+     "pct_acima": 0.53303,
+     "excedente": 20170741.63
     },
     {
      "teto": 0.1,
-     "n_acima": 157,
-     "pct_acima": 0.366822,
-     "excedente": 13922760.14
+     "n_acima": 164,
+     "pct_acima": 0.373576,
+     "excedente": 14762100.06
     },
     {
      "teto": 0.15,
-     "n_acima": 118,
-     "pct_acima": 0.275701,
-     "excedente": 10215837.07
+     "n_acima": 124,
+     "pct_acima": 0.28246,
+     "excedente": 10889157.94
     },
     {
      "teto": 0.2,
-     "n_acima": 87,
-     "pct_acima": 0.203271,
-     "excedente": 7493692.76
+     "n_acima": 93,
+     "pct_acima": 0.211845,
+     "excedente": 7973245.02
     }
    ],
    "top": [
@@ -68,8 +68,8 @@
      "uf": "PR",
      "principal": 1248526.06,
      "confirmado": 1248526.06,
-     "total": 3006857.42,
-     "proporcao": 0.415226,
+     "total": 3008357.42,
+     "proporcao": 0.415019,
      "pequena": false
     },
     {
@@ -110,12 +110,12 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 26429331.04,
+   "total": 26447752.86,
    "principal": 2062397.99,
    "confirmado": 2046368.0,
    "generico": 16029.99,
    "provavel": 0.0,
-   "proporcao": 0.078034,
+   "proporcao": 0.07798,
    "n_candidatos": 7,
    "n_gastaram": 6,
    "n_elegiveis": 4,
@@ -128,7 +128,7 @@
      "teto": 0.05,
      "n_acima": 4,
      "pct_acima": 1.0,
-     "excedente": 727212.3
+     "excedente": 726966.31
     },
     {
      "teto": 0.1,
@@ -168,8 +168,8 @@
      "uf": "PR",
      "principal": 600029.99,
      "confirmado": 600000.0,
-     "total": 10997335.02,
-     "proporcao": 0.054561,
+     "total": 11002254.83,
+     "proporcao": 0.054537,
      "pequena": false
     },
     {
@@ -310,43 +310,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 131760780.8,
-   "principal": 13792128.66,
-   "confirmado": 11875302.98,
-   "generico": 1916825.68,
+   "total": 136366691.82,
+   "principal": 14848711.29,
+   "confirmado": 12749385.61,
+   "generico": 2099325.68,
    "provavel": 156.96,
-   "proporcao": 0.104676,
-   "n_candidatos": 371,
-   "n_gastaram": 229,
-   "n_elegiveis": 201,
-   "pago": 13042354.6,
-   "pago_publico": 10310996.28,
-   "pct_publico": 0.790578,
-   "cobertura_pago": 0.945638,
+   "proporcao": 0.108888,
+   "n_candidatos": 374,
+   "n_gastaram": 234,
+   "n_elegiveis": 206,
+   "pago": 14098937.23,
+   "pago_publico": 11274642.77,
+   "pct_publico": 0.79968,
+   "cobertura_pago": 0.949506,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 94,
-     "pct_acima": 0.467662,
-     "excedente": 9200572.97
+     "n_acima": 100,
+     "pct_acima": 0.485437,
+     "excedente": 9910836.47
     },
     {
      "teto": 0.1,
-     "n_acima": 63,
-     "pct_acima": 0.313433,
-     "excedente": 6750690.79
+     "n_acima": 65,
+     "pct_acima": 0.315534,
+     "excedente": 7233388.38
     },
     {
      "teto": 0.15,
-     "n_acima": 43,
-     "pct_acima": 0.21393,
-     "excedente": 5107646.61
+     "n_acima": 44,
+     "pct_acima": 0.213592,
+     "excedente": 5523653.88
     },
     {
      "teto": 0.2,
-     "n_acima": 34,
-     "pct_acima": 0.169154,
-     "excedente": 3863704.05
+     "n_acima": 36,
+     "pct_acima": 0.174757,
+     "excedente": 4171627.1
     }
    ],
    "top": [
@@ -357,8 +357,8 @@
      "uf": "PR",
      "principal": 1248526.06,
      "confirmado": 1248526.06,
-     "total": 3006857.42,
-     "proporcao": 0.415226,
+     "total": 3008357.42,
+     "proporcao": 0.415019,
      "pequena": false
     },
     {
@@ -384,6 +384,17 @@
      "pequena": false
     },
     {
+     "sq": "160002542297",
+     "nome": "Paulo Eduardo Lima Martins",
+     "cargo": "Deputado Federal",
+     "uf": "PR",
+     "principal": 700078.0,
+     "confirmado": 700078.0,
+     "total": 2008010.27,
+     "proporcao": 0.348643,
+     "pequena": false
+    },
+    {
      "sq": "160002536517",
      "nome": "Elton Carlos Welter",
      "cargo": "Deputado Federal",
@@ -393,60 +404,49 @@
      "total": 2393928.93,
      "proporcao": 0.245128,
      "pequena": false
-    },
-    {
-     "sq": "160002547582",
-     "nome": "Reinhold Stephanes Junior",
-     "cargo": "Deputado Federal",
-     "uf": "PR",
-     "principal": 581000.0,
-     "confirmado": 581000.0,
-     "total": 2301082.34,
-     "proporcao": 0.25249,
-     "pequena": false
     }
    ]
   },
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 58829659.99,
-   "principal": 7247849.68,
-   "confirmado": 5979259.83,
-   "generico": 1268589.85,
+   "total": 62706572.94,
+   "principal": 7879967.24,
+   "confirmado": 6453027.39,
+   "generico": 1426939.85,
    "provavel": 290.94,
-   "proporcao": 0.123201,
-   "n_candidatos": 460,
-   "n_gastaram": 281,
-   "n_elegiveis": 217,
-   "pago": 6984326.15,
-   "pago_publico": 4426822.16,
-   "pct_publico": 0.633822,
-   "cobertura_pago": 0.963641,
+   "proporcao": 0.125664,
+   "n_candidatos": 470,
+   "n_gastaram": 291,
+   "n_elegiveis": 223,
+   "pago": 7617202.22,
+   "pago_publico": 4893879.85,
+   "pct_publico": 0.642477,
+   "cobertura_pago": 0.966654,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 120,
-     "pct_acima": 0.552995,
-     "excedente": 4638968.73
+     "n_acima": 125,
+     "pct_acima": 0.560538,
+     "excedente": 5104214.33
     },
     {
      "teto": 0.1,
-     "n_acima": 88,
-     "pct_acima": 0.40553,
-     "excedente": 3412495.76
+     "n_acima": 93,
+     "pct_acima": 0.41704,
+     "excedente": 3769138.08
     },
     {
      "teto": 0.15,
-     "n_acima": 70,
-     "pct_acima": 0.322581,
-     "excedente": 2495616.88
+     "n_acima": 75,
+     "pct_acima": 0.336323,
+     "excedente": 2752930.48
     },
     {
      "teto": 0.2,
-     "n_acima": 49,
-     "pct_acima": 0.225806,
-     "excedente": 1792859.84
+     "n_acima": 53,
+     "pct_acima": 0.237668,
+     "excedente": 1964489.05
     }
    ],
    "top": [
@@ -473,6 +473,28 @@
      "pequena": false
     },
     {
+     "sq": "160002547597",
+     "nome": "Flávia Carolina Resende Jaber Francischini",
+     "cargo": "Deputado Estadual",
+     "uf": "PR",
+     "principal": 219102.0,
+     "confirmado": 219102.0,
+     "total": 344468.44,
+     "proporcao": 0.636058,
+     "pequena": false
+    },
+    {
+     "sq": "160002533460",
+     "nome": "Mabel Corá Canto",
+     "cargo": "Deputado Estadual",
+     "uf": "PR",
+     "principal": 210000.0,
+     "confirmado": 0.0,
+     "total": 887584.66,
+     "proporcao": 0.236597,
+     "pequena": false
+    },
+    {
      "sq": "160002546804",
      "nome": "Oziel Luiz de Souza",
      "cargo": "Deputado Estadual",
@@ -481,28 +503,6 @@
      "confirmado": 210000.0,
      "total": 635227.09,
      "proporcao": 0.33059,
-     "pequena": false
-    },
-    {
-     "sq": "160002547632",
-     "nome": "Paulo Henrique Rivera de Melo",
-     "cargo": "Deputado Estadual",
-     "uf": "PR",
-     "principal": 189500.0,
-     "confirmado": 189500.0,
-     "total": 315816.44,
-     "proporcao": 0.600032,
-     "pequena": false
-    },
-    {
-     "sq": "160002542263",
-     "nome": "Yasmin Victoria Souza Hachem",
-     "cargo": "Deputado Estadual",
-     "uf": "PR",
-     "principal": 158500.0,
-     "confirmado": 158500.0,
-     "total": 270209.81,
-     "proporcao": 0.586581,
      "pequena": false
     }
    ]

@@ -55,6 +55,8 @@ ROTULOS_CARGO = {
     "deputado distrital": "Deputados distritais",
 }
 TETOS_EXIBIDOS = (0.05, 0.10, 0.20)
+# DS_SIT_TOT_TURNO (normalizado) de uma linha NR_TURNO 2 ja totalizada
+SITUACOES_DECIDIDAS = {"eleito", "nao eleito"}
 
 
 def brl(valor: float) -> str:
@@ -105,7 +107,7 @@ def linhas_consulta_cand(eleitos_zip: Path):
 
 def _consulta_cand(eleitos_zip: Path, uf: str, cargo: str | None) -> tuple[int, int, dict]:
     """(candidatos no cargo/UF, quantos seguem no 2º turno, nome completo por SQ) a partir do consulta_cand do TSE."""
-    sq_todos, sq_2turno, nomes = set(), set(), {}
+    sq_todos, sq_2turno, decididos, nomes = set(), set(), set(), {}
     for r in linhas_consulta_cand(eleitos_zip):
         if r["SG_UF"] != uf:
             continue
@@ -118,7 +120,9 @@ def _consulta_cand(eleitos_zip: Path, uf: str, cargo: str | None) -> tuple[int, 
         nomes[r["SQ_CANDIDATO"]] = r["NM_CANDIDATO"]
         if normalize(r["DS_SIT_TOT_TURNO"]).startswith("2") and r.get("NR_TURNO", "1") == "1":
             sq_2turno.add(r["SQ_CANDIDATO"])
-    return len(sq_todos), len(sq_2turno), nomes
+        if r.get("NR_TURNO") == "2" and normalize(r["DS_SIT_TOT_TURNO"]) in SITUACOES_DECIDIDAS:
+            decididos.add(r["SQ_CANDIDATO"])
+    return len(sq_todos), len(sq_2turno - decididos), nomes
 
 
 def montar(run: Path, uf: str, cargo: str, n_total: int, n_2turno: int, nomes: dict | None = None) -> dict:

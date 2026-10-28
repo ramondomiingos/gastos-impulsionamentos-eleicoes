@@ -16,7 +16,7 @@ python3.12 -m venv .venv
 
 ## Dados
 
-O download é automático: na primeira execução o zip do TSE é salvo em `data/raw/` (cerca de 209 MB) e reaproveitado depois. Para pular o download, passe `--zip caminho.zip`. O mesmo zip traz as despesas **pagas**, usadas por `gastos publicar` para medir a fonte do dinheiro. A lista de candidatos e eleitos (`consulta_cand`, usada por `gastos emails` e `gastos publicar`) fica em `data/raw/consulta_cand_2026.zip` e é baixada de novo quando o cache tem mais de 12 h. `data/raw/`, `data/interim/` e `out/` não vão para o git.
+O download é automático: na primeira execução o zip do TSE é salvo em `data/raw/` (cerca de 250 MB em 28/10/2026) e reaproveitado depois, **sem nunca ser baixado de novo**: para atualizar, mova ou apague o zip antigo antes de rodar. Para pular o download, passe `--zip caminho.zip`. O mesmo zip traz as despesas **pagas**, usadas por `gastos publicar` para medir a fonte do dinheiro. A lista de candidatos e eleitos (`consulta_cand`, usada por `gastos emails` e `gastos publicar`) fica em `data/raw/consulta_cand_2026.zip` e é baixada de novo quando o cache tem mais de 12 h. `data/raw/`, `data/interim/` e `out/` não vão para o git.
 
 ## Rodando `gastos analisar`
 
@@ -33,12 +33,12 @@ gastos analisar                                          # país inteiro
 
 (use `.venv/bin/gastos` se o venv não estiver ativo; `--zip` aceita o zip já baixado.) Nome ambíguo é recusado e a mensagem lista os `SQ_CANDIDATO` possíveis.
 
-Exemplo real do RN (dados de 22/10/2026): as duas primeiras linhas acima geram `out/2026-10-22_uf-RN` e `out/2026-10-22_uf-RN_cargo-deputado-federal`.
+Exemplo real do RN (dados de 28/10/2026): as duas primeiras linhas acima geram `out/2026-10-28_uf-RN` e `out/2026-10-28_uf-RN_cargo-deputado-federal`.
 
 | recorte | principal (confirmado + genérico) | piso (confirmado) | proporção sobre o total |
 | --- | --- | --- | --- |
-| RN, todos os cargos | R$ 4.240.709,51 | R$ 2.930.448,25 | 4,5% |
-| RN, Deputado Federal | R$ 1.145.454,73 | R$ 707.060,28 | 3,1% |
+| RN, todos os cargos | R$ 4.399.788,26 | R$ 3.079.527,00 | 4,6% |
+| RN, Deputado Federal | R$ 1.256.133,48 | R$ 817.739,03 | 3,3% |
 
 ## `gastos publicar`: JSON do site
 
@@ -165,5 +165,5 @@ Opções: `--eleitos-zip` (padrão `data/raw/consulta_cand_2026.zip`, usado para
 
 - Os dados são **parciais**: reúnem prestações parciais e relatórios financeiros (algumas campanhas já entregaram a prestação final). `relatorio.md` e os e-mails dizem "dados gerados pelo TSE em X; as prestações de contas mais recentes incluídas foram entregues até Y" (as duas datas também estão em `meta.json`). Os números mudam até a prestação final de todas.
 - A classificação foi validada à mão, linha a linha, apenas no RN. Nos outros estados os números são estimativas (há uma [checagem automática por estado](metodologia.md#validação-por-estado-checagem-automática)); olhe `qualidade.md` antes de usar.
-- Em 22/10/2026 o arquivo de resultados do TSE não tinha totalização de alguns cargos (ex.: senadores e governador da PB; disputas de 2º turno), então esses eleitos podem faltar na lista usada pelo `emails`.
+- Desde 28/10/2026 o arquivo de resultados do TSE traz o 2º turno totalizado; quem tem resultado no 2º turno deixa de contar como "em 2º turno" no site e nos stories. Se algum cargo ainda estiver sem totalização, os eleitos dele podem faltar na lista usada pelo `emails`.
 - O CPF vem mascarado; o candidato é identificado por `SQ_CANDIDATO`.

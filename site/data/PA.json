@@ -2,51 +2,51 @@
  "uf": "PA",
  "nome": "Pará",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "22/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 706,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 127943050.84,
-   "principal": 12333839.68,
-   "confirmado": 6861433.81,
-   "generico": 5472405.87,
+   "total": 132760241.74,
+   "principal": 12581472.69,
+   "confirmado": 7027632.32,
+   "generico": 5553840.37,
    "provavel": 631.67,
-   "proporcao": 0.096401,
-   "n_candidatos": 477,
-   "n_gastaram": 222,
-   "n_elegiveis": 301,
-   "pago": 12156879.08,
-   "pago_publico": 10492463.76,
-   "pct_publico": 0.863089,
-   "cobertura_pago": 0.985652,
+   "proporcao": 0.094768,
+   "n_candidatos": 485,
+   "n_gastaram": 228,
+   "n_elegiveis": 307,
+   "pago": 12408512.09,
+   "pago_publico": 10623846.27,
+   "pct_publico": 0.856174,
+   "cobertura_pago": 0.986253,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 87,
-     "pct_acima": 0.289037,
-     "excedente": 8441765.19
+     "pct_acima": 0.283388,
+     "excedente": 8587213.56
     },
     {
      "teto": 0.1,
-     "n_acima": 57,
-     "pct_acima": 0.189369,
-     "excedente": 6005838.27
+     "n_acima": 56,
+     "pct_acima": 0.18241,
+     "excedente": 6131432.56
     },
     {
      "teto": 0.15,
      "n_acima": 36,
-     "pct_acima": 0.119601,
-     "excedente": 4300771.21
+     "pct_acima": 0.117264,
+     "excedente": 4413021.33
     },
     {
      "teto": 0.2,
-     "n_acima": 27,
-     "pct_acima": 0.089701,
-     "excedente": 2954078.72
+     "n_acima": 26,
+     "pct_acima": 0.084691,
+     "excedente": 3063702.06
     }
    ],
    "top": [
@@ -110,17 +110,17 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 16224236.46,
-   "principal": 4010000.0,
-   "confirmado": 1560000.0,
-   "generico": 2450000.0,
+   "total": 16837606.92,
+   "principal": 4036000.0,
+   "confirmado": 1576000.0,
+   "generico": 2460000.0,
    "provavel": 0.0,
-   "proporcao": 0.247161,
+   "proporcao": 0.239702,
    "n_candidatos": 5,
    "n_gastaram": 3,
    "n_elegiveis": 3,
-   "pago": 4010000.0,
-   "pago_publico": 4010000.0,
+   "pago": 4036000.0,
+   "pago_publico": 4036000.0,
    "pct_publico": 1.0,
    "cobertura_pago": 1.0,
    "tetos": [
@@ -177,10 +177,10 @@
      "nome": "Araceli Maria Pereira Lemos",
      "cargo": "Governador",
      "uf": "PA",
-     "principal": 10000.0,
-     "confirmado": 10000.0,
-     "total": 521363.44,
-     "proporcao": 0.01918,
+     "principal": 36000.0,
+     "confirmado": 26000.0,
+     "total": 1134733.9,
+     "proporcao": 0.031725,
      "pequena": false
     }
    ]
@@ -288,43 +288,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 66960330.8,
-   "principal": 4971849.82,
-   "confirmado": 2866318.96,
-   "generico": 2105530.86,
+   "total": 69486924.26,
+   "principal": 5156996.24,
+   "confirmado": 2997780.88,
+   "generico": 2159215.36,
    "provavel": 487.53,
-   "proporcao": 0.074251,
-   "n_candidatos": 194,
-   "n_gastaram": 105,
-   "n_elegiveis": 144,
-   "pago": 4871689.23,
-   "pago_publico": 4370558.76,
-   "pct_publico": 0.897134,
-   "cobertura_pago": 0.979854,
+   "proporcao": 0.074215,
+   "n_candidatos": 197,
+   "n_gastaram": 106,
+   "n_elegiveis": 146,
+   "pago": 5056835.65,
+   "pago_publico": 4447954.68,
+   "pct_publico": 0.879592,
+   "cobertura_pago": 0.980578,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 41,
-     "pct_acima": 0.284722,
-     "excedente": 3146247.59
+     "pct_acima": 0.280822,
+     "excedente": 3294831.97
     },
     {
      "teto": 0.1,
      "n_acima": 29,
-     "pct_acima": 0.201389,
-     "excedente": 2101754.6
+     "pct_acima": 0.19863,
+     "excedente": 2238527.9
     },
     {
      "teto": 0.15,
      "n_acima": 19,
-     "pct_acima": 0.131944,
-     "excedente": 1433020.72
+     "pct_acima": 0.130137,
+     "excedente": 1557160.66
     },
     {
      "teto": 0.2,
      "n_acima": 14,
-     "pct_acima": 0.097222,
-     "excedente": 1038918.51
+     "pct_acima": 0.09589,
+     "excedente": 1150425.1
     }
    ],
    "top": [
@@ -388,43 +388,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 37316139.8,
-   "principal": 2667989.86,
-   "confirmado": 1951114.85,
-   "generico": 716875.01,
+   "total": 38993366.78,
+   "principal": 2704476.45,
+   "confirmado": 1969851.44,
+   "generico": 734625.01,
    "provavel": 144.14,
-   "proporcao": 0.071497,
-   "n_candidatos": 269,
-   "n_gastaram": 108,
-   "n_elegiveis": 148,
-   "pago": 2591189.85,
-   "pago_publico": 1528905.0,
-   "pct_publico": 0.59004,
-   "cobertura_pago": 0.971214,
+   "proporcao": 0.069357,
+   "n_candidatos": 274,
+   "n_gastaram": 113,
+   "n_elegiveis": 152,
+   "pago": 2631676.44,
+   "pago_publico": 1556891.59,
+   "pct_publico": 0.591597,
+   "cobertura_pago": 0.973082,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 39,
-     "pct_acima": 0.263514,
-     "excedente": 1675730.94
+     "pct_acima": 0.256579,
+     "excedente": 1672594.94
     },
     {
      "teto": 0.1,
-     "n_acima": 24,
-     "pct_acima": 0.162162,
-     "excedente": 1270315.47
+     "n_acima": 23,
+     "pct_acima": 0.151316,
+     "excedente": 1259136.46
     },
     {
      "teto": 0.15,
      "n_acima": 14,
-     "pct_acima": 0.094595,
-     "excedente": 1055925.76
+     "pct_acima": 0.092105,
+     "excedente": 1044035.94
     },
     {
      "teto": 0.2,
-     "n_acima": 10,
-     "pct_acima": 0.067568,
-     "excedente": 907727.23
+     "n_acima": 9,
+     "pct_acima": 0.059211,
+     "excedente": 905843.98
     }
    ],
    "top": [
