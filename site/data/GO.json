@@ -2,51 +2,51 @@
  "uf": "GO",
  "nome": "Goiás",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 877,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 172255533.22,
-   "principal": 13748472.01,
-   "confirmado": 9367782.95,
-   "generico": 4380689.06,
+   "total": 179570525.27,
+   "principal": 14727526.9,
+   "confirmado": 10281828.96,
+   "generico": 4445697.94,
    "provavel": 1037.97,
-   "proporcao": 0.079814,
-   "n_candidatos": 606,
-   "n_gastaram": 299,
-   "n_elegiveis": 320,
-   "pago": 13547247.64,
-   "pago_publico": 9028082.62,
-   "pct_publico": 0.666415,
-   "cobertura_pago": 0.985364,
+   "proporcao": 0.082015,
+   "n_candidatos": 610,
+   "n_gastaram": 306,
+   "n_elegiveis": 326,
+   "pago": 14547178.28,
+   "pago_publico": 9631807.9,
+   "pct_publico": 0.662108,
+   "cobertura_pago": 0.987754,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 124,
-     "pct_acima": 0.3875,
-     "excedente": 7748699.35
+     "pct_acima": 0.380368,
+     "excedente": 8436024.79
     },
     {
      "teto": 0.1,
-     "n_acima": 72,
-     "pct_acima": 0.225,
-     "excedente": 4149132.98
+     "n_acima": 73,
+     "pct_acima": 0.223926,
+     "excedente": 4716778.28
     },
     {
      "teto": 0.15,
-     "n_acima": 48,
-     "pct_acima": 0.15,
-     "excedente": 2690193.84
+     "n_acima": 52,
+     "pct_acima": 0.159509,
+     "excedente": 3229672.39
     },
     {
      "teto": 0.2,
-     "n_acima": 33,
-     "pct_acima": 0.103125,
-     "excedente": 1826340.11
+     "n_acima": 38,
+     "pct_acima": 0.116564,
+     "excedente": 2285427.31
     }
    ],
    "top": [
@@ -95,14 +95,14 @@
      "pequena": false
     },
     {
-     "sq": "90002543215",
-     "nome": "Vanderlan Vieira Cardoso",
-     "cargo": "Senador",
+     "sq": "90002542626",
+     "nome": "Vitor Hugo de Araujo Almeida",
+     "cargo": "Deputado Federal",
      "uf": "GO",
-     "principal": 540000.0,
-     "confirmado": 430000.0,
-     "total": 2257933.36,
-     "proporcao": 0.239157,
+     "principal": 584681.41,
+     "confirmado": 524681.41,
+     "total": 1180732.4,
+     "proporcao": 0.495185,
      "pequena": false
     }
    ]
@@ -299,46 +299,57 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 77404296.04,
-   "principal": 3997991.47,
-   "confirmado": 2838128.39,
-   "generico": 1159863.08,
+   "total": 81917862.16,
+   "principal": 4661623.13,
+   "confirmado": 3475757.72,
+   "generico": 1185865.41,
    "provavel": 654.72,
-   "proporcao": 0.051651,
+   "proporcao": 0.056906,
    "n_candidatos": 211,
-   "n_gastaram": 108,
-   "n_elegiveis": 137,
-   "pago": 3931615.72,
-   "pago_publico": 3189062.27,
-   "pct_publico": 0.811133,
-   "cobertura_pago": 0.983398,
+   "n_gastaram": 110,
+   "n_elegiveis": 138,
+   "pago": 4610623.13,
+   "pago_publico": 3789383.47,
+   "pct_publico": 0.821881,
+   "cobertura_pago": 0.98906,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 40,
-     "pct_acima": 0.291971,
-     "excedente": 2055877.7
+     "pct_acima": 0.289855,
+     "excedente": 2506567.32
     },
     {
      "teto": 0.1,
      "n_acima": 22,
-     "pct_acima": 0.160584,
-     "excedente": 1318888.64
+     "pct_acima": 0.15942,
+     "excedente": 1688117.52
     },
     {
      "teto": 0.15,
      "n_acima": 14,
-     "pct_acima": 0.10219,
-     "excedente": 794396.87
+     "pct_acima": 0.101449,
+     "excedente": 1187248.32
     },
     {
      "teto": 0.2,
-     "n_acima": 10,
-     "pct_acima": 0.072993,
-     "excedente": 446267.65
+     "n_acima": 11,
+     "pct_acima": 0.07971,
+     "excedente": 809375.38
     }
    ],
    "top": [
+    {
+     "sq": "90002542626",
+     "nome": "Vitor Hugo de Araujo Almeida",
+     "cargo": "Deputado Federal",
+     "uf": "GO",
+     "principal": 584681.41,
+     "confirmado": 524681.41,
+     "total": 1180732.4,
+     "proporcao": 0.495185,
+     "pequena": false
+    },
     {
      "sq": "90002543471",
      "nome": "Ismael Alexandrino Junior",
@@ -346,8 +357,8 @@
      "uf": "GO",
      "principal": 530000.0,
      "confirmado": 530000.0,
-     "total": 2419267.1,
-     "proporcao": 0.219075,
+     "total": 2419280.1,
+     "proporcao": 0.219073,
      "pequena": false
     },
     {
@@ -382,60 +393,49 @@
      "total": 897794.98,
      "proporcao": 0.289598,
      "pequena": false
-    },
-    {
-     "sq": "90002543220",
-     "nome": "Lucas de Castro Santos",
-     "cargo": "Deputado Federal",
-     "uf": "GO",
-     "principal": 235000.0,
-     "confirmado": 235000.0,
-     "total": 1410756.74,
-     "proporcao": 0.166577,
-     "pequena": false
     }
    ]
   },
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 46782911.39,
-   "principal": 3745233.02,
-   "confirmado": 2948382.04,
-   "generico": 796850.98,
+   "total": 49584337.32,
+   "principal": 4060656.25,
+   "confirmado": 3224798.72,
+   "generico": 835857.53,
    "provavel": 383.25,
-   "proporcao": 0.080056,
-   "n_candidatos": 380,
-   "n_gastaram": 177,
-   "n_elegiveis": 171,
-   "pago": 3610384.4,
-   "pago_publico": 1061273.83,
-   "pct_publico": 0.29395,
-   "cobertura_pago": 0.963995,
+   "proporcao": 0.081894,
+   "n_candidatos": 384,
+   "n_gastaram": 182,
+   "n_elegiveis": 176,
+   "pago": 3931307.63,
+   "pago_publico": 1064677.91,
+   "pct_publico": 0.27082,
+   "cobertura_pago": 0.968146,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 73,
-     "pct_acima": 0.426901,
-     "excedente": 2093799.2
+     "pct_acima": 0.414773,
+     "excedente": 2330435.02
     },
     {
      "teto": 0.1,
-     "n_acima": 45,
-     "pct_acima": 0.263158,
-     "excedente": 1338551.97
+     "n_acima": 46,
+     "pct_acima": 0.261364,
+     "excedente": 1536968.39
     },
     {
      "teto": 0.15,
-     "n_acima": 31,
-     "pct_acima": 0.181287,
-     "excedente": 880625.73
+     "n_acima": 35,
+     "pct_acima": 0.198864,
+     "excedente": 1027252.83
     },
     {
      "teto": 0.2,
-     "n_acima": 20,
-     "pct_acima": 0.116959,
-     "excedente": 611510.81
+     "n_acima": 24,
+     "pct_acima": 0.136364,
+     "excedente": 707490.28
     }
    ],
    "top": [
@@ -451,14 +451,25 @@
      "pequena": false
     },
     {
+     "sq": "90002547083",
+     "nome": "Karlos Marcio Vieira Cabral",
+     "cargo": "Deputado Estadual",
+     "uf": "GO",
+     "principal": 136900.0,
+     "confirmado": 136900.0,
+     "total": 481295.04,
+     "proporcao": 0.284441,
+     "pequena": false
+    },
+    {
      "sq": "90002543783",
      "nome": "Eduardo José do Prado",
      "cargo": "Deputado Estadual",
      "uf": "GO",
      "principal": 126000.0,
      "confirmado": 0.0,
-     "total": 347560.0,
-     "proporcao": 0.362527,
+     "total": 353672.71,
+     "proporcao": 0.356262,
      "pequena": false
     },
     {
@@ -481,17 +492,6 @@
      "confirmado": 123000.0,
      "total": 190192.5,
      "proporcao": 0.646713,
-     "pequena": false
-    },
-    {
-     "sq": "90002537458",
-     "nome": "Eder Gean Silva",
-     "cargo": "Deputado Estadual",
-     "uf": "GO",
-     "principal": 110000.0,
-     "confirmado": 110000.0,
-     "total": 274949.66,
-     "proporcao": 0.400073,
      "pequena": false
     }
    ]

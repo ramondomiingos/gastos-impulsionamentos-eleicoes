@@ -2,51 +2,51 @@
  "uf": "MS",
  "nome": "Mato Grosso do Sul",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 395,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 86961643.22,
-   "principal": 6889091.13,
-   "confirmado": 4148375.86,
-   "generico": 2740715.27,
+   "total": 91650850.3,
+   "principal": 8400746.09,
+   "confirmado": 5676770.82,
+   "generico": 2723975.27,
    "provavel": 102.09,
-   "proporcao": 0.07922,
-   "n_candidatos": 298,
-   "n_gastaram": 164,
-   "n_elegiveis": 157,
-   "pago": 6500189.64,
-   "pago_publico": 4671971.47,
-   "pct_publico": 0.718744,
-   "cobertura_pago": 0.943548,
+   "proporcao": 0.09166,
+   "n_candidatos": 302,
+   "n_gastaram": 171,
+   "n_elegiveis": 162,
+   "pago": 8011179.96,
+   "pago_publico": 5913821.02,
+   "pct_publico": 0.738196,
+   "cobertura_pago": 0.953627,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 61,
-     "pct_acima": 0.388535,
-     "excedente": 3981627.92
+     "n_acima": 68,
+     "pct_acima": 0.419753,
+     "excedente": 5244048.23
     },
     {
      "teto": 0.1,
-     "n_acima": 36,
-     "pct_acima": 0.229299,
-     "excedente": 2395894.32
+     "n_acima": 42,
+     "pct_acima": 0.259259,
+     "excedente": 3403782.07
     },
     {
      "teto": 0.15,
-     "n_acima": 22,
-     "pct_acima": 0.140127,
-     "excedente": 1403937.2
+     "n_acima": 27,
+     "pct_acima": 0.166667,
+     "excedente": 2137962.43
     },
     {
      "teto": 0.2,
-     "n_acima": 12,
-     "pct_acima": 0.076433,
-     "excedente": 873505.58
+     "n_acima": 14,
+     "pct_acima": 0.08642,
+     "excedente": 1416707.69
     }
    ],
    "top": [
@@ -57,8 +57,19 @@
      "uf": "MS",
      "principal": 1629000.0,
      "confirmado": 25000.0,
-     "total": 6167726.55,
+     "total": 6167731.55,
      "proporcao": 0.264117,
+     "pequena": false
+    },
+    {
+     "sq": "120002536282",
+     "nome": "Marcos Sborowski Pollon",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 1050000.0,
+     "confirmado": 1050000.0,
+     "total": 2651690.47,
+     "proporcao": 0.395974,
      "pequena": false
     },
     {
@@ -73,6 +84,17 @@
      "pequena": false
     },
     {
+     "sq": "120002536281",
+     "nome": "Rodolfo Oliveira Nogueira",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 300132.44,
+     "confirmado": 300132.44,
+     "total": 1922179.5,
+     "proporcao": 0.156142,
+     "pequena": false
+    },
+    {
      "sq": "120002537361",
      "nome": "Jaime Elias Verruck",
      "cargo": "Deputado Federal",
@@ -82,71 +104,49 @@
      "total": 1938587.14,
      "proporcao": 0.125349,
      "pequena": false
-    },
-    {
-     "sq": "120002536287",
-     "nome": "Luana Ruiz Silva",
-     "cargo": "Deputado Federal",
-     "uf": "MS",
-     "principal": 228000.0,
-     "confirmado": 228000.0,
-     "total": 1275805.54,
-     "proporcao": 0.178711,
-     "pequena": false
-    },
-    {
-     "sq": "120002535769",
-     "nome": "Renan Barbosa Contar",
-     "cargo": "Senador",
-     "uf": "MS",
-     "principal": 220000.0,
-     "confirmado": 220000.0,
-     "total": 2137727.29,
-     "proporcao": 0.102913,
-     "pequena": false
     }
    ]
   },
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 9697540.88,
-   "principal": 1673550.0,
-   "confirmado": 69400.0,
-   "generico": 1604150.0,
+   "total": 9673873.88,
+   "principal": 1688550.0,
+   "confirmado": 74400.0,
+   "generico": 1614150.0,
    "provavel": 0.0,
-   "proporcao": 0.172575,
+   "proporcao": 0.174547,
    "n_candidatos": 5,
    "n_gastaram": 4,
    "n_elegiveis": 4,
-   "pago": 1673550.0,
+   "pago": 1688550.0,
    "pago_publico": 1210000.0,
-   "pct_publico": 0.723014,
+   "pct_publico": 0.716591,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 2,
      "pct_acima": 0.5,
-     "excedente": 1321706.02
+     "excedente": 1337889.37
     },
     {
      "teto": 0.1,
-     "n_acima": 1,
-     "pct_acima": 0.25,
-     "excedente": 1012227.34
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 1021628.74
     },
     {
      "teto": 0.15,
-     "n_acima": 1,
-     "pct_acima": 0.25,
-     "excedente": 703841.02
+     "n_acima": 2,
+     "pct_acima": 0.5,
+     "excedente": 705368.12
     },
     {
      "teto": 0.2,
      "n_acima": 1,
      "pct_acima": 0.25,
-     "excedente": 395454.69
+     "excedente": 395453.69
     }
    ],
    "top": [
@@ -157,8 +157,19 @@
      "uf": "MS",
      "principal": 1629000.0,
      "confirmado": 25000.0,
-     "total": 6167726.55,
+     "total": 6167731.55,
      "proporcao": 0.264117,
+     "pequena": false
+    },
+    {
+     "sq": "120002552155",
+     "nome": "Delcidio do Amaral Gomez",
+     "cargo": "Governador",
+     "uf": "MS",
+     "principal": 25150.0,
+     "confirmado": 15000.0,
+     "total": 157481.0,
+     "proporcao": 0.159702,
      "pequena": false
     },
     {
@@ -170,17 +181,6 @@
      "confirmado": 25000.0,
      "total": 3149014.34,
      "proporcao": 0.007939,
-     "pequena": false
-    },
-    {
-     "sq": "120002552155",
-     "nome": "Delcidio do Amaral Gomez",
-     "cargo": "Governador",
-     "uf": "MS",
-     "principal": 10150.0,
-     "confirmado": 10000.0,
-     "total": 181153.0,
-     "proporcao": 0.05603,
      "pequena": false
     },
     {
@@ -299,46 +299,68 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 37543901.12,
-   "principal": 2423851.34,
-   "confirmado": 1732650.84,
+   "total": 41089457.12,
+   "principal": 3824717.59,
+   "confirmado": 3133517.09,
    "generico": 691200.5,
    "provavel": 0.0,
-   "proporcao": 0.06456,
-   "n_candidatos": 96,
-   "n_gastaram": 53,
-   "n_elegiveis": 51,
-   "pago": 2066149.85,
-   "pago_publico": 1708468.14,
-   "pct_publico": 0.826885,
-   "cobertura_pago": 0.852424,
+   "proporcao": 0.093083,
+   "n_candidatos": 97,
+   "n_gastaram": 57,
+   "n_elegiveis": 54,
+   "pago": 3467017.59,
+   "pago_publico": 2913074.57,
+   "pct_publico": 0.840225,
+   "cobertura_pago": 0.906477,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 17,
-     "pct_acima": 0.333333,
-     "excedente": 1241171.69
+     "n_acima": 21,
+     "pct_acima": 0.388889,
+     "excedente": 2451921.89
     },
     {
      "teto": 0.1,
-     "n_acima": 13,
-     "pct_acima": 0.254902,
-     "excedente": 727474.66
+     "n_acima": 15,
+     "pct_acima": 0.277778,
+     "excedente": 1716280.75
     },
     {
      "teto": 0.15,
-     "n_acima": 7,
-     "pct_acima": 0.137255,
-     "excedente": 468223.15
+     "n_acima": 11,
+     "pct_acima": 0.203704,
+     "excedente": 1198742.36
     },
     {
      "teto": 0.2,
-     "n_acima": 6,
-     "pct_acima": 0.117647,
-     "excedente": 356591.98
+     "n_acima": 8,
+     "pct_acima": 0.148148,
+     "excedente": 900768.02
     }
    ],
    "top": [
+    {
+     "sq": "120002536282",
+     "nome": "Marcos Sborowski Pollon",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 1050000.0,
+     "confirmado": 1050000.0,
+     "total": 2651690.47,
+     "proporcao": 0.395974,
+     "pequena": false
+    },
+    {
+     "sq": "120002536281",
+     "nome": "Rodolfo Oliveira Nogueira",
+     "cargo": "Deputado Federal",
+     "uf": "MS",
+     "principal": 300132.44,
+     "confirmado": 300132.44,
+     "total": 1922179.5,
+     "proporcao": 0.156142,
+     "pequena": false
+    },
     {
      "sq": "120002537361",
      "nome": "Jaime Elias Verruck",
@@ -371,71 +393,49 @@
      "total": 462065.3,
      "proporcao": 0.446907,
      "pequena": false
-    },
-    {
-     "sq": "120002536281",
-     "nome": "Rodolfo Oliveira Nogueira",
-     "cargo": "Deputado Federal",
-     "uf": "MS",
-     "principal": 200000.0,
-     "confirmado": 200000.0,
-     "total": 1762809.06,
-     "proporcao": 0.113455,
-     "pequena": false
-    },
-    {
-     "sq": "120002536280",
-     "nome": "Andre de Arruda Campos",
-     "cargo": "Deputado Federal",
-     "uf": "MS",
-     "principal": 178400.0,
-     "confirmado": 8400.0,
-     "total": 243302.5,
-     "proporcao": 0.733244,
-     "pequena": false
     }
    ]
   },
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 31088723.47,
-   "principal": 1843302.29,
-   "confirmado": 1397937.52,
-   "generico": 445364.77,
+   "total": 32256041.55,
+   "principal": 1939091.0,
+   "confirmado": 1520466.23,
+   "generico": 418624.77,
    "provavel": 102.09,
-   "proporcao": 0.059292,
-   "n_candidatos": 190,
-   "n_gastaram": 102,
-   "n_elegiveis": 97,
-   "pago": 1812302.29,
-   "pago_publico": 1273503.33,
-   "pct_publico": 0.702699,
-   "cobertura_pago": 0.983182,
+   "proporcao": 0.060116,
+   "n_candidatos": 193,
+   "n_gastaram": 105,
+   "n_elegiveis": 99,
+   "pago": 1907424.87,
+   "pago_publico": 1310746.45,
+   "pct_publico": 0.687181,
+   "cobertura_pago": 0.98367,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 38,
-     "pct_acima": 0.391753,
-     "excedente": 871128.78
+     "n_acima": 41,
+     "pct_acima": 0.414141,
+     "excedente": 906615.54
     },
     {
      "teto": 0.1,
-     "n_acima": 20,
-     "pct_acima": 0.206186,
-     "excedente": 442168.9
+     "n_acima": 23,
+     "pct_acima": 0.232323,
+     "excedente": 451849.16
     },
     {
      "teto": 0.15,
      "n_acima": 13,
-     "pct_acima": 0.134021,
-     "excedente": 197678.8
+     "pct_acima": 0.131313,
+     "excedente": 199657.72
     },
     {
      "teto": 0.2,
      "n_acima": 5,
-     "pct_acima": 0.051546,
-     "excedente": 121458.91
+     "pct_acima": 0.050505,
+     "excedente": 120485.98
     }
    ],
    "top": [
@@ -473,25 +473,25 @@
      "pequena": false
     },
     {
+     "sq": "120002536060",
+     "nome": "Daverson Munhoz de Matos",
+     "cargo": "Deputado Estadual",
+     "uf": "MS",
+     "principal": 92834.47,
+     "confirmado": 92834.47,
+     "total": 271999.99,
+     "proporcao": 0.341303,
+     "pequena": false
+    },
+    {
      "sq": "120002536054",
      "nome": "Gianni Dias Aguillar Nogueira",
      "cargo": "Deputado Estadual",
      "uf": "MS",
      "principal": 85000.0,
      "confirmado": 85000.0,
-     "total": 692461.75,
+     "total": 692462.75,
      "proporcao": 0.12275,
-     "pequena": false
-    },
-    {
-     "sq": "120002536060",
-     "nome": "Daverson Munhoz de Matos",
-     "cargo": "Deputado Estadual",
-     "uf": "MS",
-     "principal": 82000.0,
-     "confirmado": 52000.0,
-     "total": 212963.0,
-     "proporcao": 0.385043,
      "pequena": false
     }
    ]

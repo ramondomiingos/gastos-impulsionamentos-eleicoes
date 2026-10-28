@@ -2,51 +2,51 @@
  "uf": "ES",
  "nome": "Espírito Santo",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
- "segundo_turno": 2,
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "28/10/2026",
+ "segundo_turno": 0,
  "n_candidatos_total": 563,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 100544475.35,
-   "principal": 8579661.75,
-   "confirmado": 6204311.28,
-   "generico": 2375350.47,
+   "total": 109640937.64,
+   "principal": 9665856.88,
+   "confirmado": 7182506.41,
+   "generico": 2483350.47,
    "provavel": 12971.72,
-   "proporcao": 0.085332,
-   "n_candidatos": 432,
-   "n_gastaram": 252,
-   "n_elegiveis": 200,
-   "pago": 8220154.98,
-   "pago_publico": 6295806.34,
-   "pct_publico": 0.765899,
-   "cobertura_pago": 0.958098,
+   "proporcao": 0.088159,
+   "n_candidatos": 437,
+   "n_gastaram": 256,
+   "n_elegiveis": 206,
+   "pago": 9279050.11,
+   "pago_publico": 7250129.74,
+   "pct_publico": 0.781344,
+   "cobertura_pago": 0.959982,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 98,
-     "pct_acima": 0.49,
-     "excedente": 5002565.07
+     "n_acima": 104,
+     "pct_acima": 0.504854,
+     "excedente": 5612249.18
     },
     {
      "teto": 0.1,
-     "n_acima": 68,
-     "pct_acima": 0.34,
-     "excedente": 3282784.02
+     "n_acima": 73,
+     "pct_acima": 0.354369,
+     "excedente": 3537133.31
     },
     {
      "teto": 0.15,
-     "n_acima": 45,
-     "pct_acima": 0.225,
-     "excedente": 2307866.73
+     "n_acima": 48,
+     "pct_acima": 0.23301,
+     "excedente": 2456816.72
     },
     {
      "teto": 0.2,
-     "n_acima": 34,
-     "pct_acima": 0.17,
-     "excedente": 1537893.91
+     "n_acima": 36,
+     "pct_acima": 0.174757,
+     "excedente": 1678893.49
     }
    ],
    "top": [
@@ -57,8 +57,8 @@
      "uf": "ES",
      "principal": 1123965.0,
      "confirmado": 1123965.0,
-     "total": 4399550.75,
-     "proporcao": 0.255473,
+     "total": 4427231.01,
+     "proporcao": 0.253875,
      "pequena": false
     },
     {
@@ -110,43 +110,43 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 12829716.42,
-   "principal": 1241465.0,
-   "confirmado": 1234965.0,
-   "generico": 6500.0,
+   "total": 14877797.6,
+   "principal": 1335965.0,
+   "confirmado": 1252465.0,
+   "generico": 83500.0,
    "provavel": 0.0,
-   "proporcao": 0.096765,
+   "proporcao": 0.089796,
    "n_candidatos": 5,
    "n_gastaram": 4,
    "n_elegiveis": 4,
-   "pago": 1241465.0,
-   "pago_publico": 1236465.0,
-   "pct_publico": 0.995973,
+   "pago": 1335965.0,
+   "pago_publico": 1330965.0,
+   "pct_publico": 0.996257,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 1,
      "pct_acima": 0.25,
-     "excedente": 903987.46
+     "excedente": 902603.45
     },
     {
      "teto": 0.1,
      "n_acima": 1,
      "pct_acima": 0.25,
-     "excedente": 684009.93
+     "excedente": 681241.9
     },
     {
      "teto": 0.15,
      "n_acima": 1,
      "pct_acima": 0.25,
-     "excedente": 464032.39
+     "excedente": 459880.35
     },
     {
      "teto": 0.2,
      "n_acima": 1,
      "pct_acima": 0.25,
-     "excedente": 244054.85
+     "excedente": 238518.8
     }
    ],
    "top": [
@@ -157,8 +157,8 @@
      "uf": "ES",
      "principal": 1123965.0,
      "confirmado": 1123965.0,
-     "total": 4399550.75,
-     "proporcao": 0.255473,
+     "total": 4427231.01,
+     "proporcao": 0.253875,
      "pequena": false
     },
     {
@@ -177,10 +177,10 @@
      "nome": "Helder Ignacio Salomao",
      "cargo": "Governador",
      "uf": "ES",
-     "principal": 5500.0,
-     "confirmado": 0.0,
-     "total": 3126303.99,
-     "proporcao": 0.001759,
+     "principal": 100000.0,
+     "confirmado": 17500.0,
+     "total": 5146704.91,
+     "proporcao": 0.01943,
      "pequena": false
     },
     {
@@ -199,25 +199,25 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 14482914.85,
-   "principal": 709327.05,
-   "confirmado": 683327.05,
+   "total": 16139292.03,
+   "principal": 909327.05,
+   "confirmado": 883327.05,
    "generico": 26000.0,
    "provavel": 0.0,
-   "proporcao": 0.048977,
+   "proporcao": 0.056342,
    "n_candidatos": 11,
    "n_gastaram": 10,
    "n_elegiveis": 9,
-   "pago": 683600.0,
-   "pago_publico": 629600.0,
-   "pct_publico": 0.921006,
-   "cobertura_pago": 0.96373,
+   "pago": 833600.0,
+   "pago_publico": 779600.0,
+   "pct_publico": 0.935221,
+   "cobertura_pago": 0.916722,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 5,
      "pct_acima": 0.555556,
-     "excedente": 306383.17
+     "excedente": 379912.65
     },
     {
      "teto": 0.1,
@@ -255,10 +255,10 @@
      "nome": "Evair Vieira de Melo",
      "cargo": "Senador",
      "uf": "ES",
-     "principal": 160000.0,
-     "confirmado": 160000.0,
-     "total": 2416909.62,
-     "proporcao": 0.0662,
+     "principal": 280000.0,
+     "confirmado": 280000.0,
+     "total": 3346319.9,
+     "proporcao": 0.083674,
      "pequena": false
     },
     {
@@ -266,10 +266,10 @@
      "nome": "Rosilda de Freitas",
      "cargo": "Senador",
      "uf": "ES",
-     "principal": 70000.0,
-     "confirmado": 50000.0,
-     "total": 3169781.5,
-     "proporcao": 0.022084,
+     "principal": 150000.0,
+     "confirmado": 130000.0,
+     "total": 3896748.4,
+     "proporcao": 0.038494,
      "pequena": false
     },
     {
@@ -299,42 +299,42 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 48567759.89,
-   "principal": 3768922.56,
-   "confirmado": 1686876.94,
-   "generico": 2082045.62,
+   "total": 52949062.72,
+   "principal": 4322100.16,
+   "confirmado": 2210054.54,
+   "generico": 2112045.62,
    "provavel": 12581.97,
-   "proporcao": 0.077601,
-   "n_candidatos": 112,
+   "proporcao": 0.081628,
+   "n_candidatos": 114,
    "n_gastaram": 68,
-   "n_elegiveis": 69,
-   "pago": 3476303.01,
-   "pago_publico": 3139994.41,
-   "pct_publico": 0.903257,
-   "cobertura_pago": 0.92236,
+   "n_elegiveis": 70,
+   "pago": 4029480.61,
+   "pago_publico": 3690994.41,
+   "pct_publico": 0.915998,
+   "cobertura_pago": 0.932297,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 27,
-     "pct_acima": 0.391304,
-     "excedente": 2119159.32
+     "n_acima": 29,
+     "pct_acima": 0.414286,
+     "excedente": 2419920.06
     },
     {
      "teto": 0.1,
-     "n_acima": 15,
-     "pct_acima": 0.217391,
-     "excedente": 1393364.05
+     "n_acima": 17,
+     "pct_acima": 0.242857,
+     "excedente": 1454399.21
     },
     {
      "teto": 0.15,
      "n_acima": 9,
-     "pct_acima": 0.130435,
+     "pct_acima": 0.128571,
      "excedente": 1060141.69
     },
     {
      "teto": 0.2,
      "n_acima": 7,
-     "pct_acima": 0.101449,
+     "pct_acima": 0.1,
      "excedente": 792107.75
     }
    ],
@@ -373,25 +373,25 @@
      "pequena": false
     },
     {
-     "sq": "80002541008",
-     "nome": "Tyago Ribeiro Hoffmann",
+     "sq": "80002542409",
+     "nome": "Josias Mario da Vitoria",
      "cargo": "Deputado Federal",
      "uf": "ES",
-     "principal": 150000.0,
-     "confirmado": 150000.0,
-     "total": 1698863.86,
-     "proporcao": 0.088294,
+     "principal": 300100.0,
+     "confirmado": 270100.0,
+     "total": 3065653.95,
+     "proporcao": 0.097891,
      "pequena": false
     },
     {
-     "sq": "80002542390",
-     "nome": "Alexandre Ofranti Ramalho",
+     "sq": "80002536274",
+     "nome": "Antonio Sergio Alves Vidigal Junior",
      "cargo": "Deputado Federal",
      "uf": "ES",
-     "principal": 141807.95,
-     "confirmado": 141807.95,
-     "total": 1417231.05,
-     "proporcao": 0.10006,
+     "principal": 215500.0,
+     "confirmado": 100500.0,
+     "total": 2456375.04,
+     "proporcao": 0.087731,
      "pequena": false
     }
    ]
@@ -399,43 +399,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 24664084.19,
-   "principal": 2859947.14,
-   "confirmado": 2599142.29,
-   "generico": 260804.85,
+   "total": 25674785.29,
+   "principal": 3098464.67,
+   "confirmado": 2836659.82,
+   "generico": 261804.85,
    "provavel": 389.75,
-   "proporcao": 0.115956,
-   "n_candidatos": 304,
-   "n_gastaram": 170,
-   "n_elegiveis": 118,
-   "pago": 2818786.97,
-   "pago_publico": 1289746.93,
-   "pct_publico": 0.457554,
-   "cobertura_pago": 0.985608,
+   "proporcao": 0.120681,
+   "n_candidatos": 307,
+   "n_gastaram": 174,
+   "n_elegiveis": 123,
+   "pago": 3080004.5,
+   "pago_publico": 1448570.33,
+   "pct_publico": 0.470314,
+   "cobertura_pago": 0.994042,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 65,
-     "pct_acima": 0.550847,
-     "excedente": 1673035.13
+     "n_acima": 69,
+     "pct_acima": 0.560976,
+     "excedente": 1909813.02
     },
     {
      "teto": 0.1,
-     "n_acima": 48,
-     "pct_acima": 0.40678,
-     "excedente": 1098952.75
+     "n_acima": 51,
+     "pct_acima": 0.414634,
+     "excedente": 1295034.91
     },
     {
      "teto": 0.15,
-     "n_acima": 33,
-     "pct_acima": 0.279661,
-     "excedente": 744679.75
+     "n_acima": 36,
+     "pct_acima": 0.292683,
+     "excedente": 897781.77
     },
     {
      "teto": 0.2,
-     "n_acima": 24,
-     "pct_acima": 0.20339,
-     "excedente": 471714.11
+     "n_acima": 26,
+     "pct_acima": 0.211382,
+     "excedente": 618249.73
     }
    ],
    "top": [
@@ -462,6 +462,17 @@
      "pequena": false
     },
     {
+     "sq": "80002549976",
+     "nome": "Alcantaro Victor Lazzarini Campos",
+     "cargo": "Deputado Estadual",
+     "uf": "ES",
+     "principal": 132800.0,
+     "confirmado": 120800.0,
+     "total": 265797.42,
+     "proporcao": 0.499629,
+     "pequena": false
+    },
+    {
      "sq": "80002535795",
      "nome": "Marco Antonio Vieira de Novaes",
      "cargo": "Deputado Estadual",
@@ -473,25 +484,14 @@
      "pequena": false
     },
     {
-     "sq": "80002549412",
-     "nome": "Evandro de Souza Ferreira Braga",
+     "sq": "80002549450",
+     "nome": "Raphaela Maria de Oliveira Moraes Vasques",
      "cargo": "Deputado Estadual",
      "uf": "ES",
-     "principal": 94900.0,
-     "confirmado": 84900.0,
-     "total": 455000.01,
-     "proporcao": 0.208571,
-     "pequena": false
-    },
-    {
-     "sq": "80002537475",
-     "nome": "Franco Fiorot",
-     "cargo": "Deputado Estadual",
-     "uf": "ES",
-     "principal": 87946.65,
-     "confirmado": 87946.65,
-     "total": 420066.61,
-     "proporcao": 0.209364,
+     "principal": 103900.0,
+     "confirmado": 76900.0,
+     "total": 262195.37,
+     "proporcao": 0.396269,
      "pequena": false
     }
    ]

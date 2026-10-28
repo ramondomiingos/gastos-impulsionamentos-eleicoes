@@ -2,51 +2,51 @@
  "uf": "DF",
  "nome": "Distrito Federal",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
- "segundo_turno": 2,
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
+ "segundo_turno": 0,
  "n_candidatos_total": 629,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 121881017.57,
-   "principal": 14827474.53,
-   "confirmado": 12604137.31,
-   "generico": 2223337.22,
+   "total": 126574192.91,
+   "principal": 15934053.02,
+   "confirmado": 13756008.6,
+   "generico": 2178044.42,
    "provavel": 1223.73,
-   "proporcao": 0.121655,
-   "n_candidatos": 501,
-   "n_gastaram": 284,
-   "n_elegiveis": 204,
-   "pago": 14164392.46,
-   "pago_publico": 9594125.08,
-   "pct_publico": 0.677341,
-   "cobertura_pago": 0.95528,
+   "proporcao": 0.125887,
+   "n_candidatos": 508,
+   "n_gastaram": 290,
+   "n_elegiveis": 209,
+   "pago": 15624840.92,
+   "pago_publico": 10314120.71,
+   "pct_publico": 0.66011,
+   "cobertura_pago": 0.980594,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 120,
-     "pct_acima": 0.588235,
-     "excedente": 9324896.76
+     "n_acima": 128,
+     "pct_acima": 0.61244,
+     "excedente": 10291797.28
     },
     {
      "teto": 0.1,
-     "n_acima": 83,
-     "pct_acima": 0.406863,
-     "excedente": 6038771.5
+     "n_acima": 95,
+     "pct_acima": 0.454545,
+     "excedente": 6725490.57
     },
     {
      "teto": 0.15,
-     "n_acima": 61,
-     "pct_acima": 0.29902,
-     "excedente": 3904091.82
+     "n_acima": 68,
+     "pct_acima": 0.325359,
+     "excedente": 4377539.83
     },
     {
      "teto": 0.2,
-     "n_acima": 43,
-     "pct_acima": 0.210784,
-     "excedente": 2738166.8
+     "n_acima": 50,
+     "pct_acima": 0.239234,
+     "excedente": 3053237.74
     }
    ],
    "top": [
@@ -110,31 +110,31 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 18315993.05,
-   "principal": 1291396.0,
-   "confirmado": 728876.0,
+   "total": 18459091.01,
+   "principal": 1381396.0,
+   "confirmado": 818876.0,
    "generico": 562520.0,
    "provavel": 29.99,
-   "proporcao": 0.070506,
+   "proporcao": 0.074836,
    "n_candidatos": 9,
    "n_gastaram": 6,
    "n_elegiveis": 6,
-   "pago": 1146519.0,
+   "pago": 1334396.0,
    "pago_publico": 962000.0,
-   "pct_publico": 0.839062,
-   "cobertura_pago": 0.887814,
+   "pct_publico": 0.720925,
+   "cobertura_pago": 0.965976,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 5,
      "pct_acima": 0.833333,
-     "excedente": 414327.31
+     "excedente": 497191.73
     },
     {
      "teto": 0.1,
-     "n_acima": 0,
-     "pct_acima": 0.0,
-     "excedente": 0.0
+     "n_acima": 1,
+     "pct_acima": 0.166667,
+     "excedente": 12959.81
     },
     {
      "teto": 0.15,
@@ -162,14 +162,25 @@
      "pequena": false
     },
     {
+     "sq": "70002547775",
+     "nome": "Francisco Queiroz Caputo Neto",
+     "cargo": "Governador",
+     "uf": "DF",
+     "principal": 271397.0,
+     "confirmado": 247877.0,
+     "total": 2584371.93,
+     "proporcao": 0.105015,
+     "pequena": false
+    },
+    {
      "sq": "70002552965",
      "nome": "Paula Moreno Paro Belmonte",
      "cargo": "Governador",
      "uf": "DF",
      "principal": 250999.0,
      "confirmado": 250999.0,
-     "total": 4672689.0,
-     "proporcao": 0.053716,
+     "total": 4695066.63,
+     "proporcao": 0.05346,
      "pequena": false
     },
     {
@@ -181,17 +192,6 @@
      "confirmado": 220000.0,
      "total": 2326132.44,
      "proporcao": 0.094578,
-     "pequena": false
-    },
-    {
-     "sq": "70002547775",
-     "nome": "Francisco Queiroz Caputo Neto",
-     "cargo": "Governador",
-     "uf": "DF",
-     "principal": 181397.0,
-     "confirmado": 157877.0,
-     "total": 2464037.97,
-     "proporcao": 0.073618,
      "pequena": false
     },
     {
@@ -210,31 +210,31 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 15627930.99,
-   "principal": 1686000.0,
-   "confirmado": 1598000.0,
+   "total": 15863790.8,
+   "principal": 1726000.0,
+   "confirmado": 1638000.0,
    "generico": 88000.0,
    "provavel": 0.0,
-   "proporcao": 0.107884,
+   "proporcao": 0.108801,
    "n_candidatos": 10,
    "n_gastaram": 7,
    "n_elegiveis": 7,
-   "pago": 1659000.0,
-   "pago_publico": 1539000.0,
-   "pct_publico": 0.927667,
-   "cobertura_pago": 0.983986,
+   "pago": 1699000.0,
+   "pago_publico": 1579000.0,
+   "pct_publico": 0.92937,
+   "cobertura_pago": 0.984357,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 5,
      "pct_acima": 0.714286,
-     "excedente": 1069126.07
+     "excedente": 1097612.43
     },
     {
      "teto": 0.1,
-     "n_acima": 4,
-     "pct_acima": 0.571429,
-     "excedente": 545573.64
+     "n_acima": 5,
+     "pct_acima": 0.714286,
+     "excedente": 562224.86
     },
     {
      "teto": 0.15,
@@ -295,14 +295,14 @@
      "pequena": false
     },
     {
-     "sq": "70002548624",
-     "nome": "Sebastiao Coelho da Silva",
+     "sq": "70002552582",
+     "nome": "Marley Mendonca Alves",
      "cargo": "Senador",
      "uf": "DF",
-     "principal": 30000.0,
-     "confirmado": 30000.0,
-     "total": 104203.27,
-     "proporcao": 0.287899,
+     "principal": 51000.0,
+     "confirmado": 51000.0,
+     "total": 343487.78,
+     "proporcao": 0.148477,
      "pequena": false
     }
    ]
@@ -310,43 +310,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 52530267.91,
-   "principal": 6146206.88,
-   "confirmado": 4958036.88,
-   "generico": 1188170.0,
+   "total": 53936434.01,
+   "principal": 6363041.94,
+   "confirmado": 5289571.94,
+   "generico": 1073470.0,
    "provavel": 589.98,
-   "proporcao": 0.117003,
-   "n_candidatos": 139,
-   "n_gastaram": 78,
-   "n_elegiveis": 80,
-   "pago": 5780796.35,
-   "pago_publico": 4168751.59,
-   "pct_publico": 0.721138,
-   "cobertura_pago": 0.940547,
+   "proporcao": 0.117973,
+   "n_candidatos": 141,
+   "n_gastaram": 81,
+   "n_elegiveis": 81,
+   "pago": 6198187.28,
+   "pago_publico": 4434097.32,
+   "pct_publico": 0.715386,
+   "cobertura_pago": 0.974092,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 38,
-     "pct_acima": 0.475,
-     "excedente": 4001901.75
+     "n_acima": 41,
+     "pct_acima": 0.506173,
+     "excedente": 4153202.51
     },
     {
      "teto": 0.1,
-     "n_acima": 26,
-     "pct_acima": 0.325,
-     "excedente": 2632074.83
+     "n_acima": 28,
+     "pct_acima": 0.345679,
+     "excedente": 2701288.4
     },
     {
      "teto": 0.15,
-     "n_acima": 16,
-     "pct_acima": 0.2,
-     "excedente": 1687169.62
+     "n_acima": 17,
+     "pct_acima": 0.209877,
+     "excedente": 1672491.91
     },
     {
      "teto": 0.2,
-     "n_acima": 10,
-     "pct_acima": 0.125,
-     "excedente": 1158950.65
+     "n_acima": 11,
+     "pct_acima": 0.135802,
+     "excedente": 1095942.16
     }
    ],
    "top": [
@@ -395,14 +395,14 @@
      "pequena": false
     },
     {
-     "sq": "70002538935",
-     "nome": "Rafael Cavalcanti Prudente",
+     "sq": "70002538523",
+     "nome": "Gilvam Maximo",
      "cargo": "Deputado Federal",
      "uf": "DF",
-     "principal": 340000.0,
-     "confirmado": 5000.0,
-     "total": 2298800.25,
-     "proporcao": 0.147903,
+     "principal": 351914.45,
+     "confirmado": 349414.45,
+     "total": 1679459.05,
+     "proporcao": 0.20954,
      "pequena": false
     }
    ]
@@ -410,46 +410,57 @@
   "deputado-distrital": {
    "rotulo": "Deputados distritais",
    "cargo": "Deputado Distrital",
-   "total": 35406825.62,
-   "principal": 5703871.65,
-   "confirmado": 5319224.43,
-   "generico": 384647.22,
+   "total": 38314877.09,
+   "principal": 6463615.08,
+   "confirmado": 6009560.66,
+   "generico": 454054.42,
    "provavel": 603.76,
-   "proporcao": 0.161095,
-   "n_candidatos": 343,
-   "n_gastaram": 193,
-   "n_elegiveis": 111,
-   "pago": 5578077.11,
-   "pago_publico": 2924373.49,
-   "pct_publico": 0.524262,
-   "cobertura_pago": 0.977946,
+   "proporcao": 0.168697,
+   "n_candidatos": 348,
+   "n_gastaram": 196,
+   "n_elegiveis": 115,
+   "pago": 6393257.64,
+   "pago_publico": 3339023.39,
+   "pct_publico": 0.522273,
+   "cobertura_pago": 0.989115,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 72,
-     "pct_acima": 0.648649,
-     "excedente": 3839541.63
+     "n_acima": 77,
+     "pct_acima": 0.669565,
+     "excedente": 4543790.61
     },
     {
      "teto": 0.1,
-     "n_acima": 53,
-     "pct_acima": 0.477477,
-     "excedente": 2861123.04
+     "n_acima": 61,
+     "pct_acima": 0.530435,
+     "excedente": 3449017.5
     },
     {
      "teto": 0.15,
-     "n_acima": 43,
-     "pct_acima": 0.387387,
-     "excedente": 2114933.33
+     "n_acima": 49,
+     "pct_acima": 0.426087,
+     "excedente": 2603059.04
     },
     {
      "teto": 0.2,
-     "n_acima": 32,
-     "pct_acima": 0.288288,
-     "excedente": 1570056.81
+     "n_acima": 38,
+     "pct_acima": 0.330435,
+     "excedente": 1948136.24
     }
    ],
    "top": [
+    {
+     "sq": "70002550009",
+     "nome": "Roosevelt Vilela Pires",
+     "cargo": "Deputado Distrital",
+     "uf": "DF",
+     "principal": 335000.0,
+     "confirmado": 335000.0,
+     "total": 1055086.72,
+     "proporcao": 0.317509,
+     "pequena": false
+    },
     {
      "sq": "70002540827",
      "nome": "Rodrigo Germano Delmasso Martins",
@@ -484,25 +495,14 @@
      "pequena": false
     },
     {
-     "sq": "70002550019",
-     "nome": "Joaquim Domingos Roriz Neto",
+     "sq": "70002550004",
+     "nome": "Victor Jansen Ferreira",
      "cargo": "Deputado Distrital",
      "uf": "DF",
-     "principal": 209715.0,
-     "confirmado": 209715.0,
-     "total": 1150851.5,
-     "proporcao": 0.182226,
-     "pequena": false
-    },
-    {
-     "sq": "70002540512",
-     "nome": "Ricardo Vale da Silva",
-     "cargo": "Deputado Distrital",
-     "uf": "DF",
-     "principal": 207000.0,
-     "confirmado": 207000.0,
-     "total": 492605.4,
-     "proporcao": 0.420215,
+     "principal": 232800.0,
+     "confirmado": 232800.0,
+     "total": 372172.2,
+     "proporcao": 0.625517,
      "pequena": false
     }
    ]

@@ -2,54 +2,76 @@
  "uf": "SE",
  "nome": "Sergipe",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 380,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 99146962.56,
-   "principal": 2403988.73,
-   "confirmado": 1452651.53,
-   "generico": 951337.2,
-   "provavel": 0.0,
-   "proporcao": 0.024247,
+   "total": 103555382.71,
+   "principal": 3110627.57,
+   "confirmado": 2001840.37,
+   "generico": 1108787.2,
+   "provavel": 251.88,
+   "proporcao": 0.030038,
    "n_candidatos": 306,
-   "n_gastaram": 102,
-   "n_elegiveis": 156,
-   "pago": 2234588.73,
-   "pago_publico": 1848382.67,
-   "pct_publico": 0.827169,
-   "cobertura_pago": 0.929534,
+   "n_gastaram": 106,
+   "n_elegiveis": 169,
+   "pago": 2941227.57,
+   "pago_publico": 2496521.51,
+   "pct_publico": 0.848803,
+   "cobertura_pago": 0.945542,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 22,
-     "pct_acima": 0.141026,
-     "excedente": 728495.71
+     "n_acima": 27,
+     "pct_acima": 0.159763,
+     "excedente": 1172748.73
     },
     {
      "teto": 0.1,
-     "n_acima": 8,
-     "pct_acima": 0.051282,
-     "excedente": 221224.11
+     "n_acima": 11,
+     "pct_acima": 0.065089,
+     "excedente": 433090.48
     },
     {
      "teto": 0.15,
      "n_acima": 1,
-     "pct_acima": 0.00641,
+     "pct_acima": 0.005917,
      "excedente": 127327.06
     },
     {
      "teto": 0.2,
      "n_acima": 1,
-     "pct_acima": 0.00641,
+     "pct_acima": 0.005917,
      "excedente": 103102.75
     }
    ],
    "top": [
+    {
+     "sq": "260002547290",
+     "nome": "Andre Luis Dantas Ferreira",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 455000.0,
+     "confirmado": 325000.0,
+     "total": 3261578.11,
+     "proporcao": 0.139503,
+     "pequena": false
+    },
+    {
+     "sq": "260002547285",
+     "nome": "Rogerio Carvalho Santos",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 422000.0,
+     "confirmado": 405000.0,
+     "total": 3462479.18,
+     "proporcao": 0.121878,
+     "pequena": false
+    },
     {
      "sq": "260002551550",
      "nome": "Edvaldo Nogueira Filho",
@@ -59,17 +81,6 @@
      "confirmado": 65000.0,
      "total": 2322051.58,
      "proporcao": 0.122736,
-     "pequena": false
-    },
-    {
-     "sq": "260002547285",
-     "nome": "Rogerio Carvalho Santos",
-     "cargo": "Senador",
-     "uf": "SE",
-     "principal": 267000.0,
-     "confirmado": 250000.0,
-     "total": 3008439.36,
-     "proporcao": 0.08875,
      "pequena": false
     },
     {
@@ -90,19 +101,8 @@
      "uf": "SE",
      "principal": 150000.0,
      "confirmado": 10000.0,
-     "total": 2383177.38,
+     "total": 2383195.38,
      "proporcao": 0.062941,
-     "pequena": false
-    },
-    {
-     "sq": "260002533084",
-     "nome": "Alessandro Vieira",
-     "cargo": "Senador",
-     "uf": "SE",
-     "principal": 110000.0,
-     "confirmado": 110000.0,
-     "total": 3116466.02,
-     "proporcao": 0.035296,
      "pequena": false
     }
    ]
@@ -110,17 +110,17 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 13063219.18,
-   "principal": 113900.0,
+   "total": 13265624.23,
+   "principal": 168900.0,
    "confirmado": 10900.0,
-   "generico": 103000.0,
+   "generico": 158000.0,
    "provavel": 0.0,
-   "proporcao": 0.008719,
+   "proporcao": 0.012732,
    "n_candidatos": 6,
    "n_gastaram": 3,
    "n_elegiveis": 5,
-   "pago": 113900.0,
-   "pago_publico": 113900.0,
+   "pago": 168900.0,
+   "pago_publico": 168900.0,
    "pct_publico": 1.0,
    "cobertura_pago": 1.0,
    "tetos": [
@@ -155,10 +155,10 @@
      "nome": "Fabio Cruz Mitidieri",
      "cargo": "Governador",
      "uf": "SE",
-     "principal": 60000.0,
+     "principal": 115000.0,
      "confirmado": 10000.0,
-     "total": 6529696.59,
-     "proporcao": 0.009189,
+     "total": 6732101.64,
+     "proporcao": 0.017082,
      "pequena": false
     },
     {
@@ -188,31 +188,31 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 16993038.54,
-   "principal": 937000.0,
-   "confirmado": 490000.0,
-   "generico": 447000.0,
+   "total": 18161157.18,
+   "principal": 1502000.0,
+   "confirmado": 955000.0,
+   "generico": 547000.0,
    "provavel": 0.0,
-   "proporcao": 0.05514,
+   "proporcao": 0.082704,
    "n_candidatos": 10,
    "n_gastaram": 8,
    "n_elegiveis": 9,
-   "pago": 797000.0,
-   "pago_publico": 702000.0,
-   "pct_publico": 0.880803,
-   "cobertura_pago": 0.850587,
+   "pago": 1362000.0,
+   "pago_publico": 1212000.0,
+   "pct_publico": 0.889868,
+   "cobertura_pago": 0.906791,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 4,
-     "pct_acima": 0.444444,
-     "excedente": 321518.91
+     "n_acima": 5,
+     "pct_acima": 0.555556,
+     "excedente": 745737.11
     },
     {
      "teto": 0.1,
-     "n_acima": 2,
-     "pct_acima": 0.222222,
-     "excedente": 53199.49
+     "n_acima": 4,
+     "pct_acima": 0.444444,
+     "excedente": 257793.76
     },
     {
      "teto": 0.15,
@@ -229,6 +229,28 @@
    ],
    "top": [
     {
+     "sq": "260002547290",
+     "nome": "Andre Luis Dantas Ferreira",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 455000.0,
+     "confirmado": 325000.0,
+     "total": 3261578.11,
+     "proporcao": 0.139503,
+     "pequena": false
+    },
+    {
+     "sq": "260002547285",
+     "nome": "Rogerio Carvalho Santos",
+     "cargo": "Senador",
+     "uf": "SE",
+     "principal": 422000.0,
+     "confirmado": 405000.0,
+     "total": 3462479.18,
+     "proporcao": 0.121878,
+     "pequena": false
+    },
+    {
      "sq": "260002551550",
      "nome": "Edvaldo Nogueira Filho",
      "cargo": "Senador",
@@ -240,24 +262,13 @@
      "pequena": false
     },
     {
-     "sq": "260002547285",
-     "nome": "Rogerio Carvalho Santos",
-     "cargo": "Senador",
-     "uf": "SE",
-     "principal": 267000.0,
-     "confirmado": 250000.0,
-     "total": 3008439.36,
-     "proporcao": 0.08875,
-     "pequena": false
-    },
-    {
      "sq": "260002549127",
      "nome": "Eduardo Alves do Amorim",
      "cargo": "Senador",
      "uf": "SE",
      "principal": 150000.0,
      "confirmado": 10000.0,
-     "total": 2383177.38,
+     "total": 2383195.38,
      "proporcao": 0.062941,
      "pequena": false
     },
@@ -271,48 +282,37 @@
      "total": 3116466.02,
      "proporcao": 0.035296,
      "pequena": false
-    },
-    {
-     "sq": "260002547290",
-     "nome": "Andre Luis Dantas Ferreira",
-     "cargo": "Senador",
-     "uf": "SE",
-     "principal": 45000.0,
-     "confirmado": 15000.0,
-     "total": 2553017.79,
-     "proporcao": 0.017626,
-     "pequena": false
     }
    ]
   },
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 45311153.01,
-   "principal": 818216.84,
-   "confirmado": 486894.62,
-   "generico": 331322.22,
-   "provavel": 0.0,
-   "proporcao": 0.018058,
+   "total": 47004966.37,
+   "principal": 878166.84,
+   "confirmado": 544394.62,
+   "generico": 333772.22,
+   "provavel": 251.88,
+   "proporcao": 0.018682,
    "n_candidatos": 109,
-   "n_gastaram": 47,
-   "n_elegiveis": 68,
-   "pago": 793516.84,
-   "pago_publico": 685146.88,
-   "pct_publico": 0.863431,
-   "cobertura_pago": 0.969812,
+   "n_gastaram": 49,
+   "n_elegiveis": 76,
+   "pago": 853466.84,
+   "pago_publico": 744596.88,
+   "pct_publico": 0.872438,
+   "cobertura_pago": 0.971873,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 9,
-     "pct_acima": 0.132353,
-     "excedente": 148120.59
+     "n_acima": 11,
+     "pct_acima": 0.144737,
+     "excedente": 163754.44
     },
     {
      "teto": 0.1,
-     "n_acima": 4,
-     "pct_acima": 0.058824,
-     "excedente": 11859.31
+     "n_acima": 5,
+     "pct_acima": 0.065789,
+     "excedente": 19131.41
     },
     {
      "teto": 0.15,
@@ -335,8 +335,8 @@
      "uf": "SE",
      "principal": 110000.0,
      "confirmado": 50000.0,
-     "total": 1171700.75,
-     "proporcao": 0.093881,
+     "total": 1206351.83,
+     "proporcao": 0.091184,
      "pequena": false
     },
     {
@@ -388,42 +388,42 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 23779551.83,
-   "principal": 534871.89,
-   "confirmado": 464856.91,
+   "total": 25123634.93,
+   "principal": 561560.73,
+   "confirmado": 491545.75,
    "generico": 70014.98,
    "provavel": 0.0,
-   "proporcao": 0.022493,
+   "proporcao": 0.022352,
    "n_candidatos": 181,
-   "n_gastaram": 44,
-   "n_elegiveis": 74,
-   "pago": 530171.89,
-   "pago_publico": 347335.79,
-   "pct_publico": 0.655138,
-   "cobertura_pago": 0.991213,
+   "n_gastaram": 46,
+   "n_elegiveis": 79,
+   "pago": 556860.73,
+   "pago_publico": 371024.63,
+   "pct_publico": 0.666279,
+   "cobertura_pago": 0.99163,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 8,
-     "pct_acima": 0.108108,
-     "excedente": 257735.38
+     "n_acima": 10,
+     "pct_acima": 0.126582,
+     "excedente": 262136.35
     },
     {
      "teto": 0.1,
      "n_acima": 2,
-     "pct_acima": 0.027027,
+     "pct_acima": 0.025316,
      "excedente": 156165.31
     },
     {
      "teto": 0.15,
      "n_acima": 1,
-     "pct_acima": 0.013514,
+     "pct_acima": 0.012658,
      "excedente": 127327.06
     },
     {
      "teto": 0.2,
      "n_acima": 1,
-     "pct_acima": 0.013514,
+     "pct_acima": 0.012658,
      "excedente": 103102.75
     }
    ],

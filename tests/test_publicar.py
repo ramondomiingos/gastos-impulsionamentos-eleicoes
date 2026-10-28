@@ -393,6 +393,25 @@ def test_candidate_missing_from_consulta_cand_falls_back_to_expense_name(zips, t
     assert (sp["n_candidatos_total"], sp["segundo_turno"]) == (0, 0)
 
 
+def test_second_round_decided_is_not_counted_as_in_dispute(tmp_path):
+    cands = [c for c in CANDS if c[:3] != ["RN", "GOVERNADOR", "1"]] + [
+        ["RN", "GOVERNADOR", "1", "JOÃO D'ÁVILA DA SILVA", "2º TURNO", "1", "ZZPART"],
+        ["RN", "GOVERNADOR", "1", "JOÃO D'ÁVILA DA SILVA", "ELEITO", "2", "ZZPART"],
+        ["RN", "GOVERNADOR", "7", "OUTRO FINALISTA", "2º TURNO", "1", "ZZPART"],
+        ["RN", "GOVERNADOR", "7", "OUTRO FINALISTA", "NÃO ELEITO", "2", "ZZPART"],
+    ]
+    e = tmp_path / "cand.zip"
+    with zipfile.ZipFile(e, "w") as f:
+        f.writestr("consulta_cand_2026_BRASIL.csv", _csv(CAB_CAND, cands))
+    z = tmp_path / "desp.zip"
+    with zipfile.ZipFile(z, "w") as f:
+        f.writestr("despesas_contratadas_candidatos_2026_BRASIL.csv", _csv(CAB_DESP, LINHAS))
+        f.writestr("despesas_pagas_candidatos_2026_BRASIL.csv", _csv(CAB_PAGO, PAGOS))
+    _pub((z, e), tmp_path / "o")
+    assert _ler(tmp_path / "o", "RN")["segundo_turno"] == 0
+    assert _ler(tmp_path / "o", "BR")["segundo_turno"] == 1  # sem linha de 2º turno: segue em disputa
+
+
 def test_gravar_rejects_nan(tmp_path):
     with pytest.raises(ValueError):
         publicar._gravar(tmp_path / "x.json", {"a": float("nan")})

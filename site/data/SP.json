@@ -2,51 +2,51 @@
  "uf": "SP",
  "nome": "São Paulo",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "22/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "28/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 2586,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 662078672.51,
-   "principal": 105219594.91,
-   "confirmado": 85475093.16,
-   "generico": 19744501.75,
-   "provavel": 24724.33,
-   "proporcao": 0.158923,
-   "n_candidatos": 1921,
-   "n_gastaram": 1211,
-   "n_elegiveis": 1139,
-   "pago": 103404473.9,
-   "pago_publico": 84406978.8,
-   "pct_publico": 0.81628,
-   "cobertura_pago": 0.982749,
+   "total": 695449940.31,
+   "principal": 115575192.69,
+   "confirmado": 95482805.55,
+   "generico": 20092387.14,
+   "provavel": 24925.08,
+   "proporcao": 0.166188,
+   "n_candidatos": 1935,
+   "n_gastaram": 1252,
+   "n_elegiveis": 1160,
+   "pago": 113720664.74,
+   "pago_publico": 93089703.39,
+   "pct_publico": 0.818582,
+   "cobertura_pago": 0.983954,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 663,
-     "pct_acima": 0.58209,
-     "excedente": 77652092.95
+     "n_acima": 695,
+     "pct_acima": 0.599138,
+     "excedente": 86254983.92
     },
     {
      "teto": 0.1,
-     "n_acima": 493,
-     "pct_acima": 0.432836,
-     "excedente": 57781827.97
+     "n_acima": 519,
+     "pct_acima": 0.447414,
+     "excedente": 64858505.68
     },
     {
      "teto": 0.15,
-     "n_acima": 371,
-     "pct_acima": 0.325724,
-     "excedente": 42962078.08
+     "n_acima": 394,
+     "pct_acima": 0.339655,
+     "excedente": 48721234.09
     },
     {
      "teto": 0.2,
-     "n_acima": 282,
-     "pct_acima": 0.247586,
-     "excedente": 32185714.6
+     "n_acima": 302,
+     "pct_acima": 0.260345,
+     "excedente": 36894678.21
     }
    ],
    "top": [
@@ -84,6 +84,17 @@
      "pequena": false
     },
     {
+     "sq": "250002533638",
+     "nome": "Fabio Eduardo de Oliveira Teruel",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1989000.0,
+     "confirmado": 1839000.0,
+     "total": 2849408.35,
+     "proporcao": 0.69804,
+     "pequena": false
+    },
+    {
      "sq": "250002544341",
      "nome": "Bruno Marcello de Oliveira Lima",
      "cargo": "Deputado Federal",
@@ -92,17 +103,6 @@
      "confirmado": 1495999.98,
      "total": 2727305.33,
      "proporcao": 0.548527,
-     "pequena": false
-    },
-    {
-     "sq": "250002537970",
-     "nome": "Tome Abduch",
-     "cargo": "Deputado Federal",
-     "uf": "SP",
-     "principal": 1401853.7,
-     "confirmado": 1401853.7,
-     "total": 2612138.46,
-     "proporcao": 0.536669,
      "pequena": false
     }
    ]
@@ -188,12 +188,12 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 26163833.75,
+   "total": 28178886.82,
    "principal": 5728110.0,
    "confirmado": 4714110.0,
    "generico": 1014000.0,
    "provavel": 0.0,
-   "proporcao": 0.218932,
+   "proporcao": 0.203277,
    "n_candidatos": 11,
    "n_gastaram": 8,
    "n_elegiveis": 9,
@@ -288,46 +288,57 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 377117248.16,
-   "principal": 56920386.52,
-   "confirmado": 47434729.84,
-   "generico": 9485656.68,
+   "total": 397237121.21,
+   "principal": 62921999.58,
+   "confirmado": 53351961.71,
+   "generico": 9570037.87,
    "provavel": 20869.64,
-   "proporcao": 0.150936,
-   "n_candidatos": 883,
-   "n_gastaram": 574,
-   "n_elegiveis": 546,
-   "pago": 55876255.14,
-   "pago_publico": 46794507.66,
-   "pct_publico": 0.837467,
-   "cobertura_pago": 0.981656,
+   "proporcao": 0.158399,
+   "n_candidatos": 889,
+   "n_gastaram": 594,
+   "n_elegiveis": 560,
+   "pago": 61828873.33,
+   "pago_publico": 52352311.04,
+   "pct_publico": 0.846729,
+   "cobertura_pago": 0.982627,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 313,
-     "pct_acima": 0.57326,
-     "excedente": 41596877.32
+     "n_acima": 334,
+     "pct_acima": 0.596429,
+     "excedente": 46504105.44
     },
     {
      "teto": 0.1,
-     "n_acima": 230,
-     "pct_acima": 0.421245,
-     "excedente": 30967104.16
+     "n_acima": 248,
+     "pct_acima": 0.442857,
+     "excedente": 34926078.65
     },
     {
      "teto": 0.15,
-     "n_acima": 167,
-     "pct_acima": 0.305861,
-     "excedente": 23512218.6
+     "n_acima": 185,
+     "pct_acima": 0.330357,
+     "excedente": 26635443.31
     },
     {
      "teto": 0.2,
-     "n_acima": 132,
-     "pct_acima": 0.241758,
-     "excedente": 17671456.36
+     "n_acima": 146,
+     "pct_acima": 0.260714,
+     "excedente": 20160871.81
     }
    ],
    "top": [
+    {
+     "sq": "250002533638",
+     "nome": "Fabio Eduardo de Oliveira Teruel",
+     "cargo": "Deputado Federal",
+     "uf": "SP",
+     "principal": 1989000.0,
+     "confirmado": 1839000.0,
+     "total": 2849408.35,
+     "proporcao": 0.69804,
+     "pequena": false
+    },
     {
      "sq": "250002544341",
      "nome": "Bruno Marcello de Oliveira Lima",
@@ -371,63 +382,74 @@
      "total": 2702190.92,
      "proporcao": 0.500335,
      "pequena": false
-    },
-    {
-     "sq": "250002536743",
-     "nome": "Edson Antonio Edinho da Silva",
-     "cargo": "Deputado Federal",
-     "uf": "SP",
-     "principal": 1346247.07,
-     "confirmado": 1346247.07,
-     "total": 3083029.11,
-     "proporcao": 0.436664,
-     "pequena": false
     }
    ]
   },
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 218718379.77,
-   "principal": 36528608.39,
-   "confirmado": 30483763.32,
-   "generico": 6044845.07,
-   "provavel": 3854.69,
-   "proporcao": 0.167012,
-   "n_candidatos": 1022,
-   "n_gastaram": 626,
-   "n_elegiveis": 580,
-   "pago": 35757618.76,
-   "pago_publico": 26754151.14,
-   "pct_publico": 0.748208,
-   "cobertura_pago": 0.978894,
+   "total": 229954721.45,
+   "principal": 40882593.11,
+   "confirmado": 34574243.84,
+   "generico": 6308349.27,
+   "provavel": 4055.44,
+   "proporcao": 0.177785,
+   "n_candidatos": 1030,
+   "n_gastaram": 647,
+   "n_elegiveis": 587,
+   "pago": 40121191.41,
+   "pago_publico": 29879072.35,
+   "pct_publico": 0.74472,
+   "cobertura_pago": 0.981376,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 343,
-     "pct_acima": 0.591379,
-     "excedente": 27444356.48
+     "n_acima": 354,
+     "pct_acima": 0.603066,
+     "excedente": 31140019.33
     },
     {
      "teto": 0.1,
-     "n_acima": 257,
-     "pct_acima": 0.443103,
-     "excedente": 21250403.91
+     "n_acima": 265,
+     "pct_acima": 0.451448,
+     "excedente": 24368107.13
     },
     {
      "teto": 0.15,
-     "n_acima": 199,
-     "pct_acima": 0.343103,
-     "excedente": 16605285.54
+     "n_acima": 204,
+     "pct_acima": 0.34753,
+     "excedente": 19241216.84
     },
     {
      "teto": 0.2,
-     "n_acima": 149,
-     "pct_acima": 0.256897,
-     "excedente": 13105536.24
+     "n_acima": 155,
+     "pct_acima": 0.264055,
+     "excedente": 15325084.4
     }
    ],
    "top": [
+    {
+     "sq": "250002540905",
+     "nome": "Raquel Kobashi Gallinati Lombardi",
+     "cargo": "Deputado Estadual",
+     "uf": "SP",
+     "principal": 973900.0,
+     "confirmado": 973900.0,
+     "total": 1239837.98,
+     "proporcao": 0.785506,
+     "pequena": false
+    },
+    {
+     "sq": "250002536393",
+     "nome": "Paulo Jorge Mansur Neto",
+     "cargo": "Deputado Estadual",
+     "uf": "SP",
+     "principal": 919989.5,
+     "confirmado": 919989.5,
+     "total": 1020617.81,
+     "proporcao": 0.901405,
+     "pequena": false
+    },
     {
      "sq": "250002536412",
      "nome": "Paulo Hugenneyer Kogos",
@@ -446,8 +468,8 @@
      "uf": "SP",
      "principal": 720898.5,
      "confirmado": 720898.5,
-     "total": 798706.93,
-     "proporcao": 0.902582,
+     "total": 834286.39,
+     "proporcao": 0.86409,
      "pequena": false
     },
     {
@@ -455,32 +477,10 @@
      "nome": "Gerson dos Santos Pires",
      "cargo": "Deputado Estadual",
      "uf": "SP",
-     "principal": 625000.0,
-     "confirmado": 625000.0,
-     "total": 950262.89,
-     "proporcao": 0.657713,
-     "pequena": false
-    },
-    {
-     "sq": "250002545143",
-     "nome": "Amanda Beatriz Foltran Ganem",
-     "cargo": "Deputado Estadual",
-     "uf": "SP",
-     "principal": 611000.0,
-     "confirmado": 611000.0,
-     "total": 959035.63,
-     "proporcao": 0.637098,
-     "pequena": false
-    },
-    {
-     "sq": "250002536846",
-     "nome": "Antonio Donato Madormo",
-     "cargo": "Deputado Estadual",
-     "uf": "SP",
-     "principal": 550000.0,
-     "confirmado": 550000.0,
-     "total": 821154.7,
-     "proporcao": 0.669789,
+     "principal": 715000.0,
+     "confirmado": 715000.0,
+     "total": 1110069.99,
+     "proporcao": 0.644104,
      "pequena": false
     }
    ]

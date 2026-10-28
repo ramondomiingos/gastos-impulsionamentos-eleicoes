@@ -17,7 +17,7 @@ from gastos.classify import classify, load_rules
 from gastos.emails import _nome_proprio
 from gastos.loader import load_despesas, load_pagamentos
 from gastos.report import _data_corte, _dt_ultima_prestacao
-from gastos.story import UF_ARTIGO, UF_NOME, linhas_consulta_cand
+from gastos.story import SITUACOES_DECIDIDAS, UF_ARTIGO, UF_NOME, linhas_consulta_cand
 from gastos.text import normalize
 
 TETOS_PADRAO = [0.05, 0.10, 0.15, 0.20]
@@ -190,6 +190,7 @@ def _ler_candidatos(eleitos_zip: Path) -> tuple[dict[str, str], dict[str, dict]]
     nomes: dict[str, str] = {}
     sqs: dict[str, set] = {}
     seg: dict[str, set] = {}
+    decididos: set = set()
     for r in linhas_consulta_cand(eleitos_zip):
         slug = slug_cargo(r["DS_CARGO"])
         uf = r["SG_UF"]
@@ -200,7 +201,11 @@ def _ler_candidatos(eleitos_zip: Path) -> tuple[dict[str, str], dict[str, dict]]
         nomes[sq] = _nome_proprio(r["NM_CANDIDATO"])
         if normalize(r["DS_SIT_TOT_TURNO"]).startswith("2") and r.get("NR_TURNO", "1") == "1":
             seg.setdefault(uf, set()).add(sq)
-    info = {uf: {"n_candidatos_total": len(s), "segundo_turno": len(seg.get(uf, ()))} for uf, s in sqs.items()}
+        if r.get("NR_TURNO") == "2" and normalize(r["DS_SIT_TOT_TURNO"]) in SITUACOES_DECIDIDAS:
+            decididos.add(sq)
+    # 2º turno ja totalizado nao esta mais "em disputa"
+    info = {uf: {"n_candidatos_total": len(s), "segundo_turno": len(seg.get(uf, set()) - decididos)}
+            for uf, s in sqs.items()}
     return nomes, info
 
 

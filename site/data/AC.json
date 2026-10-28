@@ -2,51 +2,51 @@
  "uf": "AC",
  "nome": "Acre",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
- "segundo_turno": 2,
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
+ "segundo_turno": 0,
  "n_candidatos_total": 363,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 48817331.13,
-   "principal": 1223707.42,
-   "confirmado": 598555.9,
-   "generico": 625151.52,
+   "total": 52436378.4,
+   "principal": 1326958.1,
+   "confirmado": 692806.58,
+   "generico": 634151.52,
    "provavel": 39.99,
-   "proporcao": 0.025067,
-   "n_candidatos": 211,
-   "n_gastaram": 69,
-   "n_elegiveis": 106,
-   "pago": 936807.42,
-   "pago_publico": 731227.08,
-   "pct_publico": 0.780552,
-   "cobertura_pago": 0.765549,
+   "proporcao": 0.025306,
+   "n_candidatos": 222,
+   "n_gastaram": 74,
+   "n_elegiveis": 120,
+   "pago": 1040058.1,
+   "pago_publico": 789917.75,
+   "pct_publico": 0.759494,
+   "cobertura_pago": 0.783791,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 22,
-     "pct_acima": 0.207547,
-     "excedente": 375453.46
+     "n_acima": 25,
+     "pct_acima": 0.208333,
+     "excedente": 406789.33
     },
     {
      "teto": 0.1,
-     "n_acima": 11,
-     "pct_acima": 0.103774,
-     "excedente": 163308.15
+     "n_acima": 13,
+     "pct_acima": 0.108333,
+     "excedente": 171192.59
     },
     {
      "teto": 0.15,
-     "n_acima": 6,
-     "pct_acima": 0.056604,
-     "excedente": 61542.88
+     "n_acima": 7,
+     "pct_acima": 0.058333,
+     "excedente": 65433.05
     },
     {
      "teto": 0.2,
-     "n_acima": 5,
-     "pct_acima": 0.04717,
-     "excedente": 26392.59
+     "n_acima": 6,
+     "pct_acima": 0.05,
+     "excedente": 27579.49
     }
    ],
    "top": [
@@ -310,42 +310,42 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 23840811.94,
-   "principal": 509214.71,
-   "confirmado": 324179.99,
-   "generico": 185034.72,
+   "total": 24791701.95,
+   "principal": 577765.89,
+   "confirmado": 387731.17,
+   "generico": 190034.72,
    "provavel": 0.0,
-   "proporcao": 0.021359,
-   "n_candidatos": 67,
-   "n_gastaram": 28,
-   "n_elegiveis": 47,
-   "pago": 381214.71,
-   "pago_publico": 305574.72,
-   "pct_publico": 0.801582,
-   "cobertura_pago": 0.748633,
+   "proporcao": 0.023305,
+   "n_candidatos": 69,
+   "n_gastaram": 30,
+   "n_elegiveis": 51,
+   "pago": 449765.89,
+   "pago_publico": 327665.89,
+   "pct_publico": 0.728525,
+   "cobertura_pago": 0.778457,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 10,
-     "pct_acima": 0.212766,
-     "excedente": 184114.05
+     "n_acima": 12,
+     "pct_acima": 0.235294,
+     "excedente": 206190.44
     },
     {
      "teto": 0.1,
-     "n_acima": 5,
-     "pct_acima": 0.106383,
-     "excedente": 73934.73
+     "n_acima": 6,
+     "pct_acima": 0.117647,
+     "excedente": 75225.72
     },
     {
      "teto": 0.15,
      "n_acima": 1,
-     "pct_acima": 0.021277,
+     "pct_acima": 0.019608,
      "excedente": 9124.4
     },
     {
      "teto": 0.2,
      "n_acima": 1,
-     "pct_acima": 0.021277,
+     "pct_acima": 0.019608,
      "excedente": 4499.2
     }
    ],
@@ -384,6 +384,17 @@
      "pequena": false
     },
     {
+     "sq": "10002538356",
+     "nome": "Virgílio Oliveira Macedo Neves Viana",
+     "cargo": "Deputado Federal",
+     "uf": "AC",
+     "principal": 49000.0,
+     "confirmado": 36000.0,
+     "total": 764293.84,
+     "proporcao": 0.064111,
+     "pequena": false
+    },
+    {
      "sq": "10002538358",
      "nome": "Maria Perpetua de Almeida",
      "cargo": "Deputado Federal",
@@ -393,60 +404,49 @@
      "total": 529762.86,
      "proporcao": 0.062292,
      "pequena": false
-    },
-    {
-     "sq": "10002532489",
-     "nome": "Roberto Duarte Junior",
-     "cargo": "Deputado Federal",
-     "uf": "AC",
-     "principal": 30000.0,
-     "confirmado": 0.0,
-     "total": 1295611.6,
-     "proporcao": 0.023155,
-     "pequena": false
     }
    ]
   },
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 13280182.49,
-   "principal": 336775.91,
-   "confirmado": 168375.91,
-   "generico": 168400.0,
+   "total": 15948339.75,
+   "principal": 371475.41,
+   "confirmado": 199075.41,
+   "generico": 172400.0,
    "provavel": 39.99,
-   "proporcao": 0.025359,
-   "n_candidatos": 132,
-   "n_gastaram": 30,
-   "n_elegiveis": 50,
-   "pago": 260875.91,
-   "pago_publico": 205633.56,
-   "pct_publico": 0.788243,
-   "cobertura_pago": 0.774628,
+   "proporcao": 0.023292,
+   "n_candidatos": 141,
+   "n_gastaram": 33,
+   "n_elegiveis": 60,
+   "pago": 295575.41,
+   "pago_publico": 242233.06,
+   "pct_publico": 0.81953,
+   "cobertura_pago": 0.79568,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 10,
-     "pct_acima": 0.2,
-     "excedente": 146971.44
+     "n_acima": 11,
+     "pct_acima": 0.183333,
+     "excedente": 156230.92
     },
     {
      "teto": 0.1,
-     "n_acima": 6,
-     "pct_acima": 0.12,
-     "excedente": 89373.42
+     "n_acima": 7,
+     "pct_acima": 0.116667,
+     "excedente": 95966.87
     },
     {
      "teto": 0.15,
-     "n_acima": 5,
+     "n_acima": 6,
      "pct_acima": 0.1,
-     "excedente": 52418.48
+     "excedente": 56308.65
     },
     {
      "teto": 0.2,
-     "n_acima": 4,
-     "pct_acima": 0.08,
-     "excedente": 21893.39
+     "n_acima": 5,
+     "pct_acima": 0.083333,
+     "excedente": 23080.29
     }
    ],
    "top": [
@@ -466,10 +466,10 @@
      "nome": "Michelle de Oliveira Melo",
      "cargo": "Deputado Estadual",
      "uf": "AC",
-     "principal": 50000.0,
-     "confirmado": 50000.0,
-     "total": 904319.81,
-     "proporcao": 0.05529,
+     "principal": 65000.0,
+     "confirmado": 65000.0,
+     "total": 1177564.81,
+     "proporcao": 0.055199,
      "pequena": false
     },
     {

@@ -2,45 +2,45 @@
  "uf": "BR",
  "nome": "Brasil",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "22/10/2026",
- "segundo_turno": 2,
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "28/10/2026",
+ "segundo_turno": 0,
  "n_candidatos_total": 14,
  "recortes": {
   "presidente": {
    "rotulo": "Presidência",
    "cargo": "Presidente",
-   "total": 187219094.86,
-   "principal": 20425733.0,
-   "confirmado": 17586733.0,
-   "generico": 2839000.0,
+   "total": 224126208.04,
+   "principal": 28795733.0,
+   "confirmado": 25356733.0,
+   "generico": 3439000.0,
    "provavel": 0.0,
-   "proporcao": 0.109101,
+   "proporcao": 0.12848,
    "n_candidatos": 12,
    "n_gastaram": 10,
    "n_elegiveis": 10,
-   "pago": 19665733.0,
-   "pago_publico": 9437533.0,
-   "pct_publico": 0.479897,
-   "cobertura_pago": 0.962792,
+   "pago": 28260733.0,
+   "pago_publico": 11907533.0,
+   "pct_publico": 0.421346,
+   "cobertura_pago": 0.981421,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 6,
-     "pct_acima": 0.6,
-     "excedente": 12282960.63
+     "n_acima": 7,
+     "pct_acima": 0.7,
+     "excedente": 18213610.6
     },
     {
      "teto": 0.1,
      "n_acima": 6,
      "pct_acima": 0.6,
-     "excedente": 7397888.27
+     "excedente": 10592979.75
     },
     {
      "teto": 0.15,
      "n_acima": 4,
      "pct_acima": 0.4,
-     "excedente": 2765752.62
+     "excedente": 4591443.85
     },
     {
      "teto": 0.2,
@@ -55,10 +55,10 @@
      "nome": "Flavio Nantes Bolsonaro",
      "cargo": "Presidente",
      "uf": "BR",
-     "principal": 15025000.0,
-     "confirmado": 12850000.0,
-     "total": 87602396.05,
-     "proporcao": 0.171514,
+     "principal": 20925000.0,
+     "confirmado": 18450000.0,
+     "total": 114764454.52,
+     "proporcao": 0.18233,
      "pequena": false
     },
     {
@@ -66,10 +66,10 @@
      "nome": "Luiz Inácio Lula da Silva",
      "cargo": "Presidente",
      "uf": "BR",
-     "principal": 2690000.0,
-     "confirmado": 2590000.0,
-     "total": 65679887.48,
-     "proporcao": 0.040956,
+     "principal": 5160000.0,
+     "confirmado": 4760000.0,
+     "total": 75537915.44,
+     "proporcao": 0.06831,
      "pequena": false
     },
     {

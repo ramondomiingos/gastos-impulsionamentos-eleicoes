@@ -2,51 +2,51 @@
  "uf": "PB",
  "nome": "Paraíba",
  "artigo": "da",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 419,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 124469663.19,
-   "principal": 8305472.99,
-   "confirmado": 3013262.35,
-   "generico": 5292210.64,
+   "total": 127275673.97,
+   "principal": 8461408.58,
+   "confirmado": 3151325.94,
+   "generico": 5310082.64,
    "provavel": 75.98,
-   "proporcao": 0.066727,
+   "proporcao": 0.066481,
    "n_candidatos": 320,
-   "n_gastaram": 154,
-   "n_elegiveis": 192,
-   "pago": 8189531.26,
-   "pago_publico": 6983554.61,
-   "pct_publico": 0.852742,
-   "cobertura_pago": 0.98604,
+   "n_gastaram": 159,
+   "n_elegiveis": 193,
+   "pago": 8345466.85,
+   "pago_publico": 7090430.05,
+   "pct_publico": 0.849615,
+   "cobertura_pago": 0.986298,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 64,
-     "pct_acima": 0.333333,
-     "excedente": 4587560.86
+     "n_acima": 67,
+     "pct_acima": 0.34715,
+     "excedente": 4626135.09
     },
     {
      "teto": 0.1,
-     "n_acima": 38,
-     "pct_acima": 0.197917,
-     "excedente": 2479812.73
+     "n_acima": 40,
+     "pct_acima": 0.207254,
+     "excedente": 2401844.61
     },
     {
      "teto": 0.15,
      "n_acima": 20,
-     "pct_acima": 0.104167,
-     "excedente": 1315123.84
+     "pct_acima": 0.103627,
+     "excedente": 1240000.72
     },
     {
      "teto": 0.2,
-     "n_acima": 9,
-     "pct_acima": 0.046875,
-     "excedente": 850322.02
+     "n_acima": 10,
+     "pct_acima": 0.051813,
+     "excedente": 856205.15
     }
    ],
    "top": [
@@ -57,8 +57,8 @@
      "uf": "PB",
      "principal": 1060000.0,
      "confirmado": 220000.0,
-     "total": 6372769.35,
-     "proporcao": 0.166333,
+     "total": 7648713.19,
+     "proporcao": 0.138585,
      "pequena": false
     },
     {
@@ -110,12 +110,12 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 19704867.54,
+   "total": 20980811.38,
    "principal": 1861487.96,
    "confirmado": 492000.0,
    "generico": 1369487.96,
    "provavel": 0.0,
-   "proporcao": 0.094468,
+   "proporcao": 0.088723,
    "n_candidatos": 3,
    "n_gastaram": 3,
    "n_elegiveis": 3,
@@ -128,19 +128,19 @@
      "teto": 0.05,
      "n_acima": 2,
      "pct_acima": 0.666667,
-     "excedente": 968782.63
+     "excedente": 904985.44
     },
     {
      "teto": 0.1,
      "n_acima": 1,
      "pct_acima": 0.333333,
-     "excedente": 422723.06
+     "excedente": 295128.68
     },
     {
      "teto": 0.15,
-     "n_acima": 1,
-     "pct_acima": 0.333333,
-     "excedente": 104084.6
+     "n_acima": 0,
+     "pct_acima": 0.0,
+     "excedente": 0.0
     },
     {
      "teto": 0.2,
@@ -157,8 +157,8 @@
      "uf": "PB",
      "principal": 1060000.0,
      "confirmado": 220000.0,
-     "total": 6372769.35,
-     "proporcao": 0.166333,
+     "total": 7648713.19,
+     "proporcao": 0.138585,
      "pequena": false
     },
     {
@@ -288,31 +288,31 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 63026309.42,
-   "principal": 2864337.13,
-   "confirmado": 1378830.39,
+   "total": 63317133.94,
+   "principal": 2874400.72,
+   "confirmado": 1388893.98,
    "generico": 1485506.74,
    "provavel": 29.99,
-   "proporcao": 0.045447,
+   "proporcao": 0.045397,
    "n_candidatos": 138,
-   "n_gastaram": 71,
+   "n_gastaram": 75,
    "n_elegiveis": 89,
-   "pago": 2805253.32,
-   "pago_publico": 2515965.16,
-   "pct_publico": 0.896876,
-   "cobertura_pago": 0.979373,
+   "pago": 2815316.91,
+   "pago_publico": 2525109.42,
+   "pct_publico": 0.896918,
+   "cobertura_pago": 0.979445,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 26,
      "pct_acima": 0.292135,
-     "excedente": 1368326.6
+     "excedente": 1364576.95
     },
     {
      "teto": 0.1,
-     "n_acima": 17,
-     "pct_acima": 0.191011,
-     "excedente": 556533.1
+     "n_acima": 16,
+     "pct_acima": 0.179775,
+     "excedente": 551929.38
     },
     {
      "teto": 0.15,
@@ -368,8 +368,8 @@
      "uf": "PB",
      "principal": 204500.0,
      "confirmado": 0.0,
-     "total": 1998962.82,
-     "proporcao": 0.102303,
+     "total": 2045459.52,
+     "proporcao": 0.099978,
      "pequena": false
     },
     {
@@ -388,43 +388,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 28229820.31,
-   "principal": 1521033.48,
-   "confirmado": 721817.54,
-   "generico": 799215.94,
+   "total": 29469062.73,
+   "principal": 1666905.48,
+   "confirmado": 849817.54,
+   "generico": 817087.94,
    "provavel": 45.99,
-   "proporcao": 0.05388,
+   "proporcao": 0.056565,
    "n_candidatos": 172,
-   "n_gastaram": 73,
-   "n_elegiveis": 94,
-   "pago": 1466449.98,
-   "pago_publico": 788761.49,
-   "pct_publico": 0.537871,
-   "cobertura_pago": 0.964114,
+   "n_gastaram": 74,
+   "n_elegiveis": 95,
+   "pago": 1612321.98,
+   "pago_publico": 886492.67,
+   "pct_publico": 0.549824,
+   "cobertura_pago": 0.967255,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 32,
-     "pct_acima": 0.340426,
-     "excedente": 766636.9
+     "n_acima": 35,
+     "pct_acima": 0.368421,
+     "excedente": 872757.98
     },
     {
      "teto": 0.1,
-     "n_acima": 16,
-     "pct_acima": 0.170213,
-     "excedente": 480767.11
+     "n_acima": 19,
+     "pct_acima": 0.2,
+     "excedente": 534997.1
     },
     {
      "teto": 0.15,
-     "n_acima": 8,
-     "pct_acima": 0.085106,
-     "excedente": 351279.77
+     "n_acima": 9,
+     "pct_acima": 0.094737,
+     "excedente": 380241.24
     },
     {
      "teto": 0.2,
-     "n_acima": 4,
-     "pct_acima": 0.042553,
-     "excedente": 269650.62
+     "n_acima": 5,
+     "pct_acima": 0.052632,
+     "excedente": 275533.75
     }
    ],
    "top": [
@@ -437,6 +437,17 @@
      "confirmado": 67000.0,
      "total": 404942.25,
      "proporcao": 0.735907,
+     "pequena": false
+    },
+    {
+     "sq": "150002544655",
+     "nome": "Carlos Tiberio Limeira Santos Fernandes",
+     "cargo": "Deputado Estadual",
+     "uf": "PB",
+     "principal": 95000.0,
+     "confirmado": 85000.0,
+     "total": 465394.94,
+     "proporcao": 0.204128,
      "pequena": false
     },
     {
@@ -470,17 +481,6 @@
      "confirmado": 20000.0,
      "total": 278158.3,
      "proporcao": 0.269631,
-     "pequena": false
-    },
-    {
-     "sq": "150002548947",
-     "nome": "Maria Luiza Porto Bezerra Cavalcanti",
-     "cargo": "Deputado Estadual",
-     "uf": "PB",
-     "principal": 50000.0,
-     "confirmado": 50000.0,
-     "total": 947512.73,
-     "proporcao": 0.05277,
      "pequena": false
     }
    ]

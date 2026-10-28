@@ -2,51 +2,51 @@
  "uf": "RO",
  "nome": "Rondônia",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "28/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 410,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 109719784.19,
-   "principal": 6516598.55,
-   "confirmado": 6080202.45,
-   "generico": 436396.1,
+   "total": 115306439.9,
+   "principal": 7062999.83,
+   "confirmado": 6631603.73,
+   "generico": 431396.1,
    "provavel": 630.56,
-   "proporcao": 0.059393,
-   "n_candidatos": 313,
-   "n_gastaram": 206,
-   "n_elegiveis": 195,
-   "pago": 6251818.55,
-   "pago_publico": 4062867.6,
-   "pct_publico": 0.64987,
-   "cobertura_pago": 0.959368,
+   "proporcao": 0.061254,
+   "n_candidatos": 314,
+   "n_gastaram": 209,
+   "n_elegiveis": 196,
+   "pago": 6798519.83,
+   "pago_publico": 4597567.78,
+   "pct_publico": 0.67626,
+   "cobertura_pago": 0.962554,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 63,
-     "pct_acima": 0.323077,
-     "excedente": 2760697.31
+     "pct_acima": 0.321429,
+     "excedente": 3048983.49
     },
     {
      "teto": 0.1,
      "n_acima": 28,
-     "pct_acima": 0.14359,
-     "excedente": 1246037.92
+     "pct_acima": 0.142857,
+     "excedente": 1292001.17
     },
     {
      "teto": 0.15,
-     "n_acima": 15,
-     "pct_acima": 0.076923,
-     "excedente": 496926.61
+     "n_acima": 14,
+     "pct_acima": 0.071429,
+     "excedente": 423141.56
     },
     {
      "teto": 0.2,
-     "n_acima": 9,
-     "pct_acima": 0.046154,
-     "excedente": 177204.89
+     "n_acima": 8,
+     "pct_acima": 0.040816,
+     "excedente": 139824.82
     }
    ],
    "top": [
@@ -59,6 +59,17 @@
      "confirmado": 700000.0,
      "total": 3442651.82,
      "proporcao": 0.203332,
+     "pequena": false
+    },
+    {
+     "sq": "220002547309",
+     "nome": "Silvia Cristina Amancio Chagas",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 535000.0,
+     "confirmado": 535000.0,
+     "total": 3748467.2,
+     "proporcao": 0.142725,
      "pequena": false
     },
     {
@@ -79,8 +90,8 @@
      "uf": "RO",
      "principal": 450000.0,
      "confirmado": 450000.0,
-     "total": 6414443.48,
-     "proporcao": 0.070154,
+     "total": 6510486.28,
+     "proporcao": 0.069119,
      "pequena": false
     },
     {
@@ -93,29 +104,18 @@
      "total": 3559537.89,
      "proporcao": 0.123612,
      "pequena": false
-    },
-    {
-     "sq": "220002541490",
-     "nome": "Acir Marcos Gurgacz",
-     "cargo": "Senador",
-     "uf": "RO",
-     "principal": 285000.0,
-     "confirmado": 285000.0,
-     "total": 2915984.48,
-     "proporcao": 0.097737,
-     "pequena": false
     }
    ]
   },
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 17827833.94,
+   "total": 17923876.74,
    "principal": 1193000.0,
    "confirmado": 1193000.0,
    "generico": 0.0,
    "provavel": 0.0,
-   "proporcao": 0.066918,
+   "proporcao": 0.066559,
    "n_candidatos": 5,
    "n_gastaram": 5,
    "n_elegiveis": 5,
@@ -128,7 +128,7 @@
      "teto": 0.05,
      "n_acima": 3,
      "pct_acima": 0.6,
-     "excedente": 402437.63
+     "excedente": 397635.49
     },
     {
      "teto": 0.1,
@@ -157,8 +157,8 @@
      "uf": "RO",
      "principal": 450000.0,
      "confirmado": 450000.0,
-     "total": 6414443.48,
-     "proporcao": 0.070154,
+     "total": 6510486.28,
+     "proporcao": 0.069119,
      "pequena": false
     },
     {
@@ -210,31 +210,31 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 17730716.46,
-   "principal": 1952000.0,
-   "confirmado": 1952000.0,
+   "total": 18630655.23,
+   "principal": 2352000.0,
+   "confirmado": 2352000.0,
    "generico": 0.0,
    "provavel": 91.08,
-   "proporcao": 0.110091,
+   "proporcao": 0.126244,
    "n_candidatos": 10,
    "n_gastaram": 8,
    "n_elegiveis": 9,
-   "pago": 1952000.0,
-   "pago_publico": 1008000.0,
-   "pct_publico": 0.516393,
+   "pago": 2352000.0,
+   "pago_publico": 1408000.0,
+   "pct_publico": 0.598639,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 4,
-     "pct_acima": 0.444444,
-     "excedente": 1142456.11
+     "n_acima": 5,
+     "pct_acima": 0.555556,
+     "excedente": 1478286.25
     },
     {
      "teto": 0.1,
-     "n_acima": 3,
-     "pct_acima": 0.333333,
-     "excedente": 556510.68
+     "n_acima": 4,
+     "pct_acima": 0.444444,
+     "excedente": 716663.96
     },
     {
      "teto": 0.15,
@@ -262,6 +262,17 @@
      "pequena": false
     },
     {
+     "sq": "220002547309",
+     "nome": "Silvia Cristina Amancio Chagas",
+     "cargo": "Senador",
+     "uf": "RO",
+     "principal": 535000.0,
+     "confirmado": 535000.0,
+     "total": 3748467.2,
+     "proporcao": 0.142725,
+     "pequena": false
+    },
+    {
      "sq": "220002539995",
      "nome": "Bruno Scheid",
      "cargo": "Senador",
@@ -279,8 +290,8 @@
      "uf": "RO",
      "principal": 285000.0,
      "confirmado": 285000.0,
-     "total": 2915984.48,
-     "proporcao": 0.097737,
+     "total": 3150914.61,
+     "proporcao": 0.09045,
      "pequena": false
     },
     {
@@ -293,63 +304,63 @@
      "total": 1840325.29,
      "proporcao": 0.135846,
      "pequena": false
-    },
-    {
-     "sq": "220002547309",
-     "nome": "Silvia Cristina Amancio Chagas",
-     "cargo": "Senador",
-     "uf": "RO",
-     "principal": 135000.0,
-     "confirmado": 135000.0,
-     "total": 3083458.56,
-     "proporcao": 0.043782,
-     "pequena": false
     }
    ]
   },
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 47255768.25,
-   "principal": 1897375.42,
-   "confirmado": 1540596.6,
+   "total": 50567439.8,
+   "principal": 1987875.42,
+   "confirmado": 1631096.6,
    "generico": 356778.82,
    "provavel": 405.96,
-   "proporcao": 0.040151,
+   "proporcao": 0.039311,
    "n_candidatos": 105,
-   "n_gastaram": 67,
+   "n_gastaram": 68,
    "n_elegiveis": 86,
-   "pago": 1701295.42,
-   "pago_publico": 1425372.54,
-   "pct_publico": 0.837816,
-   "cobertura_pago": 0.896657,
+   "pago": 1791795.42,
+   "pago_publico": 1521372.54,
+   "pct_publico": 0.849077,
+   "cobertura_pago": 0.901362,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 19,
-     "pct_acima": 0.22093,
-     "excedente": 701691.79
+     "n_acima": 18,
+     "pct_acima": 0.209302,
+     "excedente": 647249.61
     },
     {
      "teto": 0.1,
-     "n_acima": 9,
-     "pct_acima": 0.104651,
-     "excedente": 387906.66
+     "n_acima": 8,
+     "pct_acima": 0.093023,
+     "excedente": 269216.92
     },
     {
      "teto": 0.15,
-     "n_acima": 5,
-     "pct_acima": 0.05814,
-     "excedente": 181763.52
+     "n_acima": 4,
+     "pct_acima": 0.046512,
+     "excedente": 103728.91
     },
     {
      "teto": 0.2,
-     "n_acima": 3,
-     "pct_acima": 0.034884,
-     "excedente": 71868.82
+     "n_acima": 2,
+     "pct_acima": 0.023256,
+     "excedente": 34489.34
     }
    ],
    "top": [
+    {
+     "sq": "220002536882",
+     "nome": "Lucio Antonio Mosquini",
+     "cargo": "Deputado Federal",
+     "uf": "RO",
+     "principal": 280000.0,
+     "confirmado": 280000.0,
+     "total": 3047877.33,
+     "proporcao": 0.091867,
+     "pequena": false
+    },
     {
      "sq": "220002536041",
      "nome": "Jaime Gazola Filho",
@@ -362,25 +373,14 @@
      "pequena": false
     },
     {
-     "sq": "220002536882",
-     "nome": "Lucio Antonio Mosquini",
-     "cargo": "Deputado Federal",
-     "uf": "RO",
-     "principal": 200000.0,
-     "confirmado": 200000.0,
-     "total": 813102.63,
-     "proporcao": 0.245971,
-     "pequena": false
-    },
-    {
      "sq": "220002536035",
      "nome": "Rafael Bento Pereira",
      "cargo": "Deputado Federal",
      "uf": "RO",
-     "principal": 133996.0,
-     "confirmado": 73997.0,
-     "total": 1563621.3,
-     "proporcao": 0.085696,
+     "principal": 126996.0,
+     "confirmado": 66997.0,
+     "total": 1699452.8,
+     "proporcao": 0.074728,
      "pequena": false
     },
     {
@@ -410,43 +410,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 26905465.54,
-   "principal": 1474223.13,
-   "confirmado": 1394605.85,
-   "generico": 79617.28,
+   "total": 28184468.13,
+   "principal": 1530124.41,
+   "confirmado": 1455507.13,
+   "generico": 74617.28,
    "provavel": 133.52,
-   "proporcao": 0.054793,
-   "n_candidatos": 193,
-   "n_gastaram": 126,
-   "n_elegiveis": 95,
-   "pago": 1405523.13,
-   "pago_publico": 495495.06,
-   "pct_publico": 0.352534,
-   "cobertura_pago": 0.953399,
+   "proporcao": 0.05429,
+   "n_candidatos": 194,
+   "n_gastaram": 128,
+   "n_elegiveis": 96,
+   "pago": 1461724.41,
+   "pago_publico": 534195.24,
+   "pct_publico": 0.365456,
+   "cobertura_pago": 0.955298,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 37,
-     "pct_acima": 0.389474,
-     "excedente": 514111.78
+     "pct_acima": 0.385417,
+     "excedente": 525812.15
     },
     {
      "teto": 0.1,
      "n_acima": 15,
-     "pct_acima": 0.157895,
-     "excedente": 217574.38
+     "pct_acima": 0.15625,
+     "excedente": 222074.08
     },
     {
      "teto": 0.15,
      "n_acima": 9,
-     "pct_acima": 0.094737,
-     "excedente": 131560.86
+     "pct_acima": 0.09375,
+     "excedente": 135810.41
     },
     {
      "teto": 0.2,
      "n_acima": 5,
-     "pct_acima": 0.052632,
-     "excedente": 93866.44
+     "pct_acima": 0.052083,
+     "excedente": 93865.84
     }
    ],
    "top": [
@@ -468,8 +468,8 @@
      "uf": "RO",
      "principal": 84000.0,
      "confirmado": 84000.0,
-     "total": 952349.71,
-     "proporcao": 0.088203,
+     "total": 1000210.83,
+     "proporcao": 0.083982,
      "pequena": false
     },
     {
@@ -490,8 +490,8 @@
      "uf": "RO",
      "principal": 74149.12,
      "confirmado": 74149.12,
-     "total": 754480.17,
-     "proporcao": 0.098278,
+     "total": 754765.92,
+     "proporcao": 0.098241,
      "pequena": false
     },
     {

@@ -2,50 +2,50 @@
  "uf": "RR",
  "nome": "Roraima",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "28/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 376,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 73206106.11,
-   "principal": 1760168.72,
-   "confirmado": 945540.47,
-   "generico": 814628.25,
+   "total": 74749189.65,
+   "principal": 1858250.32,
+   "confirmado": 1041622.07,
+   "generico": 816628.25,
    "provavel": 30989.91,
-   "proporcao": 0.024044,
+   "proporcao": 0.02486,
    "n_candidatos": 304,
-   "n_gastaram": 84,
-   "n_elegiveis": 174,
-   "pago": 1674668.72,
-   "pago_publico": 1348216.6,
-   "pct_publico": 0.805065,
-   "cobertura_pago": 0.951425,
+   "n_gastaram": 87,
+   "n_elegiveis": 179,
+   "pago": 1772750.32,
+   "pago_publico": 1433703.6,
+   "pct_publico": 0.808745,
+   "cobertura_pago": 0.953989,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 18,
-     "pct_acima": 0.103448,
-     "excedente": 644171.86
+     "n_acima": 19,
+     "pct_acima": 0.106145,
+     "excedente": 672408.74
     },
     {
      "teto": 0.1,
      "n_acima": 9,
-     "pct_acima": 0.051724,
+     "pct_acima": 0.050279,
      "excedente": 334907.68
     },
     {
      "teto": 0.15,
      "n_acima": 7,
-     "pct_acima": 0.04023,
+     "pct_acima": 0.039106,
      "excedente": 211174.24
     },
     {
      "teto": 0.2,
      "n_acima": 5,
-     "pct_acima": 0.028736,
+     "pct_acima": 0.027933,
      "excedente": 102008.18
     }
    ],
@@ -177,25 +177,25 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 9711182.88,
-   "principal": 373900.0,
-   "confirmado": 293900.0,
+   "total": 10211445.26,
+   "principal": 423900.0,
+   "confirmado": 343900.0,
    "generico": 80000.0,
    "provavel": 0.0,
-   "proporcao": 0.038502,
+   "proporcao": 0.041512,
    "n_candidatos": 12,
    "n_gastaram": 9,
    "n_elegiveis": 7,
-   "pago": 373400.0,
-   "pago_publico": 315000.0,
-   "pct_publico": 0.843599,
-   "cobertura_pago": 0.998663,
+   "pago": 423400.0,
+   "pago_publico": 365000.0,
+   "pct_publico": 0.862069,
+   "cobertura_pago": 0.99882,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 4,
      "pct_acima": 0.571429,
-     "excedente": 67396.26
+     "excedente": 92383.14
     },
     {
      "teto": 0.1,
@@ -251,6 +251,17 @@
      "pequena": false
     },
     {
+     "sq": "230002534806",
+     "nome": "Helio Fernando Barbosa Lopes",
+     "cargo": "Senador",
+     "uf": "RR",
+     "principal": 70000.0,
+     "confirmado": 70000.0,
+     "total": 719261.88,
+     "proporcao": 0.097322,
+     "pequena": false
+    },
+    {
      "sq": "230002549845",
      "nome": "Maria Helena Teixeira Lima",
      "cargo": "Senador",
@@ -260,36 +271,25 @@
      "total": 2392341.32,
      "proporcao": 0.0209,
      "pequena": false
-    },
-    {
-     "sq": "230002534806",
-     "nome": "Helio Fernando Barbosa Lopes",
-     "cargo": "Senador",
-     "uf": "RR",
-     "principal": 20000.0,
-     "confirmado": 20000.0,
-     "total": 218999.5,
-     "proporcao": 0.091324,
-     "pequena": false
     }
    ]
   },
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 38559439.47,
-   "principal": 845438.09,
-   "confirmado": 316889.77,
-   "generico": 528548.32,
+   "total": 38847338.44,
+   "principal": 875438.09,
+   "confirmado": 356889.77,
+   "generico": 518548.32,
    "provavel": 30000.0,
-   "proporcao": 0.021926,
+   "proporcao": 0.022535,
    "n_candidatos": 84,
    "n_gastaram": 38,
    "n_elegiveis": 62,
-   "pago": 791938.09,
-   "pago_publico": 711560.5,
-   "pct_publico": 0.898505,
-   "cobertura_pago": 0.936719,
+   "pago": 821938.09,
+   "pago_publico": 741560.5,
+   "pct_publico": 0.90221,
+   "cobertura_pago": 0.938888,
    "tetos": [
     {
      "teto": 0.05,
@@ -377,42 +377,42 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 20946294.32,
-   "principal": 385930.63,
-   "confirmado": 229850.7,
-   "generico": 156079.93,
+   "total": 21701216.51,
+   "principal": 404012.23,
+   "confirmado": 235932.3,
+   "generico": 168079.93,
    "provavel": 989.91,
-   "proporcao": 0.018425,
+   "proporcao": 0.018617,
    "n_candidatos": 205,
-   "n_gastaram": 35,
-   "n_elegiveis": 102,
-   "pago": 354430.63,
-   "pago_publico": 191756.1,
-   "pct_publico": 0.541026,
-   "cobertura_pago": 0.918379,
+   "n_gastaram": 38,
+   "n_elegiveis": 107,
+   "pago": 372512.23,
+   "pago_publico": 197243.1,
+   "pct_publico": 0.529494,
+   "cobertura_pago": 0.922032,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 8,
-     "pct_acima": 0.078431,
-     "excedente": 209167.58
+     "n_acima": 9,
+     "pct_acima": 0.084112,
+     "excedente": 212417.58
     },
     {
      "teto": 0.1,
      "n_acima": 6,
-     "pct_acima": 0.058824,
+     "pct_acima": 0.056075,
      "excedente": 128872.58
     },
     {
      "teto": 0.15,
      "n_acima": 5,
-     "pct_acima": 0.04902,
+     "pct_acima": 0.046729,
      "excedente": 87279.95
     },
     {
      "teto": 0.2,
      "n_acima": 3,
-     "pct_acima": 0.029412,
+     "pct_acima": 0.028037,
      "excedente": 53982.46
     }
    ],

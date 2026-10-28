@@ -32,8 +32,9 @@ Medido com os dados de 22/10/2026; revisado à mão, linha a linha, só no RN:
 - Esses dois casos (a periferia incerta) somam cerca de R$ 6,7 milhões, perto de 1,5% do principal nacional (R$ 438,3 milhões). Excluir os honorários é uma decisão **em aberto** (veja o [CONTRIBUTING](../CONTRIBUTING.md)).
 - Fornecedores como "Google Brasil" não distorcem: o valor pago a eles é pequeno.
 - Cerca de R$ 14,6 milhões de linhas `nenhum` mencionam termos de anúncio, quase todas "gestão de tráfego pago" (honorários de agência), que **de propósito não entram** no número.
+- Com os dados de 28/10/2026 (checagem automática, sem nova revisão à mão), a periferia é de R$ 6,95 milhões (1,5% do principal de R$ 476,7 milhões) e as possíveis perdas, de R$ 15,1 milhões.
 
-Proporção do principal sobre o total declarado em 22/10/2026 (por UF, todos os cargos): SP 15,9%, DF 12,2%, PR 12,1%, CE 11,3%, PE 11,0%, RJ 10,1%, RN 4,5%. A Presidência é 10,9% e o nacional, 9,3%. As diferenças entre estados refletem gasto real, não ruído de regra, segundo a revisão.
+Proporção do principal sobre o total declarado em 28/10/2026 (por UF, todos os cargos): SP 16,6%, DF 12,6%, PR 12,3%, CE 11,3%, PE 10,8%, RJ 10,4%, RN 4,6%. A Presidência é 12,8% e o nacional, 9,6% (em 22/10/2026: SP 15,9%, Presidência 10,9%, nacional 9,3%; a ordem dos estados não mudou). As diferenças entre estados refletem gasto real, não ruído de regra, segundo a revisão.
 
 ## Fonte do dinheiro (parte paga com fundos públicos)
 
@@ -43,7 +44,7 @@ O site mostra, por recorte, quanto do valor **já pago** em impulsionamento saiu
 2. O pago de cada `SQ_DESPESA` é repartido entre as linhas contratadas desse `SQ_DESPESA` **proporcionalmente ao valor contratado**, e só as linhas `confirmado` e `generico` recebem.
 3. `pct_publico = pago_publico / pago`. `cobertura_pago = pago / principal` (quanto do contratado já foi pago), **limitada a 1** (aditivos podem fazer o pago passar do contratado).
 
-Ressalvas: é medida sobre o valor **pago**, não sobre o contratado; "Outros Recursos" mistura doações e recursos próprios, então o restante **não** é necessariamente privado; e a parcela varia muito: RN 79%, PB 85%, SP 82%, Presidente 48%. Por isso a frase "dinheiro público" só aparece no site junto com o percentual do recorte e essa ressalva.
+Ressalvas: é medida sobre o valor **pago**, não sobre o contratado; "Outros Recursos" mistura doações e recursos próprios, então o restante **não** é necessariamente privado; e a parcela varia muito (dados de 28/10/2026): RN 80%, PB 85%, SP 82%, Presidente 42%. Por isso a frase "dinheiro público" só aparece no site junto com o percentual do recorte e essa ressalva.
 
 ## Decisão revogada: deduplicação de linhas idênticas
 
@@ -51,12 +52,12 @@ Em 23/10/2026 a remoção de linhas contratadas idênticas foi **revogada**. A e
 
 ## Validação por estado (checagem automática)
 
-Em 23/10/2026 conferiu-se, para cada recorte, quanto do principal vem de linhas cuja **origem da despesa** é "Despesa com Impulsionamento de Conteúdos" (campo do próprio TSE, independente das regras de palavras):
+Conferiu-se, para cada recorte, quanto do principal vem de linhas cuja **origem da despesa** é "Despesa com Impulsionamento de Conteúdos" (campo do próprio TSE, independente das regras de palavras):
 
-- Nacional: **98,5%** do principal (R$ 431,6 milhões de R$ 438,3 milhões).
-- **26 dos 28 recortes** (27 UFs mais Brasil) ficam em 95% ou mais; os menores são AC (90,4%) e RR (94,3%).
+- Nacional: **98,5%** do principal (R$ 469,7 milhões de R$ 476,7 milhões, dados de 28/10/2026; em 22/10/2026, R$ 431,6 milhões de R$ 438,3 milhões).
+- **26 dos 28 recortes** (27 UFs mais Brasil) ficam em 95% ou mais; os menores são AC (91,2%) e RR (94,6%).
 
-Isso mostra que o núcleo é sólido, mas **não substitui** a revisão linha a linha, feita só no RN. Hoje a checagem é automática: `gastos validar` (todas as UFs mais Brasil) ou `gastos validar --uf XX` calcula o núcleo (origem "Despesa com Impulsionamento de Conteúdos"), a periferia e as possíveis perdas de cada recorte. Em dados de 22/10/2026 ele reproduz os números acima (principal R$ 438.271.144,99; periferia R$ 6,7 milhões; possíveis perdas R$ 14,6 milhões, em sua maioria serviços de agência deliberadamente não contados). O recorte BR é o de Presidente. Os CSV de linhas (`periferia_*`, `possiveis_perdas_*`) trazem texto livre das despesas (fornecedor e descrição), que pode conter nomes ou números digitados pelas campanhas: revise antes de compartilhar publicamente. As colunas nunca incluem partido, CPF, CNPJ nem nome de candidato.
+Isso mostra que o núcleo é sólido, mas **não substitui** a revisão linha a linha, feita só no RN. Hoje a checagem é automática: `gastos validar` (todas as UFs mais Brasil) ou `gastos validar --uf XX` calcula o núcleo (origem "Despesa com Impulsionamento de Conteúdos"), a periferia e as possíveis perdas de cada recorte. Em dados de 28/10/2026 ele dá principal R$ 476.691.671,04 (igual ao do site), periferia R$ 6,95 milhões e possíveis perdas R$ 15,1 milhões, em sua maioria serviços de agência deliberadamente não contados (em 22/10/2026: R$ 438.271.144,99, R$ 6,7 milhões e R$ 14,6 milhões). O recorte BR é o de Presidente. Os CSV de linhas (`periferia_*`, `possiveis_perdas_*`) trazem texto livre das despesas (fornecedor e descrição), que pode conter nomes ou números digitados pelas campanhas: revise antes de compartilhar publicamente. As colunas nunca incluem partido, CPF, CNPJ nem nome de candidato.
 
 ## Como validar um estado novo
 

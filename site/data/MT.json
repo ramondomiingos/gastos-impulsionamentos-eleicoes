@@ -2,51 +2,51 @@
  "uf": "MT",
  "nome": "Mato Grosso",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 423,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 129421774.48,
-   "principal": 13904199.2,
-   "confirmado": 12000148.52,
-   "generico": 1904050.68,
+   "total": 131613292.96,
+   "principal": 14051921.18,
+   "confirmado": 12115870.5,
+   "generico": 1936050.68,
    "provavel": 1490.36,
-   "proporcao": 0.107433,
-   "n_candidatos": 345,
-   "n_gastaram": 214,
-   "n_elegiveis": 204,
-   "pago": 13194781.58,
-   "pago_publico": 7052241.5,
-   "pct_publico": 0.534472,
-   "cobertura_pago": 0.948978,
+   "proporcao": 0.106767,
+   "n_candidatos": 347,
+   "n_gastaram": 218,
+   "n_elegiveis": 210,
+   "pago": 13342503.56,
+   "pago_publico": 7078218.48,
+   "pct_publico": 0.530502,
+   "cobertura_pago": 0.949515,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 108,
-     "pct_acima": 0.529412,
-     "excedente": 8617548.26
+     "n_acima": 109,
+     "pct_acima": 0.519048,
+     "excedente": 8660258.21
     },
     {
      "teto": 0.1,
-     "n_acima": 72,
-     "pct_acima": 0.352941,
-     "excedente": 4933176.08
+     "n_acima": 74,
+     "pct_acima": 0.352381,
+     "excedente": 4895697.81
     },
     {
      "teto": 0.15,
-     "n_acima": 49,
-     "pct_acima": 0.240196,
-     "excedente": 2629262.99
+     "n_acima": 50,
+     "pct_acima": 0.238095,
+     "excedente": 2560370.18
     },
     {
      "teto": 0.2,
      "n_acima": 31,
-     "pct_acima": 0.151961,
-     "excedente": 1169509.21
+     "pct_acima": 0.147619,
+     "excedente": 1103492.36
     }
    ],
    "top": [
@@ -90,8 +90,8 @@
      "uf": "MT",
      "principal": 585000.0,
      "confirmado": 585000.0,
-     "total": 2400062.9,
-     "proporcao": 0.243744,
+     "total": 2413100.0,
+     "proporcao": 0.242427,
      "pequena": false
     },
     {
@@ -210,12 +210,12 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 17822052.12,
+   "total": 17835094.72,
    "principal": 2923346.62,
    "confirmado": 2637121.83,
    "generico": 286224.79,
    "provavel": 0.0,
-   "proporcao": 0.16403,
+   "proporcao": 0.16391,
    "n_candidatos": 10,
    "n_gastaram": 8,
    "n_elegiveis": 8,
@@ -228,25 +228,25 @@
      "teto": 0.05,
      "n_acima": 8,
      "pct_acima": 1.0,
-     "excedente": 2034707.59
+     "excedente": 2034055.73
     },
     {
      "teto": 0.1,
      "n_acima": 5,
      "pct_acima": 0.625,
-     "excedente": 1213936.35
+     "excedente": 1212632.64
     },
     {
      "teto": 0.15,
      "n_acima": 5,
      "pct_acima": 0.625,
-     "excedente": 676731.21
+     "excedente": 674775.65
     },
     {
      "teto": 0.2,
      "n_acima": 3,
      "pct_acima": 0.375,
-     "excedente": 271774.4
+     "excedente": 269166.98
     }
    ],
    "top": [
@@ -268,8 +268,8 @@
      "uf": "MT",
      "principal": 585000.0,
      "confirmado": 585000.0,
-     "total": 2400062.9,
-     "proporcao": 0.243744,
+     "total": 2413100.0,
+     "proporcao": 0.242427,
      "pequena": false
     },
     {
@@ -310,43 +310,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 47327448.95,
-   "principal": 3908819.44,
-   "confirmado": 3114862.27,
+   "total": 48398131.86,
+   "principal": 3911819.44,
+   "confirmado": 3117862.27,
    "generico": 793957.17,
    "provavel": 375.65,
-   "proporcao": 0.082591,
-   "n_candidatos": 110,
-   "n_gastaram": 70,
-   "n_elegiveis": 63,
-   "pago": 3572736.11,
-   "pago_publico": 3037477.51,
-   "pct_publico": 0.850182,
-   "cobertura_pago": 0.914019,
+   "proporcao": 0.080826,
+   "n_candidatos": 111,
+   "n_gastaram": 71,
+   "n_elegiveis": 64,
+   "pago": 3575736.11,
+   "pago_publico": 3040477.51,
+   "pct_publico": 0.850308,
+   "cobertura_pago": 0.914085,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 30,
-     "pct_acima": 0.47619,
-     "excedente": 2226161.07
+     "pct_acima": 0.46875,
+     "excedente": 2190382.9
     },
     {
      "teto": 0.1,
      "n_acima": 19,
-     "pct_acima": 0.301587,
-     "excedente": 1414957.19
+     "pct_acima": 0.296875,
+     "excedente": 1370654.18
     },
     {
      "teto": 0.15,
      "n_acima": 13,
-     "pct_acima": 0.206349,
-     "excedente": 830835.63
+     "pct_acima": 0.203125,
+     "excedente": 764381.12
     },
     {
      "teto": 0.2,
      "n_acima": 8,
-     "pct_acima": 0.126984,
-     "excedente": 455846.93
+     "pct_acima": 0.125,
+     "excedente": 396887.6
     }
    ],
    "top": [
@@ -368,8 +368,8 @@
      "uf": "MT",
      "principal": 510000.0,
      "confirmado": 510000.0,
-     "total": 3013610.36,
-     "proporcao": 0.169232,
+     "total": 3161843.77,
+     "proporcao": 0.161298,
      "pequena": false
     },
     {
@@ -410,43 +410,43 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 43854337.96,
-   "principal": 4140291.81,
-   "confirmado": 3326423.09,
-   "generico": 813868.72,
+   "total": 44962130.93,
+   "principal": 4285013.79,
+   "confirmado": 3439145.07,
+   "generico": 845868.72,
    "provavel": 1114.71,
-   "proporcao": 0.09441,
-   "n_candidatos": 219,
-   "n_gastaram": 131,
-   "n_elegiveis": 128,
-   "pago": 3936957.52,
-   "pago_publico": 1384763.99,
-   "pct_publico": 0.351735,
-   "cobertura_pago": 0.950889,
+   "proporcao": 0.095303,
+   "n_candidatos": 220,
+   "n_gastaram": 134,
+   "n_elegiveis": 133,
+   "pago": 4081679.5,
+   "pago_publico": 1407740.97,
+   "pct_publico": 0.344893,
+   "cobertura_pago": 0.952548,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 66,
-     "pct_acima": 0.515625,
-     "excedente": 2443092.46
+     "n_acima": 67,
+     "pct_acima": 0.503759,
+     "excedente": 2522232.42
     },
     {
      "teto": 0.1,
-     "n_acima": 44,
-     "pct_acima": 0.34375,
-     "excedente": 1408308.26
+     "n_acima": 46,
+     "pct_acima": 0.345865,
+     "excedente": 1416436.7
     },
     {
      "teto": 0.15,
-     "n_acima": 29,
-     "pct_acima": 0.226562,
-     "excedente": 769824.51
+     "n_acima": 30,
+     "pct_acima": 0.225564,
+     "excedente": 769341.77
     },
     {
      "teto": 0.2,
      "n_acima": 19,
-     "pct_acima": 0.148438,
-     "excedente": 435770.83
+     "pct_acima": 0.142857,
+     "excedente": 431320.73
     }
    ],
    "top": [

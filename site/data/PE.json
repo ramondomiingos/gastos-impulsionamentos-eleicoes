@@ -2,51 +2,51 @@
  "uf": "PE",
  "nome": "Pernambuco",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "28/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 929,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 203830134.57,
-   "principal": 22459358.01,
-   "confirmado": 18427313.34,
-   "generico": 4032044.67,
+   "total": 207489072.68,
+   "principal": 22386091.65,
+   "confirmado": 18631666.74,
+   "generico": 3754424.91,
    "provavel": 40350.92,
-   "proporcao": 0.110187,
-   "n_candidatos": 699,
-   "n_gastaram": 316,
-   "n_elegiveis": 377,
-   "pago": 21265000.9,
-   "pago_publico": 16667817.22,
-   "pct_publico": 0.783815,
-   "cobertura_pago": 0.946821,
+   "proporcao": 0.10789,
+   "n_candidatos": 705,
+   "n_gastaram": 319,
+   "n_elegiveis": 385,
+   "pago": 21268941.04,
+   "pago_publico": 16636392.62,
+   "pct_publico": 0.782192,
+   "cobertura_pago": 0.950096,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 134,
-     "pct_acima": 0.355438,
-     "excedente": 15200439.55
+     "pct_acima": 0.348052,
+     "excedente": 14958675.16
     },
     {
      "teto": 0.1,
-     "n_acima": 86,
-     "pct_acima": 0.228117,
-     "excedente": 10574452.14
+     "n_acima": 87,
+     "pct_acima": 0.225974,
+     "excedente": 10281479.95
     },
     {
      "teto": 0.15,
-     "n_acima": 63,
-     "pct_acima": 0.167109,
-     "excedente": 7384422.68
+     "n_acima": 61,
+     "pct_acima": 0.158442,
+     "excedente": 7101537.52
     },
     {
      "teto": 0.2,
-     "n_acima": 45,
-     "pct_acima": 0.119363,
-     "excedente": 5147704.41
+     "n_acima": 44,
+     "pct_acima": 0.114286,
+     "excedente": 4966518.58
     }
    ],
    "top": [
@@ -95,14 +95,14 @@
      "pequena": false
     },
     {
-     "sq": "170002540291",
-     "nome": "Felipe Augusto Lyra Carreras",
-     "cargo": "Deputado Federal",
+     "sq": "170002539456",
+     "nome": "José Mendonça Bezerra Filho",
+     "cargo": "Senador",
      "uf": "PE",
-     "principal": 770854.5,
-     "confirmado": 470854.5,
-     "total": 2954697.67,
-     "proporcao": 0.260891,
+     "principal": 741381.7,
+     "confirmado": 741381.7,
+     "total": 4537600.21,
+     "proporcao": 0.163386,
      "pequena": false
     }
    ]
@@ -288,43 +288,43 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 114448574.94,
-   "principal": 11533053.09,
-   "confirmado": 9630399.54,
-   "generico": 1902653.55,
+   "total": 117021484.45,
+   "principal": 11313743.59,
+   "confirmado": 9693705.04,
+   "generico": 1620038.55,
    "provavel": 81.07,
-   "proporcao": 0.100771,
-   "n_candidatos": 314,
-   "n_gastaram": 138,
-   "n_elegiveis": 198,
-   "pago": 10995145.0,
-   "pago_publico": 9446932.09,
-   "pct_publico": 0.859191,
-   "cobertura_pago": 0.953359,
+   "proporcao": 0.096681,
+   "n_candidatos": 315,
+   "n_gastaram": 140,
+   "n_elegiveis": 201,
+   "pago": 10832042.0,
+   "pago_publico": 9268479.09,
+   "pct_publico": 0.855654,
+   "cobertura_pago": 0.957423,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 51,
-     "pct_acima": 0.257576,
-     "excedente": 7790571.83
+     "pct_acima": 0.253731,
+     "excedente": 7433945.15
     },
     {
      "teto": 0.1,
      "n_acima": 34,
-     "pct_acima": 0.171717,
-     "excedente": 5339605.61
+     "pct_acima": 0.169154,
+     "excedente": 4940554.84
     },
     {
      "teto": 0.15,
-     "n_acima": 24,
-     "pct_acima": 0.121212,
-     "excedente": 3662015.01
+     "n_acima": 22,
+     "pct_acima": 0.109453,
+     "excedente": 3333120.68
     },
     {
      "teto": 0.2,
-     "n_acima": 18,
-     "pct_acima": 0.090909,
-     "excedente": 2525736.0
+     "n_acima": 17,
+     "pct_acima": 0.084577,
+     "excedente": 2344290.48
     }
    ],
    "top": [
@@ -351,17 +351,6 @@
      "pequena": false
     },
     {
-     "sq": "170002540291",
-     "nome": "Felipe Augusto Lyra Carreras",
-     "cargo": "Deputado Federal",
-     "uf": "PE",
-     "principal": 770854.5,
-     "confirmado": 470854.5,
-     "total": 2954697.67,
-     "proporcao": 0.260891,
-     "pequena": false
-    },
-    {
      "sq": "170002544066",
      "nome": "Fernando Bezerra de Souza Coelho Filho",
      "cargo": "Deputado Federal",
@@ -382,49 +371,60 @@
      "total": 1815759.88,
      "proporcao": 0.347788,
      "pequena": false
+    },
+    {
+     "sq": "170002539162",
+     "nome": "Thiago Medina Duarte",
+     "cargo": "Deputado Federal",
+     "uf": "PE",
+     "principal": 563104.06,
+     "confirmado": 543104.06,
+     "total": 744300.43,
+     "proporcao": 0.756555,
+     "pequena": false
     }
    ]
   },
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 53148992.67,
-   "principal": 5530555.18,
-   "confirmado": 4506150.06,
-   "generico": 1024405.12,
+   "total": 54235021.27,
+   "principal": 5676598.32,
+   "confirmado": 4647197.96,
+   "generico": 1029400.36,
    "provavel": 40269.85,
-   "proporcao": 0.104058,
-   "n_candidatos": 368,
-   "n_gastaram": 168,
-   "n_elegiveis": 169,
-   "pago": 5159284.38,
-   "pago_publico": 2932385.13,
-   "pct_publico": 0.568371,
-   "cobertura_pago": 0.932869,
+   "proporcao": 0.104667,
+   "n_candidatos": 373,
+   "n_gastaram": 169,
+   "n_elegiveis": 174,
+   "pago": 5326327.52,
+   "pago_publico": 3079413.53,
+   "pct_publico": 0.578149,
+   "cobertura_pago": 0.938296,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 77,
-     "pct_acima": 0.455621,
-     "excedente": 3689061.67
+     "pct_acima": 0.442529,
+     "excedente": 3803923.96
     },
     {
      "teto": 0.1,
-     "n_acima": 48,
-     "pct_acima": 0.284024,
-     "excedente": 2643727.4
+     "n_acima": 49,
+     "pct_acima": 0.281609,
+     "excedente": 2749805.99
     },
     {
      "teto": 0.15,
      "n_acima": 36,
-     "pct_acima": 0.213018,
-     "excedente": 1978864.01
+     "pct_acima": 0.206897,
+     "excedente": 2024873.17
     },
     {
      "teto": 0.2,
      "n_acima": 25,
-     "pct_acima": 0.147929,
-     "excedente": 1511565.74
+     "pct_acima": 0.143678,
+     "excedente": 1511825.44
     }
    ],
    "top": [
@@ -435,8 +435,8 @@
      "uf": "PE",
      "principal": 519000.0,
      "confirmado": 519000.0,
-     "total": 681033.27,
-     "proporcao": 0.762077,
+     "total": 705733.27,
+     "proporcao": 0.735405,
      "pequena": false
     },
     {
@@ -473,14 +473,14 @@
      "pequena": false
     },
     {
-     "sq": "170002542900",
-     "nome": "Romero Lima Bezerra de Albuquerque",
+     "sq": "170002543759",
+     "nome": "Gleide Nascimento Ângelo",
      "cargo": "Deputado Estadual",
      "uf": "PE",
-     "principal": 181775.0,
-     "confirmado": 181775.0,
-     "total": 293720.0,
-     "proporcao": 0.618872,
+     "principal": 226000.0,
+     "confirmado": 226000.0,
+     "total": 1204526.66,
+     "proporcao": 0.187626,
      "pequena": false
     }
    ]

@@ -2,51 +2,51 @@
  "uf": "AL",
  "nome": "Alagoas",
  "artigo": "de",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
  "segundo_turno": 0,
  "n_candidatos_total": 273,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 74945004.31,
-   "principal": 3865171.36,
-   "confirmado": 2150571.05,
-   "generico": 1714600.31,
+   "total": 76438334.51,
+   "principal": 3962671.36,
+   "confirmado": 2165571.05,
+   "generico": 1797100.31,
    "provavel": 121063.07,
-   "proporcao": 0.051573,
-   "n_candidatos": 182,
-   "n_gastaram": 80,
+   "proporcao": 0.051841,
+   "n_candidatos": 185,
+   "n_gastaram": 81,
    "n_elegiveis": 132,
-   "pago": 3744221.36,
-   "pago_publico": 2638738.59,
-   "pct_publico": 0.70475,
-   "cobertura_pago": 0.968708,
+   "pago": 3841721.36,
+   "pago_publico": 2731238.59,
+   "pct_publico": 0.710941,
+   "cobertura_pago": 0.969478,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 25,
-     "pct_acima": 0.189394,
-     "excedente": 2120728.89
+     "n_acima": 26,
+     "pct_acima": 0.19697,
+     "excedente": 2144247.3
     },
     {
      "teto": 0.1,
-     "n_acima": 11,
-     "pct_acima": 0.083333,
-     "excedente": 1355882.07
+     "n_acima": 12,
+     "pct_acima": 0.090909,
+     "excedente": 1339091.21
     },
     {
      "teto": 0.15,
      "n_acima": 7,
      "pct_acima": 0.05303,
-     "excedente": 861556.02
+     "excedente": 820918.12
     },
     {
      "teto": 0.2,
      "n_acima": 5,
      "pct_acima": 0.037879,
-     "excedente": 471249.64
+     "excedente": 417065.77
     }
    ],
    "top": [
@@ -68,8 +68,8 @@
      "uf": "AL",
      "principal": 600000.0,
      "confirmado": 50000.0,
-     "total": 1921711.7,
-     "proporcao": 0.312222,
+     "total": 2192631.06,
+     "proporcao": 0.273644,
      "pequena": false
     },
     {
@@ -188,43 +188,43 @@
   "senador": {
    "rotulo": "Senado",
    "cargo": "Senador",
-   "total": 8503149.68,
-   "principal": 1112176.98,
+   "total": 9340177.06,
+   "principal": 1161176.98,
    "confirmado": 318100.0,
-   "generico": 794076.98,
+   "generico": 843076.98,
    "provavel": 0.0,
-   "proporcao": 0.130796,
+   "proporcao": 0.124321,
    "n_candidatos": 6,
    "n_gastaram": 6,
    "n_elegiveis": 5,
-   "pago": 1021476.98,
-   "pago_publico": 829076.98,
-   "pct_publico": 0.811645,
-   "cobertura_pago": 0.918448,
+   "pago": 1070476.98,
+   "pago_publico": 878076.98,
+   "pct_publico": 0.820267,
+   "cobertura_pago": 0.92189,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 3,
      "pct_acima": 0.6,
-     "excedente": 725848.67
+     "excedente": 712302.71
     },
     {
      "teto": 0.1,
      "n_acima": 3,
      "pct_acima": 0.6,
-     "excedente": 469620.37
+     "excedente": 442528.43
     },
     {
      "teto": 0.15,
      "n_acima": 1,
      "pct_acima": 0.2,
-     "excedente": 311743.24
+     "excedente": 271105.34
     },
     {
      "teto": 0.2,
      "n_acima": 1,
      "pct_acima": 0.2,
-     "excedente": 215657.66
+     "excedente": 161473.79
     }
    ],
    "top": [
@@ -235,8 +235,8 @@
      "uf": "AL",
      "principal": 600000.0,
      "confirmado": 50000.0,
-     "total": 1921711.7,
-     "proporcao": 0.312222,
+     "total": 2192631.06,
+     "proporcao": 0.273644,
      "pequena": false
     },
     {
@@ -262,6 +262,17 @@
      "pequena": false
     },
     {
+     "sq": "20002553726",
+     "nome": "Jose Wanderley Neto",
+     "cargo": "Senador",
+     "uf": "AL",
+     "principal": 98000.0,
+     "confirmado": 0.0,
+     "total": 2275507.22,
+     "proporcao": 0.043067,
+     "pequena": false
+    },
+    {
      "sq": "20002553272",
      "nome": "Arthur Cesar Pereira de Lira",
      "cargo": "Senador",
@@ -271,29 +282,18 @@
      "total": 1659328.89,
      "proporcao": 0.047007,
      "pequena": false
-    },
-    {
-     "sq": "20002553726",
-     "nome": "Jose Wanderley Neto",
-     "cargo": "Senador",
-     "uf": "AL",
-     "principal": 49000.0,
-     "confirmado": 0.0,
-     "total": 1709399.2,
-     "proporcao": 0.028665,
-     "pequena": false
     }
    ]
   },
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 40561653.03,
+   "total": 40669990.53,
    "principal": 820958.52,
    "confirmado": 540338.52,
    "generico": 280620.0,
    "provavel": 21063.07,
-   "proporcao": 0.02024,
+   "proporcao": 0.020186,
    "n_candidatos": 83,
    "n_gastaram": 32,
    "n_elegiveis": 59,
@@ -388,31 +388,31 @@
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 17586070.3,
-   "principal": 756535.86,
-   "confirmado": 466632.53,
-   "generico": 289903.33,
+   "total": 18134035.62,
+   "principal": 805035.86,
+   "confirmado": 481632.53,
+   "generico": 323403.33,
    "provavel": 100000.0,
-   "proporcao": 0.043019,
-   "n_candidatos": 90,
-   "n_gastaram": 39,
+   "proporcao": 0.044394,
+   "n_candidatos": 93,
+   "n_gastaram": 40,
    "n_elegiveis": 66,
-   "pago": 746535.86,
-   "pago_publico": 309122.18,
-   "pct_publico": 0.414075,
-   "cobertura_pago": 0.986782,
+   "pago": 795035.86,
+   "pago_publico": 352622.18,
+   "pct_publico": 0.44353,
+   "cobertura_pago": 0.987578,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 14,
-     "pct_acima": 0.212121,
-     "excedente": 354308.23
+     "n_acima": 15,
+     "pct_acima": 0.227273,
+     "excedente": 391372.6
     },
     {
      "teto": 0.1,
-     "n_acima": 6,
-     "pct_acima": 0.090909,
-     "excedente": 216896.93
+     "n_acima": 7,
+     "pct_acima": 0.106061,
+     "excedente": 227198.0
     },
     {
      "teto": 0.15,
@@ -451,6 +451,17 @@
      "pequena": false
     },
     {
+     "sq": "20002548102",
+     "nome": "Maria de Fatima Moreira Canuto Rocha",
+     "cargo": "Deputado Estadual",
+     "uf": "AL",
+     "principal": 52000.0,
+     "confirmado": 0.0,
+     "total": 542954.46,
+     "proporcao": 0.095772,
+     "pequena": false
+    },
+    {
      "sq": "20002540104",
      "nome": "Silvio Rogerio Dias Camelo",
      "cargo": "Deputado Estadual",
@@ -470,17 +481,6 @@
      "confirmado": 0.0,
      "total": 278499.89,
      "proporcao": 0.17325,
-     "pequena": false
-    },
-    {
-     "sq": "20002548099",
-     "nome": "Marcelo Victor Correia dos Santos",
-     "cargo": "Deputado Estadual",
-     "uf": "AL",
-     "principal": 45000.0,
-     "confirmado": 45000.0,
-     "total": 935184.77,
-     "proporcao": 0.048119,
      "pequena": false
     }
    ]

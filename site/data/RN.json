@@ -2,39 +2,39 @@
  "uf": "RN",
  "nome": "Rio Grande do Norte",
  "artigo": "do",
- "dt_geracao": "22/10/2026",
- "dt_ultima_prestacao": "21/10/2026",
- "segundo_turno": 2,
+ "dt_geracao": "28/10/2026",
+ "dt_ultima_prestacao": "27/10/2026",
+ "segundo_turno": 0,
  "n_candidatos_total": 289,
  "recortes": {
   "todos": {
    "rotulo": "Todos os cargos",
    "cargo": null,
-   "total": 93539994.51,
-   "principal": 4240709.51,
-   "confirmado": 2930448.25,
-   "generico": 1310261.26,
+   "total": 94868499.05,
+   "principal": 4399788.26,
+   "confirmado": 3079527.0,
+   "generico": 1320261.26,
    "provavel": 503.74,
-   "proporcao": 0.045336,
-   "n_candidatos": 244,
-   "n_gastaram": 116,
+   "proporcao": 0.046378,
+   "n_candidatos": 247,
+   "n_gastaram": 117,
    "n_elegiveis": 116,
-   "pago": 4075106.55,
-   "pago_publico": 3232314.46,
-   "pct_publico": 0.793185,
-   "cobertura_pago": 0.960949,
+   "pago": 4234185.3,
+   "pago_publico": 3390973.21,
+   "pct_publico": 0.800856,
+   "cobertura_pago": 0.962361,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 38,
      "pct_acima": 0.327586,
-     "excedente": 1645168.07
+     "excedente": 1696054.4
     },
     {
      "teto": 0.1,
-     "n_acima": 19,
-     "pct_acima": 0.163793,
-     "excedente": 634442.3
+     "n_acima": 18,
+     "pct_acima": 0.155172,
+     "excedente": 623651.92
     },
     {
      "teto": 0.15,
@@ -66,10 +66,10 @@
      "nome": "Carlos Eduardo Xavier",
      "cargo": "Governador",
      "uf": "RN",
-     "principal": 363000.0,
-     "confirmado": 333000.0,
-     "total": 3061501.29,
-     "proporcao": 0.118569,
+     "principal": 373000.0,
+     "confirmado": 343000.0,
+     "total": 3334960.71,
+     "proporcao": 0.111845,
      "pequena": false
     },
     {
@@ -110,31 +110,31 @@
   "governador": {
    "rotulo": "Governo",
    "cargo": "Governador",
-   "total": 15700960.64,
-   "principal": 574064.22,
-   "confirmado": 423864.22,
+   "total": 15961520.06,
+   "principal": 584064.22,
+   "confirmado": 433864.22,
    "generico": 150200.0,
    "provavel": 195.8,
-   "proporcao": 0.036562,
+   "proporcao": 0.036592,
    "n_candidatos": 6,
    "n_gastaram": 5,
    "n_elegiveis": 3,
-   "pago": 574064.22,
-   "pago_publico": 410864.22,
-   "pct_publico": 0.715711,
+   "pago": 584064.22,
+   "pago_publico": 420864.22,
+   "pct_publico": 0.720579,
    "cobertura_pago": 1.0,
    "tetos": [
     {
      "teto": 0.05,
      "n_acima": 1,
      "pct_acima": 0.333333,
-     "excedente": 209924.94
+     "excedente": 206251.96
     },
     {
      "teto": 0.1,
      "n_acima": 1,
      "pct_acima": 0.333333,
-     "excedente": 56849.87
+     "excedente": 39503.93
     },
     {
      "teto": 0.15,
@@ -155,10 +155,10 @@
      "nome": "Carlos Eduardo Xavier",
      "cargo": "Governador",
      "uf": "RN",
-     "principal": 363000.0,
-     "confirmado": 333000.0,
-     "total": 3061501.29,
-     "proporcao": 0.118569,
+     "principal": 373000.0,
+     "confirmado": 343000.0,
+     "total": 3334960.71,
+     "proporcao": 0.111845,
      "pequena": false
     },
     {
@@ -179,8 +179,8 @@
      "uf": "RN",
      "principal": 90664.22,
      "confirmado": 90664.22,
-     "total": 6779770.08,
-     "proporcao": 0.013373,
+     "total": 6766870.08,
+     "proporcao": 0.013398,
      "pequena": false
     },
     {
@@ -310,25 +310,25 @@
   "deputado-federal": {
    "rotulo": "Deputados federais",
    "cargo": "Deputado Federal",
-   "total": 37342155.94,
-   "principal": 1145454.73,
-   "confirmado": 707060.28,
+   "total": 37888531.49,
+   "principal": 1256133.48,
+   "confirmado": 817739.03,
    "generico": 438394.45,
    "provavel": 0.0,
-   "proporcao": 0.030675,
-   "n_candidatos": 92,
-   "n_gastaram": 41,
+   "proporcao": 0.033153,
+   "n_candidatos": 93,
+   "n_gastaram": 42,
    "n_elegiveis": 38,
-   "pago": 1112680.75,
-   "pago_publico": 1019957.86,
-   "pct_publico": 0.916667,
-   "cobertura_pago": 0.971388,
+   "pago": 1223359.5,
+   "pago_publico": 1130616.61,
+   "pct_publico": 0.92419,
+   "cobertura_pago": 0.973909,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 8,
-     "pct_acima": 0.210526,
-     "excedente": 305698.58
+     "n_acima": 9,
+     "pct_acima": 0.236842,
+     "excedente": 339287.8
     },
     {
      "teto": 0.1,
@@ -359,6 +359,17 @@
      "confirmado": 0.0,
      "total": 1263016.68,
      "proporcao": 0.163102,
+     "pequena": false
+    },
+    {
+     "sq": "200002533872",
+     "nome": "Natalia Bastos Bonavides",
+     "cargo": "Deputado Federal",
+     "uf": "RN",
+     "principal": 156158.75,
+     "confirmado": 156158.75,
+     "total": 2451390.65,
+     "proporcao": 0.063702,
      "pequena": false
     },
     {
@@ -393,48 +404,37 @@
      "total": 1102596.41,
      "proporcao": 0.081626,
      "pequena": false
-    },
-    {
-     "sq": "200002533880",
-     "nome": "Yraguacy Araujo Almeida de Souza",
-     "cargo": "Deputado Federal",
-     "uf": "RN",
-     "principal": 88000.0,
-     "confirmado": 88000.0,
-     "total": 2450661.1,
-     "proporcao": 0.035909,
-     "pequena": false
     }
    ]
   },
   "deputado-estadual": {
    "rotulo": "Deputados estaduais",
    "cargo": "Deputado Estadual",
-   "total": 25482685.59,
-   "principal": 1471350.56,
-   "confirmado": 759723.75,
-   "generico": 711626.81,
+   "total": 26004255.16,
+   "principal": 1509750.56,
+   "confirmado": 788123.75,
+   "generico": 721626.81,
    "provavel": 307.94,
-   "proporcao": 0.057739,
-   "n_candidatos": 134,
+   "proporcao": 0.058058,
+   "n_candidatos": 136,
    "n_gastaram": 63,
    "n_elegiveis": 69,
-   "pago": 1348521.58,
-   "pago_publico": 841407.88,
-   "pct_publico": 0.623948,
-   "cobertura_pago": 0.91652,
+   "pago": 1386921.58,
+   "pago_publico": 879407.88,
+   "pct_publico": 0.634072,
+   "cobertura_pago": 0.918643,
    "tetos": [
     {
      "teto": 0.05,
-     "n_acima": 26,
-     "pct_acima": 0.376812,
-     "excedente": 723944.53
+     "n_acima": 25,
+     "pct_acima": 0.362319,
+     "excedente": 744914.61
     },
     {
      "teto": 0.1,
-     "n_acima": 15,
-     "pct_acima": 0.217391,
-     "excedente": 386488.67
+     "n_acima": 14,
+     "pct_acima": 0.202899,
+     "excedente": 393044.24
     },
     {
      "teto": 0.15,
@@ -473,6 +473,17 @@
      "pequena": false
     },
     {
+     "sq": "200002533862",
+     "nome": "Maria Isolda Dantas de Moura",
+     "cargo": "Deputado Estadual",
+     "uf": "RN",
+     "principal": 100400.0,
+     "confirmado": 100400.0,
+     "total": 733348.22,
+     "proporcao": 0.136906,
+     "pequena": false
+    },
+    {
      "sq": "200002538246",
      "nome": "Eriko Samuel Xavier de Oliveira",
      "cargo": "Deputado Estadual",
@@ -490,19 +501,8 @@
      "uf": "RN",
      "principal": 70000.0,
      "confirmado": 0.0,
-     "total": 689885.08,
+     "total": 689885.58,
      "proporcao": 0.101466,
-     "pequena": false
-    },
-    {
-     "sq": "200002533888",
-     "nome": "Andre Luiz Vieira de Azevedo",
-     "cargo": "Deputado Estadual",
-     "uf": "RN",
-     "principal": 70000.0,
-     "confirmado": 70000.0,
-     "total": 677278.02,
-     "proporcao": 0.103355,
      "pequena": false
     }
    ]
